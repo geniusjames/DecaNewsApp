@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BC5A93279573CB00327E68 /* GoogleService-Info.plist */; };
+		04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A962796B1B900327E68 /* FirebaseAuth */; };
+		04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */; };
+		04BC5A9B2796B1B900327E68 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A9A2796B1B900327E68 /* FirebaseFirestore */; };
+		04BC5A9D2796B1B900327E68 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A9C2796B1B900327E68 /* FirebaseMessaging */; };
+		04BC5A9F2796B1B900327E68 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A9E2796B1B900327E68 /* FirebaseStorage */; };
 		04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA6727931F0A00D4C062 /* AppDelegate.swift */; };
 		04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA6927931F0A00D4C062 /* SceneDelegate.swift */; };
 		04F2AA6C27931F0A00D4C062 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA6B27931F0A00D4C062 /* ViewController.swift */; };
@@ -21,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04F2AA6427931F0A00D4C062 /* DecaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F2AA6727931F0A00D4C062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F2AA6927931F0A00D4C062 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,6 +51,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BC58DD8FD6F52633D776422 /* Pods_DecaNews.framework in Frameworks */,
+				04BC5A9B2796B1B900327E68 /* FirebaseFirestore in Frameworks */,
+				04BC5A9D2796B1B900327E68 /* FirebaseMessaging in Frameworks */,
+				04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */,
+				04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */,
+				04BC5A9F2796B1B900327E68 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +89,7 @@
 				04F2AA8927943F7E00D4C062 /* View-Model */,
 				04F2AA7B27931F2000D4C062 /* App */,
 				04F2AA7D27931F4100D4C062 /* Resources */,
+				04BC5A93279573CB00327E68 /* GoogleService-Info.plist */,
 				04F2AA7527931F0E00D4C062 /* Info.plist */,
 			);
 			path = DecaNews;
@@ -169,6 +182,13 @@
 			dependencies = (
 			);
 			name = DecaNews;
+			packageProductDependencies = (
+				04BC5A962796B1B900327E68 /* FirebaseAuth */,
+				04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */,
+				04BC5A9A2796B1B900327E68 /* FirebaseFirestore */,
+				04BC5A9C2796B1B900327E68 /* FirebaseMessaging */,
+				04BC5A9E2796B1B900327E68 /* FirebaseStorage */,
+			);
 			productName = DecaNews;
 			productReference = 04F2AA6427931F0A00D4C062 /* DecaNews.app */;
 			productType = "com.apple.product-type.application";
@@ -197,6 +217,9 @@
 				Base,
 			);
 			mainGroup = 04F2AA5B27931F0A00D4C062;
+			packageReferences = (
+				04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 04F2AA6527931F0A00D4C062 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -212,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */,
+				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 			);
@@ -498,6 +522,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04BC5A962796B1B900327E68 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDynamicLinks;
+		};
+		04BC5A9A2796B1B900327E68 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		04BC5A9C2796B1B900327E68 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		04BC5A9E2796B1B900327E68 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04F2AA5C27931F0A00D4C062 /* Project object */;
 }
