@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  DecaNews
+//  TODO_APP
 //
-//  Created by mac on 15/01/2022.
+//  Created by Decagon on 10/12/2021.
 //
 
 import UIKit
@@ -10,6 +10,8 @@ import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static var standard: AppDelegate? { UIApplication.shared.delegate as? AppDelegate }
+    var window: UIWindow?
 
 	func application(
 		_ application: UIApplication,
@@ -19,17 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		return true
 	}
 
-	// MARK: UISceneSession Lifecycle
+    // MARK: UISceneSession Lifecycle
 
-	func application(
-		_ application: UIApplication,
-		configurationForConnecting connectingSceneSession: UISceneSession,
-		options: UIScene.ConnectionOptions
-	) -> UISceneConfiguration {
-		return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-	}
+    func application(_ application: UIApplication,
+                     configurationForConnecting connectingSceneSession: UISceneSession,
+                     options: UIScene.ConnectionOptions) -> UISceneConfiguration {
+        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
+    }
 
-	func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-	}
-
+    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
+    }
 }
