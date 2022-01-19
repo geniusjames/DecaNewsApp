@@ -24,6 +24,7 @@
 		8BC58DD8FD6F52633D776422 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C94E8683780F357A83F5C9 /* Pods_DecaNews.framework */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* MainCoordinator.swift */; };
+		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		52C94E8683780F357A83F5C9 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
 		D498B0FE59F3C90188C0B02A /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
 		FE8ED4E9A087D4E2D9B077FA /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 				04F2AA6D27931F0A00D4C062 /* Main.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
 				04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */,
+				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 				04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */,
 				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
+				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
