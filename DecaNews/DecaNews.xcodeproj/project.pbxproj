@@ -22,8 +22,13 @@
 		04F2AA8727943F6000D4C062 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8627943F6000D4C062 /* Model.swift */; };
 		04F2AA8B27943F9A00D4C062 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8A27943F9A00D4C062 /* ViewModel.swift */; };
 		8BC58DD8FD6F52633D776422 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C94E8683780F357A83F5C9 /* Pods_DecaNews.framework */; };
+		B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */; };
+		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* MainCoordinator.swift */; };
+		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
+		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
+		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +44,13 @@
 		04F2AA8627943F6000D4C062 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		04F2AA8A27943F9A00D4C062 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		52C94E8683780F357A83F5C9 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
+		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
+		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		D498B0FE59F3C90188C0B02A /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
 		FE8ED4E9A087D4E2D9B077FA /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +117,9 @@
 		04F2AA7C27931F3100D4C062 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */,
 				04F2AA6B27931F0A00D4C062 /* ViewController.swift */,
+				B49DCD432797F082005E9A04 /* OnboardingViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -118,6 +130,8 @@
 				04F2AA6D27931F0A00D4C062 /* Main.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
 				04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */,
+				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
+				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -134,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				04F2AA8A27943F9A00D4C062 /* ViewModel.swift */,
+				B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */,
 			);
 			path = "View-Model";
 			sourceTree = "<group>";
@@ -237,6 +252,7 @@
 				04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */,
 				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
+				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -291,10 +307,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F2AA8B27943F9A00D4C062 /* ViewModel.swift in Sources */,
+				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */,
 				04F2AA8727943F6000D4C062 /* Model.swift in Sources */,
+				B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */,
+				B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */,
 				B47E589C27948C0100D70341 /* Coordinator.swift in Sources */,
 				04F2AA6C27931F0A00D4C062 /* ViewController.swift in Sources */,
+				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 			);
@@ -450,9 +470,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DecaNews/Info.plist;
-				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -481,9 +501,9 @@
 				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = DecaNews/Info.plist;
-				INFOPLIST_KEY_NSMainNibFile = Main;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
