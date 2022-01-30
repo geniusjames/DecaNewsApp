@@ -7,9 +7,10 @@
 
 import UIKit
 
-class SelectedTopicsViewController: UIViewController {
+final class SelectedTopicsViewController: UIViewController {
 
     var coordinator: MainCoordinator?
+    var viewModel: ViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -8,8 +8,8 @@
 import Foundation
 import Firebase
 
-class FirebaseViewModel {
-    let auth = Auth.auth()
+final class FirebaseService {
+    private let auth = Auth.auth()
 
     func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (String) -> Void) {
         var response = "success"
@@ -19,8 +19,6 @@ class FirebaseViewModel {
                 response = error.localizedDescription
             }
             completionHandler(response)
-//            print(result?.user.service)
-//            response = true
         }
     }
 

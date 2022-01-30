@@ -7,14 +7,14 @@
 
 import UIKit
 
-class EmailLoginViewController: UIViewController {
+final class EmailLoginViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     var coordinator: MainCoordinator?
-    var firebase: FirebaseViewModel?
+    var viewModel: ViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,14 +27,10 @@ class EmailLoginViewController: UIViewController {
     }
     @IBAction func showUnshow(_ sender: Any) {
         guard let sender = sender as? UIButton else { return }
-        if passwordTextField.isSecureTextEntry {
-            passwordTextField.isSecureTextEntry = false
-            sender.setImage(UIImage(systemName: "eye"), for: .normal)
-        } else {
-            passwordTextField.isSecureTextEntry = true
-            sender.setImage(UIImage(systemName: "eye.slash"), for: .normal)
-        }
+        passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
+        passwordTextField.isSecureTextEntry ? setImage(sender, "eye.slash") : setImage(sender, "eye")
     }
+
     @IBAction func createAccount(_ sender: Any) {
         if !fieldTextError(nameTextField) || !fieldTextError(emailTextField) || !fieldTextError(passwordTextField) {
             return
@@ -42,10 +38,15 @@ class EmailLoginViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        firebase?.signUp(email, password, loggedIn(_:))
+        viewModel?.firebaseService.signUp(email, password, loggedIn(_:))
     }
+
     @IBAction func login(_ sender: Any) {
 //        coordinator.openLogin()
+    }
+
+    func setImage(_ button: UIButton, _ imageName: String) {
+        button.setImage(UIImage(systemName: imageName), for: .normal)
     }
 
     func loggedIn(_ message: String) {
@@ -57,20 +58,22 @@ class EmailLoginViewController: UIViewController {
     }
 
     func fieldTextError(_ textField: UITextField) -> Bool {
-        if textField.tag == 2 {
-            if !(textField.text?.contains("@") ?? false) || !(textField.text?.contains(".") ?? false) {
-                changeBorderColor(textField)
-                errorMessageLabel.text = "Please enter a valid Email"
-                return false
-            }
-        } else if textField.tag == 3 || textField.tag == 1 {
-            if textField.text == "" {
-                changeBorderColor(textField)
-                errorMessageLabel.text = textField.tag == 3 ? "Please enter Password!" : "Please enter Name"
-                return false
+        var status = true
+        if let text = textField.text {
+            if (textField.tag == 1 || textField.tag == 3) && text.isEmpty {
+                let errorText = textField.tag == 1 ? "Please enter Name" : "Please enter Password"
+                status = showError(errorText, textField)
+            } else if textField.tag == 2 && !text.isValidEmail {
+                status = showError("Please enter a valid Email", textField)
             }
         }
-        return true
+        return status
+    }
+    
+    func showError(_ errorMessage: String, _ textField: UITextField) -> Bool {
+        changeBorderColor(textField)
+        errorMessageLabel.text = errorMessage
+        return false
     }
 
     func changeBorderColor(_ textField: UITextField) {

@@ -10,7 +10,7 @@ import UIKit
 class MainCoordinator: Coordinator {
     private var window: UIWindow
     var controller: UINavigationController
-    let firebase = FirebaseViewModel()
+    let viewModel = ViewModel()
 
     init(window: UIWindow) {
         self.window = window
@@ -26,7 +26,7 @@ class MainCoordinator: Coordinator {
     func openSignUp() {
         let emailSignUpViewController = UIStoryboard(name: "EmailLogin", bundle: nil)
             .instantiateViewController(withIdentifier: "EmailLoginViewController") as? EmailLoginViewController
-        emailSignUpViewController?.firebase = firebase
+        emailSignUpViewController?.viewModel = viewModel
         guard let emailSignUpViewController = emailSignUpViewController else { return }
         emailSignUpViewController.coordinator = self
         controller.pushViewController(emailSignUpViewController, animated: true)
@@ -39,6 +39,7 @@ class MainCoordinator: Coordinator {
             .instantiateViewController(withIdentifier: "SelectedTopicsViewController") as? SelectedTopicsViewController
         guard let viewController = viewController else { return }
         viewController.coordinator = self
+        viewController.viewModel = viewModel
         controller = UINavigationController()
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
