@@ -9,7 +9,7 @@ import Foundation
 
 final class ViewModel {
     let firebaseService: FirebaseService
-    
+
     init() {
       firebaseService = FirebaseService()
     }

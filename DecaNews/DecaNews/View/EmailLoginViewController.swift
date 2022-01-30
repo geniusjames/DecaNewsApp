@@ -69,7 +69,7 @@ final class EmailLoginViewController: UIViewController {
         }
         return status
     }
-    
+
     func showError(_ errorMessage: String, _ textField: UITextField) -> Bool {
         changeBorderColor(textField)
         errorMessageLabel.text = errorMessage
