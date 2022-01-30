@@ -11,14 +11,13 @@ import Firebase
 final class FirebaseService {
     private let auth = Auth.auth()
 
-    func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (String) -> Void) {
-        var response = "success"
+    func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         auth.createUser(withEmail: email, password: password) { _, error in
             if let error = error {
-                // there's an error
-                response = error.localizedDescription
+                completionHandler(.failure(error))
+                return
             }
-            completionHandler(response)
+            completionHandler(.success(0))
         }
     }
 

@@ -49,11 +49,12 @@ final class EmailLoginViewController: UIViewController {
         button.setImage(UIImage(systemName: imageName), for: .normal)
     }
 
-    func loggedIn(_ message: String) {
-        if message == "success" {
+    func loggedIn(_ result: Result<Int, Error>) {
+        switch result {
+        case .success(_:):
             coordinator?.openTopics()
-        } else {
-            errorMessageLabel.text = message
+        case .failure(let error):
+            errorMessageLabel.text = error.localizedDescription
         }
     }
 
