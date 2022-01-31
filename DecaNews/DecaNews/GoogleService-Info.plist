@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>1020653200021-slb91q0l5diaabkb9980gprbjrndktrv.apps.googleusercontent.com</string>
+	<string>1020653200021-se4ko8phdmla3chhpit3nej980a254bb.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.1020653200021-slb91q0l5diaabkb9980gprbjrndktrv</string>
+	<string>com.googleusercontent.apps.1020653200021-se4ko8phdmla3chhpit3nej980a254bb</string>
 	<key>API_KEY</key>
 	<string>AIzaSyCalFd5736zO6QqXDLP6_LF8MHFgqmlM70</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Decadevs.DecaNews</string>
+	<string>com.Decagon.DecaNews.dev</string>
 	<key>PROJECT_ID</key>
 	<string>decanews-de183</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1020653200021:ios:5cddc51f5d149edc9f719c</string>
+	<string>1:1020653200021:ios:446f2c5864db075b9f719c</string>
 </dict>
 </plist>

@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BC5A93279573CB00327E68 /* GoogleService-Info.plist */; };
+		0426C0BC27A84CC4000BBCF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0426C0BB27A84CC4000BBCF1 /* GoogleService-Info.plist */; };
 		04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A962796B1B900327E68 /* FirebaseAuth */; };
 		04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */; };
 		04BC5A9B2796B1B900327E68 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A9A2796B1B900327E68 /* FirebaseFirestore */; };
@@ -32,7 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0426C0BB27A84CC4000BBCF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04F2AA6427931F0A00D4C062 /* DecaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F2AA6727931F0A00D4C062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F2AA6927931F0A00D4C062 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,7 +99,7 @@
 				04F2AA8927943F7E00D4C062 /* View-Model */,
 				04F2AA7B27931F2000D4C062 /* App */,
 				04F2AA7D27931F4100D4C062 /* Resources */,
-				04BC5A93279573CB00327E68 /* GoogleService-Info.plist */,
+				0426C0BB27A84CC4000BBCF1 /* GoogleService-Info.plist */,
 				04F2AA7527931F0E00D4C062 /* Info.plist */,
 			);
 			path = DecaNews;
@@ -250,7 +250,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */,
-				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
+				0426C0BC27A84CC4000BBCF1 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
@@ -480,7 +480,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Decadevs.DecaNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Decagon.DecaNews.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -511,7 +511,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Decadevs.DecaNews;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Decagon.DecaNews.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
