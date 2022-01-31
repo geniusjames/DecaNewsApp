@@ -17,7 +17,10 @@ class MainCoordinator: Coordinator {
         controller = UINavigationController()
     }
     func start() {
-        let viewController = ViewController()
+        guard let viewController = UIStoryboard(name: "onboarding", bundle: nil).instantiateViewController(withIdentifier: "onboarding") as? OnboardingViewController
+        else {
+            return
+        }
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
         window.makeKeyAndVisible()
