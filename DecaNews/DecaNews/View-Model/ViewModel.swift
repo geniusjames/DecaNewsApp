@@ -8,9 +8,9 @@
 import Foundation
 
 final class ViewModel {
-//    let firebaseService: FirebaseService
+  let firebaseService: FirebaseService
 
     init() {
-//      firebaseService = FirebaseService()
+     firebaseService = FirebaseService()
     }
 }
