@@ -20,9 +20,13 @@ class OnboardingViewController: UIViewController {
     var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
+        proceedButton.addTarget(self, action: #selector(didTap), for: .touchUpInside)
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
-        
+    }
+    @objc func didTap() {
+        coordinator?.openSignIn()
+        print("button tapped")
     }
 }
 extension OnboardingViewController: UICollectionViewDataSource,

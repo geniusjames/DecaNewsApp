@@ -37,6 +37,17 @@ class MainCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
 
+    func openSignIn() {
+      guard let viewController = UIStoryboard(name: "LoginScreen", bundle: nil)
+                .instantiateViewController(withIdentifier: "LoginScreen") as? LoginViewController
+        else {
+            return
+        }
+        controller.pushViewController(viewController, animated: true)
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+    }
+
     func openTopics() {
         let viewController = UIStoryboard(name: "EmailLogin", bundle: nil)
             .instantiateViewController(withIdentifier: "SelectedTopicsViewController") as? SelectedTopicsViewController
