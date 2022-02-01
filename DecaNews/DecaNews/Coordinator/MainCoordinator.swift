@@ -38,11 +38,12 @@ class MainCoordinator: Coordinator {
     }
 
     func openSignIn() {
-      guard let viewController = UIStoryboard(name: "LoginScreen", bundle: nil)
-                .instantiateViewController(withIdentifier: "LoginScreen") as? LoginViewController
-        else {
-            return
-        }
+        let viewController = UIStoryboard(name: "LoginScreen", bundle: nil)
+            .instantiateViewController(withIdentifier: "LoginScreen") as? LoginViewController
+        guard let viewController = viewController else { return }
+        viewController.coordinator = self
+        viewController.viewModel = viewModel
+        controller = UINavigationController()
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
         window.makeKeyAndVisible()

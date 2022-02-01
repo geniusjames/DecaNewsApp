@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -12,33 +12,21 @@
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="LoginScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="LoginViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc" customClass="GIDSignInButton">
+                    <view key="view" contentMode="scaleToFill" id="eJu-pY-gV4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-DU-RgN" customClass="GIDSignInButton">
-                                <rect key="frame" x="43.5" y="422" width="327" height="52"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GoogleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-ln-W3E">
-                                        <rect key="frame" x="8" y="12" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KyV-x6-1Uo" customClass="GIDSignInButton">
+                                <rect key="frame" x="49" y="246" width="328" height="109"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <accessibility key="accessibilityConfiguration" identifier="SignInScreen"/>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <viewLayoutGuide key="safeArea" id="r1H-Yt-Hjb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="yRL-DU-RgN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="43.5" id="0fG-7q-ppf"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="yRL-DU-RgN" secondAttribute="trailing" constant="43.5" id="5xD-6k-mgQ"/>
-                            <constraint firstItem="yRL-DU-RgN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="378" id="Owq-hK-ecq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="yRL-DU-RgN" secondAttribute="bottom" constant="388" id="RCT-4m-BHN"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="signInButton" destination="yRL-DU-RgN" id="aWg-BK-H4E"/>
+                        <outlet property="signInButton" destination="KyV-x6-1Uo" id="L1f-GM-Ke7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -47,7 +35,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="GoogleIcon" width="20" height="20"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -1,12 +1,11 @@
-import Firebase
 import GoogleSignIn
+import Firebase
 import UIKit
 @main
 
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     static var standard: AppDelegate? { UIApplication.shared.delegate as? AppDelegate }
     var window: UIWindow?
-
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
