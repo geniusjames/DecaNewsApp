@@ -8,16 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--onboarding-->
-        <scene sceneID="IUy-GY-mbu">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="onboarding" storyboardName="onboarding" referencedIdentifier="onboarding" id="iFe-ZY-XPi" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="4W3-0D-Qir"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c0W-lc-Pnd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="530" y="-252"/>
-        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -31,7 +21,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-61" y="119"/>
+            <point key="canvasLocation" x="33" y="138"/>
         </scene>
     </scenes>
     <resources>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -86,7 +86,7 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9L-j6-uW4">
-                                <rect key="frame" x="150" y="702" width="114" height="104"/>
+                                <rect key="frame" x="150" y="738" width="114" height="104"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="button0" title=""/>
                             </button>
@@ -162,7 +162,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xuk-VQ-LPU" secondAttribute="trailing" constant="40" id="e1k-6u-uSP"/>
                             <constraint firstItem="G3H-uk-rLO" firstAttribute="top" secondItem="aWh-AE-c6f" secondAttribute="top" constant="100" id="nWa-Dw-KWD"/>
                             <constraint firstItem="aWh-AE-c6f" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="rxd-RM-9xw"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="j9L-j6-uW4" secondAttribute="bottom" constant="56" id="viR-BT-692"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="j9L-j6-uW4" secondAttribute="bottom" constant="20" id="viR-BT-692"/>
                         </constraints>
                     </view>
                     <connections>

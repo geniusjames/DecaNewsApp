@@ -14,7 +14,6 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var proceedButton: UIButton!
-
     @IBOutlet var indicators: [UILabel]!
 
     var coordinator: MainCoordinator?
@@ -22,13 +21,12 @@ class OnboardingViewController: UIViewController {
         super.viewDidLoad()
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
-        
+        proceedButton.addTarget(self, action: #selector(proceed), for: .allTouchEvents)
     }
 }
 extension OnboardingViewController: UICollectionViewDataSource,
                                     UICollectionViewDelegate,
                                     UICollectionViewDelegateFlowLayout {
-
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         viewModel.onboardingTitle.count
@@ -51,8 +49,10 @@ extension OnboardingViewController: UICollectionViewDataSource,
         DispatchQueue.main.async { [self] in
             viewModel.configureView(titleLabel: titleLabel,
                                     descriptionLabel: descriptionLabel,
-                                     indexPath: indexPath.row)
-            viewModel.configureIndicators(pageIndicator: indicators, proceedButton: proceedButton, indexPath: indexPath.row)
+                                    indexPath: indexPath.row)
+            viewModel.configureIndicators(pageIndicator: indicators,
+                                          proceedButton: proceedButton,
+                                          indexPath: indexPath.row)
         }
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -61,5 +61,9 @@ extension OnboardingViewController: UICollectionViewDataSource,
         let itemWidth = collectionView.bounds.width - 5
         let itemHeight = collectionView.bounds.height
         return CGSize(width: itemWidth, height: itemHeight)
+    }
+
+   @objc func proceed() {
+        coordinator?.navigateToEmailSignin()
     }
 }
