@@ -2,12 +2,12 @@
 //  OnboardingViewController.swift
 //  DecaNews
 //
-//  Created by Geniusjames on 19/01/2022.
+//  Created by Geniusjames on 17/01/2022.
 //
 
 import UIKit
 
-class OnboardingViewController: UIViewController {
+final class OnboardingViewController: UIViewController {
 
     let viewModel = OnboardingViewModel()
     @IBOutlet weak var onboardingCV: UICollectionView!
@@ -15,6 +15,7 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var proceedButton: UIButton!
     @IBOutlet var indicators: [UILabel]!
+    
 
     var coordinator: MainCoordinator?
     override func viewDidLoad() {
@@ -47,12 +48,17 @@ extension OnboardingViewController: UICollectionViewDataSource,
                         willDisplay cell: UICollectionViewCell,
                         forItemAt indexPath: IndexPath) {
         DispatchQueue.main.async { [self] in
-            viewModel.configureView(titleLabel: titleLabel,
-                                    descriptionLabel: descriptionLabel,
-                                    indexPath: indexPath.row)
-            viewModel.configureIndicators(pageIndicator: indicators,
-                                          proceedButton: proceedButton,
-                                          indexPath: indexPath.row)
+            let row = indexPath.row
+            titleLabel.text = viewModel.onboardingTitle[row]
+            descriptionLabel.text = viewModel.onboardingDescription[row]
+            proceedButton.setImage(UIImage(imageLiteralResourceName: viewModel.buttonImageNames[row]), for: .normal)
+            indicators.enumerated().forEach { (index, indicator) in
+                if index == row {
+                    indicator.backgroundColor = .black
+                } else {
+                    indicator.backgroundColor = .gray
+                }
+            }
         }
     }
     func collectionView(_ collectionView: UICollectionView,

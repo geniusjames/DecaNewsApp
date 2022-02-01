@@ -4,10 +4,9 @@
 //
 //  Created by Geniusjames on 29/01/2022.
 //
-
 import UIKit
 
-class EmailSiginInViewController: UIViewController {
+final class EmailSiginInViewController: UIViewController {
     var coordinator: MainCoordinator?
     var showPassword: Bool = false
     let button = UIButton()
@@ -37,21 +36,19 @@ class EmailSiginInViewController: UIViewController {
         passwordTextField.rightViewMode = .always
     }
 
-    @objc func showOrHidePassword(gesture: UIGestureRecognizer) {
-        if showPassword {
-            button.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
+    @objc func showOrHidePassword() {
+        showPassword ? { button.setImage(UIImage(imageLiteralResourceName: "eye"), for: .normal)
             passwordTextField.isSecureTextEntry = false
             showPassword = false
-        } else if !showPassword {
-            button.setImage(UIImage(imageLiteralResourceName: "eye-slash"), for: .normal)
+        }() : {button.setImage(UIImage(imageLiteralResourceName: "eye-slash"), for: .normal)
             passwordTextField.isSecureTextEntry = true
             showPassword = true
-        }
-
+        }()
     }
-
     @objc func login() {
-        if viewModel.isValidEmail(email: emailTextField) && viewModel.isValidPassword(password: passwordTextField) {
+        guard let emailAddress = emailTextField.text else {return}
+        guard let password = passwordTextField.text else {return}
+        if viewModel.isValidEmail(email: emailAddress) && viewModel.isValidPassword(password: password) {
             // perform login
         }
     }

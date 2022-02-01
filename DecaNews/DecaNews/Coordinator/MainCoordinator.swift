@@ -15,30 +15,27 @@ class MainCoordinator: Coordinator {
         controller = UINavigationController()
     }
     func start() {
-
-        // edited by: James
+        navigateToOnboarding()
+    }
+    func navigateToOnboarding() {
         guard let viewController =
                 UIStoryboard(name: "onboarding",
                              bundle: nil).instantiateViewController(withIdentifier: "onboarding") as? OnboardingViewController
         else {
             return
         }
-        // ---------------------------
         viewController.coordinator = self
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
-    // edited: by James
     func navigateToEmailSignin() {
        guard let viewController = UIStoryboard(name: "EmailSignin",
-                                               bundle: nil).instantiateViewController(withIdentifier: "EmailSiginInViewController") as? EmailSiginInViewController
+                                        bundle: nil).instantiateViewController(withIdentifier: "EmailSiginInViewController") as? EmailSiginInViewController
         else {return}
 
-//        viewController.coordinator = self
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
-    // edited by James
 }

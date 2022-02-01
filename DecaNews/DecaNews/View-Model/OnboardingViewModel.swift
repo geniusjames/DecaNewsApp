@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import UIKit
 
 class OnboardingViewModel {
 
@@ -17,42 +16,6 @@ class OnboardingViewModel {
                                  "Get the recent news everyday with DecaNews",
                                  "Get the recent news everyday with DecaNews"]
     let cellID = "onboarding"
+    let buttonImageNames = ["button0", "button1", "button2"]
 
-    func configureView(titleLabel: UILabel, descriptionLabel: UILabel, indexPath: Int) {
-        switch indexPath {
-        case 0:
-            titleLabel.text = onboardingTitle[0]
-            descriptionLabel.text = onboardingDescription[0]
-        case 1:
-            titleLabel.text = onboardingTitle[1]
-            descriptionLabel.text = onboardingDescription[1]
-        case 2:
-            titleLabel.text = onboardingTitle[2]
-            descriptionLabel.text = onboardingDescription[2]
-        default:
-            break
-        }
-    }
-    func configureIndicators(pageIndicator: [UILabel], proceedButton: UIButton, indexPath: Int) {
-    
-        switch indexPath {
-        case 0:
-            pageIndicator[0].backgroundColor = .black
-            pageIndicator[1].backgroundColor = .gray
-            pageIndicator[2].backgroundColor = .gray
-            proceedButton.setImage(UIImage(imageLiteralResourceName: "button0"), for: .normal)
-        case 1:
-            pageIndicator[0].backgroundColor = .gray
-            pageIndicator[1].backgroundColor = .black
-            pageIndicator[2].backgroundColor = .gray
-            proceedButton.setImage(UIImage(imageLiteralResourceName: "button1"), for: .normal)
-        case 2:
-            pageIndicator[0].backgroundColor = .gray
-            pageIndicator[1].backgroundColor = .gray
-            pageIndicator[2].backgroundColor = .black
-            proceedButton.setImage(UIImage(imageLiteralResourceName: "button2"), for: .normal)
-        default:
-            break
-        }
-    }
 }
