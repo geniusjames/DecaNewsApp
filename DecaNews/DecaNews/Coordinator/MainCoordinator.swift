@@ -11,7 +11,7 @@ class MainCoordinator: Coordinator {
     private var window: UIWindow
     var controller: UINavigationController
     let viewModel = ViewModel()
-
+    
     init(window: UIWindow) {
         self.window = window
         controller = UINavigationController()
@@ -25,7 +25,7 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
-
+    
     func openSignUp() {
         let emailSignUpViewController = UIStoryboard(name: "EmailLogin", bundle: nil)
             .instantiateViewController(withIdentifier: "EmailLoginViewController") as? EmailLoginViewController
@@ -36,7 +36,7 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
-
+    
     func openSignIn() {
         let viewController = UIStoryboard(name: "LoginScreen", bundle: nil)
             .instantiateViewController(withIdentifier: "LoginScreen") as? LoginViewController
@@ -48,7 +48,7 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
-
+    
     func openTopics() {
         let viewController = UIStoryboard(name: "EmailLogin", bundle: nil)
             .instantiateViewController(withIdentifier: "SelectedTopicsViewController") as? SelectedTopicsViewController
@@ -60,5 +60,5 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
-
+    
 }

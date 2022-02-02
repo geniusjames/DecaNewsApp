@@ -6,6 +6,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     static var standard: AppDelegate? { UIApplication.shared.delegate as? AppDelegate }
     var window: UIWindow?
+
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -17,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return true
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        print("User email: \(user.profile.email ?? "No Email Found")")
+//        print("User email: \(user.profile.email ?? "No Email Found")")
 
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplication

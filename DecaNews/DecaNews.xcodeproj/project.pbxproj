@@ -29,6 +29,7 @@
 		9410302027A9409F00411376 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301F27A9409F00411376 /* String+Extension.swift */; };
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
+		B41C322827AA9CB400A173A3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C322727AA9CB300A173A3 /* Color.xcassets */; };
 		B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
@@ -58,6 +59,7 @@
 		9410301F27A9409F00411376 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		B41C322727AA9CB300A173A3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			children = (
 				04F2AA6D27931F0A00D4C062 /* Main.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
+				B41C322727AA9CB300A173A3 /* Color.xcassets */,
 				04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */,
 				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
 				B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */,
@@ -203,9 +206,17 @@
 		B41C322027A999B500A173A3 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B41C322127A999E300A173A3 /* LoginViewController.swift */,
+				B41C322A27AAC40B00A173A3 /* Controller */,
 			);
 			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		B41C322A27AAC40B00A173A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B41C322127A999E300A173A3 /* LoginViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B47E589A27948BD800D70341 /* Coordinator */ = {
@@ -301,6 +312,7 @@
 				0426C0BC27A84CC4000BBCF1 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
+				B41C322827AA9CB400A173A3 /* Color.xcassets in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
 			);
