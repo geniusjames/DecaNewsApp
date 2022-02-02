@@ -14,6 +14,7 @@ final class EmailSiginInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     let viewModel = EmailSigninViewModel()
+    let firebaseViewModel = ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ final class EmailSiginInViewController: UIViewController {
         guard let emailAddress = emailTextField.text else {return}
         guard let password = passwordTextField.text else {return}
         if viewModel.isValidEmail(email: emailAddress) && viewModel.isValidPassword(password: password) {
-            // perform login
+            firebaseViewModel.firebaseService.signIn(emailAddress, password)
         }
     }
 }
