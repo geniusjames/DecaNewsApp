@@ -31,4 +31,14 @@ final class FirebaseService {
             completionHandler(.success(0))
         }
     }
+    func resetPassword(_ text: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
+        auth.sendPasswordReset(withEmail: text) { error in
+            if let error = error {
+                completionHandler(.failure(error))
+//                return
+            } else {
+            completionHandler(.success(0))
+            }
+        }
+    }
 }
