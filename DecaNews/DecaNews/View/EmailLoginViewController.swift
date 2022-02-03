@@ -14,7 +14,7 @@ final class EmailLoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     var coordinator: MainCoordinator?
-    var viewModel: ViewModel?
+    var viewModel: ServicesViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()

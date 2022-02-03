@@ -10,7 +10,7 @@ import UIKit
 class MainCoordinator: Coordinator {
     private var window: UIWindow
     var controller: UINavigationController
-    let viewModel = ViewModel()
+    var servicesViewModel: ServicesViewModel?
     init(window: UIWindow) {
         self.window = window
         controller = UINavigationController()
@@ -46,6 +46,7 @@ class MainCoordinator: Coordinator {
             as? EmailLoginViewController
             guard let emailSignUpViewController = emailSignUpViewController else { return }
             emailSignUpViewController.coordinator = self
+            servicesViewModel = ServicesViewModel()
             controller.pushViewController(emailSignUpViewController, animated: true)
             window.rootViewController = controller
             window.makeKeyAndVisible()
@@ -57,7 +58,8 @@ class MainCoordinator: Coordinator {
             as? SelectedTopicsViewController
             guard let viewController = viewController else { return }
             viewController.coordinator = self
-            controller = UINavigationController()
+            servicesViewModel = ServicesViewModel()
+            controller.setNavigationBarHidden(true, animated: true)
             controller.pushViewController(viewController, animated: true)
             window.rootViewController = controller
             window.makeKeyAndVisible()

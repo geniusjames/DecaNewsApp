@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ViewModel {
+final class ServicesViewModel {
     let firebaseService: FirebaseService
     private let defaultsStorage = UserDefaults.standard
     private let storageName = "selectedTopics"
