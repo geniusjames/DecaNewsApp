@@ -11,7 +11,7 @@ class MainCoordinator: Coordinator {
     
     private var window: UIWindow
     var controller: UINavigationController
-    let viewModel = ViewModel()
+    var servicesViewModel: ServicesViewModel?
     
     init(window: UIWindow) {
         self.window = window
@@ -79,4 +79,29 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
+
+    func openSignUp() {
+            let emailSignUpViewController = UIStoryboard(name: "EmailLogin", bundle: nil)
+                .instantiateViewController(withIdentifier: "EmailLoginViewController")
+            as? EmailLoginViewController
+            guard let emailSignUpViewController = emailSignUpViewController else { return }
+            emailSignUpViewController.coordinator = self
+            servicesViewModel = ServicesViewModel()
+            controller.pushViewController(emailSignUpViewController, animated: true)
+            window.rootViewController = controller
+            window.makeKeyAndVisible()
+        }
+
+        func openTopics() {
+            let viewController = UIStoryboard(name: "EmailLogin", bundle: nil)
+                .instantiateViewController(withIdentifier: "SelectedTopicsViewController")
+            as? SelectedTopicsViewController
+            guard let viewController = viewController else { return }
+            viewController.coordinator = self
+            servicesViewModel = ServicesViewModel()
+            controller.setNavigationBarHidden(true, animated: true)
+            controller.pushViewController(viewController, animated: true)
+            window.rootViewController = controller
+            window.makeKeyAndVisible()
+        }
 }

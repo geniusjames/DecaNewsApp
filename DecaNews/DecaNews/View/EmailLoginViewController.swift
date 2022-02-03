@@ -14,7 +14,7 @@ final class EmailLoginViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     var coordinator: MainCoordinator?
-    var viewModel: ViewModel?
+    var viewModel: ServicesViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ final class EmailLoginViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        viewModel?.firebaseService.signUp(email, password, loggedIn(_:))
+        coordinator?.viewModel.firebaseService.signUp(email, password, loggedIn(_:))
     }
 
     @IBAction func login(_ sender: Any) {
