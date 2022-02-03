@@ -47,10 +47,21 @@ final class EmailSiginInViewController: UIViewController {
         }()
     }
     @objc func login() {
-        guard let emailAddress = emailTextField.text else {return}
+        guard let emailAddress = emailTextField.text else {
+            DispatchQueue.main.async {
+                self.emailTextField.layer.borderColor = UIColor.red.cgColor
+            }
+            return
+            
+        }
         guard let password = passwordTextField.text else {return}
         if viewModel.isValidEmail(email: emailAddress) && viewModel.isValidPassword(password: password) {
             firebaseViewModel.firebaseService.signIn(emailAddress, password)
+        }
+        else {
+            DispatchQueue.main.async {
+                self.emailTextField.layer.borderColor = UIColor.red.cgColor
+            }
         }
     }
 }
