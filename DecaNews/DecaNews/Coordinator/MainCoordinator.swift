@@ -8,6 +8,7 @@
 import UIKit
 
 class MainCoordinator: Coordinator {
+    
     private var window: UIWindow
     var controller: UINavigationController
     let viewModel = ViewModel()
@@ -16,11 +17,19 @@ class MainCoordinator: Coordinator {
         self.window = window
         controller = UINavigationController()
     }
+    
     func start() {
-        guard let viewController = UIStoryboard(name: "onboarding", bundle: nil).instantiateViewController(withIdentifier: "onboarding") as? OnboardingViewController
+        navigateToOnboarding()
+    }
+    
+    func navigateToOnboarding() {
+        guard let viewController =
+                UIStoryboard(name: "onboarding",
+                             bundle: nil).instantiateViewController(withIdentifier: "onboarding") as? OnboardingViewController
         else {
             return
         }
+        viewController.coordinator = self
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
         window.makeKeyAndVisible()
@@ -56,9 +65,18 @@ class MainCoordinator: Coordinator {
         viewController.coordinator = self
         viewController.viewModel = viewModel
         controller = UINavigationController()
+        
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
     
+    func navigateToEmailSignin() {
+        guard let viewController = UIStoryboard(name: "EmailSignin",
+                                                bundle: nil).instantiateViewController(withIdentifier: "EmailSiginInViewController") as? EmailSiginInViewController
+        else {return}
+        controller.pushViewController(viewController, animated: true)
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+    }
 }

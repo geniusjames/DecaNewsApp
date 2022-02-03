@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0426C0BC27A84CC4000BBCF1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0426C0BB27A84CC4000BBCF1 /* GoogleService-Info.plist */; };
+		04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BC5A93279573CB00327E68 /* GoogleService-Info.plist */; };
 		04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A962796B1B900327E68 /* FirebaseAuth */; };
 		04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */; };
 		04BC5A9B2796B1B900327E68 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A9A2796B1B900327E68 /* FirebaseFirestore */; };
@@ -22,6 +22,10 @@
 		04F2AA8727943F6000D4C062 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8627943F6000D4C062 /* Model.swift */; };
 		04F2AA8B27943F9A00D4C062 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8A27943F9A00D4C062 /* ViewModel.swift */; };
 		8BC58DD8FD6F52633D776422 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52C94E8683780F357A83F5C9 /* Pods_DecaNews.framework */; };
+
+		B451244C27A686BA0033B818 /* EmailSigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451244B27A686BA0033B818 /* EmailSigninViewModel.swift */; };
+		B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */; };
+
 		9410301627A9404700411376 /* EmailLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301327A9404700411376 /* EmailLoginViewController.swift */; };
 		9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301427A9404700411376 /* PasswordResetViewController.swift */; };
 		9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301527A9404700411376 /* SelectedTopicsViewController.swift */; };
@@ -30,17 +34,19 @@
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
 		B41C322827AA9CB400A173A3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C322727AA9CB300A173A3 /* Color.xcassets */; };
+
 		B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* MainCoordinator.swift */; };
+		B4851E7627A525C2005F4399 /* EmailSiginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */; };
 		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
 		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
 		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0426C0BB27A84CC4000BBCF1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04F2AA6427931F0A00D4C062 /* DecaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F2AA6727931F0A00D4C062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		04F2AA6927931F0A00D4C062 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +58,10 @@
 		04F2AA8627943F6000D4C062 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		04F2AA8A27943F9A00D4C062 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		52C94E8683780F357A83F5C9 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+
+		B451244B27A686BA0033B818 /* EmailSigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSigninViewModel.swift; path = DecaNews/View/EmailSigninViewModel.swift; sourceTree = SOURCE_ROOT; };
+		B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignin.storyboard; sourceTree = "<group>"; };
+
 		9410301327A9404700411376 /* EmailLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailLoginViewController.swift; sourceTree = "<group>"; };
 		9410301427A9404700411376 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		9410301527A9404700411376 /* SelectedTopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTopicsViewController.swift; sourceTree = "<group>"; };
@@ -60,10 +70,12 @@
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		B41C322727AA9CB300A173A3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+
 		B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSiginInViewController.swift; path = DecaNews/Resources/EmailSiginInViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
 		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -117,7 +129,7 @@
 				04F2AA8927943F7E00D4C062 /* View-Model */,
 				04F2AA7B27931F2000D4C062 /* App */,
 				04F2AA7D27931F4100D4C062 /* Resources */,
-				0426C0BB27A84CC4000BBCF1 /* GoogleService-Info.plist */,
+				04BC5A93279573CB00327E68 /* GoogleService-Info.plist */,
 				04F2AA7527931F0E00D4C062 /* Info.plist */,
 			);
 			path = DecaNews;
@@ -136,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				B41C322027A999B500A173A3 /* LoginViewController */,
+				B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */,
 				B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */,
 				04F2AA6B27931F0A00D4C062 /* ViewController.swift */,
 				9410301327A9404700411376 /* EmailLoginViewController.swift */,
@@ -155,6 +168,7 @@
 				04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */,
 				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
 				B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */,
+				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
 			);
 			path = Resources;
@@ -171,6 +185,7 @@
 		04F2AA8927943F7E00D4C062 /* View-Model */ = {
 			isa = PBXGroup;
 			children = (
+				B451244B27A686BA0033B818 /* EmailSigninViewModel.swift */,
 				04F2AA8A27943F9A00D4C062 /* ViewModel.swift */,
 				B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */,
 			);
@@ -309,7 +324,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */,
-				0426C0BC27A84CC4000BBCF1 /* GoogleService-Info.plist in Resources */,
+				B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */,
+				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				B41C322827AA9CB400A173A3 /* Color.xcassets in Resources */,
@@ -406,13 +422,20 @@
 				9410301C27A9407400411376 /* FirebaseService.swift in Sources */,
 				9410301627A9404700411376 /* EmailLoginViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
+
+				B451244C27A686BA0033B818 /* EmailSigninViewModel.swift in Sources */,
+
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
+
 				B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */,
 				B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */,
 				04F2AA8727943F6000D4C062 /* Model.swift in Sources */,
 				B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */,
 				B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */,
+
+				B4851E7627A525C2005F4399 /* EmailSiginInViewController.swift in Sources */,
 				9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */,
+
 				B47E589C27948C0100D70341 /* Coordinator.swift in Sources */,
 				04F2AA6C27931F0A00D4C062 /* ViewController.swift in Sources */,
 				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
@@ -581,7 +604,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Decagon.DecaNews.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = Decadevs.DecaNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -612,7 +635,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Decagon.DecaNews.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = Decadevs.DecaNews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;

@@ -9,17 +9,8 @@ import UIKit
 
 class OnboardingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var onboardingBackgroundPicture: UIImageView!
-
+let imageFileName = ["onboarding0", "onboarding1", "onboarding2"]
     func configureViewCell(indexPath: Int) {
-        switch indexPath {
-        case 0:
-            onboardingBackgroundPicture.image = UIImage(imageLiteralResourceName: "onboarding0")
-        case 1:
-            onboardingBackgroundPicture.image = UIImage(imageLiteralResourceName: "onboarding1")
-        case 2:
-            onboardingBackgroundPicture.image = UIImage(imageLiteralResourceName: "onboarding2")
-        default:
-            break
-        }
+        onboardingBackgroundPicture.image = UIImage(imageLiteralResourceName: imageFileName[indexPath])
     }
 }
