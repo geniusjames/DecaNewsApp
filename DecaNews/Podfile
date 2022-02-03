@@ -6,6 +6,6 @@ target 'DecaNews' do
   use_frameworks!
 
   # Pods for DecaNews
-pod 'SwiftLint'
-pod 'GoogleSignIn' 
+    pod 'SwiftLint'
+    pod 'GoogleSignIn', '~> 5.0'
 end
