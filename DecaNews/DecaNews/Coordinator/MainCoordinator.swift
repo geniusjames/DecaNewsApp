@@ -44,7 +44,6 @@ class MainCoordinator: Coordinator {
             let emailSignUpViewController = UIStoryboard(name: "EmailLogin", bundle: nil)
                 .instantiateViewController(withIdentifier: "EmailLoginViewController")
             as? EmailLoginViewController
-            emailSignUpViewController?.viewModel = viewModel
             guard let emailSignUpViewController = emailSignUpViewController else { return }
             emailSignUpViewController.coordinator = self
             controller.pushViewController(emailSignUpViewController, animated: true)
@@ -58,7 +57,6 @@ class MainCoordinator: Coordinator {
             as? SelectedTopicsViewController
             guard let viewController = viewController else { return }
             viewController.coordinator = self
-            viewController.viewModel = viewModel
             controller = UINavigationController()
             controller.pushViewController(viewController, animated: true)
             window.rootViewController = controller

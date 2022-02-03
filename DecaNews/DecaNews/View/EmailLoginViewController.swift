@@ -38,7 +38,7 @@ final class EmailLoginViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        viewModel?.firebaseService.signUp(email, password, loggedIn(_:))
+        coordinator?.viewModel.firebaseService.signUp(email, password, loggedIn(_:))
     }
 
     @IBAction func login(_ sender: Any) {

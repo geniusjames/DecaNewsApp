@@ -25,45 +25,42 @@ final class SelectedTopicsViewController: UIViewController {
     @IBOutlet weak var businessButton: UIButton!
     @IBOutlet weak var musicButton: UIButton!
     var buttonStore = [Int: Bool]()
-    
+    var buttons: [UIButton] = [UIButton]()
     var coordinator: MainCoordinator?
-    var viewModel: ViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-        var buttons: [UIButton] = [musicButton, businessButton, designButton, bookButton, photographyButton,
-                       architectureButton, writingButton, educationButton, entertainmentButton,
-                       natureButton, travelButton, sportsButton, healthButton, recipesButton, gymFitnessButton]
+        buttons = [musicButton, businessButton, designButton, bookButton, photographyButton,
+                     architectureButton, writingButton, educationButton, entertainmentButton,
+                     natureButton, travelButton, sportsButton, healthButton, recipesButton, gymFitnessButton]
         for button in buttons {
             buttonStore[button.tag] = false
+            button.backgroundColor = UIColor(named: "grey")
             button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         }
-        // Do any additional setup after loading the view.
     }
-    
+
     @objc
     func buttonClicked(_ sender: Any) {
         guard let button = sender as? UIButton, let buttonState = buttonStore[button.tag]  else { return }
         if buttonState {
             buttonStore[button.tag] = false
-            button.tintColor = UIColor(named: "grey")
-            button.setTitleColor(UIColor(named: "lightBlack"), for: .normal)
+            button.backgroundColor = UIColor(named: "grey")
+            button.setTitleColor(.black, for: .normal)
         } else {
             buttonStore[button.tag] = true
-            button.tintColor = UIColor(named: "lightBlack")
-            button.setTitleColor(UIColor(named: "offWhite"), for: .normal)
+            button.backgroundColor = .black
+            button.setTitleColor(.white, for: .normal)
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction func getStarted(_ sender: Any) {
+        var output = [String]()
+        for (key, value) in buttonStore {
+            if value, let str = buttons[key].titleLabel?.text {
+                output.append(str)
+            }
+        }
+        coordinator?.viewModel.add(topics: output)
+//        coordinator?.openNext()
     }
 }
