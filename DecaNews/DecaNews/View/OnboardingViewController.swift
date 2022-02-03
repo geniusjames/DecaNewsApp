@@ -8,7 +8,7 @@
 import UIKit
 
 final class OnboardingViewController: UIViewController {
-
+    
     let viewModel = OnboardingViewModel()
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -16,15 +16,20 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet weak var proceedButton: UIButton!
     @IBOutlet var indicators: [UILabel]!
     
-
     var coordinator: MainCoordinator?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        proceedButton.addTarget(self, action: #selector(proceed), for: .touchUpInside)
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
-        proceedButton.addTarget(self, action: #selector(proceed), for: .allTouchEvents)
+    }
+    
+    @objc func proceed() {
+        coordinator?.openSignIn()
     }
 }
+
 extension OnboardingViewController: UICollectionViewDataSource,
                                     UICollectionViewDelegate,
                                     UICollectionViewDelegateFlowLayout {
@@ -67,9 +72,5 @@ extension OnboardingViewController: UICollectionViewDataSource,
         let itemWidth = collectionView.bounds.width - 5
         let itemHeight = collectionView.bounds.height
         return CGSize(width: itemWidth, height: itemHeight)
-    }
-
-   @objc func proceed() {
-        coordinator?.navigateToEmailSignin()
     }
 }
