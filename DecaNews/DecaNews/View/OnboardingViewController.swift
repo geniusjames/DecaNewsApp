@@ -26,8 +26,7 @@ final class OnboardingViewController: UIViewController {
     }
     
     @objc func proceed() {
-        coordinator?.navigateToEmailSignin()
-//        coordinator?.openSignIn()
+        coordinator?.openSignIn()
     }
 }
 
