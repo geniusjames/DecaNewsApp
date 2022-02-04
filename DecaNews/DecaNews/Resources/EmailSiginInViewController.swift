@@ -21,6 +21,8 @@ final class EmailSiginInViewController: UIViewController {
         super.viewDidLoad()
         configurePasswordField()
         loginButton.addTarget(self, action: #selector(login), for: .allTouchEvents)
+        emailTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
+        passwordTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
     }
     func configurePasswordField() {
         let eyeView = UIView()
@@ -33,7 +35,7 @@ final class EmailSiginInViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.centerXAnchor.constraint(equalTo: eyeView.centerXAnchor).isActive = true
         button.centerYAnchor.constraint(equalTo: eyeView.centerYAnchor).isActive = true
-        button.setImage(UIImage(imageLiteralResourceName: "eye.slash"), for: .normal)
+        button.setImage(UIImage(imageLiteralResourceName: "eye-slash"), for: .normal)
         button.addTarget(self, action: #selector(showOrHidePassword), for: .touchUpInside)
         passwordTextField.rightViewMode = .always
     }
@@ -70,23 +72,28 @@ final class EmailSiginInViewController: UIViewController {
         }
     }
 }
-
-}
-
-extension EmailSiginInViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        guard let email = textField.text
+    @objc func validateInputs() {
+        guard let email = emailTextField.text, let password = passwordTextField.text
         else {return}
-        if !email.isValidEmail {
-            textField.layer.borderColor = UIColor(named: "peach")?.cgColor
+        if !email.isEmpty {
+            if !email.isValidEmail {
+                emailTextField.layer.borderWidth = 1
+                emailTextField.layer.borderColor = UIColor(named: "peach")?.cgColor
+            }
         }
-    }
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        guard let email = textField.text
-        else {return}
-        if !email.isValidEmail {
-            textField.layer.borderColor = UIColor(named: "peach")?.cgColor
+        if !password.isEmpty {
+            if !password.isValidPassword {
+                passwordTextField.layer.borderWidth = 1
+                passwordTextField.layer.borderColor = UIColor(named: "peach")?.cgColor
+            }
         }
+        if email.isValidEmail || email.isEmpty {
+            emailTextField.layer.borderWidth = 0
+        }
+        if password.isValidPassword || password.isEmpty {
+            passwordTextField.layer.borderWidth = 0
+        }
+       
     }
-    
+
 }
