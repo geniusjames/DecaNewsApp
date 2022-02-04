@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class ResetPassword {
+final class ResetPasswordViewModel {
     func newPassword(_ text: String?, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
-        if let text = text {
+        if let text = text, text.isValidEmail {
             FirebaseService().resetPassword(text, completionHandler)
         }
     }

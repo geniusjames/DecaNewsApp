@@ -4,7 +4,8 @@ import AuthenticationServices
 
 class LoginViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
     var coordinator: MainCoordinator?
-    var viewModel: ViewModel?
+    var serviceViewModel: ServicesViewModel?
+    
     @IBOutlet weak var loginWithEmailButtom: UIButton!
     @IBOutlet var signInButton: GIDSignInButton!
     @IBOutlet weak var appleSignIn: ASAuthorizationAppleIDButton!
@@ -12,6 +13,12 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
         view.backgroundColor = .white
         super.viewDidLoad()
         configureGoogleSignInButton()
+        loginWithEmailButtom.addTarget(self, action: #selector(moveToLogin), for: .touchUpInside)
+    }
+    
+    @objc
+    func moveToLogin() {
+        coordinator?.navigateToEmailSignin()
     }
     
     @IBAction func didTapAppleSignIn(_ sender: Any) {
@@ -31,9 +38,9 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
         signInButton.style = .wide
     }
    
-        func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-            return view.window!
-        }
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        return view.window!
+    }
         
 }
 

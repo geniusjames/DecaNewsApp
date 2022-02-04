@@ -10,25 +10,61 @@ import Foundation
 final class ServicesViewModel {
     let firebaseService: FirebaseService
     private let defaultsStorage = UserDefaults.standard
-    private let storageName = "selectedTopics"
+    private let topicStorage = "selectedTopics"
+    private let onboardingStorage = "onboarded"
+    private let signedInStorage = "signedInStatus"
 
     init() {
      firebaseService = FirebaseService()
     }
     
-    var getTopics: [String] {
-        guard let topicsData = defaultsStorage.object(forKey: storageName) as? Data else {
-            return []
+    var getTopics: [String]? {
+        return find(topicStorage) as [String]?
+    }
+
+    var getOnboardedStatus: Bool {
+        if find(onboardingStorage) as Bool? != nil {
+            return true
         }
-        let decodedTopics = try? JSONDecoder().decode([String].self, from: topicsData)
-        return decodedTopics ?? []
+        return false
+    }
+
+    var getSignedStatus: Bool {
+        if let signedInStatus = find(signedInStorage) as Bool? {
+            return signedInStatus
+        }
+        return false
     }
 
     func add(topics: [String]) {
-        let encodedTopics = try? JSONEncoder().encode(topics)
-        guard let encodedTopics = encodedTopics else {
+        add(topics, topicStorage)
+    }
+
+    func addOnboarded() {
+        add(true, onboardingStorage)
+    }
+
+    func signIn() {
+        add(true, signedInStorage)
+    }
+
+    func signOut() {
+        add(false, signedInStorage)
+    }
+
+    func add<T: Encodable>(_ items: T, _ storage: String) {
+        let encodedItems = try? JSONEncoder().encode(items)
+        guard let encodedItems = encodedItems else {
             return
         }
-        defaultsStorage.set(encodedTopics, forKey: storageName)
+        defaultsStorage.set(encodedItems, forKey: storage)
+    }
+
+    func find<T: Decodable>(_ key: String) -> T? {
+        guard let data = defaultsStorage.object(forKey: key) as? Data else {
+            return nil
+        }
+        let decodedItem = try? JSONDecoder().decode(T.self, from: data)
+        return decodedItem
     }
 }

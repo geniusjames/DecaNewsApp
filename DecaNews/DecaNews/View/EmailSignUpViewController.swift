@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class EmailLoginViewController: UIViewController {
+final class EmailSignUpViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
     var coordinator: MainCoordinator?
-    var viewModel: ServicesViewModel?
+    var serviceViewModel: ServicesViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,9 +22,7 @@ final class EmailLoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
     }
-    @IBAction func forgotPassword(_ sender: Any) {
-//        coordinator.openResetPassword()
-    }
+
     @IBAction func showUnshow(_ sender: Any) {
         guard let sender = sender as? UIButton else { return }
         passwordTextField.isSecureTextEntry = !passwordTextField.isSecureTextEntry
@@ -38,11 +36,11 @@ final class EmailLoginViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        coordinator?.viewModel.firebaseService.signUp(email, password, loggedIn(_:))
+        serviceViewModel?.firebaseService.signUp(email, password, loggedIn(_:))
     }
 
     @IBAction func login(_ sender: Any) {
-//        coordinator.openLogin()
+        coordinator?.navigateToEmailSignin()
     }
 
     func setImage(_ button: UIButton, _ imageName: String) {
@@ -52,8 +50,7 @@ final class EmailLoginViewController: UIViewController {
     func loggedIn(_ result: Result<Int, Error>) {
         switch result {
         case .success(_:):
-            print("")
-//            coordinator?.openTopics()
+            coordinator?.navigateToTopics()
         case .failure(let error):
             errorMessageLabel.text = error.localizedDescription
         }
@@ -85,7 +82,7 @@ final class EmailLoginViewController: UIViewController {
 
 }
 
-extension EmailLoginViewController: UITextFieldDelegate {
+extension EmailSignUpViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if !fieldTextError(textField) {
             return

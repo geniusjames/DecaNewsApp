@@ -23,7 +23,7 @@ final class FirebaseService {
     }
 
     func signIn(_ email: String, _ password: String, completionHandler: @escaping (Result<Int, Error>) -> Void) {
-        auth.signIn(withEmail: email, password: password) {_ ,error in
+        auth.signIn(withEmail: email, password: password) { _, error in
             if let error = error {
                 completionHandler(.failure(error))
                 return
@@ -31,11 +31,12 @@ final class FirebaseService {
             completionHandler(.success(0))
         }
     }
+
     func resetPassword(_ text: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         auth.sendPasswordReset(withEmail: text) { error in
             if let error = error {
                 completionHandler(.failure(error))
-//                return
+                return
             } else {
             completionHandler(.success(0))
             }
