@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -117,10 +117,28 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-Jg-1Sj" userLabel="appleSignIn">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tLW-Jg-1Sj" userLabel="appleSignIn" customClass="ASAuthorizationAppleIDButton">
                                 <rect key="frame" x="24" y="406" width="366" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4TL-jz-Igg">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="40"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="">
+                                            <backgroundConfiguration key="background" strokeWidth="1">
+                                                <color key="strokeColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="didTapAppleSignIn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="dgl-uB-iNU"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBrownColor"/>
                                 <constraints>
+                                    <constraint firstItem="4TL-jz-Igg" firstAttribute="leading" secondItem="tLW-Jg-1Sj" secondAttribute="leading" id="KVA-lI-yCx"/>
+                                    <constraint firstAttribute="trailing" secondItem="4TL-jz-Igg" secondAttribute="trailing" id="OPs-YL-3oq"/>
+                                    <constraint firstItem="4TL-jz-Igg" firstAttribute="top" secondItem="tLW-Jg-1Sj" secondAttribute="top" id="Ru0-Y8-Yox"/>
+                                    <constraint firstAttribute="bottom" secondItem="4TL-jz-Igg" secondAttribute="bottom" id="Yk6-9j-j2n"/>
                                     <constraint firstAttribute="height" constant="40" id="aCu-2s-VTn"/>
                                 </constraints>
                             </view>
@@ -164,7 +182,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="appleSignIn" destination="tLW-Jg-1Sj" id="FtL-4O-zUu"/>
+                        <outlet property="appleSignIn" destination="4TL-jz-Igg" id="iDR-k0-6RE"/>
                         <outlet property="loginWithEmailButtom" destination="Q7Y-bQ-N4u" id="FAj-K9-DgV"/>
                         <outlet property="signInButton" destination="KyV-x6-1Uo" id="L1f-GM-Ke7"/>
                     </connections>
