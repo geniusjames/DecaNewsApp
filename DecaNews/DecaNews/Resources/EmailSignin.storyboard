@@ -111,6 +111,12 @@
                                 <color key="textColor" name="peach"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqr-BF-ZyV">
+                                <rect key="frame" x="20" y="515" width="374" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" name="deepPeach"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,7 +131,10 @@
                             <constraint firstItem="NEn-XA-PNE" firstAttribute="top" secondItem="NVZ-Th-42I" secondAttribute="bottom" constant="6" id="AQG-PH-zVv"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="i9y-RO-W2M" secondAttribute="trailing" constant="24" id="AZ2-R4-WEx"/>
                             <constraint firstItem="4tM-pQ-fu5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="EoB-d2-22N"/>
+                            <constraint firstItem="sqr-BF-ZyV" firstAttribute="top" secondItem="i9y-RO-W2M" secondAttribute="bottom" constant="100" id="Fzp-J8-dTG"/>
+                            <constraint firstItem="sqr-BF-ZyV" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Hks-H2-coi"/>
                             <constraint firstItem="HZR-Fd-M0O" firstAttribute="top" secondItem="NEn-XA-PNE" secondAttribute="bottom" constant="16" id="KuK-1f-FiK"/>
+                            <constraint firstItem="sqr-BF-ZyV" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="NDo-Ql-U0J"/>
                             <constraint firstItem="Yrt-9k-w93" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="OYI-t9-Ps7"/>
                             <constraint firstItem="ifN-St-En7" firstAttribute="top" secondItem="HZR-Fd-M0O" secondAttribute="bottom" constant="6" id="OfN-iM-HLn"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AE1-rS-urM" secondAttribute="trailing" constant="24" id="Qp9-ye-gP0"/>
@@ -134,6 +143,7 @@
                             <constraint firstItem="NEn-XA-PNE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="gVO-tM-0tV"/>
                             <constraint firstItem="Yrt-9k-w93" firstAttribute="top" secondItem="4tM-pQ-fu5" secondAttribute="bottom" constant="8" id="iCk-ma-2wG"/>
                             <constraint firstItem="ifN-St-En7" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="iYz-5L-QkR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="sqr-BF-ZyV" secondAttribute="trailing" constant="20" id="mnp-nb-i0p"/>
                             <constraint firstItem="AE1-rS-urM" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="p9Y-nE-FlV"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="NEn-XA-PNE" secondAttribute="trailing" constant="24" id="sjr-dp-iaM"/>
                             <constraint firstItem="5WL-vm-fp1" firstAttribute="bottom" secondItem="AE1-rS-urM" secondAttribute="bottom" constant="30" id="vgG-8r-Tgg"/>
@@ -146,6 +156,7 @@
                         <outlet property="emailTextField" destination="NEn-XA-PNE" id="Ius-rO-IWS"/>
                         <outlet property="loginButton" destination="AE1-rS-urM" id="bm7-aD-JNc"/>
                         <outlet property="passwordTextField" destination="ifN-St-En7" id="Uc3-R2-fMS"/>
+                        <outlet property="resultLabel" destination="sqr-BF-ZyV" id="xKF-8X-Eww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -157,6 +168,9 @@
     <resources>
         <namedColor name="deepGrey">
             <color red="0.63899999856948853" green="0.63899999856948853" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="deepPeach">
+            <color red="0.84700000286102295" green="0.37700000405311584" blue="0.36599999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="peach">
             <color red="0.96100002527236938" green="0.52799999713897705" blue="0.43299999833106995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
