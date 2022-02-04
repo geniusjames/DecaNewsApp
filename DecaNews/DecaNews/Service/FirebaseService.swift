@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import SwiftUI
 
 final class FirebaseService {
     private let auth = Auth.auth()
@@ -21,7 +22,13 @@ final class FirebaseService {
         }
     }
 
-    func signIn(_ email: String, _ password: String) {
-
+    func signIn(_ email: String, _ password: String, completionHandler: @escaping (Result<Int, Error>) -> Void) {
+        auth.signIn(withEmail: email, password: password) {_ ,error in
+            if let error = error {
+                completionHandler(.failure(error))
+                return
+            }
+            completionHandler(.success(0))
+        }
     }
 }

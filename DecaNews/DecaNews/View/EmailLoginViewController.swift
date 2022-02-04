@@ -52,7 +52,8 @@ final class EmailLoginViewController: UIViewController {
     func loggedIn(_ result: Result<Int, Error>) {
         switch result {
         case .success(_:):
-            coordinator?.openTopics()
+            print("")
+//            coordinator?.openTopics()
         case .failure(let error):
             errorMessageLabel.text = error.localizedDescription
         }
