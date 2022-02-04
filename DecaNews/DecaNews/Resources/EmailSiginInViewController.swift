@@ -14,7 +14,7 @@ final class EmailSiginInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
-    let firebaseViewModel = ViewModel()
+    var servicesViewModel: ServicesViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,11 +54,11 @@ final class EmailSiginInViewController: UIViewController {
         guard let password = passwordTextField.text
         else {return}
         if emailAddress.isValidEmail && password.isValidPassword {
-            firebaseViewModel.firebaseService.signIn(emailAddress, password) {result in
+            servicesViewModel?.firebaseService.signIn(emailAddress, password) {result in
                 switch result {
-                case .success(_):
-                    print("")
-                    // navigate somewhere
+                case .success(_:):
+                    print("go to home...")
+//                     navigate somewhere
                 case .failure(let error):
                     UIView.animate(withDuration: 3) {
                         self.resultLabel.text = error.localizedDescription

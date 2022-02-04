@@ -9,16 +9,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Email Login View Controller-->
+        <!--Email Sign Up View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController restorationIdentifier="EmailLoginViewController" storyboardIdentifier="EmailLoginViewController" id="Y6W-OH-hqX" customClass="EmailLoginViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="EmailLoginViewController" storyboardIdentifier="EmailLoginViewController" id="Y6W-OH-hqX" customClass="EmailSignUpViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome back!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-T9-KOl">
-                                <rect key="frame" x="24" y="54" width="171.5" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcl-T9-KOl">
+                                <rect key="frame" x="24" y="54" width="87.5" height="29"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -123,16 +123,6 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKW-EM-H70">
-                                <rect key="frame" x="262.5" y="450" width="127.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Fogot Password">
-                                    <color key="baseForegroundColor" name="deepPeach"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="forgotPassword:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qqf-lJ-LkP"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjm-SX-i6f">
                                 <rect key="frame" x="354" y="398" width="30" height="30"/>
                                 <constraints>
@@ -177,13 +167,11 @@
                             <constraint firstItem="etK-Ss-KY4" firstAttribute="top" secondItem="kqk-AC-2NQ" secondAttribute="bottom" constant="16" id="UXu-tr-7Lg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hlb-oD-mck" secondAttribute="trailing" constant="24" id="WL4-Ej-sUa"/>
                             <constraint firstItem="eCT-Vz-AmC" firstAttribute="top" secondItem="zVn-zJ-3cB" secondAttribute="bottom" constant="24" id="Wpx-0U-ny2"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zKW-EM-H70" secondAttribute="trailing" constant="24" id="Ywj-hi-2SK"/>
                             <constraint firstItem="Hen-GA-KHb" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="bBW-rM-9zi"/>
                             <constraint firstItem="kqk-AC-2NQ" firstAttribute="top" secondItem="q7c-Wf-ZMW" secondAttribute="bottom" constant="6" id="fNb-N5-zeO"/>
                             <constraint firstItem="kqk-AC-2NQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="mZe-jd-0bx"/>
                             <constraint firstItem="cvY-jr-OqH" firstAttribute="top" secondItem="EPK-15-0cE" secondAttribute="bottom" constant="16" id="mq9-d0-vhm"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Vjm-SX-i6f" secondAttribute="trailing" constant="30" id="n3c-VC-2nj"/>
-                            <constraint firstItem="zKW-EM-H70" firstAttribute="top" secondItem="Hen-GA-KHb" secondAttribute="bottom" constant="14" id="nBv-VA-hNR"/>
                             <constraint firstItem="cvY-jr-OqH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="nFB-fY-7An"/>
                             <constraint firstItem="fcl-T9-KOl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="ozs-jc-0AD"/>
                             <constraint firstItem="zVn-zJ-3cB" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="ti8-ZN-TXp"/>

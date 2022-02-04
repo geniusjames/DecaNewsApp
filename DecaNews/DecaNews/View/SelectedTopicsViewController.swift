@@ -27,6 +27,8 @@ final class SelectedTopicsViewController: UIViewController {
     var buttonStore = [Int: Bool]()
     var buttons: [UIButton] = [UIButton]()
     var coordinator: MainCoordinator?
+    var serviceViewModel: ServicesViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buttons = [musicButton, businessButton, designButton, bookButton, photographyButton,
@@ -60,7 +62,7 @@ final class SelectedTopicsViewController: UIViewController {
                 output.append(str)
             }
         }
-        coordinator?.viewModel.add(topics: output)
+        serviceViewModel?.add(topics: output)
 //        coordinator?.openNext()
     }
 }
