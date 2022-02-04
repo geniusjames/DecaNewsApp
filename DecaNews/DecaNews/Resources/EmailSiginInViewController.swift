@@ -14,7 +14,6 @@ final class EmailSiginInViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
-    let viewModel = EmailSigninViewModel()
     let firebaseViewModel = ViewModel()
 
     override func viewDidLoad() {

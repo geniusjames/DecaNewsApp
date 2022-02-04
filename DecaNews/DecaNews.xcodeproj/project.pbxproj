@@ -30,7 +30,6 @@
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
 		B41C322827AA9CB400A173A3 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B41C322727AA9CB300A173A3 /* Color.xcassets */; };
-		B451244C27A686BA0033B818 /* EmailSigninViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B451244B27A686BA0033B818 /* EmailSigninViewModel.swift */; };
 		B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */; };
 		B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
@@ -64,7 +63,6 @@
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		B41C322727AA9CB300A173A3 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		B451244B27A686BA0033B818 /* EmailSigninViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSigninViewModel.swift; path = DecaNews/View/EmailSigninViewModel.swift; sourceTree = SOURCE_ROOT; };
 		B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignin.storyboard; sourceTree = "<group>"; };
 		B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 		04F2AA8927943F7E00D4C062 /* View-Model */ = {
 			isa = PBXGroup;
 			children = (
-				B451244B27A686BA0033B818 /* EmailSigninViewModel.swift */,
 				04F2AA8A27943F9A00D4C062 /* ViewModel.swift */,
 				B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */,
 			);
@@ -417,7 +414,6 @@
 				9410301C27A9407400411376 /* FirebaseService.swift in Sources */,
 				9410301627A9404700411376 /* EmailLoginViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
-				B451244C27A686BA0033B818 /* EmailSigninViewModel.swift in Sources */,
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
 				B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */,
 				B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */,
