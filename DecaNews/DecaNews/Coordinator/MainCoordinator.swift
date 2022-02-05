@@ -38,4 +38,13 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
+    func navigateToPasswordReset() {
+        guard let viewController = UIStoryboard(name: "password_reset",
+                                         bundle: nil).instantiateViewController(withIdentifier: "PasswordResetViewController") as? PasswordResetViewController
+         else {return}
+        viewController.coordinator = self
+         controller.pushViewController(viewController, animated: true)
+         window.rootViewController = controller
+         window.makeKeyAndVisible()
+    }
 }

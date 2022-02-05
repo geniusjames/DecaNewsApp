@@ -1,27 +1,31 @@
-//
-//  AppDelegate.swift
-//  TODO_APP
-//
-//  Created by Decagon on 10/12/2021.
-//
-
-import UIKit
+import GoogleSignIn
 import Firebase
-
+import UIKit
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     static var standard: AppDelegate? { UIApplication.shared.delegate as? AppDelegate }
     var window: UIWindow?
 
-	func application(
-		_ application: UIApplication,
-		didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-	) -> Bool {
+    func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
         FirebaseApp.configure()
-		return true
-	}
+        GIDSignIn.sharedInstance()?.delegate = self
+        GIDSignIn.sharedInstance()?.clientID =
+        "1020653200021-se4ko8phdmla3chhpit3nej980a254bb.apps.googleusercontent.com"
+        return true
+    }
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        print("User email: \(user.profile.email ?? "No Email Found")")
 
-    // MARK: UISceneSession Lifecycle
+    }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication
+                    .OpenURLOptionsKey: Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url)
+    }
+// MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,

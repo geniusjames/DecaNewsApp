@@ -13,12 +13,15 @@ final class EmailSiginInViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    let viewModel = EmailSigninViewModel()
+    @IBOutlet weak var resultLabel: UILabel!
+    let firebaseViewModel = ViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configurePasswordField()
         loginButton.addTarget(self, action: #selector(login), for: .allTouchEvents)
+        emailTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
+        passwordTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
     }
     func configurePasswordField() {
         let eyeView = UIView()
@@ -46,10 +49,50 @@ final class EmailSiginInViewController: UIViewController {
         }()
     }
     @objc func login() {
-        guard let emailAddress = emailTextField.text else {return}
-        guard let password = passwordTextField.text else {return}
-        if viewModel.isValidEmail(email: emailAddress) && viewModel.isValidPassword(password: password) {
-            // perform login
+        guard let emailAddress = emailTextField.text
+        else {return}
+        guard let password = passwordTextField.text
+        else {return}
+        if emailAddress.isValidEmail && password.isValidPassword {
+            firebaseViewModel.firebaseService.signIn(emailAddress, password) {result in
+                switch result {
+                case .success(_):
+                    print("")
+                    // navigate somewhere
+                case .failure(let error):
+                    UIView.animate(withDuration: 3) {
+                        self.resultLabel.text = error.localizedDescription
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.resultLabel.text = ""
+                        self.resultLabel.alpha = 1
+                    }
+           }
         }
     }
+}
+    @objc func validateInputs() {
+        guard let email = emailTextField.text, let password = passwordTextField.text
+        else {return}
+        if !email.isEmpty {
+            if !email.isValidEmail {
+                emailTextField.layer.borderWidth = 1
+                emailTextField.layer.borderColor = UIColor(named: "peach")?.cgColor
+            }
+        }
+        if !password.isEmpty {
+            if !password.isValidPassword {
+                passwordTextField.layer.borderWidth = 1
+                passwordTextField.layer.borderColor = UIColor(named: "peach")?.cgColor
+            }
+        }
+        if email.isValidEmail || email.isEmpty {
+            emailTextField.layer.borderWidth = 0
+        }
+        if password.isValidPassword || password.isEmpty {
+            passwordTextField.layer.borderWidth = 0
+        }
+       
+    }
+
 }
