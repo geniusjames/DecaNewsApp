@@ -17,5 +17,4 @@ class OnboardingViewModel {
                                  "Get the recent news everyday with DecaNews"]
     let cellID = "onboarding"
     let buttonImageNames = ["button0", "button1", "button2"]
-
 }
