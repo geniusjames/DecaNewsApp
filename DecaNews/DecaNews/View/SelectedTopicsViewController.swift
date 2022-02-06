@@ -28,6 +28,7 @@ final class SelectedTopicsViewController: UIViewController {
     var buttons: [UIButton] = [UIButton]()
     var coordinator: MainCoordinator?
     var serviceViewModel: ServicesViewModel?
+    var navigateHome: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +64,6 @@ final class SelectedTopicsViewController: UIViewController {
             }
         }
         serviceViewModel?.add(topics: output)
-//        coordinator?.openNext()
+        navigateHome?()
     }
 }

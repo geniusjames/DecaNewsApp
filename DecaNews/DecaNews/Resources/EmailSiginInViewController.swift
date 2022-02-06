@@ -15,6 +15,9 @@ final class EmailSiginInViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
     var servicesViewModel: ServicesViewModel?
+    var navigateToReset: (() -> Void)?
+    var navigateSignUp: (() -> Void)?
+    var navigateHome: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +61,7 @@ final class EmailSiginInViewController: UIViewController {
                 switch result {
                 case .success(_:):
                     print("go to home...")
-//                     navigate somewhere
+                    self.navigateHome?()
                 case .failure(let error):
                     UIView.animate(withDuration: 3) {
                         self.resultLabel.text = error.localizedDescription
@@ -67,15 +70,15 @@ final class EmailSiginInViewController: UIViewController {
                         self.resultLabel.text = ""
                         self.resultLabel.alpha = 1
                     }
-           }
+               }
+            }
         }
     }
-}
     @IBAction func forgotPassword(_ sender: Any) {
-        coordinator?.navigatingToResetPasswordSent()
+        navigateToReset?()
     }
     @IBAction func signUp(_ sender: Any) {
-        coordinator?.navigateToSignUp()
+        navigateSignUp?()
     }
     
     @objc func validateInputs() {

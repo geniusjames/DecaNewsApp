@@ -12,6 +12,8 @@ class PasswordResetViewController: UIViewController {
     var resetViewModel: ResetPasswordViewModel?
     @IBOutlet weak var passwordReset: UITextField!
     @IBOutlet weak var errorPage: UILabel!
+    
+    var navigatingToResetPasswordSent: (() -> Void)?
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordResetProperties()
@@ -33,7 +35,7 @@ class PasswordResetViewController: UIViewController {
     func reset(_ result: Result<Int, Error>) {
         switch result {
         case .success(_:):
-            coordinator?.navigatingToResetPasswordSent()
+            navigatingToResetPasswordSent?()
         case .failure(let error):
             errorPage.text = error.localizedDescription
         }
