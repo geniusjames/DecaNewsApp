@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,36 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-AE-c6f">
-                                <rect key="frame" x="24" y="44" width="366" height="26.5"/>
+                            <stackView opaque="NO" contentMode="center" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-AE-c6f">
+                                <rect key="frame" x="24" y="44" width="387" height="31"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-SE-1B2">
-                                        <rect key="frame" x="0.0" y="0.0" width="312.5" height="26.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="163" height="31"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_logo" translatesAutoresizingMaskIntoConstraints="NO" id="6sS-5W-bgi">
-                                                <rect key="frame" x="0.0" y="1.5" width="24" height="24"/>
+                                                <rect key="frame" x="0.0" y="3.5" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="24" id="J3C-fQ-nmg"/>
                                                     <constraint firstAttribute="height" constant="24" id="duw-vg-egC"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DecaNews" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtA-du-gkd">
-                                                <rect key="frame" x="46" y="0.0" width="266.5" height="26.5"/>
+                                                <rect key="frame" x="46" y="2.5" width="117" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="22"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skip" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oje-ya-L3h">
-                                        <rect key="frame" x="334.5" y="0.0" width="31.5" height="26.5"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="31.5" id="W0a-VE-cW3"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" name="peach"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXu-3U-DQy">
+                                        <rect key="frame" x="335" y="0.0" width="52" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Skip">
+                                            <color key="baseForegroundColor" name="peach"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="skipButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="X0V-VJ-jLN"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G3H-uk-rLO">
@@ -154,7 +156,7 @@
                             <constraint firstItem="aWh-AE-c6f" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="K0m-zJ-JjP"/>
                             <constraint firstItem="xuk-VQ-LPU" firstAttribute="top" secondItem="wMw-F7-Cdd" secondAttribute="bottom" constant="32" id="Lqx-nD-hS2"/>
                             <constraint firstItem="G3H-uk-rLO" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Rin-zj-bCt"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aWh-AE-c6f" secondAttribute="trailing" constant="24" id="T1a-kI-309"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aWh-AE-c6f" secondAttribute="trailing" constant="3" id="T1a-kI-309"/>
                             <constraint firstItem="j9L-j6-uW4" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="URO-qO-xqu"/>
                             <constraint firstItem="G3H-uk-rLO" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.33" id="WSq-2o-g9C"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="G3H-uk-rLO" secondAttribute="trailing" id="Wp8-Ya-xwX"/>

@@ -39,6 +39,7 @@ class MainCoordinator: Coordinator {
     func navigateToEmailSignin() {
        guard let viewController = UIStoryboard(name: "EmailSignin", bundle: nil)
                 .instantiateViewController(withIdentifier: "EmailSiginInViewController") as? EmailSiginInViewController else {return}
+        viewController.coordinator = self
         viewController.servicesViewModel = ServicesViewModel()
         controller.pushViewController(viewController, animated: true)
         window.rootViewController = controller

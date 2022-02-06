@@ -71,6 +71,13 @@ final class EmailSiginInViewController: UIViewController {
         }
     }
 }
+    @IBAction func forgotPassword(_ sender: Any) {
+        coordinator?.navigatingToResetPasswordSent()
+    }
+    @IBAction func signUp(_ sender: Any) {
+        coordinator?.navigateToSignUp()
+    }
+    
     @objc func validateInputs() {
         guard let email = emailTextField.text, let password = passwordTextField.text
         else {return}
