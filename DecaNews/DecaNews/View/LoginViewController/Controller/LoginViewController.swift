@@ -5,6 +5,7 @@ import AuthenticationServices
 class LoginViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
     var coordinator: MainCoordinator?
     var serviceViewModel: ServicesViewModel?
+    var navigateToEmailSignin: (() -> Void)?
     
     @IBOutlet weak var loginWithEmailButtom: UIButton!
     @IBOutlet var signInButton: GIDSignInButton!
@@ -18,7 +19,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
     
     @objc
     func moveToLogin() {
-        coordinator?.navigateToEmailSignin()
+        navigateToEmailSignin?()
     }
     
     @IBAction func didTapAppleSignIn(_ sender: Any) {

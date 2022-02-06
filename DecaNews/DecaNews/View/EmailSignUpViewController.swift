@@ -15,6 +15,8 @@ final class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var errorMessageLabel: UILabel!
     var coordinator: MainCoordinator?
     var serviceViewModel: ServicesViewModel?
+    var navigateToTopics: (() -> Void)?
+    var navigateToEmailSignin: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ final class EmailSignUpViewController: UIViewController {
     }
 
     @IBAction func login(_ sender: Any) {
-        coordinator?.navigateToEmailSignin()
+        navigateToEmailSignin?()
     }
 
     func setImage(_ button: UIButton, _ imageName: String) {
@@ -50,7 +52,7 @@ final class EmailSignUpViewController: UIViewController {
     func loggedIn(_ result: Result<Int, Error>) {
         switch result {
         case .success(_:):
-            coordinator?.navigateToTopics()
+            navigateToTopics?()
         case .failure(let error):
             errorMessageLabel.text = error.localizedDescription
         }
