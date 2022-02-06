@@ -28,6 +28,9 @@ final class OnboardingViewController: UIViewController {
     @objc func proceed() {
         coordinator?.navigateToSignIn()
     }
+    @IBAction func skipButtonPressed(_ sender: Any) {
+        proceed()
+    }
 }
 
 extension OnboardingViewController: UICollectionViewDataSource,
