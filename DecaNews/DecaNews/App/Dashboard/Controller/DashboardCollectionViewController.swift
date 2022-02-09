@@ -30,24 +30,15 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
     }
 	
 	private func networkCall(_ url: String) {
-		NetworkManager.shared.networkRequest(url: url) { [weak self] response in
-//			self.jsonResponseHandler(response)
-			for num in 0..<response["articles"].count - 1 {
-				self?.articles.append(response["articles"][num].rawValue as Any)
-				
-//				print("Response \(response["articles"][num])")
+		NetworkManager.shared.networkRequest(url: url) { response in
+			for num in 0...2 {
+				print("Response \(response["articles"][num])")
 			}
-			print(self?.articles[0] as Any)
 			
 		} errorCompletion: { error in
 			print("Error \(error)")
 		}
 	}
-	
-//	func jsonResponseHandler() {
-//		let data = Article()
-//		print(articles ?? [])
-//	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		3
