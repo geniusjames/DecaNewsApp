@@ -125,4 +125,14 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
+    
+    func navigateToDetailsPage() {
+        guard let detailsViewController = UIStoryboard(name: "NewsDetails",
+                       bundle: nil).instantiateViewController(withIdentifier: "NewsDetails") as? DetailsViewController
+         else {return}
+        detailsViewController.coordinator = self
+        controller.pushViewController(detailsViewController, animated: true)
+        window.rootViewController = controller
+        window.makeKeyAndVisible()
+    }
 }

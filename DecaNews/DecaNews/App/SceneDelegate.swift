@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = appWindow
         AppDelegate.standard?.window = appWindow
         coordinator = MainCoordinator(window: appWindow)
-        coordinator?.start()
+        coordinator?.navigateToDetailsPage()
     }
     func sceneDidDisconnect(_ scene: UIScene) {
     }
