@@ -17,6 +17,7 @@ final class OnboardingViewController: UIViewController {
     @IBOutlet var indicators: [UILabel]!
     
     var coordinator: MainCoordinator?
+    var navigateToSignIn: (() -> Void)?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,10 @@ final class OnboardingViewController: UIViewController {
     }
     
     @objc func proceed() {
-        coordinator?.navigateToSignIn()
+        navigateToSignIn?()
+    }
+    @IBAction func skipButtonPressed(_ sender: Any) {
+        proceed()
     }
 }
 
