@@ -39,6 +39,11 @@
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* MainCoordinator.swift */; };
 		B4851E7627A525C2005F4399 /* EmailSiginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */; };
+		B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */; };
+		B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1527B3A9E900BDC8D4 /* BookmarksViewController.swift */; };
+		B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */; };
+		B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */; };
+		B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */; };
 		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
 		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
 		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
@@ -77,6 +82,11 @@
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSiginInViewController.swift; path = DecaNews/Resources/EmailSiginInViewController.swift; sourceTree = SOURCE_ROOT; };
+		B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmarks.storyboard; sourceTree = "<group>"; };
+		B48F2A1527B3A9E900BDC8D4 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksTableViewCell.xib; sourceTree = "<group>"; };
+		B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookmarksViewModel.swift; path = "DecaNews/View-Model/BookmarksViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
 		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
@@ -156,6 +166,9 @@
 				9410301427A9404700411376 /* PasswordResetViewController.swift */,
 				9410301527A9404700411376 /* SelectedTopicsViewController.swift */,
 				B49DCD432797F082005E9A04 /* OnboardingViewController.swift */,
+				B48F2A1527B3A9E900BDC8D4 /* BookmarksViewController.swift */,
+				B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */,
+				B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */,
+				B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */,
 				B45C373D27ADB9DD009995B7 /* password_reset.storyboard */,
 				04F2AA6D27931F0A00D4C062 /* Main.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
@@ -171,6 +185,7 @@
 				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
 				B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */,
 				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
+				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
 			);
 			path = Resources;
@@ -330,10 +345,12 @@
 				B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */,
 				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
+				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
+				B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */,
 				B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,9 +445,12 @@
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
+				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
+				B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */,
 				B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */,
 				B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */,
+				B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */,
 				B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */,
 				04F2AA8727943F6000D4C062 /* Model.swift in Sources */,
 				B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */,
