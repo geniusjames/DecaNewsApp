@@ -13,14 +13,12 @@ class BookmarksViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         newsTableView.delegate = self
-        // Do any additional setup after loading the view.
     }
-
 }
 extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return viewModel.item?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -29,5 +27,7 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
-    
+    @objc func pushToDetailScreen() {
+        
+    }
 }

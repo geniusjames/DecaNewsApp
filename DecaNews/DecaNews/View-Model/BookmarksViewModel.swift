@@ -9,7 +9,7 @@ import Foundation
 
 class BookmarksViewModel {
     let cellID = "cell"
-    
+    var item: [BookmarkModel]?
     func fetchPersistedNews() {
         
     }

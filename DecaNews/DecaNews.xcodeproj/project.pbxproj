@@ -28,6 +28,7 @@
 		9410302027A9409F00411376 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301F27A9409F00411376 /* String+Extension.swift */; };
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
+		B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4627B53765002C5E01 /* BookmarkModel.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */; };
@@ -71,6 +72,7 @@
 		AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		B4249F4627B53765002C5E01 /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 			children = (
 				B45C374027ADBB0A009995B7 /* User.swift */,
 				04F2AA8627943F6000D4C062 /* Model.swift */,
+				B4249F4627B53765002C5E01 /* BookmarkModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
+				B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
