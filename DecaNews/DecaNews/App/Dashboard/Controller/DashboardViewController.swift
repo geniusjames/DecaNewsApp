@@ -7,18 +7,22 @@
 
 import UIKit
 
+protocol DashboardViewControllerDelegate: AnyObject {
+	func newsType(string: String)
+}
+
 class DashboardViewController: UIViewController {
 	
-	@IBOutlet weak var popularTab: UILabel!
-	@IBOutlet weak var trendingTab: UILabel!
-	@IBOutlet weak var recentTab: UILabel!
+	weak var delegate: DashboardViewControllerDelegate?
 	
 	var coordinator: MainCoordinator?
-//	var collectionVC = DashboardCollectionViewController()
-
 	
+	var completion: ((String) -> Void)?
+//	var netwo
+
     override func viewDidLoad() {
         super.viewDidLoad()
+		
     }
 	
 	@IBAction func menuButton(_ sender: Any) {
@@ -29,7 +33,6 @@ class DashboardViewController: UIViewController {
 	}
 	@IBAction func seeMoreButton(_ sender: Any) {
 		coordinator?.navigateToLatestNewsScreen()
-			
 	}
 	
 }

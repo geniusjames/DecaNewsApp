@@ -10,65 +10,123 @@ import UIKit
 class DashboardCollectionViewController: UIViewController, UICollectionViewDataSource {
 	
 	@IBOutlet weak var collectionView: UICollectionView!
+	@IBOutlet weak var popularButton: UILabel!
+	@IBOutlet weak var trendingButton: UILabel!
+	@IBOutlet weak var recentButton: UILabel!
 	
 	let dashboardVC = DashboardViewController()
 	let networkViewModel = NetworkViewModel()
-	
-	let urls = [
-		"https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=dc4160da7760457cb32b3b4ed741a876",
-		"https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dc4160da7760457cb32b3b4ed741a876",
-		"https://newsapi.org/v2/everything?domains=wsj.com&apiKey=dc4160da7760457cb32b3b4ed741a876"
-	]
-	
-	var popularArticles: [Article]? = [Article]()
-	var trendingArticles: [Article]? = [Article]()
-	var recentArticles: [Article]? = [Article]()
+	let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=dc4160da7760457cb32b3b4ed741a876"
 	
 	var collectionViewNews: [Article]?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		config()
+		setupListeners()
 	}
 	
-	private func config() {
-		collectionView.dataSource = self
-		fetchData(url: urls)
-//		
-//		let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-//		layout.minimumInteritemSpacing = 0
-//		layout.minimumLineSpacing = 0
-//		collectionView!.collectionViewLayout = layout
+	override func viewDidAppear(_ animated: Bool) {
+		super.viewDidAppear(animated)
+		setupListeners()
 	}
 	
-	private func fetchData(url: [String]) {
-		for index in 0..<url.count {
-			NetworkManager.shared.networkRequest(url: url[index]) { [weak self] response in
-				if index == 0 {
-					self?.popularArticles = response.articles
-				} else if index == 1 {
-					self?.trendingArticles = response.articles
-				} else {
-					self?.recentArticles = response.articles
-				}
-				DispatchQueue.main.async {
-					self?.collectionView.reloadData()
-				}
-			} errorCompletion: { error in
-				print("THE ERROR IS: ", error)
+	func setupListeners() {
+		dashboardVC.completion = { [weak self] type in
+			if type == "popular" {
+				print("popular")
+			} else if type == "trending" {
+				print("trending")
+			} else if type == "recent" {
+				print("recent")
 			}
 		}
 	}
 	
+	private func config() {
+		collectionView.dataSource = self
+		fetchData(url: url)
+		dashboardVC.delegate = self
+		
+		let tapPopularTab = UITapGestureRecognizer(target: self, action: #selector(didTapPopular))
+		popularButton.addGestureRecognizer(tapPopularTab)
+
+		let tapTrendingTab = UITapGestureRecognizer(target: self, action: #selector(didTapTrending))
+		trendingButton.addGestureRecognizer(tapTrendingTab)
+
+		let tapRecentTab = UITapGestureRecognizer(target: self, action: #selector(didTaprecent))
+		recentButton.addGestureRecognizer(tapRecentTab)
+	}
+	
+	private func fetchData(url: String) {
+		NetworkManager.shared.networkRequest(url: url) { [weak self] response in
+			self?.collectionViewNews = response.articles
+			DispatchQueue.main.async {
+				self?.collectionView.reloadData()
+			}
+		} errorCompletion: { error in
+			print("Error is: ", error)
+			
+		}
+			
+	}
+	
+	@objc func didTapPopular() {
+		popularButton.font = .boldSystemFont(ofSize: 20)
+		popularButton.textColor = .black
+		trendingButton.font = .systemFont(ofSize: 20)
+		trendingButton.textColor = UIColor(named: "deepGrey")
+		recentButton.font = .systemFont(ofSize: 20)
+		recentButton.textColor = UIColor(named: "deepGrey")
+		fetchData(url: url)
+		DispatchQueue.main.async {
+			self.collectionView.reloadData()
+		}
+//		delegate?.newsType(string: "popular")
+//		completion?("popular")
+	}
+
+	@objc func didTapTrending() {
+		trendingButton.font = .boldSystemFont(ofSize: 20)
+		trendingButton.textColor = .black
+		popularButton.font = .systemFont(ofSize: 20)
+		popularButton.textColor = UIColor(named: "deepGrey")
+		recentButton.font = .systemFont(ofSize: 20)
+		recentButton.textColor = UIColor(named: "deepGrey")
+		fetchData(url: url2)
+		DispatchQueue.main.async {
+			self.collectionView.reloadData()
+		}
+//		delegate?.newsType(string: "trending")
+//		completion?("trending")
+	}
+
+	@objc func didTaprecent() {
+		recentButton.font = .boldSystemFont(ofSize: 20)
+		recentButton.textColor = .black
+		trendingButton.font = .systemFont(ofSize: 20)
+		trendingButton.textColor = UIColor(named: "deepGrey")
+		popularButton.font = .systemFont(ofSize: 20)
+		popularButton.textColor = UIColor(named: "deepGrey")
+		fetchData(url: url3)
+		DispatchQueue.main.async {
+			self.collectionView.reloadData()
+		}
+//		delegate?.newsType(string: "recent")
+//		completion?("recent")
+	}
+	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		popularArticles?.count ?? 3
+		3
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashBoardCollectionViewCell", for: indexPath) as? DashboardCollectionViewCell else {
 			return UICollectionViewCell()
 		}
-		if let articles = popularArticles {
+		if let articles = collectionViewNews {
 			let article = articles[indexPath.row]
 			cell.setup(with: article)
 		}
@@ -85,6 +143,25 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 	   return 0.0
+	}
+	
+}
+
+extension DashboardCollectionViewController: DashboardViewControllerDelegate {
+	func newsType(string: String) {
+		if string == "popular" {
+//			fetchData(url: url)
+			print("popular")
+		} else if string == "trending" {
+//			fetchData(url: url2)
+			print("trending")
+		} else {
+//			fetchData(url: url3)
+			print("recent")
+		}
+//		DispatchQueue.main.async {
+//			self.collectionView.reloadData()
+//		}
 	}
 	
 }
