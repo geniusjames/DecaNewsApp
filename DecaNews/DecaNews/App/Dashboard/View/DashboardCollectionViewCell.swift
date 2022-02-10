@@ -15,7 +15,21 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var authorsName: UILabel!
 	@IBOutlet weak var estimatedReadTime: UILabel!
 	@IBOutlet weak var topic: UILabel!
+	@IBOutlet weak var bookmarkBtn: UIButton!
 	
-	let identifier = "DashboardCollectionView"
-    
+	var didTapBookmarkButton: (() -> Void)?
+	
+	func setup(with article: Article) {
+		newsTitle.text = article.title
+		authorsName.text = article.author
+		if let articleURLString = article.urlToImage,
+			let catImageURL = URL(string: articleURLString) {
+			NetworkManager().getImageDataFrom(url: catImageURL, imageCell: newsImage)
+		}
+	}
+	
+	@IBAction func bookmarkButton(_ sender: Any) {
+		didTapBookmarkButton?()
+	}
+	
 }

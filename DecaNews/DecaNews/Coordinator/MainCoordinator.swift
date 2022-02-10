@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let servicesViewModel = ServicesViewModel()
         if servicesViewModel.getOnboardedStatus {
-            servicesViewModel.getSignedStatus ? print("will display the home screen") : navigateToSignIn()
+            servicesViewModel.getSignedStatus ? print("will display the home screen") : navigateToDashboard()
         } else {
             navigateToOnboarding()
         }
@@ -125,4 +125,24 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
+	
+	func navigateToDashboard() {
+		guard let viewController = UIStoryboard(name: "Dashboard",
+					   bundle: nil).instantiateViewController(withIdentifier: "Dashboard") as? DashboardViewController
+		 else {return}
+		viewController.coordinator = self
+		controller.pushViewController(viewController, animated: true)
+		window.rootViewController = controller
+		window.makeKeyAndVisible()
+	}
+	
+	func navigateToLatestNewsScreen() {
+		guard let viewController = UIStoryboard(name: "Dashboard",
+					   bundle: nil).instantiateViewController(withIdentifier: "LatestNewsVC") as? LatestNewsViewController
+		 else {return}
+		viewController.coordinator = self
+		controller.pushViewController(viewController, animated: true)
+		window.rootViewController = controller
+		window.makeKeyAndVisible()
+	}
 }
