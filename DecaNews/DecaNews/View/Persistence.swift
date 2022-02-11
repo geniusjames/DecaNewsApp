@@ -56,7 +56,7 @@ class FireStorePersistence: PersistenceManager {
 //    }
 //        return output
 //    }
-    func read<T: Codable>(model: T) -> [T] {
+    func read<T: Codable>() -> [T] {
         var output: [T] = []
         do {
             db.collection(collectionName).getDocuments { (querySnapshot, error) in
@@ -79,7 +79,7 @@ class FireStorePersistence: PersistenceManager {
                           case .failure(let error):
                               print(error)
                           }
-                      }
+                   }
                 }
             }
         }
@@ -90,7 +90,6 @@ class FireStorePersistence: PersistenceManager {
            settings.isPersistenceEnabled = true
            db.settings = settings
        }
-    
 }
 
 protocol PersistenceManager {
@@ -98,5 +97,5 @@ protocol PersistenceManager {
     func delete(documentID: String)
     func update()
     func search()
-    func read<T: Codable>(model: T) -> [T]
+    func read<T: Codable>() -> [T]
 }
