@@ -28,17 +28,20 @@
 		9410302027A9409F00411376 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301F27A9409F00411376 /* String+Extension.swift */; };
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
-		B43313D927B4592C00A4D7A5 /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B43313D827B4592C00A4D7A5 /* NewsDetailsViewController.swift */; };
-		B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4627B53765002C5E01 /* BookmarkModel.swift */; };
 		B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4827B5BB8D002C5E01 /* Persistence.swift */; };
 		B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */; };
+		B4249F4D27B66DC9002C5E01 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4C27B66DC9002C5E01 /* SideMenuViewController.swift */; };
+		B4249F5127B66EC7002C5E01 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4E27B66EC7002C5E01 /* ProfileTableViewCell.swift */; };
+		B4249F5227B66EC7002C5E01 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4249F4F27B66EC7002C5E01 /* ProfileTableViewCell.xib */; };
+		B4249F5327B66EC7002C5E01 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5027B66EC7002C5E01 /* MenuTableViewController.swift */; };
+		B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5427B67050002C5E01 /* MenuDelegate.swift */; };
+		B4249F5727B67144002C5E01 /* NewsPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */; };
 		B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373D27ADB9DD009995B7 /* password_reset.storyboard */; };
 		B45C374127ADBB0A009995B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C374027ADBB0A009995B7 /* User.swift */; };
 		B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */; };
-		B46704DE27B33A1100369481 /* NewsDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B46704DD27B33A1100369481 /* NewsDetails.storyboard */; };
 		B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
@@ -75,16 +78,19 @@
 		A2708C72683E030660B24D80 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
-		B43313D827B4592C00A4D7A5 /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
-		B4249F4627B53765002C5E01 /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
 		B4249F4827B5BB8D002C5E01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B4249F4C27B66DC9002C5E01 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = SideMenuProfile/SideMenuViewController.swift; sourceTree = "<group>"; };
+		B4249F4E27B66EC7002C5E01 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = SideMenuProfile/ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		B4249F4F27B66EC7002C5E01 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = SideMenuProfile/ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		B4249F5027B66EC7002C5E01 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = SideMenuProfile/MenuTableViewController.swift; sourceTree = "<group>"; };
+		B4249F5427B67050002C5E01 /* MenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
+		B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPersistenceModel.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
 		B45C373D27ADB9DD009995B7 /* password_reset.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = password_reset.storyboard; sourceTree = "<group>"; };
 		B45C374027ADBB0A009995B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EmailSignin.storyboard; sourceTree = "<group>"; };
-		B46704DD27B33A1100369481 /* NewsDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsDetails.storyboard; sourceTree = "<group>"; };
 		B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -167,8 +173,11 @@
 		04F2AA7C27931F3100D4C062 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4249F5027B66EC7002C5E01 /* MenuTableViewController.swift */,
+				B4249F4E27B66EC7002C5E01 /* ProfileTableViewCell.swift */,
+				B4249F4F27B66EC7002C5E01 /* ProfileTableViewCell.xib */,
+				B4249F4C27B66DC9002C5E01 /* SideMenuViewController.swift */,
 				B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */,
-				B46704DA27B3393E00369481 /* DetailsViewController */,
 				B41C322027A999B500A173A3 /* LoginViewController */,
 				B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */,
 				B46C8EC9279BF29800C1A903 /* OnboardingCollectionViewCell.swift */,
@@ -199,7 +208,6 @@
 				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
 				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
-				B46704DD27B33A1100369481 /* NewsDetails.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -209,7 +217,7 @@
 			children = (
 				B45C374027ADBB0A009995B7 /* User.swift */,
 				04F2AA8627943F6000D4C062 /* Model.swift */,
-				B4249F4627B53765002C5E01 /* BookmarkModel.swift */,
+				B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -244,6 +252,7 @@
 		9410301D27A9408000411376 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B4249F5427B67050002C5E01 /* MenuDelegate.swift */,
 				9410301B27A9407400411376 /* FirebaseService.swift */,
 			);
 			path = Service;
@@ -261,17 +270,17 @@
 		B41C322027A999B500A173A3 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B41C322127A999E300A173A3 /* LoginViewController.swift */,
+				B41C322A27AAC40B00A173A3 /* Controller */,
 			);
 			path = LoginViewController;
 			sourceTree = "<group>";
 		};
-		B46704DA27B3393E00369481 /* DetailsViewController */ = {
+		B41C322A27AAC40B00A173A3 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B43313D827B4592C00A4D7A5 /* NewsDetailsViewController.swift */,
+				B41C322127A999E300A173A3 /* LoginViewController.swift */,
 			);
-			path = DetailsViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B47E589A27948BD800D70341 /* Coordinator */ = {
@@ -295,8 +304,8 @@
 				04F2AA6027931F0A00D4C062 /* Sources */,
 				04F2AA6127931F0A00D4C062 /* Frameworks */,
 				04F2AA6227931F0A00D4C062 /* Resources */,
-				FE4293A4B0C806853A677088 /* [CP] Embed Pods Frameworks */,
-				7E9D41EAC288D412BA803540 /* [CP] Copy Pods Resources */,
+				D03301BDED3BB869A878D217 /* [CP] Embed Pods Frameworks */,
+				74DC3677694EB95DA80E32D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,8 +369,8 @@
 				B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */,
 				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
-				B46704DE27B33A1100369481 /* NewsDetails.storyboard in Resources */,
 				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
+				B4249F5227B66EC7002C5E01 /* ProfileTableViewCell.xib in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
@@ -396,7 +405,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7E9D41EAC288D412BA803540 /* [CP] Copy Pods Resources */ = {
+		04F2AA80279322AC00D4C062 /* Swift Lint + Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint + Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		74DC3677694EB95DA80E32D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -413,29 +440,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF701C2A71FF73B28CC2BFBD /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-DecaNews-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FE4293A4B0C806853A677088 /* [CP] Embed Pods Frameworks */ = {
+		D03301BDED3BB869A878D217 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -460,12 +465,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9410302027A9409F00411376 /* String+Extension.swift in Sources */,
+				B4249F5727B67144002C5E01 /* NewsPersistenceModel.swift in Sources */,
+				B4249F5127B66EC7002C5E01 /* ProfileTableViewCell.swift in Sources */,
 				9410301C27A9407400411376 /* FirebaseService.swift in Sources */,
 				9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
+				B4249F4D27B66DC9002C5E01 /* SideMenuViewController.swift in Sources */,
 				B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */,
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
 				B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */,
@@ -481,11 +489,11 @@
 				B47E589C27948C0100D70341 /* Coordinator.swift in Sources */,
 				04F2AA6C27931F0A00D4C062 /* ViewController.swift in Sources */,
 				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
-				B43313D927B4592C00A4D7A5 /* NewsDetailsViewController.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
-				B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */,
+				B4249F5327B66EC7002C5E01 /* MenuTableViewController.swift in Sources */,
+				B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

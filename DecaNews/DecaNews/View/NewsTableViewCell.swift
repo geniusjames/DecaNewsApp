@@ -25,8 +25,10 @@ class NewsTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    func configureViewCell() {
-        
-    }
-    
+        func configureCell(index: Int) {
+            newsSectionLabel.text = viewModel.items[index].articleDescription
+            newsDaysLabel.text = viewModel.items[index].publishedAt
+            newsHeaderLabel.text = viewModel.items[index].title
+        }
+
 }
