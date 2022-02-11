@@ -58,6 +58,6 @@ protocol PersistenceManager {
     func delete()
     func update()
     func search()
-    func fetch() -> [[String : Any]]
+    func fetch() -> [[String: Any]]
 
 }

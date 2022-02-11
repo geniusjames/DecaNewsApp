@@ -25,11 +25,6 @@ final class EmailSiginInViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(login), for: .allTouchEvents)
         emailTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
         passwordTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
-        let persistene = FireStorePersistence(collectionName: "ebele", id: "name")
-        persistene.add(item: BookmarkModel(image: "yene ", section: "deca", time: "1234", header: "11", days: "not today"))
-        persistene.add(item: BookmarkModel(image: "fine boy", section: "doreen", time: "today", header: "yes", days: "tuesday"))
-        persistene.fetch()
-        
     }
     func configurePasswordField() {
         let eyeView = UIView()
