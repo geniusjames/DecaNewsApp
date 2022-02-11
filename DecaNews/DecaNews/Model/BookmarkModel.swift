@@ -8,9 +8,9 @@
 import Foundation
 
 struct BookmarkModel: Codable {
-    var image: String
-    var section: String
-    var time: String
-    var header: String
-    var days: String
+    let image: String?
+    let section: String?
+    let time: String?
+    let header: String?
+    let days: String?
 }
