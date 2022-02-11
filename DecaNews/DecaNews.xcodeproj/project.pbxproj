@@ -21,6 +21,10 @@
 		04BC5A9F2796B1B900327E68 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A9E2796B1B900327E68 /* FirebaseStorage */; };
 		04BC6DF727B53F220007B059 /* LatestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC6DF627B53F220007B059 /* LatestNewsViewController.swift */; };
 		04BC6DF927B5413B0007B059 /* LatestNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC6DF827B5413B0007B059 /* LatestNewsTableViewCell.swift */; };
+		04BC6DFE27B5FCE10007B059 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC6DFD27B5FCE10007B059 /* MenuTableViewController.swift */; };
+		04BC6E0227B5FCF40007B059 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC6DFF27B5FCF40007B059 /* SideMenuViewController.swift */; };
+		04BC6E0327B5FCF40007B059 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04BC6E0027B5FCF40007B059 /* ProfileTableViewCell.swift */; };
+		04BC6E0427B5FCF40007B059 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 04BC6E0127B5FCF40007B059 /* ProfileTableViewCell.xib */; };
 		04D772A327B06BFE00502E95 /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04D772A227B06BFE00502E95 /* Dashboard.storyboard */; };
 		04D772A727B0718B00502E95 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D772A627B0718B00502E95 /* DashboardViewController.swift */; };
 		04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA6727931F0A00D4C062 /* AppDelegate.swift */; };
@@ -66,6 +70,10 @@
 		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04BC6DF627B53F220007B059 /* LatestNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsViewController.swift; sourceTree = "<group>"; };
 		04BC6DF827B5413B0007B059 /* LatestNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsTableViewCell.swift; sourceTree = "<group>"; };
+		04BC6DFD27B5FCE10007B059 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = DecaNews/App/SideMenuProfile/MenuTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		04BC6DFF27B5FCF40007B059 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = DecaNews/App/SideMenuProfile/SideMenuViewController.swift; sourceTree = SOURCE_ROOT; };
+		04BC6E0027B5FCF40007B059 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = DecaNews/App/SideMenuProfile/ProfileTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		04BC6E0127B5FCF40007B059 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = DecaNews/App/SideMenuProfile/ProfileTableViewCell.xib; sourceTree = SOURCE_ROOT; };
 		04D772A227B06BFE00502E95 /* Dashboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dashboard.storyboard; sourceTree = "<group>"; };
 		04D772A627B0718B00502E95 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		04F2AA6427931F0A00D4C062 /* DecaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +154,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		04BC6DFC27B5FC470007B059 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				04BC6E0027B5FCF40007B059 /* ProfileTableViewCell.swift */,
+				04BC6E0127B5FCF40007B059 /* ProfileTableViewCell.xib */,
+				04BC6DFF27B5FCF40007B059 /* SideMenuViewController.swift */,
+				04BC6DFD27B5FCE10007B059 /* MenuTableViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 		04D772A427B0716B00502E95 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +225,7 @@
 		04F2AA7B27931F2000D4C062 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				04BC6DFC27B5FC470007B059 /* SideMenu */,
 				04D772A427B0716B00502E95 /* Dashboard */,
 				04F2AA6727931F0A00D4C062 /* AppDelegate.swift */,
 				04F2AA6927931F0A00D4C062 /* SceneDelegate.swift */,
@@ -405,6 +425,7 @@
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
+				04BC6E0427B5FCF40007B059 /* ProfileTableViewCell.xib in Resources */,
 				B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -496,6 +517,7 @@
 				046747D127B369DE00A346B8 /* NewsModel.swift in Sources */,
 				9410302027A9409F00411376 /* String+Extension.swift in Sources */,
 				9410301C27A9407400411376 /* FirebaseService.swift in Sources */,
+				04BC6E0327B5FCF40007B059 /* ProfileTableViewCell.swift in Sources */,
 				9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				04BC6DF927B5413B0007B059 /* LatestNewsTableViewCell.swift in Sources */,
@@ -508,6 +530,8 @@
 				046747CB27B2995500A346B8 /* DashboardTableViewCell.swift in Sources */,
 				B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */,
 				B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */,
+				04BC6DFE27B5FCE10007B059 /* MenuTableViewController.swift in Sources */,
+				04BC6E0227B5FCF40007B059 /* SideMenuViewController.swift in Sources */,
 				04F2AA8727943F6000D4C062 /* Model.swift in Sources */,
 				B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */,
 				B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */,
