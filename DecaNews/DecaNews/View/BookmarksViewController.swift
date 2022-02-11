@@ -27,6 +27,7 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: viewModel.cellID, for: indexPath) as? NewsTableViewCell else {
             return UITableViewCell()
         }
+        cell.configureCell(index: indexPath.row)
         return cell
     }
     @objc func pushToDetailScreen() {

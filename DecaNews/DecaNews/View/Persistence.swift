@@ -40,6 +40,7 @@ class FireStorePersistence: PersistenceManager {
     func search() {
         
     }
+    
 //    func fetch() -> [[String: Any]]{
 //        var output: [[String : Any]] = []
 //        let docRef = Firestore.firestore().collection(collectionName)
@@ -98,5 +99,4 @@ protocol PersistenceManager {
     func update()
     func search()
     func read<T: Codable>(model: T) -> [T]
-
 }
