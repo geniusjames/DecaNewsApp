@@ -23,8 +23,12 @@ class DashboardViewController: UIViewController {
 		present(sideMenu!, animated: true)
 	}
 	@IBAction func searchButton(_ sender: Any) {
+		print("Menuc button clicked")
+		present(sideMenu!, animated: true)
 	}
 	@IBAction func writeNewsButton(_ sender: Any) {
+		print("Menub button clicked")
+		present(sideMenu!, animated: true)
 	}
 	@IBAction func seeMoreButton(_ sender: Any) {
 		navigateLatestNewsScreen?()
