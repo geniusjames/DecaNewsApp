@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-class DetailsViewController: UIViewController {
+final class DetailsViewController: UIViewController {
     
     var coordinator: MainCoordinator?
     override func viewDidLoad() {

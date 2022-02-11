@@ -1,6 +1,7 @@
 import UIKit
 import GoogleSignIn
 import AuthenticationServices
+import FirebaseAuth
 
 class LoginViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
     var coordinator: MainCoordinator?
@@ -10,6 +11,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
     @IBOutlet weak var loginWithEmailButtom: UIButton!
     @IBOutlet var signInButton: GIDSignInButton!
     @IBOutlet weak var appleSignIn: ASAuthorizationAppleIDButton!
+  
     override func viewDidLoad() {
         view.backgroundColor = .white
         super.viewDidLoad()
@@ -42,7 +44,6 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }
-        
 }
 
 extension LoginViewController: ASAuthorizationControllerDelegate {

@@ -230,17 +230,9 @@
 		B41C322027A999B500A173A3 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B41C322A27AAC40B00A173A3 /* Controller */,
-			);
-			path = LoginViewController;
-			sourceTree = "<group>";
-		};
-		B41C322A27AAC40B00A173A3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
 				B41C322127A999E300A173A3 /* LoginViewController.swift */,
 			);
-			path = Controller;
+			path = LoginViewController;
 			sourceTree = "<group>";
 		};
 		B46704DA27B3393E00369481 /* DetailsViewController */ = {
@@ -280,8 +272,8 @@
 				04F2AA6027931F0A00D4C062 /* Sources */,
 				04F2AA6127931F0A00D4C062 /* Frameworks */,
 				04F2AA6227931F0A00D4C062 /* Resources */,
-				E41E9405ED8116268800EFD7 /* [CP] Embed Pods Frameworks */,
-				CDFAEBD2DF05A2D23108B1D6 /* [CP] Copy Pods Resources */,
+				FE4293A4B0C806853A677088 /* [CP] Embed Pods Frameworks */,
+				7E9D41EAC288D412BA803540 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -374,6 +366,23 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		7E9D41EAC288D412BA803540 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		BF701C2A71FF73B28CC2BFBD /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -396,24 +405,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CDFAEBD2DF05A2D23108B1D6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E41E9405ED8116268800EFD7 /* [CP] Embed Pods Frameworks */ = {
+		FE4293A4B0C806853A677088 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (

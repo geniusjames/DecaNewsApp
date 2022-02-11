@@ -20,7 +20,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lJx-V9-44w">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.14117647058823529" green="0.14117647058823529" blue="0.19607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="270" id="IMd-Ms-ncu"/>
                                 </constraints>
@@ -106,13 +106,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Tss-pQ-Bp4">
-                                <rect key="frame" x="24" y="507" width="323.5" height="36"/>
+                                <rect key="frame" x="24" y="507" width="317" height="36"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o1B-LD-RBs">
-                                        <rect key="frame" x="0.0" y="0.0" width="164" height="36"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153.5" height="36"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="dX4-0Q-OfM">
-                                                <rect key="frame" x="3.5" y="8" width="156.5" height="20.5"/>
+                                            <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dX4-0Q-OfM">
+                                                <rect key="frame" x="3.5" y="8" width="146.5" height="20.5"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jDv-Oa-5BW">
                                                         <rect key="frame" x="0.0" y="-2" width="24" height="24.5"/>
@@ -124,7 +124,7 @@
                                                         </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Jean Prangley" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J5b-LF-UjQ">
-                                                        <rect key="frame" x="49" y="0.0" width="107.5" height="20.5"/>
+                                                        <rect key="frame" x="39" y="0.0" width="107.5" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" name="offWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -146,7 +146,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hi6-h0-6fj">
-                                        <rect key="frame" x="179" y="0.0" width="67.5" height="36"/>
+                                        <rect key="frame" x="168.5" y="0.0" width="67.5" height="36"/>
                                         <color key="backgroundColor" name="grey"/>
                                         <color key="tintColor" red="0.070575349029999998" green="0.070595644410000005" blue="0.070574067530000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
@@ -161,11 +161,11 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zaE-3o-PIt">
-                                        <rect key="frame" x="261.5" y="0.0" width="62" height="36"/>
+                                        <rect key="frame" x="251" y="0.0" width="66" height="36"/>
                                         <color key="backgroundColor" name="grey"/>
                                         <color key="tintColor" red="0.070575349029999998" green="0.070595644410000005" blue="0.070574067530000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="message" imagePlacement="leading" title="0" imagePadding="9" cornerStyle="capsule" titleAlignment="leading">
+                                        <buttonConfiguration key="configuration" style="plain" image="message" imagePlacement="leading" title="0" imagePadding="13" cornerStyle="capsule" titleAlignment="leading">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
