@@ -27,11 +27,9 @@ class DashboardTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 	
-	func setup(with article: Article) {
+	public func setup(with article: Article) {
 		newsTitle.text = article.title
 		authorsName.text = article.author
 		if let articleURLString = article.urlToImage,

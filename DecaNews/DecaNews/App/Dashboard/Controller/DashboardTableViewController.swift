@@ -11,7 +11,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 
 	@IBOutlet weak var tableView: UITableView!
 	
-	let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	private let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=dc4160da7760457cb32b3b4ed741a876"
 	var articles: [Article]? = [Article]()
 	var completion: (([Article]) -> Void)?
 	

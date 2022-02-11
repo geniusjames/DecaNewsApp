@@ -14,12 +14,11 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	@IBOutlet weak var trendingButton: UILabel!
 	@IBOutlet weak var recentButton: UILabel!
 	
-	let networkViewModel = NetworkViewModel()
-	let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=dc4160da7760457cb32b3b4ed741a876"
-	let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dc4160da7760457cb32b3b4ed741a876"
-	let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	private let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=dc4160da7760457cb32b3b4ed741a876"
 	
-	var collectionViewNews: [Article]?
+	private var collectionViewNews: [Article]?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -117,25 +116,6 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 
 	func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
 	   return 0.0
-	}
-	
-}
-
-extension DashboardCollectionViewController: DashboardViewControllerDelegate {
-	func newsType(string: String) {
-		if string == "popular" {
-//			fetchData(url: url)
-			print("popular")
-		} else if string == "trending" {
-//			fetchData(url: url2)
-			print("trending")
-		} else {
-//			fetchData(url: url3)
-			print("recent")
-		}
-//		DispatchQueue.main.async {
-//			self.collectionView.reloadData()
-//		}
 	}
 	
 }

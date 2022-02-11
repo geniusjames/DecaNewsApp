@@ -5,18 +5,9 @@
 //  Created by mac on 09/02/2022.
 //
 
-//
-//  Network.swift
-//  Currency Converter
-//
-//  Created by mac on 28/01/2022.
-//
-
 import UIKit
-import Alamofire
-import SwiftyJSON
 
-typealias SuccessBlock = ((Empty) -> Void)?
+typealias SuccessBlock = ((Base) -> Void)?
 typealias ErrorBlock = ((String) -> Void)?
 
 class NetworkManager {
@@ -26,11 +17,9 @@ class NetworkManager {
 	var successResponse: SuccessBlock!
 	var errorResponse: ErrorBlock!
 	
-	init() {
-		
-	}
+	init() { }
 	
-	func networkRequest(url: String, successCompletion: SuccessBlock, errorCompletion: ErrorBlock) {
+	public func networkRequest(url: String, successCompletion: SuccessBlock, errorCompletion: ErrorBlock) {
 
 		guard let urlMain = URL(string: url) else {
 			return
@@ -41,18 +30,18 @@ class NetworkManager {
 			}
 			if let data = data {
 				do {
-					let response = try JSONDecoder().decode(Empty.self, from: data)
+					let response = try JSONDecoder().decode(Base.self, from: data)
 					successCompletion?(response)
 				} catch let error {
 					print("ERROR FROM DECODING: ", error.localizedDescription)
-//					errorCompletion?(error.localizedDescription)
+					errorCompletion?(error.localizedDescription)
 				}
 			}
 		}.resume()
 	}
 	
-	func getImageDataFrom(url: URL, imageCell: UIImageView){
-		URLSession.shared.dataTask(with: url) {(data, response, error) in
+	public func getImageDataFrom(url: URL, imageCell: UIImageView) {
+		URLSession.shared.dataTask(with: url) {(data, _, error) in
 			 if let error = error {
 				print("error is: \(error.localizedDescription)")
 				return

@@ -19,7 +19,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 	
 	var didTapBookmarkButton: (() -> Void)?
 	
-	func setup(with article: Article) {
+	public func setup(with article: Article) {
 		newsTitle.text = article.title
 		authorsName.text = article.author
 		if let articleURLString = article.urlToImage,

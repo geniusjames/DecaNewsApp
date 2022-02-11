@@ -13,8 +13,6 @@
 		046747CB27B2995500A346B8 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747CA27B2995500A346B8 /* DashboardTableViewCell.swift */; };
 		046747CE27B3659400A346B8 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747CD27B3659400A346B8 /* NetworkCall.swift */; };
 		046747D127B369DE00A346B8 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747D027B369DE00A346B8 /* NewsModel.swift */; };
-		046747D827B4028300A346B8 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747D727B4028200A346B8 /* NetworkViewModel.swift */; };
-		046747DA27B40BFF00A346B8 /* ArticleDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747D927B40BFF00A346B8 /* ArticleDirectory.swift */; };
 		04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BC5A93279573CB00327E68 /* GoogleService-Info.plist */; };
 		04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A962796B1B900327E68 /* FirebaseAuth */; };
 		04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */; };
@@ -65,8 +63,6 @@
 		046747CA27B2995500A346B8 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		046747CD27B3659400A346B8 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		046747D027B369DE00A346B8 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
-		046747D727B4028200A346B8 /* NetworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
-		046747D927B40BFF00A346B8 /* ArticleDirectory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDirectory.swift; sourceTree = "<group>"; };
 		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04BC6DF627B53F220007B059 /* LatestNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsViewController.swift; sourceTree = "<group>"; };
 		04BC6DF827B5413B0007B059 /* LatestNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -150,19 +146,9 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		046747D627B4025D00A346B8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				046747D727B4028200A346B8 /* NetworkViewModel.swift */,
-				046747D927B40BFF00A346B8 /* ArticleDirectory.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		04D772A427B0716B00502E95 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				046747D627B4025D00A346B8 /* ViewModel */,
 				046747CF27B369CC00A346B8 /* Model */,
 				046747CC27B3657B00A346B8 /* service */,
 				046747C727B2992200A346B8 /* View */,
@@ -514,7 +500,6 @@
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				04BC6DF927B5413B0007B059 /* LatestNewsTableViewCell.swift in Sources */,
 				046747C627B288D800A346B8 /* DashboardTableViewController.swift in Sources */,
-				046747D827B4028300A346B8 /* NetworkViewModel.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
@@ -535,7 +520,6 @@
 				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04D772A727B0718B00502E95 /* DashboardViewController.swift in Sources */,
-				046747DA27B40BFF00A346B8 /* ArticleDirectory.swift in Sources */,
 				046747C427B288C300A346B8 /* DashboardCollectionViewController.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,

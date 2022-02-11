@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Empty: Codable {
+struct Base: Codable {
 	let status: String?
 	let totalResults: Int?
 	let articles: [Article]

@@ -7,18 +7,13 @@
 
 import UIKit
 
-protocol DashboardViewControllerDelegate: AnyObject {
-	func newsType(string: String)
-}
-
 class DashboardViewController: UIViewController {
 	
-	weak var delegate: DashboardViewControllerDelegate?
 	var coordinator: MainCoordinator?
+	var navigateLatestNewsScreen: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-		
     }
 	
 	@IBAction func menuButton(_ sender: Any) {
@@ -28,7 +23,7 @@ class DashboardViewController: UIViewController {
 	@IBAction func writeNewsButton(_ sender: Any) {
 	}
 	@IBAction func seeMoreButton(_ sender: Any) {
-		coordinator?.navigateToLatestNewsScreen()
+		navigateLatestNewsScreen?()
 	}
 	
 }
