@@ -50,7 +50,6 @@ extension OnboardingViewController: UICollectionViewDataSource,
             return OnboardingCollectionViewCell()
         }
         cell.configureViewCell(indexPath: indexPath.row)
-        print(indexPath.row)
         return cell
     }
     func collectionView(_ collectionView: UICollectionView,

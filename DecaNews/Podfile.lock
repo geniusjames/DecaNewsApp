@@ -24,6 +24,7 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - SideMenu
     - SwiftLint
 
 SPEC CHECKSUMS:

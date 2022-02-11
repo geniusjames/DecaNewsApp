@@ -132,7 +132,13 @@ class MainCoordinator: Coordinator {
          else {return}
         detailsViewController.coordinator = self
         controller.pushViewController(detailsViewController, animated: true)
-        window.rootViewController = controller
-        window.makeKeyAndVisible()
+    }
+    
+    func navigatingToSideMenu() {
+        guard let viewController = UIStoryboard(name: "SideMenu",
+                       bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
+         else {return}
+        viewController.coordinator = self
+        controller.pushViewController(viewController, animated: true)
     }
 }
