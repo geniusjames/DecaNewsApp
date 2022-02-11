@@ -12,16 +12,24 @@ class LatestNewsViewController: UIViewController, UITableViewDataSource, UITable
 	
 	var coordinator: MainCoordinator?
 	var articles: [Article]? = [Article]()
-	let dashboardVC = DashboardTableViewController()
-	
+
     override func viewDidLoad() {
         super.viewDidLoad()
-		articles = dashboardVC.articles
-		print(articles)
+		tableView.delegate = self
+		tableView.dataSource = self
+		setupListeners()
     }
 	
+	func setupListeners() {
+		let dashboardVC = DashboardTableViewController()
+		dashboardVC.completion = { [weak self] article in
+			self?.articles = article
+			print(self?.articles?[0])
+		}
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		articles?.count ?? 14
+		articles?.count ?? 20
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

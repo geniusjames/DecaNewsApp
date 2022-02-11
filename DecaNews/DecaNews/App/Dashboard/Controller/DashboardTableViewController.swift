@@ -13,9 +13,9 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 	
 	let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=dc4160da7760457cb32b3b4ed741a876"
 	var articles: [Article]? = [Article]()
+	var completion: (([Article]) -> Void)?
 	
 	override func viewDidLoad() {
-		
         super.viewDidLoad()
 		config()
     }
@@ -24,6 +24,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		fetchData(url: url)
 		tableView.delegate = self
 		tableView.dataSource = self
+		completion?(articles ?? [])
 	}
 	
 	private func fetchData(url: String) {

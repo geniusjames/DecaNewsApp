@@ -32,4 +32,9 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 		didTapBookmarkButton?()
 	}
 	
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		newsImage.image = nil
+	}
+	
 }

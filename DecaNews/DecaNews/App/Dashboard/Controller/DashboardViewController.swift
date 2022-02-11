@@ -14,11 +14,7 @@ protocol DashboardViewControllerDelegate: AnyObject {
 class DashboardViewController: UIViewController {
 	
 	weak var delegate: DashboardViewControllerDelegate?
-	
 	var coordinator: MainCoordinator?
-	
-	var completion: ((String) -> Void)?
-//	var netwo
 
     override func viewDidLoad() {
         super.viewDidLoad()

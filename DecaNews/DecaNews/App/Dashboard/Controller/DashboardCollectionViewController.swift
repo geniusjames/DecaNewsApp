@@ -14,7 +14,6 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	@IBOutlet weak var trendingButton: UILabel!
 	@IBOutlet weak var recentButton: UILabel!
 	
-	let dashboardVC = DashboardViewController()
 	let networkViewModel = NetworkViewModel()
 	let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=dc4160da7760457cb32b3b4ed741a876"
 	let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dc4160da7760457cb32b3b4ed741a876"
@@ -25,30 +24,11 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		config()
-		setupListeners()
-	}
-	
-	override func viewDidAppear(_ animated: Bool) {
-		super.viewDidAppear(animated)
-		setupListeners()
-	}
-	
-	func setupListeners() {
-		dashboardVC.completion = { [weak self] type in
-			if type == "popular" {
-				print("popular")
-			} else if type == "trending" {
-				print("trending")
-			} else if type == "recent" {
-				print("recent")
-			}
-		}
 	}
 	
 	private func config() {
 		collectionView.dataSource = self
 		fetchData(url: url)
-		dashboardVC.delegate = self
 		
 		let tapPopularTab = UITapGestureRecognizer(target: self, action: #selector(didTapPopular))
 		popularButton.addGestureRecognizer(tapPopularTab)
@@ -84,8 +64,6 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		DispatchQueue.main.async {
 			self.collectionView.reloadData()
 		}
-//		delegate?.newsType(string: "popular")
-//		completion?("popular")
 	}
 
 	@objc func didTapTrending() {
@@ -99,8 +77,6 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		DispatchQueue.main.async {
 			self.collectionView.reloadData()
 		}
-//		delegate?.newsType(string: "trending")
-//		completion?("trending")
 	}
 
 	@objc func didTaprecent() {
@@ -114,8 +90,6 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		DispatchQueue.main.async {
 			self.collectionView.reloadData()
 		}
-//		delegate?.newsType(string: "recent")
-//		completion?("recent")
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
