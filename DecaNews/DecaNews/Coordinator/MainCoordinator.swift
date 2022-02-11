@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let servicesViewModel = ServicesViewModel()
         if servicesViewModel.getOnboardedStatus {
-            servicesViewModel.getSignedStatus ? print("will display the home screen") : navigateToSignIn()
+			servicesViewModel.getSignedStatus ? navigateToSignIn() : navigateToDashboard()
         } else {
             navigateToOnboarding()
         }
@@ -132,7 +132,6 @@ class MainCoordinator: Coordinator {
 		guard let viewController = viewController else { return }
 		viewController.navigateLatestNewsScreen = { [weak self] in
 			self?.navigateToLatestNewsScreen()
-			self?.navigatingToSideMenu()
 		}
 		viewController.coordinator = self
 		controller = UINavigationController()

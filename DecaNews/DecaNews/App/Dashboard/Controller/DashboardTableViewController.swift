@@ -10,10 +10,10 @@ import UIKit
 class DashboardTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
 	@IBOutlet weak var tableView: UITableView!
-	
-	private let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=dc4160da7760457cb32b3b4ed741a876"
+
 	var articles: [Article]? = [Article]()
-	var completion: (([Article]) -> Void)?
+	
+	private let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
 	
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,6 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		fetchData(url: url)
 		tableView.delegate = self
 		tableView.dataSource = self
-		completion?(articles ?? [])
 	}
 	
 	private func fetchData(url: String) {

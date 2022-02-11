@@ -14,9 +14,9 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	@IBOutlet weak var trendingButton: UILabel!
 	@IBOutlet weak var recentButton: UILabel!
 	
-	private let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=dc4160da7760457cb32b3b4ed741a876"
-	private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dc4160da7760457cb32b3b4ed741a876"
-	private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=dc4160da7760457cb32b3b4ed741a876"
+	private let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
+	private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
+	private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
 	
 	private var collectionViewNews: [Article]?
 	

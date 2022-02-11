@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import SideMenu
 
 class DashboardViewController: UIViewController {
 	
+	private var sideMenu: SideMenuNavigationController?
 	var coordinator: MainCoordinator?
 	var navigateLatestNewsScreen: (() -> Void)?
 
@@ -17,6 +19,8 @@ class DashboardViewController: UIViewController {
     }
 	
 	@IBAction func menuButton(_ sender: Any) {
+		print("Menu button clicked")
+		present(sideMenu!, animated: true)
 	}
 	@IBAction func searchButton(_ sender: Any) {
 	}

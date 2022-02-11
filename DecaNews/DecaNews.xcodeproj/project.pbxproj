@@ -13,6 +13,8 @@
 		046747CB27B2995500A346B8 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747CA27B2995500A346B8 /* DashboardTableViewCell.swift */; };
 		046747CE27B3659400A346B8 /* NetworkCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747CD27B3659400A346B8 /* NetworkCall.swift */; };
 		046747D127B369DE00A346B8 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046747D027B369DE00A346B8 /* NewsModel.swift */; };
+		049D60B227B6710100DB35F1 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60B127B6710100DB35F1 /* MenuDelegate.swift */; };
+		049D60B427B6711800DB35F1 /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049D60B327B6711800DB35F1 /* SideMenu.storyboard */; };
 		04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04BC5A93279573CB00327E68 /* GoogleService-Info.plist */; };
 		04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A962796B1B900327E68 /* FirebaseAuth */; };
 		04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */ = {isa = PBXBuildFile; productRef = 04BC5A982796B1B900327E68 /* FirebaseDynamicLinks */; };
@@ -34,7 +36,7 @@
 		04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F2AA7027931F0E00D4C062 /* Assets.xcassets */; };
 		04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */; };
 		04F2AA8727943F6000D4C062 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8627943F6000D4C062 /* Model.swift */; };
-		365A2CE4267EB421329CE915 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FB2374DA8E90F9B3765AB2 /* Pods_DecaNews.framework */; };
+		1B9956B5B11CF57620BF50D6 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466342727940A790039E58D5 /* Pods_DecaNews.framework */; };
 		9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301327A9404700411376 /* EmailSignUpViewController.swift */; };
 		9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301427A9404700411376 /* PasswordResetViewController.swift */; };
 		9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301527A9404700411376 /* SelectedTopicsViewController.swift */; };
@@ -60,13 +62,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02FB2374DA8E90F9B3765AB2 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		046747C327B288C300A346B8 /* DashboardCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewController.swift; sourceTree = "<group>"; };
 		046747C527B288D800A346B8 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		046747C827B2993E00A346B8 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
 		046747CA27B2995500A346B8 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
 		046747CD27B3659400A346B8 /* NetworkCall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCall.swift; sourceTree = "<group>"; };
 		046747D027B369DE00A346B8 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
+		049D60B127B6710100DB35F1 /* MenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
+		049D60B327B6711800DB35F1 /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04BC6DF627B53F220007B059 /* LatestNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsViewController.swift; sourceTree = "<group>"; };
 		04BC6DF827B5413B0007B059 /* LatestNewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsTableViewCell.swift; sourceTree = "<group>"; };
@@ -85,13 +88,14 @@
 		04F2AA7327931F0E00D4C062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F2AA7527931F0E00D4C062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F2AA8627943F6000D4C062 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		34857EB93295DBE03F236E2B /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
+		35AB5C396ACF6136BBAADDE9 /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
+		466342727940A790039E58D5 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9410301327A9404700411376 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		9410301427A9404700411376 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		9410301527A9404700411376 /* SelectedTopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTopicsViewController.swift; sourceTree = "<group>"; };
 		9410301B27A9407400411376 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		9410301F27A9409F00411376 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		9544C53C2FC4B68E2353FD93 /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
-		AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
@@ -121,7 +125,7 @@
 				04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */,
 				04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */,
 				04BC5A9F2796B1B900327E68 /* FirebaseStorage in Frameworks */,
-				365A2CE4267EB421329CE915 /* Pods_DecaNews.framework in Frameworks */,
+				1B9956B5B11CF57620BF50D6 /* Pods_DecaNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,7 +197,7 @@
 				04F2AA6627931F0A00D4C062 /* DecaNews */,
 				04F2AA6527931F0A00D4C062 /* Products */,
 				2120C6C26FC59197AAEBA3EE /* Pods */,
-				ED2A12676502EAD501D1D57C /* Frameworks */,
+				E54BB648B79A1AC25518E378 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -252,6 +256,7 @@
 		04F2AA7D27931F4100D4C062 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				049D60B327B6711800DB35F1 /* SideMenu.storyboard */,
 				B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */,
 				B45C373D27ADB9DD009995B7 /* password_reset.storyboard */,
 				04F2AA6D27931F0A00D4C062 /* Main.storyboard */,
@@ -288,8 +293,8 @@
 		2120C6C26FC59197AAEBA3EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */,
-				9544C53C2FC4B68E2353FD93 /* Pods-DecaNews.release.xcconfig */,
+				35AB5C396ACF6136BBAADDE9 /* Pods-DecaNews.debug.xcconfig */,
+				34857EB93295DBE03F236E2B /* Pods-DecaNews.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 		9410301D27A9408000411376 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				049D60B127B6710100DB35F1 /* MenuDelegate.swift */,
 				9410301B27A9407400411376 /* FirebaseService.swift */,
 			);
 			path = Service;
@@ -336,10 +342,10 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		ED2A12676502EAD501D1D57C /* Frameworks */ = {
+		E54BB648B79A1AC25518E378 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				02FB2374DA8E90F9B3765AB2 /* Pods_DecaNews.framework */,
+				466342727940A790039E58D5 /* Pods_DecaNews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -351,13 +357,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04F2AA7827931F0E00D4C062 /* Build configuration list for PBXNativeTarget "DecaNews" */;
 			buildPhases = (
-				BF701C2A71FF73B28CC2BFBD /* [CP] Check Pods Manifest.lock */,
+				3462237BB77DEF16DB78B598 /* [CP] Check Pods Manifest.lock */,
 				04F2AA80279322AC00D4C062 /* Swift Lint + Run Script */,
 				04F2AA6027931F0A00D4C062 /* Sources */,
 				04F2AA6127931F0A00D4C062 /* Frameworks */,
 				04F2AA6227931F0A00D4C062 /* Resources */,
-				E41E9405ED8116268800EFD7 /* [CP] Embed Pods Frameworks */,
-				CDFAEBD2DF05A2D23108B1D6 /* [CP] Copy Pods Resources */,
+				CDF01AD99C6E3F041D44362E /* [CP] Copy Pods Resources */,
+				4290BEEA973F1339D834E6AF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049D60B427B6711800DB35F1 /* SideMenu.storyboard in Resources */,
 				04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */,
 				04D772A327B06BFE00502E95 /* Dashboard.storyboard in Resources */,
 				B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */,
@@ -451,7 +458,7 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		BF701C2A71FF73B28CC2BFBD /* [CP] Check Pods Manifest.lock */ = {
+		3462237BB77DEF16DB78B598 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -473,24 +480,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CDFAEBD2DF05A2D23108B1D6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E41E9405ED8116268800EFD7 /* [CP] Embed Pods Frameworks */ = {
+		4290BEEA973F1339D834E6AF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -505,6 +495,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDF01AD99C6E3F041D44362E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -541,6 +548,7 @@
 				B47E589C27948C0100D70341 /* Coordinator.swift in Sources */,
 				046747CE27B3659400A346B8 /* NetworkCall.swift in Sources */,
 				04F2AA6C27931F0A00D4C062 /* ViewController.swift in Sources */,
+				049D60B227B6710100DB35F1 /* MenuDelegate.swift in Sources */,
 				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04D772A727B0718B00502E95 /* DashboardViewController.swift in Sources */,
@@ -690,7 +698,7 @@
 		};
 		04F2AA7927931F0E00D4C062 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */;
+			baseConfigurationReference = 35AB5C396ACF6136BBAADDE9 /* Pods-DecaNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -721,7 +729,7 @@
 		};
 		04F2AA7A27931F0E00D4C062 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9544C53C2FC4B68E2353FD93 /* Pods-DecaNews.release.xcconfig */;
+			baseConfigurationReference = 34857EB93295DBE03F236E2B /* Pods-DecaNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

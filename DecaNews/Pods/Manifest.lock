@@ -13,7 +13,7 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.0)
   - SideMenu (6.5.0)
-  - SwiftLint (0.46.1)
+  - SwiftLint (0.46.2)
 
 DEPENDENCIES:
   - GoogleSignIn (~> 5.0)
@@ -35,7 +35,7 @@ SPEC CHECKSUMS:
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
   SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
-  SwiftLint: aaa29a9f649316095a9079595cb60906bd899353
+  SwiftLint: 6bc52a21f0fd44cab9aa2dc8e534fb9f5e3ec507
 
 PODFILE CHECKSUM: 8111293fe7d994f2f1914f0f3b4f5d995c875d34
 
