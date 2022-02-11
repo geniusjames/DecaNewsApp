@@ -15,6 +15,7 @@ PODS:
     - AppAuth/Core (~> 1.4)
     - GTMSessionFetcher/Core (~> 1.5)
   - GTMSessionFetcher/Core (1.7.0)
+  - SideMenu (6.5.0)
   - SwiftLint (0.46.1)
   - SwiftyJSON (4.3.0)
 
@@ -22,6 +23,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - GoogleSignIn (~> 5.0)
+  - SideMenu
   - SwiftLint
   - SwiftyJSON (~> 4.0)
 
@@ -33,6 +35,7 @@ SPEC REPOS:
     - GoogleSignIn
     - GTMAppAuth
     - GTMSessionFetcher
+    - SideMenu
     - SwiftLint
     - SwiftyJSON
 
@@ -43,9 +46,10 @@ SPEC CHECKSUMS:
   GoogleSignIn: 7137d297ddc022a7e0aa4619c86d72c909fa7213
   GTMAppAuth: ad5c2b70b9a8689e1a04033c9369c4915bfcbe89
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
   SwiftLint: aaa29a9f649316095a9079595cb60906bd899353
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
 
-PODFILE CHECKSUM: a56e17e674031f02363031efe591096c89420117
+PODFILE CHECKSUM: 8111293fe7d994f2f1914f0f3b4f5d995c875d34
 
 COCOAPODS: 1.11.2

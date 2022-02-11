@@ -8,7 +8,5 @@ target 'DecaNews' do
   # Pods for DecaNews
     pod 'SwiftLint'
     pod 'GoogleSignIn', '~> 5.0'
-    pod 'Alamofire'
-    pod 'SwiftyJSON', '~> 4.0'
-    pod 'AlamofireImage'
+    pod 'SideMenu'
 end
