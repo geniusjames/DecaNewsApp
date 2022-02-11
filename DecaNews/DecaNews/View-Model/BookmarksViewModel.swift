@@ -15,8 +15,6 @@ class BookmarksViewModel {
     var items: [News] {
         store.read()
     }
-    let news = News(author: "", title: "", articleDescription: "", url: "", urlToImage: "", publishedAt: "", content: "")
-
     func fetchPersistedNews() {
         
     }
