@@ -10,11 +10,9 @@ import UIKit
 class BookmarksViewController: UIViewController {
     @IBOutlet weak var newsTableView: UITableView!
     let viewModel = BookmarksViewModel()
-    let store = FireStorePersistence(collectionName: "news")
     override func viewDidLoad() {
         super.viewDidLoad()
         newsTableView.delegate = self
-        store.read(model: News.init(author: "", title: "", articleDescription: "", url: "", urlToImage: "", publishedAt: "", content: ""))
     }
 }
 extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
@@ -31,7 +29,7 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        pushToDetailScreen()
     }
     @objc func pushToDetailScreen() {
         
