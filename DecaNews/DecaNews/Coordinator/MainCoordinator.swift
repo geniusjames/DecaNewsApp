@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let servicesViewModel = ServicesViewModel()
         if servicesViewModel.getOnboardedStatus {
-            servicesViewModel.getSignedStatus ? print("will display the home screen") : navigateToSignIn()
+			servicesViewModel.getSignedStatus ? navigateToSignIn() : navigateToDashboard()
         } else {
             navigateToOnboarding()
         }
@@ -50,7 +50,7 @@ class MainCoordinator: Coordinator {
             self?.navigateToPasswordReset()
         }
         viewController.navigateHome = { [weak self] in
-//            self?.navigateHome()
+            self?.navigateToDashboard()
         }
         viewController.servicesViewModel = ServicesViewModel()
         controller.pushViewController(viewController, animated: true)
@@ -106,7 +106,7 @@ class MainCoordinator: Coordinator {
         let viewController = UIStoryboard(name: "EmailLogin", bundle: nil).instantiateViewController(withIdentifier: "SelectedTopicsViewController") as? SelectedTopicsViewController
         guard let viewController = viewController else { return }
         viewController.navigateHome = { [weak self] in
-//            self?.navigateHome()
+            self?.navigateToDashboard()
         }
         viewController.coordinator = self
         viewController.serviceViewModel = ServicesViewModel()
@@ -125,6 +125,30 @@ class MainCoordinator: Coordinator {
         window.rootViewController = controller
         window.makeKeyAndVisible()
     }
+	
+	func navigateToDashboard() {
+		let viewController = UIStoryboard(name: "Dashboard",
+					   bundle: nil).instantiateViewController(withIdentifier: "Dashboard") as? DashboardViewController
+		guard let viewController = viewController else { return }
+		viewController.navigateLatestNewsScreen = { [weak self] in
+			self?.navigateToLatestNewsScreen()
+		}
+		viewController.coordinator = self
+		controller = UINavigationController()
+		controller.pushViewController(viewController, animated: true)
+		window.rootViewController = controller
+		window.makeKeyAndVisible()
+	}
+	
+	func navigateToLatestNewsScreen() {
+		guard let viewController = UIStoryboard(name: "Dashboard",
+					   bundle: nil).instantiateViewController(withIdentifier: "LatestNewsVC") as? LatestNewsViewController
+		 else {return}
+		viewController.coordinator = self
+		controller.pushViewController(viewController, animated: true)
+		window.rootViewController = controller
+		window.makeKeyAndVisible()
+	}
     
     func navigateToDetailsPage() {
         guard let detailsViewController = UIStoryboard(name: "NewsDetails",
