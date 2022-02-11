@@ -10,23 +10,27 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 class FireStorePersistence: PersistenceManager {
     var collectionName: String
-    var id: String
+    var id: String?
+    let db = Firestore.firestore()
 
-    init(collectionName: String, id: String) {
+    init(collectionName: String) {
         self.collectionName = collectionName
-        self.id = id
     }
-
     func add<T: Codable>(item: T) {
         do {
-            try Firestore.firestore().collection(collectionName).document().setData(from: item)
+            try db.collection(collectionName).document().setData(from: item)
         } catch {
             print("error")
         }
     }
-    
-    func delete() {
-    
+    func delete(documentID: String) {
+        db.collection(collectionName).document(documentID).delete { err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+            }
+        }
     }
     
     func update() {
@@ -36,28 +40,63 @@ class FireStorePersistence: PersistenceManager {
     func search() {
         
     }
-    func fetch() -> [[String: Any]]{
-        var output: [[String : Any]] = []
-        let docRef = Firestore.firestore().collection(collectionName)
-        docRef.getDocuments() { (document, error) in
-            if let error = error {
-                print(error)
-            } else {
-                for doc in document!.documents {
-                    output.append(doc.data())
-                    print(doc.data(), "look here")
+//    func fetch() -> [[String: Any]]{
+//        var output: [[String : Any]] = []
+//        let docRef = Firestore.firestore().collection(collectionName)
+//        docRef.getDocuments() { (document, error) in
+//            if let error = error {
+//                print(error)
+//            } else {
+//                for doc in document!.documents {
+//                    output.append(doc.data())
+//                    print(doc.data(), "look here")
+//                }
+//            }
+//    }
+//        return output
+//    }
+    func read<T: Codable>(model: T) -> [T] {
+        var output: [T] = []
+        do {
+            db.collection(collectionName).getDocuments { (querySnapshot, error) in
+                  
+                  if let error = error {
+                      print(error)
+                  } else {
+                      for documents in querySnapshot!.documents {
+                          let result = Result {
+                              try? documents.data(as: T.self)
+                          }
+                          switch result {
+                          case .success(let doc):
+                              if let doc = doc {
+                                  output.append(doc)
+                                  print(doc)
+                              } else {
+                                  print("document does not exists")
+                              }
+                          case .failure(let error):
+                              print(error)
+                          }
+                      }
                 }
             }
-    }
+        }
         return output
     }
+    private func enableOffline() {
+           let settings = FirestoreSettings()
+           settings.isPersistenceEnabled = true
+           db.settings = settings
+       }
+    
 }
 
 protocol PersistenceManager {
     func add<T: Codable>(item: T)
-    func delete()
+    func delete(documentID: String)
     func update()
     func search()
-    func fetch() -> [[String: Any]]
+    func read<T: Codable>(model: T) -> [T]
 
 }

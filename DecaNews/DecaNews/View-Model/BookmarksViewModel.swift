@@ -10,13 +10,14 @@ import Firebase
 
 class BookmarksViewModel {
     
-    
+    let store = FireStorePersistence(collectionName: "news")
     let cellID = "cell"
-    var item: [BookmarkModel]?
-    func fetchPersistedNews() {
-        FirebaseApp.configure()
-        
-
+    var items: [News] {
+            store.read(model: news)
     }
-    
+    let news = News(author: "", title: "", articleDescription: "", url: "", urlToImage: "", publishedAt: "", content: "")
+
+    func fetchPersistedNews() {
+        
+    }
 }

@@ -18,6 +18,7 @@ final class EmailSiginInViewController: UIViewController {
     var navigateToReset: (() -> Void)?
     var navigateSignUp: (() -> Void)?
     var navigateHome: (() -> Void)?
+    let store = FireStorePersistence(collectionName: "new")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,9 @@ final class EmailSiginInViewController: UIViewController {
         loginButton.addTarget(self, action: #selector(login), for: .allTouchEvents)
         emailTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
         passwordTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
+        store.add(item: News(author: "James", title: "Boko Haram", articleDescription: "terror", url: "no", urlToImage: "url", publishedAt: "friday", content: "new content"))
+        let news = News(author: "", title: "", articleDescription: "", url: "", urlToImage: "", publishedAt: "", content: "")
+        store.read(model: news)
     }
     func configurePasswordField() {
         let eyeView = UIView()

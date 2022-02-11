@@ -28,9 +28,14 @@
 		9410302027A9409F00411376 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301F27A9409F00411376 /* String+Extension.swift */; };
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
-		B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4627B53765002C5E01 /* BookmarkModel.swift */; };
 		B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4827B5BB8D002C5E01 /* Persistence.swift */; };
 		B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */; };
+		B4249F4D27B66DC9002C5E01 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4C27B66DC9002C5E01 /* SideMenuViewController.swift */; };
+		B4249F5127B66EC7002C5E01 /* ProfileTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4E27B66EC7002C5E01 /* ProfileTableViewCell.swift */; };
+		B4249F5227B66EC7002C5E01 /* ProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4249F4F27B66EC7002C5E01 /* ProfileTableViewCell.xib */; };
+		B4249F5327B66EC7002C5E01 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5027B66EC7002C5E01 /* MenuTableViewController.swift */; };
+		B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5427B67050002C5E01 /* MenuDelegate.swift */; };
+		B4249F5727B67144002C5E01 /* NewsPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */; };
@@ -73,8 +78,13 @@
 		A2708C72683E030660B24D80 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
-		B4249F4627B53765002C5E01 /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
 		B4249F4827B5BB8D002C5E01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		B4249F4C27B66DC9002C5E01 /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SideMenuViewController.swift; path = SideMenuProfile/SideMenuViewController.swift; sourceTree = "<group>"; };
+		B4249F4E27B66EC7002C5E01 /* ProfileTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProfileTableViewCell.swift; path = SideMenuProfile/ProfileTableViewCell.swift; sourceTree = "<group>"; };
+		B4249F4F27B66EC7002C5E01 /* ProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ProfileTableViewCell.xib; path = SideMenuProfile/ProfileTableViewCell.xib; sourceTree = "<group>"; };
+		B4249F5027B66EC7002C5E01 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuTableViewController.swift; path = SideMenuProfile/MenuTableViewController.swift; sourceTree = "<group>"; };
+		B4249F5427B67050002C5E01 /* MenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
+		B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPersistenceModel.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
@@ -163,6 +173,10 @@
 		04F2AA7C27931F3100D4C062 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4249F5027B66EC7002C5E01 /* MenuTableViewController.swift */,
+				B4249F4E27B66EC7002C5E01 /* ProfileTableViewCell.swift */,
+				B4249F4F27B66EC7002C5E01 /* ProfileTableViewCell.xib */,
+				B4249F4C27B66DC9002C5E01 /* SideMenuViewController.swift */,
 				B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */,
 				B41C322027A999B500A173A3 /* LoginViewController */,
 				B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */,
@@ -203,7 +217,7 @@
 			children = (
 				B45C374027ADBB0A009995B7 /* User.swift */,
 				04F2AA8627943F6000D4C062 /* Model.swift */,
-				B4249F4627B53765002C5E01 /* BookmarkModel.swift */,
+				B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -238,6 +252,7 @@
 		9410301D27A9408000411376 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				B4249F5427B67050002C5E01 /* MenuDelegate.swift */,
 				9410301B27A9407400411376 /* FirebaseService.swift */,
 			);
 			path = Service;
@@ -355,6 +370,7 @@
 				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
+				B4249F5227B66EC7002C5E01 /* ProfileTableViewCell.xib in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
@@ -449,12 +465,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				9410302027A9409F00411376 /* String+Extension.swift in Sources */,
+				B4249F5727B67144002C5E01 /* NewsPersistenceModel.swift in Sources */,
+				B4249F5127B66EC7002C5E01 /* ProfileTableViewCell.swift in Sources */,
 				9410301C27A9407400411376 /* FirebaseService.swift in Sources */,
 				9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
+				B4249F4D27B66DC9002C5E01 /* SideMenuViewController.swift in Sources */,
 				B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */,
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
 				B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */,
@@ -473,7 +492,8 @@
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
-				B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */,
+				B4249F5327B66EC7002C5E01 /* MenuTableViewController.swift in Sources */,
+				B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
