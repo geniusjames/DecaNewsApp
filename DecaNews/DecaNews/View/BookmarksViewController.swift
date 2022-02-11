@@ -30,6 +30,9 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configureCell(index: indexPath.row)
         return cell
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
     @objc func pushToDetailScreen() {
         
     }
