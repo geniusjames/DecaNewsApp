@@ -7,7 +7,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
     static var standard: AppDelegate? { UIApplication.shared.delegate as? AppDelegate }
     var window: UIWindow?
-
+    var coordinate: MainCoordinator?
     func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
@@ -20,21 +20,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         return true
     }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-//        print("User email: \(user.profile.email ?? "No Email Found")")
-
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        guard let auth = user.authentication else { return }
+        let credentials = GoogleAuthProvider.credential(withIDToken: auth.idToken, accessToken: auth.accessToken)
+        Auth.auth().signIn(with: credentials) { (_ authResult, _ error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                print("Login Successful.")
+            }
+        }
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplication
-                    .OpenURLOptionsKey: Any] = [:]) -> Bool {
-        return GIDSignIn.sharedInstance().handle(url)
+                                                                        .OpenURLOptionsKey: Any] = [:]) -> Bool {
+        let handled = GIDSignIn.sharedInstance().handle(url)
+        return handled
     }
-// MARK: UISceneSession Lifecycle
-
+    // MARK: UISceneSession Lifecycle
+    
     func application(_ application: UIApplication,
                      configurationForConnecting connectingSceneSession: UISceneSession,
                      options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 }

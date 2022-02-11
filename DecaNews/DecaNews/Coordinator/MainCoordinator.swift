@@ -126,13 +126,19 @@ class MainCoordinator: Coordinator {
         window.makeKeyAndVisible()
     }
     
+    func navigateToDetailsPage() {
+        guard let detailsViewController = UIStoryboard(name: "NewsDetails",
+                       bundle: nil).instantiateViewController(withIdentifier: "NewsDetails") as? DetailsViewController
+         else {return}
+        detailsViewController.coordinator = self
+        controller.pushViewController(detailsViewController, animated: true)
+    }
+    
     func navigatingToSideMenu() {
         guard let viewController = UIStoryboard(name: "SideMenu",
                        bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
          else {return}
         viewController.coordinator = self
         controller.pushViewController(viewController, animated: true)
-        window.rootViewController = controller
-        window.makeKeyAndVisible()
     }
 }
