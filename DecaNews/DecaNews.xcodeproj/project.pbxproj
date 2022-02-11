@@ -20,7 +20,7 @@
 		04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F2AA7027931F0E00D4C062 /* Assets.xcassets */; };
 		04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */; };
 		04F2AA8727943F6000D4C062 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8627943F6000D4C062 /* Model.swift */; };
-		365A2CE4267EB421329CE915 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02FB2374DA8E90F9B3765AB2 /* Pods_DecaNews.framework */; };
+		208B3CDE88915857A5E3AE9E /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2708C72683E030660B24D80 /* Pods_DecaNews.framework */; };
 		9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301327A9404700411376 /* EmailSignUpViewController.swift */; };
 		9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301427A9404700411376 /* PasswordResetViewController.swift */; };
 		9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301527A9404700411376 /* SelectedTopicsViewController.swift */; };
@@ -28,6 +28,9 @@
 		9410302027A9409F00411376 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301F27A9409F00411376 /* String+Extension.swift */; };
 		B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41C322127A999E300A173A3 /* LoginViewController.swift */; };
 		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
+		B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4627B53765002C5E01 /* BookmarkModel.swift */; };
+		B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4827B5BB8D002C5E01 /* Persistence.swift */; };
+		B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */; };
@@ -39,6 +42,11 @@
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* MainCoordinator.swift */; };
 		B4851E7627A525C2005F4399 /* EmailSiginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */; };
+		B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */; };
+		B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1527B3A9E900BDC8D4 /* BookmarksViewController.swift */; };
+		B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */; };
+		B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */; };
+		B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */; };
 		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
 		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
 		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
@@ -46,7 +54,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02FB2374DA8E90F9B3765AB2 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		04BC5A93279573CB00327E68 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		04F2AA6427931F0A00D4C062 /* DecaNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DecaNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04F2AA6727931F0A00D4C062 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,15 +64,17 @@
 		04F2AA7327931F0E00D4C062 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		04F2AA7527931F0E00D4C062 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04F2AA8627943F6000D4C062 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		536454F270C552C9E376646B /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
 		9410301327A9404700411376 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		9410301427A9404700411376 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		9410301527A9404700411376 /* SelectedTopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTopicsViewController.swift; sourceTree = "<group>"; };
 		9410301B27A9407400411376 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		9410301F27A9409F00411376 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
-		9544C53C2FC4B68E2353FD93 /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
-		AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
+		A2708C72683E030660B24D80 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B41C322127A999E300A173A3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
+		B4249F4627B53765002C5E01 /* BookmarkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkModel.swift; sourceTree = "<group>"; };
+		B4249F4827B5BB8D002C5E01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
@@ -77,10 +86,16 @@
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSiginInViewController.swift; path = DecaNews/Resources/EmailSiginInViewController.swift; sourceTree = SOURCE_ROOT; };
+		B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Bookmarks.storyboard; sourceTree = "<group>"; };
+		B48F2A1527B3A9E900BDC8D4 /* BookmarksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewController.swift; sourceTree = "<group>"; };
+		B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
+		B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksTableViewCell.xib; sourceTree = "<group>"; };
+		B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookmarksViewModel.swift; path = "DecaNews/View-Model/BookmarksViewModel.swift"; sourceTree = SOURCE_ROOT; };
 		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
 		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetLinkViewController.swift; sourceTree = "<group>"; };
+		B5B85A257DCFA7EC317992CE /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +105,11 @@
 			files = (
 				04BC5A9B2796B1B900327E68 /* FirebaseFirestore in Frameworks */,
 				04BC5A9D2796B1B900327E68 /* FirebaseMessaging in Frameworks */,
+				B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */,
 				04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */,
 				04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */,
 				04BC5A9F2796B1B900327E68 /* FirebaseStorage in Frameworks */,
-				365A2CE4267EB421329CE915 /* Pods_DecaNews.framework in Frameworks */,
+				208B3CDE88915857A5E3AE9E /* Pods_DecaNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,7 +122,7 @@
 				04F2AA6627931F0A00D4C062 /* DecaNews */,
 				04F2AA6527931F0A00D4C062 /* Products */,
 				2120C6C26FC59197AAEBA3EE /* Pods */,
-				ED2A12676502EAD501D1D57C /* Frameworks */,
+				46C31157455E23CE66ABA9BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +172,10 @@
 				9410301427A9404700411376 /* PasswordResetViewController.swift */,
 				9410301527A9404700411376 /* SelectedTopicsViewController.swift */,
 				B49DCD432797F082005E9A04 /* OnboardingViewController.swift */,
+				B48F2A1527B3A9E900BDC8D4 /* BookmarksViewController.swift */,
+				B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */,
+				B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */,
+				B4249F4827B5BB8D002C5E01 /* Persistence.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -164,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */,
+				B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */,
 				B45C373D27ADB9DD009995B7 /* password_reset.storyboard */,
 				04F2AA6D27931F0A00D4C062 /* Main.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
@@ -171,6 +192,7 @@
 				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
 				B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */,
 				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
+				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
 			);
 			path = Resources;
@@ -181,6 +203,7 @@
 			children = (
 				B45C374027ADBB0A009995B7 /* User.swift */,
 				04F2AA8627943F6000D4C062 /* Model.swift */,
+				B4249F4627B53765002C5E01 /* BookmarkModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,10 +221,18 @@
 		2120C6C26FC59197AAEBA3EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */,
-				9544C53C2FC4B68E2353FD93 /* Pods-DecaNews.release.xcconfig */,
+				B5B85A257DCFA7EC317992CE /* Pods-DecaNews.debug.xcconfig */,
+				536454F270C552C9E376646B /* Pods-DecaNews.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		46C31157455E23CE66ABA9BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2708C72683E030660B24D80 /* Pods_DecaNews.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9410301D27A9408000411376 /* Service */ = {
@@ -246,14 +277,6 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
-		ED2A12676502EAD501D1D57C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				02FB2374DA8E90F9B3765AB2 /* Pods_DecaNews.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -261,13 +284,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 04F2AA7827931F0E00D4C062 /* Build configuration list for PBXNativeTarget "DecaNews" */;
 			buildPhases = (
-				BF701C2A71FF73B28CC2BFBD /* [CP] Check Pods Manifest.lock */,
+				01EAF2AEE028F2E265B04B1D /* [CP] Check Pods Manifest.lock */,
 				04F2AA80279322AC00D4C062 /* Swift Lint + Run Script */,
 				04F2AA6027931F0A00D4C062 /* Sources */,
 				04F2AA6127931F0A00D4C062 /* Frameworks */,
 				04F2AA6227931F0A00D4C062 /* Resources */,
-				E41E9405ED8116268800EFD7 /* [CP] Embed Pods Frameworks */,
-				CDFAEBD2DF05A2D23108B1D6 /* [CP] Copy Pods Resources */,
+				D03301BDED3BB869A878D217 /* [CP] Embed Pods Frameworks */,
+				74DC3677694EB95DA80E32D9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,6 +303,7 @@
 				04BC5A9A2796B1B900327E68 /* FirebaseFirestore */,
 				04BC5A9C2796B1B900327E68 /* FirebaseMessaging */,
 				04BC5A9E2796B1B900327E68 /* FirebaseStorage */,
+				B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */,
 			);
 			productName = DecaNews;
 			productReference = 04F2AA6427931F0A00D4C062 /* DecaNews.app */;
@@ -330,10 +354,12 @@
 				B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */,
 				04BC5A94279573CB00327E68 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
+				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
 				04F2AA6F27931F0A00D4C062 /* Main.storyboard in Resources */,
 				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
+				B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */,
 				B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,25 +367,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		04F2AA80279322AC00D4C062 /* Swift Lint + Run Script */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint + Run Script";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
-		};
-		BF701C2A71FF73B28CC2BFBD /* [CP] Check Pods Manifest.lock */ = {
+		01EAF2AEE028F2E265B04B1D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -381,7 +389,25 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CDFAEBD2DF05A2D23108B1D6 /* [CP] Copy Pods Resources */ = {
+		04F2AA80279322AC00D4C062 /* Swift Lint + Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint + Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		74DC3677694EB95DA80E32D9 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -398,7 +424,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DecaNews/Pods-DecaNews-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E41E9405ED8116268800EFD7 /* [CP] Embed Pods Frameworks */ = {
+		D03301BDED3BB869A878D217 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -428,9 +454,13 @@
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
+				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
+				B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */,
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
+				B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */,
 				B47E589E27948C1D00D70341 /* MainCoordinator.swift in Sources */,
 				B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */,
+				B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */,
 				B41C322227A999E300A173A3 /* LoginViewController.swift in Sources */,
 				04F2AA8727943F6000D4C062 /* Model.swift in Sources */,
 				B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */,
@@ -443,6 +473,7 @@
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
+				B4249F4727B53765002C5E01 /* BookmarkModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +617,7 @@
 		};
 		04F2AA7927931F0E00D4C062 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AAB8320FBE397832E6E807EE /* Pods-DecaNews.debug.xcconfig */;
+			baseConfigurationReference = B5B85A257DCFA7EC317992CE /* Pods-DecaNews.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -617,7 +648,7 @@
 		};
 		04F2AA7A27931F0E00D4C062 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9544C53C2FC4B68E2353FD93 /* Pods-DecaNews.release.xcconfig */;
+			baseConfigurationReference = 536454F270C552C9E376646B /* Pods-DecaNews.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -705,6 +736,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04BC5A952796B1B900327E68 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
