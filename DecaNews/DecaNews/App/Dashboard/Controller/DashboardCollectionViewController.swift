@@ -29,6 +29,8 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		collectionView.dataSource = self
 		fetchData(url: url)
 		
+		self.navigationController?.setNavigationBarHidden(true, animated: true)
+		
 		let tapPopularTab = UITapGestureRecognizer(target: self, action: #selector(didTapPopular))
 		popularButton.addGestureRecognizer(tapPopularTab)
 

@@ -16,19 +16,20 @@ class DashboardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
 	
 	@IBAction func menuButton(_ sender: Any) {
 		print("Menu button clicked")
-		present(sideMenu!, animated: true)
+//		present(sideMenu!, animated: true)
 	}
 	@IBAction func searchButton(_ sender: Any) {
 		print("Menuc button clicked")
-		present(sideMenu!, animated: true)
+//		present(sideMenu!, animated: true)
 	}
 	@IBAction func writeNewsButton(_ sender: Any) {
 		print("Menub button clicked")
-		present(sideMenu!, animated: true)
+//		present(sideMenu!, animated: true)
 	}
 	@IBAction func seeMoreButton(_ sender: Any) {
 		navigateLatestNewsScreen?()

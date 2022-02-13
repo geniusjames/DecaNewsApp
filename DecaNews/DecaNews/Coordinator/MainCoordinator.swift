@@ -19,7 +19,7 @@ class MainCoordinator: Coordinator {
     func start() {
         let servicesViewModel = ServicesViewModel()
         if servicesViewModel.getOnboardedStatus {
-			servicesViewModel.getSignedStatus ? navigateToSignIn() : navigateToDashboard()
+			servicesViewModel.getSignedStatus ? navigateToDashboard() : navigateToDashboard()
         } else {
             navigateToOnboarding()
         }
