@@ -11,6 +11,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 
 	@IBOutlet weak var tableView: UITableView!
 
+	let directory = ArticleDirectory()
 	var articles: [Article]? = [Article]()
 	
 	private let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
@@ -37,6 +38,10 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		}
 	}
 	
+	func updateBookmarks(with article: Article) {
+		directory.updateBookmarks(with: article)
+	}
+	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		articles?.count ?? 10
 	}
@@ -48,6 +53,9 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		if let articles = articles {
 			let article = articles[indexPath.row]
 			cell.setup(with: article)
+			cell.didTapBookmarkBtn = { [weak self] in
+				self?.updateBookmarks(with: article)
+			}
 		}
 		
 		return cell

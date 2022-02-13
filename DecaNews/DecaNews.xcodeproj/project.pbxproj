@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		049D60D927B8059E00DB35F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60D827B8059E00DB35F1 /* LoginViewController.swift */; };
-		049D60ED27B8062800DB35F1 /* NetworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60DE27B8062800DB35F1 /* NetworkViewModel.swift */; };
 		049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */; };
 		049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E127B8062800DB35F1 /* DashboardViewController.swift */; };
 		049D60F027B8062800DB35F1 /* LatestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */; };
@@ -43,7 +42,6 @@
 		04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04F2AA7027931F0E00D4C062 /* Assets.xcassets */; };
 		04F2AA7427931F0E00D4C062 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */; };
 		04F2AA8727943F6000D4C062 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F2AA8627943F6000D4C062 /* Model.swift */; };
-		55ABE241659B802CB9980DC9 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CAB471233BCA2620A07BFE50 /* Pods_DecaNews.framework */; };
 		9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301327A9404700411376 /* EmailSignUpViewController.swift */; };
 		9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301427A9404700411376 /* PasswordResetViewController.swift */; };
 		9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301527A9404700411376 /* SelectedTopicsViewController.swift */; };
@@ -78,7 +76,6 @@
 
 /* Begin PBXFileReference section */
 		049D60D827B8059E00DB35F1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = DecaNews/View/LoginViewController/Controller/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
-		049D60DE27B8062800DB35F1 /* NetworkViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkViewModel.swift; sourceTree = "<group>"; };
 		049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDirectory.swift; sourceTree = "<group>"; };
 		049D60E127B8062800DB35F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestNewsViewController.swift; sourceTree = "<group>"; };
@@ -141,7 +138,6 @@
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetLinkViewController.swift; sourceTree = "<group>"; };
 		B5B85A257DCFA7EC317992CE /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
-		CAB471233BCA2620A07BFE50 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +151,6 @@
 				04BC5A972796B1B900327E68 /* FirebaseAuth in Frameworks */,
 				04BC5A992796B1B900327E68 /* FirebaseDynamicLinks in Frameworks */,
 				04BC5A9F2796B1B900327E68 /* FirebaseStorage in Frameworks */,
-				55ABE241659B802CB9980DC9 /* Pods_DecaNews.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,7 +172,6 @@
 		049D60DD27B8062800DB35F1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				049D60DE27B8062800DB35F1 /* NetworkViewModel.swift */,
 				049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */,
 			);
 			path = ViewModel;
@@ -361,7 +355,6 @@
 			isa = PBXGroup;
 			children = (
 				049D610C27B8962200DB35F1 /* Pods-DecaNews-frameworks.sh */,
-				CAB471233BCA2620A07BFE50 /* Pods_DecaNews.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -593,7 +586,6 @@
 				9410301C27A9407400411376 /* FirebaseService.swift in Sources */,
 				9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
-				049D60ED27B8062800DB35F1 /* NetworkViewModel.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
