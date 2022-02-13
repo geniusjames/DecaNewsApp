@@ -14,6 +14,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	@IBOutlet weak var trendingButton: UILabel!
 	@IBOutlet weak var recentButton: UILabel!
 	
+	let directory = ArticleDirectory()
 	private let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
 	private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
 	private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
@@ -29,13 +30,15 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		collectionView.dataSource = self
 		fetchData(url: url)
 		
+		self.navigationController?.setNavigationBarHidden(true, animated: true)
+		
 		let tapPopularTab = UITapGestureRecognizer(target: self, action: #selector(didTapPopular))
 		popularButton.addGestureRecognizer(tapPopularTab)
 
 		let tapTrendingTab = UITapGestureRecognizer(target: self, action: #selector(didTapTrending))
 		trendingButton.addGestureRecognizer(tapTrendingTab)
 
-		let tapRecentTab = UITapGestureRecognizer(target: self, action: #selector(didTaprecent))
+		let tapRecentTab = UITapGestureRecognizer(target: self, action: #selector(didTapRecent))
 		recentButton.addGestureRecognizer(tapRecentTab)
 	}
 	
@@ -50,6 +53,10 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 			
 		}
 			
+	}
+	
+	func updateBookmarks(with article: Article) {
+		directory.updateBookmarks(with: article)
 	}
 	
 	@objc func didTapPopular() {
@@ -78,7 +85,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		}
 	}
 
-	@objc func didTaprecent() {
+	@objc func didTapRecent() {
 		recentButton.font = .boldSystemFont(ofSize: 20)
 		recentButton.textColor = .black
 		trendingButton.font = .systemFont(ofSize: 20)
@@ -102,6 +109,9 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		if let articles = collectionViewNews {
 			let article = articles[indexPath.row]
 			cell.setup(with: article)
+			cell.didTapBookmarkBtn = { [weak self] in
+				self?.updateBookmarks(with: article)
+			}
 		}
 		return cell
 	}

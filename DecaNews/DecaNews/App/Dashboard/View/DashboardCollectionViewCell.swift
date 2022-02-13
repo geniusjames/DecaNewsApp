@@ -17,7 +17,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var topic: UILabel!
 	@IBOutlet weak var bookmarkBtn: UIButton!
 	
-	var didTapBookmarkButton: (() -> Void)?
+	var didTapBookmarkBtn: (() -> Void)?
 	
 	public func setup(with article: Article) {
 		newsTitle.text = article.title
@@ -29,7 +29,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 	}
 	
 	@IBAction func bookmarkButton(_ sender: Any) {
-		didTapBookmarkButton?()
+		didTapBookmarkBtn?()
 	}
 	
 	override func prepareForReuse() {

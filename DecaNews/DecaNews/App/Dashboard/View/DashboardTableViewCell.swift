@@ -20,9 +20,6 @@ class DashboardTableViewCell: UITableViewCell {
 	
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(bookmarkButtonTapped))
-		bookmarkBtn.addGestureRecognizer(tapGesture)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,7 +35,8 @@ class DashboardTableViewCell: UITableViewCell {
 		}
 	}
 	
-	@objc func bookmarkButtonTapped() {
+	@IBAction func didTapBookMarkBtn(_ sender: Any) {
+		print("Button tapped")
 		didTapBookmarkBtn?()
 	}
 
