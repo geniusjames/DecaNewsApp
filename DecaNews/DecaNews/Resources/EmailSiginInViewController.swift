@@ -7,7 +7,6 @@
 import UIKit
 
 final class EmailSiginInViewController: UIViewController {
-    var coordinator: MainCoordinator?
     var showPassword: Bool = false
     let button = UIButton()
     @IBOutlet weak var passwordTextField: UITextField!

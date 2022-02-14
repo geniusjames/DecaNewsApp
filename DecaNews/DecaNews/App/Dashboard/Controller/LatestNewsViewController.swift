@@ -10,7 +10,6 @@ import UIKit
 class LatestNewsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 	@IBOutlet weak var tableView: UITableView!
 	
-	var coordinator: MainCoordinator?
 	var articles: [Article]? = [Article]()
 	
 	private let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c47e6bd7b3c74efa885b276cceed84e6"

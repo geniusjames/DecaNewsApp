@@ -28,6 +28,11 @@ final class OnboardingCoordinator: Coordinator {
                 .instantiateViewController(withIdentifier: "onboarding") as? OnboardingViewController else {
                     return
                 }
+        
+        viewController.didCompleteOnboarding = { [weak self] in
+            self?.finish()
+        }
+        
         navigationController.pushViewController(viewController, animated: true)
     }
 }

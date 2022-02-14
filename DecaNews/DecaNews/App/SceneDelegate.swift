@@ -10,7 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-    var coordinator: MainCoordinator?
+    var coordinator: AppCoordinator?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession,
                options connectionOptions: UIScene.ConnectionOptions) {
@@ -22,9 +22,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appWindow.windowScene = windowScene
         self.window = appWindow
         AppDelegate.standard?.window = appWindow
-        coordinator = MainCoordinator(window: appWindow)
-        coordinator?.navigateToSignIn()
+        coordinator = AppCoordinator(window: appWindow)
+        coordinator?.start()
     }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
     }
 

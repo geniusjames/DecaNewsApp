@@ -13,7 +13,6 @@ final class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
-    var coordinator: MainCoordinator?
     var serviceViewModel: ServicesViewModel?
     var navigateToTopics: (() -> Void)?
     var navigateToEmailSignin: (() -> Void)?

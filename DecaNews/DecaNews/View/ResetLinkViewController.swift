@@ -8,7 +8,6 @@
 import UIKit
 
 class ResetLinkViewController: UIViewController {
-    var coordinator: MainCoordinator?
     var navigateToEmailSignin: (() -> Void)?
     
 override func viewDidLoad() {

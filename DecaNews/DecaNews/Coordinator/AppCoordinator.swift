@@ -27,5 +27,14 @@ final class AppCoordinator: Coordinator {
         pushCoordinator(onboardingCoordinator)
         window.rootViewController = onboardingCoordinator.rootViewController
         window.makeKeyAndVisible()
+        
+        onboardingCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+            self?.startAuth()
+        }
+    }
+    
+    func startAuth() {
+        
     }
 }
