@@ -13,13 +13,20 @@ final class AppCoordinator: Coordinator {
     
     var navigationController: UINavigationController
     
+    let servicesViewModel = ServicesViewModel()
+    
+    
     init(window: UIWindow) {
         self.window = window
         navigationController = UINavigationController()
     }
     
     override func start() {
-        startOnboarding()
+        servicesViewModel.getOnboardedStatus ? autenticateUser() : startOnboarding()
+    }
+    
+    func autenticateUser() {
+        servicesViewModel.getSignedStatus ? startMainApp() : startAuth()
     }
     
     func startOnboarding() {
@@ -30,7 +37,7 @@ final class AppCoordinator: Coordinator {
         
         onboardingCoordinator.didFinish = { [weak self] coordinator in
             self?.popCoordinator(coordinator)
-            self?.startAuth()
+            self?.autenticateUser()
         }
     }
     
