@@ -47,6 +47,14 @@ final class AppCoordinator: Coordinator {
     }
     
     func startMainApp() {
+        let mainAppCoordinator = MainAppCoordinator()
+        pushCoordinator(mainAppCoordinator)
+        window.rootViewController = mainAppCoordinator.rootViewController
+        window.makeKeyAndVisible()
         
+        mainAppCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+            self?.startAuth()
+        }
     }
 }
