@@ -11,7 +11,7 @@ import SideMenu
 class DashboardViewController: UIViewController {
 	
 	private var sideMenu: SideMenuNavigationController?
-	var coordinator: MainCoordinator?
+	// var coordinator: MainCoordinator?
 	var navigateLatestNewsScreen: (() -> Void)?
 
     override func viewDidLoad() {

@@ -3,7 +3,6 @@ import UIKit
 
 final class DetailsViewController: UIViewController {
     
-    var coordinator: MainCoordinator?
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
