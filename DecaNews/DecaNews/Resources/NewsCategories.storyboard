@@ -4,8 +4,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,7 +23,8 @@
                                 <subviews>
                                     <searchBar contentMode="redraw" placeholder="Search news and authors" translatesAutoresizingMaskIntoConstraints="NO" id="nOZ-9E-lfq">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="51"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <color key="backgroundColor" name="offWhite"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </searchBar>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mae-1o-zZs">
                                         <rect key="frame" x="260" y="0.0" width="67" height="51"/>
@@ -33,36 +34,37 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" name="offWhite"/>
                             </stackView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-2f-4Md">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="black" keyboardDismissMode="interactive" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Jk1-2f-4Md">
                                 <rect key="frame" x="0.0" y="135" width="375" height="211"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="offWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="211" id="UKO-Eo-V22"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="2DN-ZG-4hq">
-                                    <size key="itemSize" width="156" height="145"/>
+                                    <size key="itemSize" width="106" height="110"/>
                                     <size key="headerReferenceSize" width="50" height="50"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="NewsTopicsCollectionViewCell" id="yCc-JD-YBn" customClass="NewsTopicsCollectionViewCell" customModule="DecaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="156" height="145"/>
+                                        <rect key="frame" x="0.0" y="50" width="106" height="110"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yIb-Wn-6Y5">
-                                            <rect key="frame" x="0.0" y="0.0" width="156" height="145"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="106" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PAq-Kp-pV2">
-                                                    <rect key="frame" x="5" y="0.0" width="146" height="145"/>
+                                                    <rect key="frame" x="5" y="0.0" width="96" height="110"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="BEl-UX-UNV">
-                                                            <rect key="frame" x="45.666666666666657" y="30" width="56" height="56"/>
+                                                            <rect key="frame" x="20.666666666666671" y="12" width="55" height="56"/>
                                                             <color key="backgroundColor" red="0.84705882349999995" green="0.37647058820000001" blue="0.36470588240000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="56" id="UJN-uW-pNN"/>
-                                                                <constraint firstAttribute="width" constant="56" id="q6h-ja-61U"/>
+                                                                <constraint firstAttribute="width" constant="56" id="wuj-2m-jIq"/>
+                                                                <constraint firstAttribute="height" constant="56" id="y49-yS-Vu4"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -71,22 +73,24 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKR-xE-I4F">
-                                                            <rect key="frame" x="34.666666666666657" y="101" width="78" height="26"/>
+                                                            <rect key="frame" x="9.6666666666666643" y="78" width="78" height="19"/>
                                                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="offWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="OKR-xE-I4F" secondAttribute="bottom" constant="18" id="N34-Cn-Q4g"/>
-                                                        <constraint firstItem="OKR-xE-I4F" firstAttribute="top" secondItem="BEl-UX-UNV" secondAttribute="bottom" constant="15" id="PN2-4d-Vdv"/>
-                                                        <constraint firstItem="OKR-xE-I4F" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="34.5" id="X6X-Cc-Z7n"/>
-                                                        <constraint firstItem="BEl-UX-UNV" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="45.5" id="Xme-eR-PpD"/>
-                                                        <constraint firstItem="BEl-UX-UNV" firstAttribute="top" secondItem="PAq-Kp-pV2" secondAttribute="top" constant="30" id="rMZ-qL-hvK"/>
+                                                        <constraint firstItem="BEl-UX-UNV" firstAttribute="top" secondItem="PAq-Kp-pV2" secondAttribute="top" constant="12" id="CiD-RY-zza"/>
+                                                        <constraint firstAttribute="bottom" secondItem="OKR-xE-I4F" secondAttribute="bottom" constant="13" id="KsJ-Ou-X99"/>
+                                                        <constraint firstItem="BEl-UX-UNV" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="20.5" id="co1-nK-6wU"/>
+                                                        <constraint firstAttribute="trailing" secondItem="BEl-UX-UNV" secondAttribute="trailing" constant="20.5" id="meu-CJ-Lqe"/>
+                                                        <constraint firstItem="OKR-xE-I4F" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="9.5" id="smm-kz-27x"/>
+                                                        <constraint firstItem="OKR-xE-I4F" firstAttribute="top" secondItem="BEl-UX-UNV" secondAttribute="bottom" constant="10" id="ucf-bL-7ky"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" name="offWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="PAq-Kp-pV2" secondAttribute="bottom" id="7Bc-dH-W1p"/>
                                                 <constraint firstItem="PAq-Kp-pV2" firstAttribute="leading" secondItem="yIb-Wn-6Y5" secondAttribute="leading" constant="5" id="Gkl-3y-YCQ"/>
@@ -94,8 +98,8 @@
                                                 <constraint firstItem="PAq-Kp-pV2" firstAttribute="top" secondItem="yIb-Wn-6Y5" secondAttribute="top" id="hOv-Zy-VUF"/>
                                             </constraints>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="156" height="145"/>
+                                        <color key="backgroundColor" name="offWhite"/>
+                                        <size key="customSize" width="106" height="110"/>
                                         <connections>
                                             <outlet property="circularBackgroundView" destination="PAq-Kp-pV2" id="wzr-OZ-VMK"/>
                                             <outlet property="imageView" destination="BEl-UX-UNV" id="8mU-Dc-vAT"/>
@@ -103,7 +107,7 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="w2f-rh-ezQ">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="AyV-XU-UkI">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </collectionReusableView>
@@ -114,7 +118,8 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5Dd-CW-Bea">
                                 <rect key="frame" x="0.0" y="366" width="375" height="180"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="wh7-NO-fD1">
+                                <color key="backgroundColor" name="offWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="wh7-NO-fD1">
                                     <size key="itemSize" width="136" height="160"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -122,7 +127,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PopularTopicsCollectionViewCell" id="hE0-bo-dyT" customClass="PopularTopicsCollectionViewCell" customModule="DecaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="160"/>
+                                        <rect key="frame" x="0.0" y="10" width="136" height="160"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5cC-7e-5cn">
                                             <rect key="frame" x="0.0" y="0.0" width="136" height="160"/>
@@ -141,7 +146,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <color key="backgroundColor" name="offWhite"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="bottom" secondItem="Idu-MK-Bg2" secondAttribute="bottom" constant="16" id="2vs-QD-v1P"/>
                                                                 <constraint firstAttribute="height" constant="56" id="PC6-kG-8rc"/>
@@ -180,7 +185,7 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="offWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="GpK-cm-mFK" firstAttribute="leading" secondItem="z2F-m5-d1k" secondAttribute="leading" constant="16.5" id="JMg-pm-XCA"/>
                                                         <constraint firstItem="85q-JM-iXc" firstAttribute="leading" secondItem="z2F-m5-d1k" secondAttribute="leading" constant="10.5" id="Twa-I8-tHX"/>
@@ -198,6 +203,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
+                                            <color key="backgroundColor" name="offWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="z2F-m5-d1k" secondAttribute="trailing" constant="5" id="2bZ-4Z-2xm"/>
                                                 <constraint firstItem="z2F-m5-d1k" firstAttribute="top" secondItem="5cC-7e-5cn" secondAttribute="top" id="7Ts-7a-TI3"/>
@@ -206,6 +212,7 @@
                                                 <constraint firstItem="z2F-m5-d1k" firstAttribute="leading" secondItem="5cC-7e-5cn" secondAttribute="leading" constant="5" id="qdY-dl-iBu"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="offWhite"/>
                                         <size key="customSize" width="136" height="160"/>
                                         <connections>
                                             <outlet property="cellBackgroundView" destination="z2F-m5-d1k" id="8Kq-o2-DCe"/>
@@ -223,7 +230,7 @@
                             </collectionView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aQl-OM-dlK">
                                 <rect key="frame" x="0.0" y="566" width="375" height="206"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" name="offWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="206" id="WGw-0b-qJh"/>
                                 </constraints>
@@ -288,7 +295,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                     </subviews>
-                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <color key="backgroundColor" name="offWhite"/>
                                                     <constraints>
                                                         <constraint firstItem="C9o-3u-s5j" firstAttribute="leading" secondItem="hr0-YV-bwa" secondAttribute="leading" id="1iJ-0A-Duo"/>
                                                         <constraint firstItem="bQV-L9-Tuo" firstAttribute="leading" secondItem="hr0-YV-bwa" secondAttribute="leading" constant="28.5" id="47O-Qx-wOW"/>
@@ -312,7 +319,7 @@
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
                                             </subviews>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <color key="backgroundColor" name="offWhite"/>
                                             <constraints>
                                                 <constraint firstItem="hr0-YV-bwa" firstAttribute="leading" secondItem="e6I-Om-5b6" secondAttribute="leading" id="JdE-ya-rIS"/>
                                                 <constraint firstItem="hr0-YV-bwa" firstAttribute="top" secondItem="e6I-Om-5b6" secondAttribute="top" id="Nlb-We-gIC"/>
@@ -320,6 +327,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="hr0-YV-bwa" secondAttribute="bottom" id="uyp-gd-VgR"/>
                                             </constraints>
                                         </collectionViewCellContentView>
+                                        <color key="backgroundColor" name="offWhite"/>
                                         <size key="customSize" width="140" height="151"/>
                                         <connections>
                                             <outlet property="authorName" destination="01s-zp-gfl" id="cRJ-Nh-hm6"/>
@@ -337,7 +345,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="offWhite"/>
                         <constraints>
                             <constraint firstItem="5Dd-CW-Bea" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="7oW-CW-fbV"/>
                             <constraint firstItem="5Dd-CW-Bea" firstAttribute="top" secondItem="Jk1-2f-4Md" secondAttribute="bottom" constant="20" id="I1I-Z7-wdU"/>
@@ -371,8 +379,8 @@
         <image name="Filter" width="24" height="24"/>
         <image name="background2" width="140" height="56"/>
         <image name="profile" width="56" height="52"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="offWhite">
+            <color red="0.98028594260000002" green="0.9804533124" blue="0.98027533290000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

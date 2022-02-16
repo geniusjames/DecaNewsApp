@@ -1,9 +1,3 @@
-//
-//  ThirdCollectionViewCell.swift
-//  DecaNews
-//
-//  Created by Decagon on 16/02/2022.
-//
 import UIKit
 
 class ThirdCollectionViewCell: UICollectionViewCell {
@@ -13,8 +7,7 @@ class ThirdCollectionViewCell: UICollectionViewCell {
     override class func awakeFromNib() {
         super.awakeFromNib()
     }
-  
-   
+    
     @IBOutlet var containerView: UIView!
     @IBOutlet var topBackgroundImage: UIImageView!
     @IBOutlet var profileImage: UIImageView!

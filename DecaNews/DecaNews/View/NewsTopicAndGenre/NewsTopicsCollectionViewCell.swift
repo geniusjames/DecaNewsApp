@@ -1,10 +1,3 @@
-//
-//  NewsTopicsCollectionViewCell.swift
-//  DecaNews
-//
-//  Created by Decagon on 16/02/2022.
-//
-
 import UIKit
 
 class NewsTopicsCollectionViewCell: UICollectionViewCell {
@@ -17,6 +10,4 @@ class NewsTopicsCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var newsGenre: UILabel!
     @IBOutlet var circularBackgroundView: UIView!
-
 }
-
