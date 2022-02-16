@@ -42,4 +42,9 @@ final class FirebaseService {
             }
         }
     }
+	
+	func getUserDetails() -> FirebaseAuth.User? {
+		let user = auth.currentUser
+		return user
+	}
 }

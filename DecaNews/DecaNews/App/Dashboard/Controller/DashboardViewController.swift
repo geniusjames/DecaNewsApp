@@ -41,7 +41,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		sideMenu?.dismiss(animated: true, completion: { [weak self] in
 			switch named {
 			case "Home":
-				self?.view.backgroundColor = .blue
+				self?.view.backgroundColor = .white
 			case "Saved News":
 				self?.view.backgroundColor = .red
 			case "Write News":
