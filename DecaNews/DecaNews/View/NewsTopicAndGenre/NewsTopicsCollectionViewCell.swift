@@ -15,6 +15,8 @@ class NewsTopicsCollectionViewCell: UICollectionViewCell {
     }
     
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var newsTopic: UILabel!
+    @IBOutlet var newsGenre: UILabel!
     @IBOutlet var circularBackgroundView: UIView!
+
 }
+
