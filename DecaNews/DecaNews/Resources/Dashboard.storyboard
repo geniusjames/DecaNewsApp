@@ -195,7 +195,7 @@
                                                                 <constraint firstAttribute="height" constant="30" id="GUG-dR-SJg"/>
                                                                 <constraint firstAttribute="width" constant="30" id="g7X-J8-7ET"/>
                                                             </constraints>
-                                                            <color key="tintColor" name="themeWhite"/>
+                                                            <color key="tintColor" name="black"/>
                                                             <state key="normal" title=""/>
                                                             <buttonConfiguration key="configuration" style="filled" image="Bookmark" imagePadding="0.0">
                                                                 <backgroundConfiguration key="background" cornerRadius="30">
@@ -542,7 +542,7 @@
                                                                                 <constraint firstAttribute="width" constant="30" id="ppu-fY-GMd"/>
                                                                             </constraints>
                                                                             <state key="normal" title=""/>
-                                                                            <buttonConfiguration key="configuration" style="plain" image="Bookmark-Outline"/>
+                                                                            <buttonConfiguration key="configuration" style="plain" image="Bookmark"/>
                                                                             <connections>
                                                                                 <action selector="didTapBookMarkBtn:" destination="aHe-k1-6Rb" eventType="touchUpInside" id="ac7-q1-X54"/>
                                                                             </connections>

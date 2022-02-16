@@ -28,21 +28,30 @@
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="QZv-n0-QE1">
-                        <rect key="frame" x="16" y="115" width="44" height="48"/>
+                        <rect key="frame" x="16" y="115" width="100.5" height="55"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-kV-MoS">
-                                <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="0.0" y="0.0" width="100.5" height="25"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42l-0x-TAp">
-                                <rect key="frame" x="0.0" y="26.5" width="44" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" name="deepGrey"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dV-Of-uc3">
+                                <rect key="frame" x="0.0" y="30" width="100.5" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="hue-el-PxN"/>
+                                </constraints>
+                                <color key="tintColor" name="deepGrey"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="View Profile"/>
+                                <connections>
+                                    <action selector="viewProfileButtonAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Cby-CH-t2R"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="4dV-Of-uc3" firstAttribute="leading" secondItem="QZv-n0-QE1" secondAttribute="leading" id="Zm8-fU-8hb"/>
+                        </constraints>
                     </stackView>
                 </subviews>
                 <constraints>
@@ -57,7 +66,6 @@
             <connections>
                 <outlet property="profileImage" destination="jFB-rl-hqu" id="Fto-nM-tTF"/>
                 <outlet property="profileName" destination="3g3-kV-MoS" id="hNM-Lq-22K"/>
-                <outlet property="viewProfile" destination="42l-0x-TAp" id="LlZ-Ht-aTV"/>
             </connections>
             <point key="canvasLocation" x="192.75362318840581" y="88.392857142857139"/>
         </tableViewCell>
