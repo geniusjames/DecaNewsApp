@@ -14,7 +14,8 @@ extension String {
     }
 
     var isValidPassword: Bool {
-        let passRegEx = "(?=[^a-z]*[a-z])[^0-9]*[0-9].*"
+        let passRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\w\\W]{8,}$"
+       
         return applyPredicationOnRegex(regexStr: passRegEx)
     }
 

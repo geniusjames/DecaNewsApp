@@ -25,6 +25,7 @@ final class EmailSiginInViewController: UIViewController {
         emailTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
         passwordTextField.addTarget(self, action: #selector(validateInputs), for: .allEditingEvents)
     }
+
     func configurePasswordField() {
         let eyeView = UIView()
         eyeView.translatesAutoresizingMaskIntoConstraints = false
@@ -73,13 +74,14 @@ final class EmailSiginInViewController: UIViewController {
             }
         }
     }
+
     @IBAction func forgotPassword(_ sender: Any) {
         navigateToReset?()
     }
     @IBAction func signUp(_ sender: Any) {
         navigateSignUp?()
     }
-    
+
     @objc func validateInputs() {
         guard let email = emailTextField.text, let password = passwordTextField.text
         else {return}
@@ -101,7 +103,5 @@ final class EmailSiginInViewController: UIViewController {
         if password.isValidPassword || password.isEmpty {
             passwordTextField.layer.borderWidth = 0
         }
-       
     }
-
 }

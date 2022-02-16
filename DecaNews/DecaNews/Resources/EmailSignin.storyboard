@@ -2,9 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -168,16 +170,135 @@
             </objects>
             <point key="canvasLocation" x="34.782608695652179" y="97.767857142857139"/>
         </scene>
+        <!--Password Change View Controller-->
+        <scene sceneID="Dvk-KI-dGP">
+            <objects>
+                <viewController storyboardIdentifier="PasswordChange" id="Kz2-9t-F3Q" customClass="PasswordChangeViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5eB-sr-guQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rz8-Ik-fIL">
+                                <rect key="frame" x="24" y="144" width="210" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
+                                <color key="textColor" name="black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Old Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qjS-hJ-cnO">
+                                <rect key="frame" x="24" y="181" width="102" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Old Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HZL-4C-iHb" customClass="HideShowPasswordTextField" customModule="DecaNews" customModuleProvider="target">
+                                <rect key="frame" x="24" y="209" width="366" height="56"/>
+                                <color key="backgroundColor" name="offWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="cfh-jB-ccB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLn-h6-T2p">
+                                <rect key="frame" x="24" y="281" width="109.5" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1kP-BC-sIq" customClass="HideShowPasswordTextField" customModule="DecaNews" customModuleProvider="target">
+                                <rect key="frame" x="24" y="309" width="366" height="56"/>
+                                <color key="backgroundColor" name="offWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="DCI-1O-nUJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm New Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pd8-XB-8zb">
+                                <rect key="frame" x="24" y="381" width="173" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z9T-kF-8eK" customClass="HideShowPasswordTextField" customModule="DecaNews" customModuleProvider="target">
+                                <rect key="frame" x="24" y="409" width="366" height="56"/>
+                                <color key="backgroundColor" name="offWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="jWQ-AO-4eT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GvT-ls-dqB">
+                                <rect key="frame" x="24" y="497" width="366" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="7wF-Sr-HmR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Change Password" cornerStyle="large">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="17"/>
+                                    <color key="baseForegroundColor" name="themeWhite"/>
+                                    <color key="baseBackgroundColor" name="black"/>
+                                </buttonConfiguration>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fjv-zh-HC5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="GvT-ls-dqB" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="1xw-RV-C2c"/>
+                            <constraint firstItem="bLn-h6-T2p" firstAttribute="top" secondItem="HZL-4C-iHb" secondAttribute="bottom" constant="16" id="77y-KF-lrj"/>
+                            <constraint firstItem="Rz8-Ik-fIL" firstAttribute="top" secondItem="fjv-zh-HC5" secondAttribute="top" constant="100" id="8pD-8b-Im6"/>
+                            <constraint firstItem="bLn-h6-T2p" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="8pJ-8p-NCv"/>
+                            <constraint firstItem="GvT-ls-dqB" firstAttribute="top" secondItem="z9T-kF-8eK" secondAttribute="bottom" constant="32" id="9RS-9e-CA0"/>
+                            <constraint firstItem="fjv-zh-HC5" firstAttribute="trailing" secondItem="1kP-BC-sIq" secondAttribute="trailing" constant="24" id="JL3-r2-Bso"/>
+                            <constraint firstItem="Pd8-XB-8zb" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="KPF-YQ-GEt"/>
+                            <constraint firstItem="z9T-kF-8eK" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="MCS-9j-a9R"/>
+                            <constraint firstItem="fjv-zh-HC5" firstAttribute="trailing" secondItem="GvT-ls-dqB" secondAttribute="trailing" constant="24" id="Vpp-CI-Cbv"/>
+                            <constraint firstItem="HZL-4C-iHb" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="YY2-FX-EUA"/>
+                            <constraint firstItem="qjS-hJ-cnO" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="YZi-Oa-N9H"/>
+                            <constraint firstItem="fjv-zh-HC5" firstAttribute="trailing" secondItem="z9T-kF-8eK" secondAttribute="trailing" constant="24" id="ft0-2W-pbQ"/>
+                            <constraint firstItem="HZL-4C-iHb" firstAttribute="top" secondItem="qjS-hJ-cnO" secondAttribute="bottom" constant="8" id="k85-IS-NdF"/>
+                            <constraint firstItem="1kP-BC-sIq" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="nIS-1Q-t0a"/>
+                            <constraint firstItem="fjv-zh-HC5" firstAttribute="trailing" secondItem="HZL-4C-iHb" secondAttribute="trailing" constant="24" id="nMD-W7-kBf"/>
+                            <constraint firstItem="1kP-BC-sIq" firstAttribute="top" secondItem="bLn-h6-T2p" secondAttribute="bottom" constant="8" id="nTe-zk-JPV"/>
+                            <constraint firstItem="Rz8-Ik-fIL" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="oKp-Rk-KmD"/>
+                            <constraint firstItem="Pd8-XB-8zb" firstAttribute="top" secondItem="1kP-BC-sIq" secondAttribute="bottom" constant="16" id="ps7-yb-mZM"/>
+                            <constraint firstItem="qjS-hJ-cnO" firstAttribute="top" secondItem="Rz8-Ik-fIL" secondAttribute="bottom" constant="8" id="wzO-Y3-jTg"/>
+                            <constraint firstItem="z9T-kF-8eK" firstAttribute="top" secondItem="Pd8-XB-8zb" secondAttribute="bottom" constant="8" id="xvq-aN-eQo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="newPasswordTextField" destination="1kP-BC-sIq" id="XLg-F3-Dak"/>
+                        <outlet property="oldPasswordTextField" destination="HZL-4C-iHb" id="32o-ne-XaE"/>
+                        <outlet property="passwordConfirmationTextField" destination="z9T-kF-8eK" id="I4O-eN-XDU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BzL-EL-37A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="778" y="21"/>
+        </scene>
     </scenes>
     <resources>
+        <namedColor name="black">
+            <color red="0.16099999845027924" green="0.16099999845027924" blue="0.16099999845027924" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="deepGrey">
             <color red="0.63899999856948853" green="0.63899999856948853" blue="0.63899999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="deepPeach">
             <color red="0.84700000286102295" green="0.37700000405311584" blue="0.36599999666213989" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="offWhite">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="peach">
             <color red="0.96100002527236938" green="0.52799999713897705" blue="0.43299999833106995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="themeWhite">
+            <color red="0.98000001907348633" green="0.98000001907348633" blue="0.98000001907348633" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
