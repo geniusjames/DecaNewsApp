@@ -16,14 +16,14 @@ class MenuTableViewController: UITableViewController {
         self.menuItem = menuItems
         super.init(nibName: nil, bundle: nil)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .black
         //            tableView.rowHeight = CGFloat(60.0)
-        tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
     }
 
     required init?(coder: NSCoder) {
@@ -36,7 +36,7 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as? ProfileTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuTableViewCell.identifier, for: indexPath) as? SideMenuTableViewCell else {
                 return UITableViewCell()
             }
             cell.profileName.text = "Tiana Vetrovs"

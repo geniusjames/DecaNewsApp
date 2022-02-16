@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+class SideMenuTableViewCell: UITableViewCell {
     
     static let identifier = "ProfileTableViewCell"
     @IBOutlet weak var profileName: UILabel!
