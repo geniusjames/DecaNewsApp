@@ -8,7 +8,7 @@
 import UIKit
 
 class EditProfilePageViewController: UIViewController {
-    var coordinator: MainCoordinator?
+    var coordinator: MainAppCoordinator?
     @IBOutlet weak var profileImage: UIImageView!
 //    var navigatingToEditProfilePage: (() -> Void)?
     override func viewDidLoad() {
