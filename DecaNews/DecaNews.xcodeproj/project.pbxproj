@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0417C34927BCEB7F006AB3B4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0417C34827BCEB7F006AB3B4 /* Profile.storyboard */; };
 		049D60D927B8059E00DB35F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60D827B8059E00DB35F1 /* LoginViewController.swift */; };
 		049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */; };
 		049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E127B8062800DB35F1 /* DashboardViewController.swift */; };
@@ -78,6 +79,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0417C34827BCEB7F006AB3B4 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		049D60D827B8059E00DB35F1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = DecaNews/View/LoginViewController/Controller/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDirectory.swift; sourceTree = "<group>"; };
 		049D60E127B8062800DB35F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0417C34527BCEB29006AB3B4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				0417C34727BCEB55006AB3B4 /* View */,
+				0417C34627BCEB3B006AB3B4 /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0417C34627BCEB3B006AB3B4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0417C34727BCEB55006AB3B4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		049D60DC27B8062800DB35F1 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +305,7 @@
 		04F2AA7B27931F2000D4C062 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				0417C34527BCEB29006AB3B4 /* Profile */,
 				04F2AA6727931F0A00D4C062 /* AppDelegate.swift */,
 				04F2AA6927931F0A00D4C062 /* SceneDelegate.swift */,
 				049D60F827B8063D00DB35F1 /* SideMenuProfile */,
@@ -326,6 +352,7 @@
 				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
 				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
+				0417C34827BCEB7F006AB3B4 /* Profile.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -498,6 +525,7 @@
 				049D610927B88BFC00DB35F1 /* SideMenu.storyboard in Resources */,
 				049D610727B88BDC00DB35F1 /* NewsDetails.storyboard in Resources */,
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
+				0417C34927BCEB7F006AB3B4 /* Profile.storyboard in Resources */,
 				049D610527B88BBC00DB35F1 /* Dashboard.storyboard in Resources */,
 				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
 				049D610D27B8962200DB35F1 /* Pods-DecaNews-frameworks.sh in Resources */,
