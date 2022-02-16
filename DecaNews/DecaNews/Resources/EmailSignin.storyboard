@@ -240,6 +240,9 @@
                                     <color key="baseForegroundColor" name="themeWhite"/>
                                     <color key="baseBackgroundColor" name="black"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="changePasswordPressed:" destination="Kz2-9t-F3Q" eventType="touchUpInside" id="8Vu-Cw-OR0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fjv-zh-HC5"/>

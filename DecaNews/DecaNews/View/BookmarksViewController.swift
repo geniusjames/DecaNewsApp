@@ -19,10 +19,9 @@ class BookmarksViewController: UIViewController {
         newsTableView.delegate = self
         newsTableView.dataSource = self
         
-        viewModel.fetch { [self] str in
-            count = str.count
+        viewModel.fetch { [self] newsItems in
+            count = newsItems.count
             newsTableView.reloadData()
-            print(viewModel.items.count, "trial")
         }
     }
 }
