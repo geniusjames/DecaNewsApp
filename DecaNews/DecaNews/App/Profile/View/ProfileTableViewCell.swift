@@ -1,40 +1,38 @@
 //
-//  LatestNewsTableViewCell.swift
+//  ProfileTableViewCell.swift
 //  DecaNews
 //
-//  Created by mac on 10/02/2022.
+//  Created by mac on 16/02/2022.
 //
 
 import UIKit
 
-class LatestNewsTableViewCell: UITableViewCell {
+class ProfileTableViewCell: UITableViewCell {
+	
 	@IBOutlet weak var newsImage: UIImageView!
-	@IBOutlet weak var topic: UILabel!
 	@IBOutlet weak var newsTitle: UILabel!
-	@IBOutlet weak var authorsName: UILabel!
-	@IBOutlet weak var bookmark: UIImageView!
+	@IBOutlet weak var newsAuthor: UILabel!
 	
 	var didTapBookmarkBtn: (() -> Void)?
 	
-    override func awakeFromNib() {
+	override func awakeFromNib() {
         super.awakeFromNib()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
+	
 	@IBAction func bookmarkButtonAction(_ sender: Any) {
 		didTapBookmarkBtn?()
 	}
 	
 	func setup(with article: Article) {
 		newsTitle?.text = article.title
-		authorsName?.text = article.author
 		if let articleURLString = article.urlToImage,
 			let catImageURL = URL(string: articleURLString) {
 			NetworkManager().getImageDataFrom(url: catImageURL, imageCell: newsImage)
 		}
 	}
-
+	
 }
