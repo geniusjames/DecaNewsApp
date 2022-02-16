@@ -79,7 +79,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-St-En7">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ifN-St-En7" customClass="HideShowPasswordTextField" customModule="DecaNews" customModuleProvider="target">
                                 <rect key="frame" x="24" y="322.5" width="366" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="EgD-tG-ifB"/>
