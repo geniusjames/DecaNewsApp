@@ -6,13 +6,13 @@ class TopicsCollectionViewController: UIViewController {
     let authorsCollectionView = ThirdCollectionViewCell()
     var red = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
     
-    @IBOutlet weak var topicsSearchBar: UISearchBar!
-    @IBOutlet weak var searchFilterButton: UIButton!
-    @IBAction func searchFilterButtonAction(_ sender: Any) {}
+    @IBOutlet weak var searchBarField: UITextField!
     @IBOutlet weak var circularCollectionView: UICollectionView!
     @IBOutlet weak var cardShapedCollectionView: UICollectionView!
     @IBOutlet weak var authorsCardShapedCollectionView: UICollectionView!
-    
+    @IBOutlet weak var clickToSeeMoreAuthorSButton: UIButton!
+    @IBAction func seeMoreAuthorsActionButton(_ sender: Any) {
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
@@ -23,9 +23,21 @@ class TopicsCollectionViewController: UIViewController {
     }
     
     func configureView() {
-        
-        self.topicsSearchBar.autocapitalizationType = .none
-        self.topicsSearchBar.autocorrectionType = .no
-        self.topicsSearchBar.returnKeyType = .search
+        searchBarField.autocapitalizationType = .none
+        searchBarField.autocorrectionType = .no
+        searchBarField.returnKeyType = .search
+        searchBarField.leftViewMode = UITextField.ViewMode.always
+        let imageView = UIImageView()
+        let image = UIImage(systemName: "arrow.left")
+        imageView.tintColor = .black
+        imageView.image = image
+//        imageView.leftAnchor.constraint(equalTo: searchBarField.leftAnchor, constant: 12).isActive = true
+        searchBarField.leftView = imageView
+        searchBarField.rightViewMode = UITextField.ViewMode.always
+        let rightIconImage = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+        let rightimage = UIImage(named: "search-normal")
+        rightIconImage.image = rightimage
+       searchBarField.rightView = rightIconImage
     }
+    
 }

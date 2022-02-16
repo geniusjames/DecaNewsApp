@@ -46,7 +46,6 @@ extension TopicsCollectionViewController: UICollectionViewDataSource {
         return cell
     }
     
-  
 //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
 //           return CGSize(width: view.frame.size.width, height: 24)
 //    }
@@ -59,7 +58,18 @@ extension TopicsCollectionViewController: UICollectionViewDelegate {
     }
     
 }
-//extension TopicsCollectionViewController: UICollectionViewDelegateFlowLayout {
+
+extension TopicsCollectionViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        .init(0)
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        .init(0)
+//    }
+}
+
+// extension TopicsCollectionViewController: UICollectionViewDelegateFlowLayout {
 //    private func firstheaderView() -> UIView {
 //        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.circularCollectionView.frame.width, height: 30))
 //        view.backgroundColor = .red
