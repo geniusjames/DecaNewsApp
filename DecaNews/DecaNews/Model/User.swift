@@ -13,7 +13,7 @@ struct User {
     let firstName: String
     let lastName: String
     let email: String
-    
+
     init(credentials: ASAuthorizationAppleIDCredential) {
         self.id = credentials.user
         self.firstName = credentials.fullName?.givenName ?? ""
