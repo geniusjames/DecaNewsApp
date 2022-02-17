@@ -2,6 +2,10 @@ import UIKit
 
 class TopicsCollectionViewController: UIViewController {
     var serviceViewModel: ServicesViewModel?
+    public var collectionViewNews: [Article]?
+//    var articles: [Article]? = [Article]()
+    private let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=b48f157c6a94447bbaba425d8774fde3"
+    
     let publications = PopularTopicsCollectionViewCell()
     let authorsCollectionView = ThirdCollectionViewCell()
     var red = UIColor(red: 100.0/255.0, green: 130.0/255.0, blue: 230.0/255.0, alpha: 1.0)
@@ -16,10 +20,23 @@ class TopicsCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureView()
+        fetchDataTocell(url: url)
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         dismissKeyboard()
+    }
+   
+    private func fetchDataTocell(url: String) {
+        NetworkManager.shared.networkRequest(url: url)
+        { [weak self] response in
+            self?.collectionViewNews = response.articles
+            DispatchQueue.main.async {
+                self?.cardShapedCollectionView.reloadData()
+            }
+        } errorCompletion: { error in
+            print("This is the error displayed: ", error)
+        }
     }
     
     func configureView() {

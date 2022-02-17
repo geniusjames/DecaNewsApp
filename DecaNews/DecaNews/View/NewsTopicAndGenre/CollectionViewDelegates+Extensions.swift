@@ -24,10 +24,10 @@ extension TopicsCollectionViewController: UICollectionViewDataSource {
             guard let cell2 = cardShapedCollectionView.dequeueReusableCell(withReuseIdentifier: PopularTopicsCollectionViewCell.identifier, for: indexPath) as? PopularTopicsCollectionViewCell
             else { return UICollectionViewCell()
             }
-            cell2.newsSource.text = "Yahoo! Mail"
-            cell2.backgroundColor = .white
-            cell2.circularView = publications.seeMoreButton
-            cell2.sourceLogo.text = "Y"
+            if let articles = collectionViewNews {
+                let article = articles[indexPath.row]
+                cell2.setUp(with: article)
+            }
             return cell2
             
         } else if collectionView == authorsCardShapedCollectionView {

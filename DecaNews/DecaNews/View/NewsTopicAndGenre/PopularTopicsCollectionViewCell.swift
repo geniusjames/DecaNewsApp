@@ -18,6 +18,7 @@ class PopularTopicsCollectionViewCell: UICollectionViewCell {
         cellBackgroundView?.layer.borderWidth = 1
         cellBackgroundView?.layer.borderColor = UIColor(red: 163/255, green: 163/255,
                                                         blue: 163/255, alpha: 1).cgColor
+       newsSource.sizeToFit()
     }
     var newsSourceName = ""
 //    func setupMyView(with article: Article) {
@@ -26,12 +27,12 @@ class PopularTopicsCollectionViewCell: UICollectionViewCell {
 //        let firstLetterOfSourceName = newsSourceName.first?.description ?? ""
 //        sourceLogo.text = firstLetterOfSourceName
 //    }
-    private func setUp(with article: Article) {
+    func setUp(with article: Article) {
         newsSource.text = article.source.name ?? ""
-        let text = newsSource.text
+        let text = newsSource.text! as String
         let sourceName = text
-        let string = sourceName?.prefix(1)
-        sourceLogo.text = string
+        let string = sourceName.prefix(1)
+        sourceLogo.text = String(Array(string)[0])
         
         // output: "a"
 //        if let urlLink = article.url,
