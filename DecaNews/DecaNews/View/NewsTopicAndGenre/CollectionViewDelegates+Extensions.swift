@@ -7,7 +7,7 @@ extension TopicsCollectionViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == circularCollectionView {
-            return 8
+            return topics.count
         } else if collectionView == cardShapedCollectionView {
             return 4
         }
@@ -18,9 +18,7 @@ extension TopicsCollectionViewController: UICollectionViewDataSource {
                         cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = circularCollectionView.dequeueReusableCell(withReuseIdentifier: NewsTopicsCollectionViewCell.identifier, for: indexPath) as? NewsTopicsCollectionViewCell else {
             return UICollectionViewCell() }
-        cell.backgroundColor = .white
-        cell.newsGenre.text = "Technology"
-        cell.imageView = UIImageView(image: UIImage(named: "post"))
+        cell.setup(with: topics[indexPath.row])
         
         if collectionView == cardShapedCollectionView {
             guard let cell2 = cardShapedCollectionView.dequeueReusableCell(withReuseIdentifier: PopularTopicsCollectionViewCell.identifier, for: indexPath) as? PopularTopicsCollectionViewCell
@@ -31,6 +29,7 @@ extension TopicsCollectionViewController: UICollectionViewDataSource {
             cell2.circularView = publications.seeMoreButton
             cell2.sourceLogo.text = "Y"
             return cell2
+            
         } else if collectionView == authorsCardShapedCollectionView {
             guard let cell3 = authorsCardShapedCollectionView.dequeueReusableCell(withReuseIdentifier: ThirdCollectionViewCell.identifier, for: indexPath) as? ThirdCollectionViewCell
             else {

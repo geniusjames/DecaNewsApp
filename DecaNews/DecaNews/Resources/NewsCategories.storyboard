@@ -82,7 +82,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Technology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OKR-xE-I4F">
-                                                            <rect key="frame" x="2.6666666666666643" y="68" width="78" height="19"/>
+                                                            <rect key="frame" x="5" y="68" width="74.666666666666671" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -92,10 +92,8 @@
                                                     <constraints>
                                                         <constraint firstItem="BEl-UX-UNV" firstAttribute="top" secondItem="PAq-Kp-pV2" secondAttribute="top" constant="11" id="3iT-2x-Wvp"/>
                                                         <constraint firstItem="BEl-UX-UNV" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="8" id="8qP-Lt-uYI"/>
-                                                        <constraint firstItem="OKR-xE-I4F" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="2.5" id="B8p-Lz-qh0"/>
-                                                        <constraint firstAttribute="trailing" secondItem="OKR-xE-I4F" secondAttribute="trailing" constant="2.5" id="CD2-lW-5eT"/>
+                                                        <constraint firstItem="OKR-xE-I4F" firstAttribute="leading" secondItem="PAq-Kp-pV2" secondAttribute="leading" constant="5" id="EdI-jV-L3l"/>
                                                         <constraint firstItem="OKR-xE-I4F" firstAttribute="top" secondItem="BEl-UX-UNV" secondAttribute="bottom" constant="5" id="Jpq-Oh-pul"/>
-                                                        <constraint firstAttribute="bottom" secondItem="OKR-xE-I4F" secondAttribute="bottom" constant="13" id="QpG-rq-sLJ"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
