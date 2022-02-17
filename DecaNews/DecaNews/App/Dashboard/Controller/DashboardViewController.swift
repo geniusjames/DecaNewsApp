@@ -42,7 +42,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		print("Write button clicked")
 	}
 	@IBAction func seeMoreButton(_ sender: Any) {
-		coordinator.loadLatestNewsScreen()
+//		coordinator.loadLatestNewsScreen()
 	}
 	
 	func didSelectMenuItem(named: String) {
