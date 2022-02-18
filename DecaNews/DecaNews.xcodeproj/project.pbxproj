@@ -50,6 +50,8 @@
 		9410301C27A9407400411376 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301B27A9407400411376 /* FirebaseService.swift */; };
 		9410302027A9409F00411376 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301F27A9409F00411376 /* String+Extension.swift */; };
 		9412445327C023160045484E /* AuthComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9412445227C023160045484E /* AuthComposer.swift */; };
+		9412445B27C032440045484E /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9412445A27C032440045484E /* Storyboardable.swift */; };
+		9412445D27C033600045484E /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9412445C27C033600045484E /* Storyboard.swift */; };
 		94A2C96A27BADB600048F37C /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */; };
 		94A2C96D27BAE85D0048F37C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */; };
 		94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */; };
@@ -127,6 +129,8 @@
 		9410301B27A9407400411376 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		9410301F27A9409F00411376 /* String+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		9412445227C023160045484E /* AuthComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthComposer.swift; sourceTree = "<group>"; };
+		9412445A27C032440045484E /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
+		9412445C27C033600045484E /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		94A2C96B27BADFF00048F37C /* DecaNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecaNews.entitlements; sourceTree = "<group>"; };
 		94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
@@ -452,6 +456,15 @@
 			path = Presentation;
 			sourceTree = "<group>";
 		};
+		9412445E27C034290045484E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				9412445C27C033600045484E /* Storyboard.swift */,
+				9412445A27C032440045484E /* Storyboardable.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		B41C322027A999B500A173A3 /* LoginViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -471,6 +484,7 @@
 		B47E589A27948BD800D70341 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				9412445E27C034290045484E /* Storyboard */,
 				B47E589B27948C0100D70341 /* Coordinator.swift */,
 				B47E589D27948C1D00D70341 /* AppCoordinator.swift */,
 				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
@@ -660,6 +674,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049D60D927B8059E00DB35F1 /* LoginViewController.swift in Sources */,
+				9412445D27C033600045484E /* Storyboard.swift in Sources */,
 				94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */,
 				9410302027A9409F00411376 /* String+Extension.swift in Sources */,
 				049D60F027B8062800DB35F1 /* LatestNewsViewController.swift in Sources */,
@@ -675,6 +690,7 @@
 				B42573A427BCE340006F1944 /* PasswordChangeViewController.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
+				9412445B27C032440045484E /* Storyboardable.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
 				049D60FD27B8063D00DB35F1 /* MenuTableViewController.swift in Sources */,
 				B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */,

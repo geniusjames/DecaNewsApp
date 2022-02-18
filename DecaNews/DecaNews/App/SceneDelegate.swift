@@ -22,8 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         appWindow.windowScene = windowScene
         self.window = appWindow
         AppDelegate.standard?.window = appWindow
-        let viewModel = ServicesViewModel()
-        coordinator = AppCoordinator(window: appWindow, servicesViewModel: viewModel)
+        coordinator = AppCoordinator(window: appWindow, servicesViewModel: DIContainer.makeServiceViewModel())
         coordinator?.start()
     }
     

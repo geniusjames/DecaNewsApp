@@ -17,7 +17,7 @@ class DetailsSettingsView: UIView {
     private let fSize = "fontSize"
     private let bNess = "brightness"
     private let tColor = "themeColor"
-    let serviceViewModel = ServicesViewModel()
+    let serviceViewModel = DIContainer.makeServiceViewModel()
     let customViewLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textColor = .black

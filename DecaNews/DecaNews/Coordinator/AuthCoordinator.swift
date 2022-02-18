@@ -25,7 +25,7 @@ final class AuthCoordinator: Coordinator {
     }
     
     func loadAuthRoot() {
-        let viewController = AuthComposer.makeLoginController()
+        guard let viewController = AuthComposer.makeLoginController() else { return }
         navigationController.pushViewController(viewController, animated: true)
     }
     

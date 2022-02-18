@@ -10,7 +10,7 @@ import UIKit
 final class AppCoordinator: Coordinator {
     
     private var window: UIWindow
-    private let servicesViewModel
+    private let servicesViewModel: ServicesViewModel
     private var navigationController: UINavigationController
     
     init(window: UIWindow, servicesViewModel: ServicesViewModel) {

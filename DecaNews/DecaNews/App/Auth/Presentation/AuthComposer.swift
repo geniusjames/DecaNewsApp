@@ -10,18 +10,17 @@ import UIKit
 
 final class AuthComposer {
     
-    static func makeLoginController(with email: String) -> LoginViewController? {
-        let viewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as? LoginViewController
+    static func makeLoginController() -> LoginViewController? {
+        let viewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
         let serviceViewModel = DIContainer.makeServiceViewModel()
         serviceViewModel.addOnboarded()
-        viewController.serviceViewModel = serviceViewModel
+        viewController?.serviceViewModel = serviceViewModel
         return viewController
     }
     
-    func makeEmailSigninController() -> EmailSiginInViewController? {
-        let viewController = UIStoryboard(name: "EmailSignin", bundle: nil)
-            .instantiateViewController(withIdentifier: "EmailSiginInViewController") as? EmailSiginInViewController
-        viewController?.servicesViewModel = DIContainer.makeServiceViewModel()
+    static func makeEmailSigninController() -> EmailSiginInViewController {
+        let viewController = EmailSiginInViewController.instantiate()
+        viewController.servicesViewModel = DIContainer.makeServiceViewModel()
         return viewController
     }
 }
