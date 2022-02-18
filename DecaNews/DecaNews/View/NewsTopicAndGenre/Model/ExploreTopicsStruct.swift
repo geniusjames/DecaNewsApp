@@ -15,12 +15,3 @@ Topics(title: "Food", image: UIImage(named: "food")!),
 Topics(title: "Lifestyle", image: UIImage(named: "lifestyle")!),
 Topics(title: "Technology", image: UIImage(named: "technology")!)
 ]
-
-//struct PopularPublications {
-//    //name
-//    //url
-//}
-//
-//let popularPublications: [Article] = [
-//    Article(source: Source(id: nil, name: nil), author: nil, title: nil, articleDescription: nil, url: <#T##String?#>, urlToImage: nil, publishedAt: nil, content: nil)
-//]
