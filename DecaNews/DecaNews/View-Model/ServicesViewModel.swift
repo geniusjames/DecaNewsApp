@@ -8,7 +8,9 @@
 import Foundation
 
 final class ServicesViewModel {
-    let firebaseService: FirebaseService
+    
+    let firebaseService: AuthServiceRepository
+    
     private let defaultsStorage = UserDefaults.standard
     private let topicStorage = "selectedTopics"
     private let onboardingStorage = "onboarded"
@@ -20,8 +22,8 @@ final class ServicesViewModel {
     private let bNess = "brightness"
     private let tColor = "themeColor"
 
-    init() {
-     firebaseService = FirebaseService()
+    init(firebaseService: AuthServiceRepository) {
+        self.firebaseService = firebaseService
     }
     
     var getTopics: [String]? {
