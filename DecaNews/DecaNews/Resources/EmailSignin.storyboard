@@ -244,6 +244,12 @@
                                     <action selector="changePasswordPressed:" destination="Kz2-9t-F3Q" eventType="touchUpInside" id="8Vu-Cw-OR0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PED-jE-vjn">
+                                <rect key="frame" x="207" y="762" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="deepPeach"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fjv-zh-HC5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -256,6 +262,7 @@
                             <constraint firstItem="fjv-zh-HC5" firstAttribute="trailing" secondItem="1kP-BC-sIq" secondAttribute="trailing" constant="24" id="JL3-r2-Bso"/>
                             <constraint firstItem="Pd8-XB-8zb" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="KPF-YQ-GEt"/>
                             <constraint firstItem="z9T-kF-8eK" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="MCS-9j-a9R"/>
+                            <constraint firstItem="fjv-zh-HC5" firstAttribute="bottom" secondItem="PED-jE-vjn" secondAttribute="bottom" constant="100" id="Pex-ad-K4v"/>
                             <constraint firstItem="fjv-zh-HC5" firstAttribute="trailing" secondItem="GvT-ls-dqB" secondAttribute="trailing" constant="24" id="Vpp-CI-Cbv"/>
                             <constraint firstItem="HZL-4C-iHb" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="YY2-FX-EUA"/>
                             <constraint firstItem="qjS-hJ-cnO" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="YZi-Oa-N9H"/>
@@ -266,6 +273,7 @@
                             <constraint firstItem="1kP-BC-sIq" firstAttribute="top" secondItem="bLn-h6-T2p" secondAttribute="bottom" constant="8" id="nTe-zk-JPV"/>
                             <constraint firstItem="Rz8-Ik-fIL" firstAttribute="leading" secondItem="fjv-zh-HC5" secondAttribute="leading" constant="24" id="oKp-Rk-KmD"/>
                             <constraint firstItem="Pd8-XB-8zb" firstAttribute="top" secondItem="1kP-BC-sIq" secondAttribute="bottom" constant="16" id="ps7-yb-mZM"/>
+                            <constraint firstItem="PED-jE-vjn" firstAttribute="centerX" secondItem="5eB-sr-guQ" secondAttribute="centerX" id="waK-C1-S9z"/>
                             <constraint firstItem="qjS-hJ-cnO" firstAttribute="top" secondItem="Rz8-Ik-fIL" secondAttribute="bottom" constant="8" id="wzO-Y3-jTg"/>
                             <constraint firstItem="z9T-kF-8eK" firstAttribute="top" secondItem="Pd8-XB-8zb" secondAttribute="bottom" constant="8" id="xvq-aN-eQo"/>
                         </constraints>
@@ -274,6 +282,7 @@
                         <outlet property="newPasswordTextField" destination="1kP-BC-sIq" id="XLg-F3-Dak"/>
                         <outlet property="oldPasswordTextField" destination="HZL-4C-iHb" id="32o-ne-XaE"/>
                         <outlet property="passwordConfirmationTextField" destination="z9T-kF-8eK" id="I4O-eN-XDU"/>
+                        <outlet property="resultLabel" destination="PED-jE-vjn" id="Ltw-ak-7D3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BzL-EL-37A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

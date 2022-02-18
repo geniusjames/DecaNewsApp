@@ -14,7 +14,7 @@ final class OnboardingViewController: UIViewController {
     
     // MARK: - Instance Properties
     let viewModel = OnboardingViewModel()
-    
+
     // MARK: - Outlets
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
