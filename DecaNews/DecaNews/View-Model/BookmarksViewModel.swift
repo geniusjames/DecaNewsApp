@@ -9,16 +9,15 @@ import Foundation
 import Firebase
 
 class BookmarksViewModel {
-    
-    let store = FireStorePersistence(collectionName: "news")
+  
+    let store = FireStorePersistence(collectionName: "new")
     let cellID = "cell"
-    var items: [News] {
-        store.read()
-    }
     func fetchPersistedNews() {
         
     }
-    func fetch() -> [News] {
-        return store.read()
+    func fetch( completion: @escaping (([News]) -> Void)){
+        _ =  store.read { contents in
+            completion(contents)
+        }
     }
 }

@@ -27,6 +27,7 @@ final class OnboardingViewController: UIViewController {
         proceedButton.addTarget(self, action: #selector(proceed), for: .touchUpInside)
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
+        
     }
     
     @objc func proceed() {
