@@ -11,6 +11,7 @@ class MenuTableViewController: UITableViewController {
     public weak var delegate: MenuControllerDelegate?
     var imageList: [String] = [ "home", "Bookmark", "card", "edit", "logout", "card", "settings"]
     private let menuItem: [String]
+	let firebaseService = FirebaseService()
 
     init(with menuItems: [String]) {
         self.menuItem = menuItems
@@ -39,10 +40,10 @@ class MenuTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuTableViewCell.identifier, for: indexPath) as? SideMenuTableViewCell else {
                 return UITableViewCell()
             }
-            cell.profileName.text = "Tiana Vetrovs"
-            cell.viewProfile.text = "View Profile"
+			let user = firebaseService.getUserDetails()
+			cell.profileName.text = user?.displayName
+			NetworkManager.shared.getImageDataFrom(url: (user?.photoURL)!, imageCell: cell.profileImage)
             cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
-            cell.profileImage.image = UIImage(named: "profile")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
