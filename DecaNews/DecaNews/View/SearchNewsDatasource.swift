@@ -32,4 +32,7 @@ final class SearchNewsDatasource<TCell: UITableViewCell, T>: NSObject, UITableVi
         return UITableViewCell()
     }
     
+    func setCellData(_ cellData: [T]) {
+        self.cellData = cellData
+    }
 }
