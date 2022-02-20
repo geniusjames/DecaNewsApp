@@ -11,6 +11,7 @@ class PasswordChangeViewController: UIViewController {
     @IBOutlet weak var oldPasswordTextField: HideShowPasswordTextField!
     @IBOutlet weak var newPasswordTextField: HideShowPasswordTextField!
     @IBOutlet weak var passwordConfirmationTextField: HideShowPasswordTextField!
+    @IBOutlet weak var resultLabel: UILabel!
     @IBAction func changePasswordPressed(_ sender: Any) {
     }
     var servicesViewModel: ServicesViewModel?
@@ -26,8 +27,22 @@ class PasswordChangeViewController: UIViewController {
                 switch result {
                 case .failure(let error):
                     print(error)
+                    UIView.animate(withDuration: 3) {
+                        self.resultLabel.text = error.localizedDescription
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                        self.resultLabel.text = ""
+                        self.resultLabel.alpha = 1
+                    }
                 case .success(_:):
                     print("password changed")
+                    UIView.animate(withDuration: 3) {
+                        self.resultLabel.text = "password changed"
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                            self.resultLabel.text = ""
+                            self.resultLabel.alpha = 1
+                        }
+                    }
                 }
             }
         }
