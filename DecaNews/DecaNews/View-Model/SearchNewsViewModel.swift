@@ -8,11 +8,13 @@
 import Foundation
 
 final class SearchNewsViewModel {
-    private let newsURL: String
+    private var newsURL: String
     var articles = [Article]()
     private var currentSortPattern: SearchSortBy = .popular
     var currentSearchString = "News"
     var included = false
+    let fromDate: String
+    let toDate: String
     
     var populateTable: (() -> Void)?
     
@@ -20,13 +22,13 @@ final class SearchNewsViewModel {
         let date = Date()
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "YY-MM-dd"
-        let toDate = dateFormatter.string(from: date)
+        toDate = dateFormatter.string(from: date)
         var dayComponent = DateComponents()
-        dayComponent.day = -7 // For removing one day (yesterday): -1
+        dayComponent.day = -7
         let theCalendar = Calendar.current
         let nextDate = theCalendar.date(byAdding: dayComponent, to: date) ?? Date()
-        let fromDate = dateFormatter.string(from: nextDate)
-        newsURL =  "https://newsapi.org/v2/everything?q=\(currentSearchString)\(currentSortPattern == .popular ? "&sortBy=popularity" : "")&from=\(fromDate)&to=\(toDate)&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
+        fromDate = dateFormatter.string(from: nextDate)
+        newsURL = ""
     }
     
     var getCurrentSortPattern: SearchSortBy {
@@ -37,8 +39,9 @@ final class SearchNewsViewModel {
     }
     
     func fetchNews() {
-        NetworkManagers().networkRequest(url: newsURL) { [weak self] res in
-            self?.articles = res.articles
+        newsURL =  "https://newsapi.org/v2/everything?q=\(currentSearchString)&from=\(fromDate)&to=\(currentSortPattern == .oldest ? fromDate : toDate)\(currentSortPattern == .popular ? "&sortBy=popularity" : "&sortBy=publishedAt")&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
+        NetworkManager().networkRequest(url: newsURL) { [weak self] res in
+            self?.articles = self?.currentSortPattern != .oldest ? res.articles : res.articles.reversed()
             self?.populateTable?()
         } errorCompletion: { _ in
         }
@@ -51,30 +54,8 @@ final class SearchNewsViewModel {
     func setCurrentSearchString(_ searchString: String) {
         currentSearchString = searchString
     }
-    func dateChanger(_ isoDate: String?) -> Date {
-        guard let isoDate = isoDate else {
-            return Date()
-        }
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        if let date = dateFormatter.date(from:isoDate) {
-            return date
-        }
-        return Date()
-    }
+    
     func sort() {
-        switch currentSortPattern {
-        case .popular:
-            fetchNews()
-        case .newest:
-            articles.sort { art1, art2 in
-                return dateChanger(art1.publishedAt) > dateChanger(art2.publishedAt)
-            }
-        case .oldest:
-            articles.sort { art1, art2 in
-                return dateChanger(art1.publishedAt) < dateChanger(art2.publishedAt)
-            }
-        }
+        fetchNews()
     }
 }

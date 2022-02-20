@@ -25,4 +25,13 @@ extension String {
         let isvalidateOtherString = validateOtherString.evaluate(with: trimmedString)
         return isvalidateOtherString
     }
+    
+    func dateChanger() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = dateFormatter.date(from: self) {
+            return date
+        }
+        return Date()
+    }
 }

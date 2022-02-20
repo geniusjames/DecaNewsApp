@@ -64,15 +64,15 @@ class SortByUIView: UIView {
         button.tag = 1
         return button
     }()
-    let popularCheckMarkImage: UIImageView = {
+    let popularCheckMarkImage: CheckMarkImageView = {
         let imgView = CheckMarkImageView()
         return imgView
     }()
-    let newestCheckMarkImage: UIImageView = {
+    let newestCheckMarkImage: CheckMarkImageView = {
         let imgView = CheckMarkImageView()
         return imgView
     }()
-    let oldestCheckMarkImage: UIImageView = {
+    let oldestCheckMarkImage: CheckMarkImageView = {
         let imgView = CheckMarkImageView()
         return imgView
     }()
@@ -114,6 +114,7 @@ class SortByUIView: UIView {
         oldestButton.addTarget(self, action: #selector(selectPattern), for: .touchUpInside)
         newestButton.addTarget(self, action: #selector(selectPattern), for: .touchUpInside)
         
+        setCheckMark(0)
     }
     @objc
     func close() {
@@ -157,5 +158,23 @@ class SortByUIView: UIView {
         applyButton.anchored(top: nil, leading: nil, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 40, right: 24))
         applyButton.constrainHeight(constant: 48)
         applyButton.constrainWidth(constant: 155)
+    }
+    
+    func setCheckMark(_ tag: Int) {
+        switch tag {
+        case 0:
+            popularCheckMarkImage.setCheckMark(true)
+            oldestCheckMarkImage.setCheckMark(false)
+            newestCheckMarkImage.setCheckMark(false)
+        case 1:
+            popularCheckMarkImage.setCheckMark(false)
+            oldestCheckMarkImage.setCheckMark(false)
+            newestCheckMarkImage.setCheckMark(true)
+        case 2:
+            popularCheckMarkImage.setCheckMark(false)
+            oldestCheckMarkImage.setCheckMark(true)
+            newestCheckMarkImage.setCheckMark(false)
+        default: return
+        }
     }
 }
