@@ -21,7 +21,7 @@ class SearchNewsViewController: UIViewController {
     var bottomPart: NSLayoutConstraint?
     var upperPart: NSLayoutConstraint?
     
-    var sortbyview: SortByUIView?// = SortByUIView(searchNewsViewModel: <#T##SearchNewsViewModel#>)
+    var sortbyview: SortByUIView?
     var searchNewsViewModel: SearchNewsViewModel?
     
     var searchBy: String?
@@ -35,6 +35,7 @@ class SearchNewsViewController: UIViewController {
         guard let searchNewsViewModel = searchNewsViewModel else {
             return
         }
+        searchTextField.text = defaultSearchString
         sortbyview = SortByUIView(searchNewsViewModel: searchNewsViewModel)
         guard let sortbyview = sortbyview else {
             return

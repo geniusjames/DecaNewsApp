@@ -47,7 +47,7 @@ class SortByUIView: UIView {
         let button = UIButton(frame: .zero)
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitle("Popular", for: .normal)
-        button.tag = 1
+        button.tag = 0
         return button
     }()
     let newestButton: UIButton = {
@@ -61,7 +61,7 @@ class SortByUIView: UIView {
         let button = UIButton(frame: .zero)
         button.setTitleColor(UIColor.black, for: .normal)
         button.setTitle("Oldest", for: .normal)
-        button.tag = 1
+        button.tag = 2
         return button
     }()
     let popularCheckMarkImage: CheckMarkImageView = {
@@ -124,14 +124,18 @@ class SortByUIView: UIView {
     func reset() {
         searchNewsViewModel.setCurrentSortPattern(.popular)
         populateTable?()
+        closePopUp?()
     }
     @objc
     func apply() {
+        searchNewsViewModel.sort()
         populateTable?()
+        closePopUp?()
     }
     @objc
     func selectPattern(_ sender: UIButton) {
         searchNewsViewModel.setCurrentSortPattern(SearchSortBy(rawValue: sender.tag) ?? .popular)
+        setCheckMark(sender.tag)
     }
 
     func constrainUpper() {
