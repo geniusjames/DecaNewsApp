@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -81,11 +82,16 @@
                                             <rect key="frame" x="0.0" y="0.0" width="366" height="100"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-yq-diO">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="90"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doc" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ln3-yq-diO">
+                                                    <rect key="frame" x="0.0" y="10" width="80" height="80"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="HKJ-UL-Jxt"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="12"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lifestyle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jn2-bd-Kb7">
                                                     <rect key="frame" x="95" y="5" width="48" height="14.5"/>
@@ -142,7 +148,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="C3h-uI-f3D" secondAttribute="trailing" constant="20" id="HXG-xg-7A3"/>
                                                 <constraint firstAttribute="bottom" secondItem="VbK-ws-38Z" secondAttribute="bottom" constant="5" id="LKn-DM-tHY"/>
                                                 <constraint firstItem="2eJ-9k-363" firstAttribute="leading" secondItem="L1H-qz-ugc" secondAttribute="trailing" constant="5" id="MCl-Nz-Owb"/>
-                                                <constraint firstItem="ln3-yq-diO" firstAttribute="top" secondItem="0PW-FC-n7G" secondAttribute="top" id="MO4-zd-WqR"/>
+                                                <constraint firstItem="ln3-yq-diO" firstAttribute="top" secondItem="0PW-FC-n7G" secondAttribute="top" constant="10" id="MO4-zd-WqR"/>
                                                 <constraint firstItem="ln3-yq-diO" firstAttribute="leading" secondItem="0PW-FC-n7G" secondAttribute="leading" id="WPI-qh-Wqy"/>
                                                 <constraint firstItem="Jn2-bd-Kb7" firstAttribute="leading" secondItem="ln3-yq-diO" secondAttribute="trailing" constant="15" id="YzX-eQ-42p"/>
                                                 <constraint firstItem="C3h-uI-f3D" firstAttribute="leading" secondItem="ln3-yq-diO" secondAttribute="trailing" constant="10" id="Zmn-g0-m1Z"/>
@@ -156,6 +162,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="bookMarkImage" destination="VbK-ws-38Z" id="PFe-tq-gRR"/>
                                             <outlet property="categoryLabel" destination="Jn2-bd-Kb7" id="KV5-1h-9P3"/>
                                             <outlet property="daysAgoLabel" destination="9hc-eD-Ne2" id="zoJ-3b-LCZ"/>
                                             <outlet property="profilePictureImgView" destination="ln3-yq-diO" id="w7U-6p-CFM"/>
@@ -336,6 +343,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backButton" destination="nuz-tX-ozZ" id="lMs-xA-rR3"/>
+                        <outlet property="cancelButton" destination="qpr-vg-IF5" id="TS2-uP-dtu"/>
+                        <outlet property="filterButton" destination="qDR-n1-wRc" id="iZ3-LX-DeZ"/>
                         <outlet property="searchTextField" destination="33A-El-12m" id="AXQ-hp-DyQ"/>
                         <outlet property="sortByUIView" destination="k6Q-xY-Czd" id="Ot0-QL-vIf"/>
                         <outlet property="tableView" destination="iGp-dI-DKU" id="huN-tq-kEO"/>
