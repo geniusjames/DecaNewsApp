@@ -14,6 +14,7 @@ class SearchNewsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var profilePictureImgView: UIImageView!
+    @IBOutlet weak var bookMarkImage: UIButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -28,13 +29,15 @@ class SearchNewsTableViewCell: UITableViewCell {
     }
     
     func setup(cellData: Article, category: String) {
+        guard let publishedDate = cellData.publishedAt else { return }
         titleLabel.text = cellData.title
         categoryLabel.text = category
         readTimeLabel.text = "\(2) mins read"
-        daysAgoLabel.text = "\(1) day ago"
+        daysAgoLabel.text = (Date() - publishedDate.dateChanger()).toString()
         if let cellImage = cellData.urlToImage, let url = URL(string: cellImage) {
-            NetworkManagers().getImageDataFroms(url: url, imageCell: profilePictureImgView)
+            NetworkManager().getImageDataFrom(url: url, imageCell: profilePictureImgView)
         }
+        bookMarkImage.setTitle("", for: .normal)
     }
 
 }

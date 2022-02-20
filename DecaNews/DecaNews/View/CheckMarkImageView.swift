@@ -28,4 +28,8 @@ class CheckMarkImageView: UIImageView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setCheckMark(_ state: Bool) {
+        image = state ? UIImage(systemName: "checkmark") : nil
+    }
+    
 }
