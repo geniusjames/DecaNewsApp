@@ -25,7 +25,7 @@ final class AppCoordinator: Coordinator {
     }
 
     func autenticateUser() {
-        servicesViewModel.getSignedStatus ? startMainApp() : startAuth()
+        servicesViewModel.getSignedStatus ? startMainApp() : startWriteNews()
     }
     
     func startOnboarding() {
@@ -85,5 +85,18 @@ final class AppCoordinator: Coordinator {
             self?.popCoordinator(coordinator)
             self?.startAuth()
         }
+    }
+    
+    func startWriteNews() {
+        let writeNewsCoordinator = WriteNewsCoordinator()
+        pushCoordinator(writeNewsCoordinator)
+        window.rootViewController = writeNewsCoordinator.rootViewController
+        window.makeKeyAndVisible()
+        
+        writeNewsCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+            self?.startAuth()
+        }
+        
     }
 }
