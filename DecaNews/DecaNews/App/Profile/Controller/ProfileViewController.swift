@@ -17,7 +17,8 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	
 	let dashboardTableVC = DashboardTableViewController()
 	let firebaseService = FirebaseService()
-	let articles: [Article] = [Article]()
+	var articles: [Article] = [Article]()
+	var userArticles: [Article] = [Article]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,19 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
 		tableView.delegate = self
 		tableView.dataSource = self
-		articles = dashboardTableVC.articles
+		articles = dashboardTableVC.articles ?? []
 		let user = firebaseService.getUserDetails()
 		profileName.text = user?.displayName
 		profileEmail.text = user?.email
 		bio.text = ""
 		NetworkManager.shared.getImageDataFrom(url: (user?.photoURL)!, imageCell: displayPicture)
+		for article in articles {
+			if article.author == profileName.text {
+				userArticles.append(article)
+			}
+		}
 	}
+	
 
 	@IBAction func EditProfileButtonAction(_ sender: Any) {
 	}
@@ -43,17 +50,13 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		0
+		userArticles.count
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as? ProfileTableViewCell
 		else { return UITableViewCell() }
-		for article in articles {
-			if article.author == profileName.text {
-				cell.setup(with: article)
-			}
-		}
+		cell.setup(with: userArticles[indexPath.row])
 		return cell
 	}
     
