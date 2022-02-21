@@ -53,5 +53,12 @@ class LatestNewsViewController: UIViewController, UITableViewDataSource, UITable
 		}
 		return cell
 	}
-	
+    
+//    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        guard let newsDetailsController = UIStoryboard(name: "NewsDetails", bundle: nil).instantiateViewController(withIdentifier: "NewsDetails") as? DetailsViewController else {
+//            return
+//        }
+//        navigationController?.pushViewController(newsDetailsController, animated: true)
+//    }
 }

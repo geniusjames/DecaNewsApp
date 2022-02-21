@@ -1,8 +1,11 @@
 import UIKit
 
-class PopularPublications: UICollectionViewCell {
+final class PopularPublications: UICollectionViewCell {
     
     static let identifier = "PopularTopicsCollectionViewCell"
+    var urlFromBase: String?
+    public var newName: String?
+    
     @IBOutlet var circularView: UIView?
     @IBOutlet var cellBackgroundView: UIView?
     @IBOutlet var seeMoreButton: UIButton!
@@ -16,39 +19,49 @@ class PopularPublications: UICollectionViewCell {
         UIApplication.shared.open(NSURL(string: urlFromBase)! as URL)
     }
     
-   override func awakeFromNib() {
+    override func awakeFromNib() {
         super.awakeFromNib()
         configureView()
     }
-    var urlFromBase: String?
-    public func setUp(with article: Article) {
-        newsSource.text = article.source.name ?? ""
-        let text = newsSource.text! as String
-        let sourceName = text
-        let string = sourceName.prefix(1)
-        sourceLogo.text = String(Array(string)[0])
+    
+    func popularPublicationsNames(_ names: String) {
+        let name = names.split(separator: ",")
+        let namesWithDash = names.split(separator: "-")
+        let namesWithFullStop = names.split(separator: ".")
+        if name.count > 0 || namesWithDash.count > 0 || namesWithFullStop.count > 0 {
+            let nameAtFirstIndex = name[0]
+            newName = String(nameAtFirstIndex)
+            newsSource.text = newName
+        }
     }
     
-    func setupTap() {
-            let touchDown = UILongPressGestureRecognizer(target: self, action: #selector(didTouchDown))
-            touchDown.minimumPressDuration = 0
-        circularView?.addGestureRecognizer(touchDown)
+    public func setUp(with article: Article) {
+        let sourceName = newName
+        let string = sourceName?.prefix(1)
+        sourceLogo.text = String(Array(string ?? "") [0])
+    }
+    
+    func changecircularViewBorderColor() {
+        let circularViewTapped = UILongPressGestureRecognizer(target: self, action: #selector(didTouchDown))
+        circularViewTapped.minimumPressDuration = 0
+        circularView?.addGestureRecognizer(circularViewTapped)
+    }
+    
+    @objc func didTouchDown(gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            circularView?.backgroundColor = UIColor(named: "offWhite")
+            circularView?.layer.borderColor = UIColor(named: "BlueColor")?.cgColor
+        } else if gesture.state == .ended || gesture.state == .cancelled {
+            circularView?.backgroundColor = UIColor(named: "offWhite")
+            circularView?.layer.borderColor = UIColor(named: "deepPeach")?.cgColor
         }
-
-        @objc func didTouchDown(gesture: UILongPressGestureRecognizer) {
-            if gesture.state == .began {
-                circularView?.backgroundColor = .green
-            } else if gesture.state == .ended || gesture.state == .cancelled {
-                circularView?.backgroundColor = .orange
-            }
-        }
-    func configureView() {
+    }
+    
+    private func configureView() {
         circularView?.layer.borderWidth = 1
-        circularView?.layer.borderColor = UIColor(red: 216/255, green: 96/255,
-                                                  blue: 93/255, alpha: 1).cgColor
+        circularView?.layer.borderColor = UIColor(named: "deepPeach")?.cgColor
         cellBackgroundView?.layer.borderWidth = 0.7
-        cellBackgroundView?.layer.borderColor = UIColor(red: 163/255, green: 163/255,
-                                                        blue: 163/255, alpha: 1).cgColor
+        cellBackgroundView?.layer.borderColor = UIColor(named: "deepGrey")?.cgColor
         newsSource.adjustsFontSizeToFitWidth = true
     }
 }
