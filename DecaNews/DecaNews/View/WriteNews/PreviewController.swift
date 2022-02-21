@@ -9,7 +9,6 @@ import UIKit
 
 class PreviewController: UIViewController {
     
-//    var coordinator: MainCoordinator?
     private let viewLayout = PreviewControllerLayout()
     var news: NewsModel?
 
@@ -31,6 +30,7 @@ class PreviewController: UIViewController {
         viewLayout.newsTitle.text = news?.title
         viewLayout.newsDetails.text = news?.content
         viewLayout.newsCover.image = news?.image
+        
     }
     
     fileprivate func setupLayoutConstraints() {
@@ -45,5 +45,6 @@ class PreviewController: UIViewController {
     }
     
 @objc func back() {
-goBack?()                                               }
+goBack?()
+}
 }
