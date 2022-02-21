@@ -40,23 +40,8 @@ class FireStorePersistence: PersistenceManager {
     func search() {
         
     }
-    
-//    func fetch() -> [[String: Any]]{
-//        var output: [[String : Any]] = []
-//        let docRef = Firestore.firestore().collection(collectionName)
-//        docRef.getDocuments() { (document, error) in
-//            if let error = error {
-//                print(error)
-//            } else {
-//                for doc in document!.documents {
-//                    output.append(doc.data())
-//                    print(doc.data(), "look here")
-//                }
-//            }
-//    }
-//        return output
-//    }
-    func read<T: Codable>() -> [T] {
+
+    func read<T: Codable>(completion: @escaping (([T])-> Void)) -> [T]{
         var output: [T] = []
         do {
             db.collection(collectionName).getDocuments { (querySnapshot, error) in
@@ -72,7 +57,6 @@ class FireStorePersistence: PersistenceManager {
                           case .success(let doc):
                               if let doc = doc {
                                   output.append(doc)
-                                  print(doc)
                               } else {
                                   print("document does not exists")
                               }
@@ -80,9 +64,11 @@ class FireStorePersistence: PersistenceManager {
                               print(error)
                           }
                    }
+                      completion(output)
                 }
             }
         }
+    
         return output
     }
     private func enableOffline() {
@@ -97,5 +83,5 @@ protocol PersistenceManager {
     func delete(documentID: String)
     func update()
     func search()
-    func read<T: Codable>() -> [T]
+//    func read<T: Codable>() -> [T]
 }

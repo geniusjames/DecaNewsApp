@@ -146,4 +146,22 @@ public extension UIView {
         
         return self
     }
+    
+    var arrow_downward: UIView {
+        let imageIcon: UIImageView = {
+            let image = UIImageView()
+            image.image = UIImage(systemName: "chevron.down")
+            image.frame = CGRect(x: -10, y: 0, width: UIImage(systemName: "chevron.down")!.size.width, height: UIImage(systemName: "chevron.down")!.size.height)
+            image.tintColor = . black
+            return image
+        }()
+        
+        let view = UIView()
+        view.frame = CGRect(x: 0, y: 0, width: UIImage(systemName: "chevron.down")!.size.width, height: UIImage(systemName: "chevron.down")!.size.height)
+        view.addSubview(imageIcon)
+        
+        return view
+        
+    }
+    
 }

@@ -14,7 +14,7 @@ final class OnboardingViewController: UIViewController {
     
     // MARK: - Instance Properties
     let viewModel = OnboardingViewModel()
-    
+
     // MARK: - Outlets
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -27,6 +27,7 @@ final class OnboardingViewController: UIViewController {
         proceedButton.addTarget(self, action: #selector(proceed), for: .touchUpInside)
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
+        
     }
     
     @objc func proceed() {
