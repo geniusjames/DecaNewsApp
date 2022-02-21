@@ -43,9 +43,10 @@ class WriteNewsViewController: UIViewController {
         title = "Write News"
         setupNavBarButtons()
         setUp()
-        
     }
+    
     override func viewDidLayoutSubviews() {
+        setupLayoutConstraints()
         setValues()
     }
  
@@ -131,11 +132,6 @@ class WriteNewsViewController: UIViewController {
        }
     }
     
-//    func setHeights() {
-//        let screen = UIScreen.main.bounds
-//        let height = screen.height
-//    }
-    
     @objc func publishNews(_ sender: UIButton) {
          writeNewsViewModel?
             .uploadImage(image: imageData!, completionHandler: uploadData(_:))
@@ -165,6 +161,10 @@ class WriteNewsViewController: UIViewController {
             print("\(error.localizedDescription)")
 
         }
+    }
+    
+    func setupLayoutConstraints() {
+        uploadTitle.anchored(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24))
     }
 }
 extension WriteNewsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
