@@ -91,6 +91,12 @@
 		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
 		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
 		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
+		B4B51EE227C41D6D0004E468 /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE127C41D6D0004E468 /* CommentsCoordinator.swift */; };
+		B4B51EE427C41D780004E468 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE327C41D780004E468 /* CommentsModel.swift */; };
+		B4B51EE827C41D960004E468 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE527C41D950004E468 /* CommentViewModel.swift */; };
+		B4B51EE927C41D960004E468 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE627C41D950004E468 /* CommentsCell.swift */; };
+		B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE727C41D960004E468 /* CommentsViewController.swift */; };
+		B4B51EEC27C41EBC0004E468 /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B51EEB27C41EBC0004E468 /* Comments.storyboard */; };
 		B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */; };
 		B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */; };
 		BB261B904D2D6A570476C503 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DBAE4292CDB92944ECD0C5 /* Pods_DecaNews.framework */; };
@@ -179,6 +185,12 @@
 		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
 		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		B4B51EE127C41D6D0004E468 /* CommentsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
+		B4B51EE327C41D780004E468 /* CommentsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
+		B4B51EE527C41D950004E468 /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		B4B51EE627C41D950004E468 /* CommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
+		B4B51EE727C41D960004E468 /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		B4B51EEB27C41EBC0004E468 /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
 		B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetLinkViewController.swift; sourceTree = "<group>"; };
 		B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeCoordinator.swift; sourceTree = "<group>"; };
 		DEEC4D653BCBAE32C2DF21E1 /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
@@ -356,6 +368,9 @@
 		04F2AA7C27931F3100D4C062 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4B51EE627C41D950004E468 /* CommentsCell.swift */,
+				B4B51EE727C41D960004E468 /* CommentsViewController.swift */,
+				B4B51EE527C41D950004E468 /* CommentViewModel.swift */,
 				B45C377A27C1D334009995B7 /* CheckMarkImageView.swift */,
 				B45C377927C1D334009995B7 /* SearchNewsDatasource.swift */,
 				B45C377C27C1D335009995B7 /* SearchNewsTableViewCell.swift */,
@@ -385,6 +400,7 @@
 		04F2AA7D27931F4100D4C062 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B4B51EEB27C41EBC0004E468 /* Comments.storyboard */,
 				B45C378527C1D34A009995B7 /* Main.storyboard */,
 				B45C378627C1D34B009995B7 /* NewSearch.storyboard */,
 				0417C34E27BCFCAA006AB3B4 /* editProfilePage.storyboard */,
@@ -409,6 +425,7 @@
 		04F2AA8527943F5000D4C062 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B4B51EE327C41D780004E468 /* CommentsModel.swift */,
 				B45C374027ADBB0A009995B7 /* User.swift */,
 				B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */,
 			);
@@ -485,6 +502,7 @@
 		B47E589A27948BD800D70341 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				B4B51EE127C41D6D0004E468 /* CommentsCoordinator.swift */,
 				B47E589B27948C0100D70341 /* Coordinator.swift */,
 				B47E589D27948C1D00D70341 /* AppCoordinator.swift */,
 				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
@@ -585,6 +603,7 @@
 				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
 				049D610D27B8962200DB35F1 /* Pods-DecaNews-frameworks.sh in Resources */,
 				B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */,
+				B4B51EEC27C41EBC0004E468 /* Comments.storyboard in Resources */,
 				B45C378727C1D34B009995B7 /* Main.storyboard in Resources */,
 				B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */,
 				0417C34F27BCFCAA006AB3B4 /* editProfilePage.storyboard in Resources */,
@@ -726,15 +745,20 @@
 				B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */,
 				B45C378227C1D335009995B7 /* SortByUIView.swift in Sources */,
 				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
+				B4B51EE227C41D6D0004E468 /* CommentsCoordinator.swift in Sources */,
 				049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */,
+				B4B51EE927C41D960004E468 /* CommentsCell.swift in Sources */,
 				049D60F427B8062800DB35F1 /* LatestNewsTableViewCell.swift in Sources */,
+				B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */,
 				049D60F127B8062800DB35F1 /* DashboardCollectionViewController.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
+				B4B51EE827C41D960004E468 /* CommentViewModel.swift in Sources */,
 				049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */,
 				B42573A627BCE5B6006F1944 /* HideOrShowPasswordTextField.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
 				B45C377E27C1D335009995B7 /* SearchNewsDatasource.swift in Sources */,
+				B4B51EE427C41D780004E468 /* CommentsModel.swift in Sources */,
 				B45C377827C1D2FC009995B7 /* SearchSortBy.swift in Sources */,
 				B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */,
 			);
