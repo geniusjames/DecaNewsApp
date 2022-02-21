@@ -8,7 +8,6 @@
 import UIKit
 
 class PasswordResetViewController: UIViewController {
-    var coordinator: MainCoordinator?
     var resetViewModel: ResetPasswordViewModel?
     @IBOutlet weak var passwordReset: UITextField!
     @IBOutlet weak var errorPage: UILabel!

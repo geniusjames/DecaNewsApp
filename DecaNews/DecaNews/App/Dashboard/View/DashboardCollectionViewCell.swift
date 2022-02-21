@@ -18,6 +18,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 	@IBOutlet weak var bookmarkBtn: UIButton!
 	
 	var didTapBookmarkBtn: (() -> Void)?
+	var isBookmarked: Bool = false
 	
 	public func setup(with article: Article) {
 		newsTitle.text = article.title
@@ -29,6 +30,7 @@ class DashboardCollectionViewCell: UICollectionViewCell {
 	}
 	
 	@IBAction func bookmarkButton(_ sender: Any) {
+		isBookmarked ? (isBookmarked = false) : (isBookmarked = true)
 		didTapBookmarkBtn?()
 	}
 	

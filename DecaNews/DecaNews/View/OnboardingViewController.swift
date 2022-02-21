@@ -9,28 +9,33 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
     
+    // MARK: - Coordinator Closures
+    var didCompleteOnboarding: CoordinatorTransition?
+    
+    // MARK: - Instance Properties
     let viewModel = OnboardingViewModel()
+
+    // MARK: - Outlets
     @IBOutlet weak var onboardingCV: UICollectionView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var proceedButton: UIButton!
     @IBOutlet var indicators: [UILabel]!
     
-    var coordinator: MainCoordinator?
-    var navigateToSignIn: (() -> Void)?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         proceedButton.addTarget(self, action: #selector(proceed), for: .touchUpInside)
         onboardingCV.delegate = self
         onboardingCV.dataSource = self
+        
     }
     
     @objc func proceed() {
-        navigateToSignIn?()
+        didCompleteOnboarding?()
     }
+    
     @IBAction func skipButtonPressed(_ sender: Any) {
-        proceed()
+        didCompleteOnboarding?()
     }
 }
 

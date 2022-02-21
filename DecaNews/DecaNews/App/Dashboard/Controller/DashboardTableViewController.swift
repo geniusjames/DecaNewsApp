@@ -39,7 +39,19 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 	}
 	
 	func updateBookmarks(with article: Article) {
-		directory.updateBookmarks(with: article)
+		directory.addBookmark(
+			author: article.author ?? "",
+			title: article.title ?? "",
+			articleDescription: article.articleDescription ?? "",
+			url: article.url ?? "",
+			urlToImage: article.urlToImage ?? "",
+			publishedAt: article.publishedAt ?? "",
+			content: article.content ?? ""
+		)
+	}
+	
+	func deleteBookmark(with article: Article) {
+		print("delete Bookmark")
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -54,10 +66,11 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 			let article = articles[indexPath.row]
 			cell.setup(with: article)
 			cell.didTapBookmarkBtn = { [weak self] in
+				cell.isBookmarked ?
+				self?.deleteBookmark(with: article) :
 				self?.updateBookmarks(with: article)
 			}
 		}
-		
 		return cell
 	}
 	

@@ -40,6 +40,37 @@ final class FirebaseService {
             } else {
             completionHandler(.success(0))
             }
+            
         }
     }
+
+    func changePassword(oldPassword: String, newPassword: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
+        guard let user = auth.currentUser else {return}
+        
+        guard let email = user.email else {return}
+        var credential: AuthCredential
+        credential = EmailAuthProvider.credential(withEmail: email, password: oldPassword )
+        user.reauthenticate(with: credential) { result, error  in
+            if let error = error {
+                completionHandler(.failure(error))
+            }
+            else {
+                user.updatePassword(to: newPassword) { error in
+                    if let error = error {
+                        completionHandler(.failure(error))
+                    } else {
+                        completionHandler(.success(0))
+                    }
+                }
+            }
+            
+        }
+        
+  }
+  
+  func getUserDetails() -> FirebaseAuth.User? {
+		let user = auth.currentUser
+		return user
+	}
+
 }

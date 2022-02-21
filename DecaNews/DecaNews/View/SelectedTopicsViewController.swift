@@ -26,7 +26,6 @@ final class SelectedTopicsViewController: UIViewController {
     @IBOutlet weak var musicButton: UIButton!
     var buttonStore = [Int: Bool]()
     var buttons: [UIButton] = [UIButton]()
-    var coordinator: MainCoordinator?
     var serviceViewModel: ServicesViewModel?
     var navigateHome: (() -> Void)?
     

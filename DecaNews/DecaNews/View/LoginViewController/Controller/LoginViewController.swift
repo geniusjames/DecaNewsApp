@@ -4,7 +4,6 @@ import AuthenticationServices
 import FirebaseAuth
 
 class LoginViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
-    var coordinator: MainCoordinator?
     var serviceViewModel: ServicesViewModel?
     var navigateToEmailSignin: (() -> Void)?
     

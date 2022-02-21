@@ -10,7 +10,6 @@ import SideMenu
 
 class SideMenuViewController: UIViewController, MenuControllerDelegate {
     private var sideMenu: SideMenuNavigationController?
-    var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

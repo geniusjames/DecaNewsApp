@@ -17,6 +17,7 @@ class DashboardTableViewCell: UITableViewCell {
 	@IBOutlet weak var bookmarkBtn: UIButton!
 	
 	var didTapBookmarkBtn: (() -> Void)?
+	var isBookmarked: Bool = false
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,7 +37,7 @@ class DashboardTableViewCell: UITableViewCell {
 	}
 	
 	@IBAction func didTapBookMarkBtn(_ sender: Any) {
-		print("Button tapped")
+		isBookmarked ? (isBookmarked = false) : (isBookmarked = true)
 		didTapBookmarkBtn?()
 	}
 
