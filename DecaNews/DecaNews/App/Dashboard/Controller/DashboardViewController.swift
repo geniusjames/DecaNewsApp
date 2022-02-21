@@ -11,10 +11,16 @@ import SideMenu
 class DashboardViewController: UIViewController, MenuControllerDelegate {
 	
 	private var sideMenu: SideMenuNavigationController?
-	var navigateLatestNewsScreen: (() -> Void)?
+	let coordinator = MainAppCoordinator()
+	let directory = ArticleDirectory()
+	var data: [BookmarkArticle] = [BookmarkArticle]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		setUp()
+    }
+	
+	func setUp() {
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
 		let menu = MenuTableViewController(with: itemList)
 		sideMenu = SideMenuNavigationController(rootViewController: menu)
@@ -22,7 +28,9 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		sideMenu?.leftSide = true
 		SideMenuManager.default.leftMenuNavigationController = sideMenu
 		SideMenuManager.default.addPanGestureToPresent(toView: view)
-    }
+		data = directory.readBookmarks()
+		print(data)
+	}
 	
 	@IBAction func menuButton(_ sender: Any) {
 		present(sideMenu!, animated: true)
@@ -34,14 +42,14 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		print("Write button clicked")
 	}
 	@IBAction func seeMoreButton(_ sender: Any) {
-		navigateLatestNewsScreen?()
+//		coordinator.loadLatestNewsScreen()
 	}
 	
 	func didSelectMenuItem(named: String) {
 		sideMenu?.dismiss(animated: true, completion: { [weak self] in
 			switch named {
 			case "Home":
-				self?.view.backgroundColor = .blue
+				self?.view.backgroundColor = .white
 			case "Saved News":
 				self?.view.backgroundColor = .red
 			case "Write News":

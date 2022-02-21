@@ -6,36 +6,65 @@
 //
 
 import Foundation
+import RealmSwift
 
 class ArticleDirectory {
 	
-	static let key = "articles"
-	
-	func getAllBookmarks() -> [Article] {
-		guard let articleData = UserDefaults.standard.object(forKey: ArticleDirectory.key) as? Data else {
-			return []
+	private let realm = try? Realm()
+
+	func readBookmarks() -> [BookmarkArticle] {
+		var data = [BookmarkArticle]()
+		data = realm!.objects(BookmarkArticle.self).map({ $0 })
+		return data
+	}
+
+	func addBookmark(
+		author: String,
+		title: String,
+		articleDescription: String,
+		url: String,
+		urlToImage: String,
+		publishedAt: String,
+		content: String
+	) {
+		let newBookmark = BookmarkArticle()
+		newBookmark.author = author
+		newBookmark.title = title
+		newBookmark.articleDescription = articleDescription
+		newBookmark.url = url
+		newBookmark.urlToImage = urlToImage
+		newBookmark.publishedAt = publishedAt
+		newBookmark.content = content
+		try? realm!.write {
+			realm!.add(newBookmark)
 		}
-		let decodedPet = try? JSONDecoder().decode([Article].self, from: articleData)
-		return decodedPet ?? []
 	}
-	
-	func saveArticle(with article: Article) {
-		var allArticles = getAllBookmarks()
-		allArticles.append(article)
-		updateArticles(with: allArticles)
+
+	func deleteBookmark(article: BookmarkArticle) {
+		try? realm!.write {
+			realm!.delete(article)
+		}
 	}
-	
-	func updateArticles(with data: [Article]) {
-		let encodedArticle = try? JSONEncoder().encode(data)
-		UserDefaults.standard.set(encodedArticle, forKey: ArticleDirectory.key)
-	}
-	
-	func updateBookmarks(with article: Article) {
-		let allArticles = getAllBookmarks()
-		if allArticles.contains(where: { $0.title == article.title }) {
-			updateArticles(with: allArticles.filter { $0.title != article.title })
-		} else {
-			saveArticle(with: article)
+
+	func updateBookmark(
+		article: BookmarkArticle,
+		author: String,
+		title: String,
+		articleDescription: String,
+		url: String,
+		urlToImage: String,
+		publishedAt: String,
+		content: String
+	) {
+		try? realm!.write {
+			article.author = author
+			article.title = title
+			article.articleDescription = articleDescription
+			article.url = url
+			article.urlToImage = urlToImage
+			article.publishedAt = publishedAt
+			article.content = content
+			realm!.add(article, update: .all)
 		}
 	}
 	

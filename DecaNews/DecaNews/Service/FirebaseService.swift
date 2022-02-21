@@ -43,6 +43,7 @@ final class FirebaseService {
             
         }
     }
+
     func changePassword(oldPassword: String, newPassword: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         guard let user = auth.currentUser else {return}
         
@@ -65,5 +66,11 @@ final class FirebaseService {
             
         }
         
-}
+  }
+  
+  func getUserDetails() -> FirebaseAuth.User? {
+		let user = auth.currentUser
+		return user
+	}
+
 }
