@@ -23,8 +23,6 @@ class PreviewControllerLayout: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    let add = UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(pointSize: 28, weight: .medium))
-    
     var newsTitle: UILabel = {
         var label = UILabel()
 //        label.text = "Lorem Ipsum Dolor Sit er Elit Lamet, Consectetaur Cillium Adipisicing Pecu"
@@ -131,4 +129,3 @@ class PreviewControllerLayout: UIView {
         ])
     }
 }
-

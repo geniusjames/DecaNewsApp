@@ -24,7 +24,7 @@ final class WriteNewsCoordinator: Coordinator {
     }
     
     func loadWriteNewsRoot() {
-        guard let viewController = UIStoryboard(name: "WriteNewsViewController", bundle: nil)
+        guard let viewController = UIStoryboard(name: "WriteNews", bundle: nil)
                 .instantiateViewController(withIdentifier: "WriteNewsViewController") as? WriteNewsViewController else {
                     return
                 }

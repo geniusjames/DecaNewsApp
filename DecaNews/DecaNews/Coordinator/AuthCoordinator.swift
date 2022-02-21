@@ -41,7 +41,6 @@ final class AuthCoordinator: Coordinator {
     }
 }
 
-
 /*
  func navigateToEmailSignin() {
     guard let viewController = UIStoryboard(name: "EmailSignin", bundle: nil)
