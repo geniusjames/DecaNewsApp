@@ -43,6 +43,11 @@
                                 <rect key="frame" x="87" y="95" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udK-ik-hN7">
+                                <rect key="frame" x="88" y="95" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" spacing="29" translatesAutoresizingMaskIntoConstraints="NO" id="Dzn-JZ-zvg">
                                 <rect key="frame" x="21" y="272" width="41.5" height="83.5"/>
                                 <subviews>
@@ -150,6 +155,7 @@
                         <outlet property="contentLabel" destination="ePy-xw-duG" id="2lt-Vs-LLt"/>
                         <outlet property="contentStack" destination="1ot-65-RkT" id="keZ-Bt-xzF"/>
                         <outlet property="coverImage" destination="e50-aI-Osj" id="A9u-It-L4r"/>
+                        <outlet property="imageView" destination="udK-ik-hN7" id="zDg-I4-soN"/>
                         <outlet property="publishButton" destination="Vkt-Bm-fXe" id="flY-Nn-mZU"/>
                         <outlet property="titleField" destination="yrG-sS-flO" id="yYk-fE-IOd"/>
                         <outlet property="titleLabel" destination="kPo-0Y-5i2" id="kbH-2F-7Kw"/>
