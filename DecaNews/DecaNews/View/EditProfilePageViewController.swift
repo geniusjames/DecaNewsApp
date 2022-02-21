@@ -11,7 +11,7 @@ import UniformTypeIdentifiers
 
 class EditProfilePageViewController: UIViewController {
     var fireStore: FireStorePersistence?
-    var coordinator: MainCoordinator?
+//    var coordinator: MainCoordinator?
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userBio: UITextView!

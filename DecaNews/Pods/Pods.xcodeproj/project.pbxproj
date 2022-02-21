@@ -705,7 +705,7 @@
 		4D211468A5CFDB528B9FDC7F3700A5EC /* Deprecations.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deprecations.swift; path = Pod/Classes/Deprecations.swift; sourceTree = "<group>"; };
 		4DF4A5DDDE2EAC9CC7CE7940A6C2C2C8 /* BSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSON.swift; path = RealmSwift/BSON.swift; sourceTree = "<group>"; };
 		5116B5FCA593298FCF63FE8496053B92 /* AppAuth.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AppAuth.modulemap; sourceTree = "<group>"; };
-		5282F27FD9901677DAE2B77166F12054 /* Pods-DecaNews */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-DecaNews"; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5282F27FD9901677DAE2B77166F12054 /* Pods_DecaNews.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DecaNews.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52AC08BB717D4B26A963BB1EED269D7B /* OIDScopeUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OIDScopeUtilities.h; path = Source/AppAuthCore/OIDScopeUtilities.h; sourceTree = "<group>"; };
 		54D488DE137C4EB1033DD685A06185D4 /* Util.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Util.swift; path = RealmSwift/Util.swift; sourceTree = "<group>"; };
 		54DB8A8C52B0D94975E2A5F4DF2E1F89 /* RLMAPIKeyAuth.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = RLMAPIKeyAuth.h; path = include/RLMAPIKeyAuth.h; sourceTree = "<group>"; };
@@ -1794,7 +1794,7 @@
 			);
 			name = "Pods-DecaNews";
 			productName = Pods_DecaNews;
-			productReference = 5282F27FD9901677DAE2B77166F12054 /* Pods-DecaNews */;
+			productReference = 5282F27FD9901677DAE2B77166F12054 /* Pods_DecaNews.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		5C642AA10FB29936669CC269F42079C6 /* AppAuth */ = {
