@@ -15,7 +15,9 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	@IBOutlet weak var profileEmail: UILabel!
 	@IBOutlet weak var bio: UILabel!
 	
+	let dashboardTableVC = DashboardTableViewController()
 	let firebaseService = FirebaseService()
+	let articles: [Article] = [Article]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +28,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
 		tableView.delegate = self
 		tableView.dataSource = self
+		articles = dashboardTableVC.articles
 		let user = firebaseService.getUserDetails()
 		profileName.text = user?.displayName
 		profileEmail.text = user?.email
+		bio.text = ""
 		NetworkManager.shared.getImageDataFrom(url: (user?.photoURL)!, imageCell: displayPicture)
 	}
 
@@ -45,6 +49,11 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as? ProfileTableViewCell
 		else { return UITableViewCell() }
+		for article in articles {
+			if article.author == profileName.text {
+				cell.setup(with: article)
+			}
+		}
 		return cell
 	}
     
