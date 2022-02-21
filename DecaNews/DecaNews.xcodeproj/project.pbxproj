@@ -70,6 +70,7 @@
 		B42573A627BCE5B6006F1944 /* HideOrShowPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */; };
 		B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */; };
 		B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */; };
+		B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */; };
@@ -99,7 +100,6 @@
 		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
 		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
 		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
-		B4B51EE227C41D6D0004E468 /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE127C41D6D0004E468 /* CommentsCoordinator.swift */; };
 		B4B51EE427C41D780004E468 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE327C41D780004E468 /* CommentsModel.swift */; };
 		B4B51EE827C41D960004E468 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE527C41D950004E468 /* CommentViewModel.swift */; };
 		B4B51EE927C41D960004E468 /* CommentsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE627C41D950004E468 /* CommentsCell.swift */; };
@@ -172,6 +172,7 @@
 		B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideOrShowPasswordTextField.swift; sourceTree = "<group>"; };
 		B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggleVisibilityView.swift; sourceTree = "<group>"; };
 		B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
+		B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
 		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
-		B4B51EE127C41D6D0004E468 /* CommentsCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
 		B4B51EE327C41D780004E468 /* CommentsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
 		B4B51EE527C41D950004E468 /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		B4B51EE627C41D950004E468 /* CommentsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsCell.swift; sourceTree = "<group>"; };
@@ -533,9 +533,9 @@
 		B47E589A27948BD800D70341 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				B4B51EE127C41D6D0004E468 /* CommentsCoordinator.swift */,
 				B47E589B27948C0100D70341 /* Coordinator.swift */,
 				B47E589D27948C1D00D70341 /* AppCoordinator.swift */,
+				B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */,
 				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
 				94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */,
 				94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */,
@@ -755,6 +755,7 @@
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
 				B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */,
 				049D60F627B8062800DB35F1 /* DashboardCollectionViewCell.swift in Sources */,
+				B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */,
 				049D60F327B8062800DB35F1 /* NewsModel.swift in Sources */,
 				B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */,
 				B47E589E27948C1D00D70341 /* AppCoordinator.swift in Sources */,

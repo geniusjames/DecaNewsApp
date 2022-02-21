@@ -87,6 +87,7 @@ final class AppCoordinator: Coordinator {
         }
     }
     func startComments() {
+        
         let commentsCoordinator = CommentsCoordinator()
         pushCoordinator(commentsCoordinator)
         window.rootViewController = commentsCoordinator.rootViewController
