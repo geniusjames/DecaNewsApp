@@ -11,7 +11,10 @@ import UniformTypeIdentifiers
 
 class EditProfilePageViewController: UIViewController {
     var fireStore: FireStorePersistence?
-//    var coordinator: MainCoordinator?
+    var fireService: FirebaseService?
+    let user = fireService?.getUserDetails()
+    var coordinator: MainCoordinator?
+  
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userEmail: UITextField!
     @IBOutlet weak var userBio: UITextView!
@@ -20,7 +23,7 @@ class EditProfilePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImage.layer.cornerRadius = profileImage.frame.size.width / 2
-        
+        UserDetails()
     }
     
     @IBAction func onClickProfile(_ sender: Any) {
@@ -28,6 +31,7 @@ class EditProfilePageViewController: UIViewController {
     }
     
     @IBAction func updateUserInfo(_ sender: Any) {
+        updateUserDetails()
     }
     func actionSheet() {
         let alert = UIAlertController(title: "Choose Image", message: nil, preferredStyle: .actionSheet)
@@ -64,6 +68,18 @@ class EditProfilePageViewController: UIViewController {
             image.mediaTypes = [UTType.image.identifier]
             self.present(image, animated: true, completion: nil)
         }
+    }
+    
+    func UserDetails(){
+        let user = fireService?.getUserDetails()
+        userName.text = user?.displayName
+        userEmail.text = user?.email
+    }
+    
+    func updateUserDetails(){
+        let user = fireService?.getUserDetails()
+        user?.updateEmail(to: userEmail.text, completion: nil)
+        fireService.collection("userDetails").updateData(["Bio": userBio.text, "name":userName.text, "phoneNumber":userPhoneNumber.text])
     }
 }
 
