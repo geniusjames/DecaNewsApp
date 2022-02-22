@@ -19,12 +19,12 @@ class NetworkManager {
 	
 	init() { }
 	
-	public func networkRequest(url: String, successCompletion: SuccessBlock, errorCompletion: ErrorBlock) {
+    public func networkRequest(url: String, successCompletion: SuccessBlock, errorCompletion: ErrorBlock) {
 
-		guard let urlMain = URL(string: url) else {
-			return
-		}
-		URLSession.shared.dataTask(with: urlMain) { data, _, error in
+            guard let urlMain = URL(string: url) else {
+                return
+            }
+            URLSession.shared.dataTask(with: urlMain) { data, _, error in
 			if let error = error {
 				errorCompletion?(error.localizedDescription)
 			}

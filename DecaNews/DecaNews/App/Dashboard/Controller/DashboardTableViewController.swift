@@ -73,5 +73,17 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		}
 		return cell
 	}
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        guard let newsDetailsController = UIStoryboard(name: "NewsDetails", bundle: nil).instantiateViewController(withIdentifier: "NewsDetails") as? NewsDetailsViewController else {
+            return
+        }
+        if let unwrappedArticles = articles {
+            let article = unwrappedArticles[indexPath.row]
+            newsDetailsController.article = article
+        }
+        navigationController?.pushViewController(newsDetailsController, animated: true)
+    }
 	
 }

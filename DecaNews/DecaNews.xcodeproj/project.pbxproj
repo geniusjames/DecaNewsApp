@@ -106,6 +106,14 @@
 		B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE727C41D960004E468 /* CommentsViewController.swift */; };
 		B4B51EEC27C41EBC0004E468 /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B51EEB27C41EBC0004E468 /* Comments.storyboard */; };
 		B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */; };
+		B4E7B99F27BC658900F809CE /* NewsCategories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4E7B99E27BC658900F809CE /* NewsCategories.storyboard */; };
+		B4E7B9A227BC690600F809CE /* PopularPublicationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */; };
+		B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */; };
+		B4E7B9A727BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A627BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift */; };
+		B4E7B9A927BC69DA00F809CE /* PopularAuthorViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A827BC69DA00F809CE /* PopularAuthorViewCell.swift */; };
+		B4E7B9AD27BC88FB00F809CE /* KeyBoardDismissal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9AC27BC88FB00F809CE /* KeyBoardDismissal.swift */; };
+		B4E7B9AF27BCF8B400F809CE /* CollectionViewDelegates+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9AE27BCF8B400F809CE /* CollectionViewDelegates+Extensions.swift */; };
+		B4E7B9B127BDC11700F809CE /* ExploreTopicsStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9B027BDC11600F809CE /* ExploreTopicsStruct.swift */; };
 		B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */; };
 		BB261B904D2D6A570476C503 /* Pods_DecaNews.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95DBAE4292CDB92944ECD0C5 /* Pods_DecaNews.framework */; };
 /* End PBXBuildFile section */
@@ -208,6 +216,14 @@
 		B4B51EE727C41D960004E468 /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		B4B51EEB27C41EBC0004E468 /* Comments.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Comments.storyboard; sourceTree = "<group>"; };
 		B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetLinkViewController.swift; sourceTree = "<group>"; };
+		B4E7B99E27BC658900F809CE /* NewsCategories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewsCategories.storyboard; sourceTree = "<group>"; };
+		B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPublicationsCell.swift; sourceTree = "<group>"; };
+		B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewController.swift; sourceTree = "<group>"; };
+		B4E7B9A627BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTopicsCollectionViewCell.swift; sourceTree = "<group>"; };
+		B4E7B9A827BC69DA00F809CE /* PopularAuthorViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularAuthorViewCell.swift; sourceTree = "<group>"; };
+		B4E7B9AC27BC88FB00F809CE /* KeyBoardDismissal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyBoardDismissal.swift; sourceTree = "<group>"; };
+		B4E7B9AE27BCF8B400F809CE /* CollectionViewDelegates+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewDelegates+Extensions.swift"; sourceTree = "<group>"; };
+		B4E7B9B027BDC11600F809CE /* ExploreTopicsStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreTopicsStruct.swift; sourceTree = "<group>"; };
 		B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeCoordinator.swift; sourceTree = "<group>"; };
 		DEEC4D653BCBAE32C2DF21E1 /* Pods-DecaNews.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.debug.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.debug.xcconfig"; sourceTree = "<group>"; };
 		F661D99E3E7415444CF3FC96 /* Pods-DecaNews.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DecaNews.release.xcconfig"; path = "Target Support Files/Pods-DecaNews/Pods-DecaNews.release.xcconfig"; sourceTree = "<group>"; };
@@ -394,6 +410,7 @@
 		04F2AA7C27931F3100D4C062 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B4E7B9A027BC68CB00F809CE /* NewsTopicAndGenre */,
 				B4B51EE627C41D950004E468 /* CommentsCell.swift */,
 				B4B51EE727C41D960004E468 /* CommentsViewController.swift */,
 				B4B51EE527C41D950004E468 /* CommentViewModel.swift */,
@@ -444,6 +461,7 @@
 				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
 				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
+				B4E7B99E27BC658900F809CE /* NewsCategories.storyboard */,
 				0417C34827BCEB7F006AB3B4 /* Profile.storyboard */,
 				045B321727C3101C00D41470 /* WriteNews.storyboard */,
 			);
@@ -506,6 +524,7 @@
 			children = (
 				049D611227B89B3D00DB35F1 /* UIView+Extension.swift */,
 				9410301F27A9409F00411376 /* String+Extension.swift */,
+				B4E7B9AC27BC88FB00F809CE /* KeyBoardDismissal.swift */,
 				B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */,
 				B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */,
 				B45C378927C1D36F009995B7 /* Date+Extension.swift */,
@@ -544,6 +563,43 @@
 				045B320827C30B6D00D41470 /* WriteNewsCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		B4E7B9A027BC68CB00F809CE /* NewsTopicAndGenre */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7B9B327BE9AA400F809CE /* Model */,
+				B4E7B9B227BE98C600F809CE /* CollectionViewCell */,
+				B4E7B9A527BC694200F809CE /* Controller */,
+			);
+			path = NewsTopicAndGenre;
+			sourceTree = "<group>";
+		};
+		B4E7B9A527BC694200F809CE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7B9AE27BCF8B400F809CE /* CollectionViewDelegates+Extensions.swift */,
+				B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B4E7B9B227BE98C600F809CE /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7B9A627BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift */,
+				B4E7B9A827BC69DA00F809CE /* PopularAuthorViewCell.swift */,
+				B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		B4E7B9B327BE9AA400F809CE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4E7B9B027BDC11600F809CE /* ExploreTopicsStruct.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -623,6 +679,7 @@
 				0417C35327BD7738006AB3B4 /* SideMenuTableViewCell.xib in Resources */,
 				B4655A1627A289DA0012E4CD /* EmailSignin.storyboard in Resources */,
 				049D611427B89CAB00DB35F1 /* GoogleService-Info.plist in Resources */,
+				B4E7B99F27BC658900F809CE /* NewsCategories.storyboard in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
 				B45C378827C1D34B009995B7 /* NewSearch.storyboard in Resources */,
@@ -745,8 +802,12 @@
 				B42573A427BCE340006F1944 /* PasswordChangeViewController.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
+				B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
+				B4E7B9AF27BCF8B400F809CE /* CollectionViewDelegates+Extensions.swift in Sources */,
 				049D60FD27B8063D00DB35F1 /* MenuTableViewController.swift in Sources */,
+				B4E7B9AD27BC88FB00F809CE /* KeyBoardDismissal.swift in Sources */,
+				049D60FE27B8063D00DB35F1 /* SideMenuViewController.swift in Sources */,
 				045B321427C30EEC00D41470 /* PreviewController.swift in Sources */,
 				B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */,
 				049D60FF27B8063D00DB35F1 /* SideMenuTableViewCell.swift in Sources */,
@@ -757,6 +818,7 @@
 				049D60F627B8062800DB35F1 /* DashboardCollectionViewCell.swift in Sources */,
 				B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */,
 				049D60F327B8062800DB35F1 /* NewsModel.swift in Sources */,
+				B4E7B9A227BC690600F809CE /* PopularPublicationsCell.swift in Sources */,
 				B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */,
 				B47E589E27948C1D00D70341 /* AppCoordinator.swift in Sources */,
 				B45C378127C1D335009995B7 /* SearchNewsTableViewCell.swift in Sources */,
@@ -768,6 +830,9 @@
 				94A2C96D27BAE85D0048F37C /* AuthCoordinator.swift in Sources */,
 				B45C377F27C1D335009995B7 /* CheckMarkImageView.swift in Sources */,
 				B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */,
+				B4E7B9A727BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift in Sources */,
+				04F2AA8727943F6000D4C062 /* Model.swift in Sources */,
+				B4E7B9A927BC69DA00F809CE /* PopularAuthorViewCell.swift in Sources */,
 				0417C35127BCFCE7006AB3B4 /* EditProfilePageViewController.swift in Sources */,
 				B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */,
 				049D610327B80C8E00DB35F1 /* DetailsViewController.swift in Sources */,
@@ -781,6 +846,7 @@
 				049D610F27B89A0900DB35F1 /* DetailsSettingsView.swift in Sources */,
 				B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */,
 				049D60F227B8062800DB35F1 /* DashboardTableViewController.swift in Sources */,
+				B4E7B9B127BDC11700F809CE /* ExploreTopicsStruct.swift in Sources */,
 				B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */,
 				B45C378227C1D335009995B7 /* SortByUIView.swift in Sources */,
 				B46C8ECA279BF29800C1A903 /* OnboardingCollectionViewCell.swift in Sources */,
