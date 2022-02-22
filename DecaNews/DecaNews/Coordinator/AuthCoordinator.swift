@@ -20,9 +20,10 @@ final class AuthCoordinator: Coordinator {
     }
     
     override func start() {
-        loadAuthRoot()
+//        loadAuthRoot()
+        navigateToEmailSignin()
     }
-    
+
     func loadAuthRoot() {
         let viewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginScreen") as? LoginViewController
         guard let viewController = viewController else { return }
@@ -31,8 +32,14 @@ final class AuthCoordinator: Coordinator {
         viewController.serviceViewModel = serviceViewModel
         navigationController.pushViewController(viewController, animated: true)
     }
+    func navigateToEmailSignin() {
+       guard let viewController = UIStoryboard(name: "EmailSignin", bundle: nil)
+                .instantiateViewController(withIdentifier: "EmailSiginInViewController") as? EmailSiginInViewController else {return}
+        let serviceViewModel = ServicesViewModel()
+//        serviceViewModel.addOnboarded()
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
-
 
 /*
  func navigateToEmailSignin() {

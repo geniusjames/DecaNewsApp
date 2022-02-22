@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct News: Codable {
     let author: String?

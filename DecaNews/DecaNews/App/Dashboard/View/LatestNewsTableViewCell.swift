@@ -14,6 +14,8 @@ class LatestNewsTableViewCell: UITableViewCell {
 	@IBOutlet weak var authorsName: UILabel!
 	@IBOutlet weak var bookmark: UIImageView!
 	
+	var didTapBookmarkBtn: (() -> Void)?
+	
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -22,6 +24,9 @@ class LatestNewsTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
     }
+	@IBAction func bookmarkButtonAction(_ sender: Any) {
+		didTapBookmarkBtn?()
+	}
 	
 	func setup(with article: Article) {
 		newsTitle?.text = article.title

@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ProfileTableViewCell: UITableViewCell {
+class SideMenuTableViewCell: UITableViewCell {
     
     static let identifier = "ProfileTableViewCell"
     @IBOutlet weak var profileName: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!
-    @IBOutlet weak var viewProfile: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -23,4 +22,6 @@ class ProfileTableViewCell: UITableViewCell {
 
     }
     
+	@IBAction func viewProfileButtonAction(_ sender: Any) {
+	}
 }

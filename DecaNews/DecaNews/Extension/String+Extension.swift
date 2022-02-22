@@ -14,7 +14,8 @@ extension String {
     }
 
     var isValidPassword: Bool {
-        let passRegEx = "(?=[^a-z]*[a-z])[^0-9]*[0-9].*"
+        let passRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d\\w\\W]{8,}$"
+       
         return applyPredicationOnRegex(regexStr: passRegEx)
     }
 
@@ -23,5 +24,14 @@ extension String {
         let validateOtherString = NSPredicate(format: "SELF MATCHES %@", regexStr)
         let isvalidateOtherString = validateOtherString.evaluate(with: trimmedString)
         return isvalidateOtherString
+    }
+    
+    func dateChanger() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        if let date = dateFormatter.date(from: self) {
+            return date
+        }
+        return Date()
     }
 }

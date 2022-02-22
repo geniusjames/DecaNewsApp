@@ -11,19 +11,20 @@ class MenuTableViewController: UITableViewController {
     public weak var delegate: MenuControllerDelegate?
     var imageList: [String] = [ "home", "Bookmark", "card", "edit", "logout", "card", "settings"]
     private let menuItem: [String]
+	let firebaseService = FirebaseService()
 
     init(with menuItems: [String]) {
         self.menuItem = menuItems
         super.init(nibName: nil, bundle: nil)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .black
         //            tableView.rowHeight = CGFloat(60.0)
-        tableView.register(UINib(nibName: "ProfileTableViewCell", bundle: nil), forCellReuseIdentifier: ProfileTableViewCell.identifier)
+        tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
     }
 
     required init?(coder: NSCoder) {
@@ -36,13 +37,13 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: ProfileTableViewCell.identifier, for: indexPath) as? ProfileTableViewCell else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuTableViewCell.identifier, for: indexPath) as? SideMenuTableViewCell else {
                 return UITableViewCell()
             }
-            cell.profileName.text = "Tiana Vetrovs"
-            cell.viewProfile.text = "View Profile"
+			let user = firebaseService.getUserDetails()
+			cell.profileName.text = user?.displayName
+			NetworkManager.shared.getImageDataFrom(url: (user?.photoURL)!, imageCell: cell.profileImage)
             cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
-            cell.profileImage.image = UIImage(named: "profile")
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
