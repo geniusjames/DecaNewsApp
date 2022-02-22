@@ -9,6 +9,10 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 class FireStorePersistence: PersistenceManager {
+    func update() {
+        
+    }
+    
     var collectionName: String
     var id: String?
     let db = Firestore.firestore()
@@ -33,8 +37,8 @@ class FireStorePersistence: PersistenceManager {
         }
     }
     
-    func update() {
-
+    func updateProfile (document: [String: Any] ) {
+        db.collection(collectionName).parent?.updateData(document)
     }
     
     func search() {

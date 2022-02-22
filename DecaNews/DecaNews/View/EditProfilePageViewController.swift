@@ -12,8 +12,7 @@ import UniformTypeIdentifiers
 class EditProfilePageViewController: UIViewController {
     var fireStore: FireStorePersistence?
     var fireService: FirebaseService?
-//    let user = fireService?.getUserDetails()
-//    var coordinator: MainCoordinator?
+    var persistence = FireStorePersistence(collectionName: "userDetails")
   
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userEmail: UITextField!
@@ -70,7 +69,7 @@ class EditProfilePageViewController: UIViewController {
         }
     }
     
-    func UserDetails(){
+    func UserDetails() {
         let user = fireService?.getUserDetails()
         userName.text = user?.displayName
         userEmail.text = user?.email
@@ -79,7 +78,9 @@ class EditProfilePageViewController: UIViewController {
     func updateUserDetails() {
         let user = fireService?.getUserDetails()
         user?.updateEmail(to: userEmail.text ?? "", completion: nil)
-       // fireService.collection("userDetails").updateData(["Bio": userBio.text, "name":userName.text, "phoneNumber":userPhoneNumber.text])
+        let setDetails = UserSetDetails(phoneNumber: userPhoneNumber.text ?? "", bio: userBio.text ?? "", name: userName.text ?? "")
+           persistence.add(item: setDetails)
+         
     }
 }
 
