@@ -2,7 +2,7 @@
 //  PreviewController.swift
 //  DecaNews
 //
-//  Created by Decagon on 2/21/22.
+//  Created by JustifiedTech on 2/21/22.
 //
 import Foundation
 import UIKit
@@ -34,14 +34,13 @@ class PreviewController: UIViewController {
     }
     
     fileprivate func setupLayoutConstraints() {
-        
         view.addSubview(viewLayout)
         viewLayout.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([viewLayout.topAnchor.constraint(equalTo: view.topAnchor),
         viewLayout.leadingAnchor.constraint(equalTo: view.leadingAnchor),
         viewLayout.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         viewLayout.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-                                    ])
+    ])
     }
     
 @objc func back() {

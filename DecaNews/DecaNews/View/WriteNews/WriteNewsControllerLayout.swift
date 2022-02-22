@@ -1,14 +1,15 @@
 //
-//  PreviewControllerLayout.swift
+//  WriteNewsControllerLayout.swift
 //  DecaNews
 //
-//  Created by JustifiedTech on 2/21/22.
+//  Created by JustifiedTech on 2/22/22.
 //
+
 
 import Foundation
 import UIKit
 
-class PreviewControllerLayout: UIView {
+class WriteNewsControllerLayout: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,29 +24,59 @@ class PreviewControllerLayout: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    var newsTitle: UILabel = {
-        var label = UILabel()
-//        label.text = "Lorem Ipsum Dolor Sit er Elit Lamet, Consectetaur Cillium Adipisicing Pecu"
-        label.numberOfLines = 0
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+    lazy var topicStack: UIStackView = {
         
-        label.translatesAutoresizingMaskIntoConstraints = false
-        
-        return label
     }()
-    
-    lazy var newsCover: UIImageView = {
+    lazy var contentStack: UIStackView = {
+        
+    }()
+    lazy var imageView: UIView = {
+        
+    }()
+    lazy  var titleStack: UIStackView = {
+        
+    }()
+    lazy var coverImage: UIImageView = {
         var image = UIImageView()
-//        image.image = UIImage(named: "test")
         image.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2).isActive = true
         image.layer.cornerRadius = 20
         image.clipsToBounds = true
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
+        
     }()
     
-   lazy var newsDetails: UITextView = {
+    lazy var uploadTitle: UILabel = {
+        var label = UILabel()
+
+        return label
+        
+    }()
+    lazy var uploadButton: UIButton = {
+        
+    }()
+    lazy  var uploadLabel: UILabel = {
+        
+    }()
+  lazy var titleLabel: UILabel = {
+      var label = UILabel()
+      label.numberOfLines = 0
+      label.textAlignment = .center
+      label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
+    
+      label.translatesAutoresizingMaskIntoConstraints = false
+      return label
+    }()
+    lazy var titleField: UITextField = {
+        
+    }()
+    lazy var contentLabel: UILabel = {
+        var label = UILabel()
+
+        return label
+        
+    }()
+    lazy var contentField: UITextView = {
         let textView = UITextView()
        textView.smartDashesType = .default
        textView.dataDetectorTypes = .all
@@ -58,7 +89,56 @@ class PreviewControllerLayout: UIView {
         textView.translatesAutoresizingMaskIntoConstraints = false
 //        textView.backgroundColor = UIColor.lightGray
         return textView
+
+        
     }()
+    lazy var topicField: UITextField = {
+        
+    }()
+    lazy var topicLabel: UILabel = {
+        var label = UILabel()
+
+        return label
+        
+    }()
+    
+    lazy var publishButton: UIButton = {
+        
+    }()
+    
+    func coverImageStyle() {
+     .coverImage.clipsToBounds = true
+        viewLayout.coverImage.layer.cornerRadius = 10
+        viewLayout.coverImage.layer.borderWidth = 1
+        viewLayout.coverImage.layer.masksToBounds = true
+        viewLayout.coverImage.layer.borderColor = .init(gray: 255, alpha: 1)
+        
+    }
+    func uniformFieldStyle(_ field: UITextField, _ placeHolder: String) {
+        field.autocorrectionType = .no
+        field.layer.borderWidth = 0.2
+        field.layer.cornerRadius = 10
+        field.placeholder = placeHolder
+        field.rightViewMode = .always
+    }
+    
+    func imageViewStyle() {
+        viewLayout.imageView.layer.borderWidth = 1
+        viewLayout.imageView.layer.cornerRadius = 10
+        viewLayout.imageView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
+        viewLayout.imageView.backgroundColor = UIColor.systemGray.withAlphaComponent(0)
+    }
+    
+    func textFieldStyle() {
+        viewLayout.topicField.rightView = view.arrow_downward
+        viewLayout.contentField.layer.borderWidth = 1
+        viewLayout.contentField.layer.cornerRadius = 10
+        viewLayout.contentField.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
+        uniformFieldStyle(titleField, "Write title")
+        uniformFieldStyle(topicField, "topic")
+    }
+    
+
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -74,7 +154,6 @@ class PreviewControllerLayout: UIView {
     }()
     
     func setUpScrollView() {
-        
         scrollView.addSubview(contentView)
         self.addSubview(scrollView)
         let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
@@ -98,7 +177,6 @@ class PreviewControllerLayout: UIView {
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentViewCenterY,
             contentViewHeight
-        
         ])
     }
     
