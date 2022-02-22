@@ -83,3 +83,10 @@ final class EmailSiginInViewController: UIViewController {
         }
     }
 }
+
+
+extension EmailSiginInViewController: Storyboardable {
+    static var storyboard: Storyboard {
+        return .emailSignIn
+    }
+}

@@ -62,4 +62,28 @@ final class MainAppCoordinator: Coordinator {
      viewController.coordinator = self
      controller.pushViewController(viewController, animated: true)
  }
+ 
+ func startBookmarks() {
+     let bookmarksCoordinator = BookmarksCoordinator()
+     pushCoordinator(bookmarksCoordinator)
+     window.rootViewController = bookmarksCoordinator.rootViewController
+     window.makeKeyAndVisible()
+     
+     bookmarksCoordinator.didFinish = { [weak self] coordinator in
+         self?.popCoordinator(coordinator)
+         self?.startAuth()
+     }
+ }
+ func startPasswordChange() {
+     let changePasswordCoordinator = PasswordChangeCoordinator()
+     pushCoordinator(changePasswordCoordinator)
+     window.rootViewController = changePasswordCoordinator.rootViewController
+     window.makeKeyAndVisible()
+     
+     changePasswordCoordinator.didFinish = { [weak self] coordinator in
+         self?.popCoordinator(coordinator)
+         self?.startAuth()
+     }
+ }
+ 
  */

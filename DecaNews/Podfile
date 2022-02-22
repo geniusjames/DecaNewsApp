@@ -9,7 +9,6 @@ target 'DecaNews' do
 
   # Pods for DecaNews
     pod 'SwiftLint'
-    pod 'GoogleSignIn', '~> 5.0.2'
     pod 'SideMenu'
     pod 'RealmSwift'
 end

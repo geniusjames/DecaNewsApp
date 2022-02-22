@@ -10,7 +10,15 @@ import Firebase
 import SwiftUI
 import FirebaseStorage
 
-final class FirebaseService {
+protocol AuthServiceRepository {
+    func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void)
+    func signIn(_ email: String, _ password: String, completionHandler: @escaping (Result<Int, Error>) -> Void)
+    func resetPassword(_ text: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void)
+    func changePassword(oldPassword: String, newPassword: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void)
+}
+
+final class FirebaseService: AuthServiceRepository {
+    
     private let auth = Auth.auth()
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()

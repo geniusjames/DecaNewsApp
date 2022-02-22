@@ -36,8 +36,13 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
     }
     
     func configureGoogleSignInButton() {
-        GIDSignIn.sharedInstance()?.presentingViewController = self
         signInButton.style = .wide
+        let signInConfig = GIDConfiguration.init(clientID: "1020653200021-se4ko8phdmla3chhpit3nej980a254bb.apps.googleusercontent.com")
+        GIDSignIn.sharedInstance.signIn(with: signInConfig, presenting: self) { user, error in
+            guard error == nil else { return }
+            
+            // If sign in succeeded, display the app's main content View.
+        }
     }
    
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {

@@ -1,6 +1,0 @@
-framework module Pods_DecaNews {
-  umbrella header "Pods-DecaNews-umbrella.h"
-
-  export *
-  module * { export * }
-}
