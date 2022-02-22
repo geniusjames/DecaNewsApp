@@ -22,7 +22,7 @@ final class FirebaseService: AuthServiceRepository {
     private let auth = Auth.auth()
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
-
+    
     func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         auth.createUser(withEmail: email, password: password) { _, error in
             if let error = error {
@@ -32,7 +32,7 @@ final class FirebaseService: AuthServiceRepository {
             completionHandler(.success(0))
         }
     }
-
+    
     func signIn(_ email: String, _ password: String, completionHandler: @escaping (Result<Int, Error>) -> Void) {
         auth.signIn(withEmail: email, password: password) { _, error in
             if let error = error {
@@ -42,19 +42,19 @@ final class FirebaseService: AuthServiceRepository {
             completionHandler(.success(0))
         }
     }
-
+    
     func resetPassword(_ text: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         auth.sendPasswordReset(withEmail: text) { error in
             if let error = error {
                 completionHandler(.failure(error))
                 return
             } else {
-            completionHandler(.success(0))
+                completionHandler(.success(0))
             }
             
         }
     }
-
+    
     func changePassword(oldPassword: String, newPassword: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         guard let user = auth.currentUser else {return}
         
@@ -77,15 +77,15 @@ final class FirebaseService: AuthServiceRepository {
             
         }
         
-  }
-  
-  func getUserDetails() -> FirebaseAuth.User? {
-		let user = auth.currentUser
-		return user
-	}
+    }
+    
+    func getUserDetails() -> FirebaseAuth.User? {
+        let user = auth.currentUser
+        return user
+    }
     
     func saveNewsData(title: String, topic: String, content: String, cover: String, _ completionHandler: @escaping (Result<String, Error>) -> Void ) {
-
+        
         var ref: DocumentReference?
         ref = db.collection("news").addDocument(data: [
             "title": title,
@@ -98,7 +98,7 @@ final class FirebaseService: AuthServiceRepository {
                 completionHandler(.failure(error))
                 return
             } else {
-            completionHandler(.success(ref!.documentID))
+                completionHandler(.success(ref!.documentID))
             }
         }
     }
@@ -120,6 +120,4 @@ final class FirebaseService: AuthServiceRepository {
             }
         })
     }
-
-
 }

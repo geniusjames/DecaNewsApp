@@ -9,7 +9,7 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
     
-    private var window: UIWindow
+    private let window: UIWindow
     private let servicesViewModel: ServicesViewModel
     private var navigationController: UINavigationController
     
@@ -18,11 +18,11 @@ final class AppCoordinator: Coordinator {
         self.servicesViewModel = servicesViewModel
         navigationController = UINavigationController()
     }
-
+    
     override func start() {
         servicesViewModel.getOnboardedStatus ? autenticateUser() : startOnboarding()
     }
-
+    
     func autenticateUser() {
         servicesViewModel.getSignedStatus ? startMainApp() : startWriteNews()
     }
@@ -85,7 +85,7 @@ final class AppCoordinator: Coordinator {
             self?.startAuth()
         }
     }
-
+    
     func startWriteNews() {
         let writeNewsCoordinator = WriteNewsCoordinator()
         pushCoordinator(writeNewsCoordinator)
@@ -96,17 +96,18 @@ final class AppCoordinator: Coordinator {
             self?.popCoordinator(coordinator)
             self?.startAuth()
         }
-
-    func startComments() {
-        let commentsCoordinator = CommentsCoordinator()
-        pushCoordinator(commentsCoordinator)
-        window.rootViewController = commentsCoordinator.rootViewController
-        window.makeKeyAndVisible()
         
-        commentsCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-            self?.startAuth()
-    }
-
+        func startComments() {
+            let commentsCoordinator = CommentsCoordinator()
+            pushCoordinator(commentsCoordinator)
+            window.rootViewController = commentsCoordinator.rootViewController
+            window.makeKeyAndVisible()
+            
+            commentsCoordinator.didFinish = { [weak self] coordinator in
+                self?.popCoordinator(coordinator)
+                self?.startAuth()
+            }
+            
+        }
     }
 }

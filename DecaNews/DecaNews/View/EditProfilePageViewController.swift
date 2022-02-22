@@ -12,8 +12,8 @@ import UniformTypeIdentifiers
 class EditProfilePageViewController: UIViewController {
     var fireStore: FireStorePersistence?
     var fireService: FirebaseService?
-    let user = fireService?.getUserDetails()
-    var coordinator: MainCoordinator?
+//    let user = fireService?.getUserDetails()
+//    var coordinator: MainCoordinator?
   
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var userEmail: UITextField!
@@ -76,10 +76,10 @@ class EditProfilePageViewController: UIViewController {
         userEmail.text = user?.email
     }
     
-    func updateUserDetails(){
+    func updateUserDetails() {
         let user = fireService?.getUserDetails()
-        user?.updateEmail(to: userEmail.text, completion: nil)
-        fireService.collection("userDetails").updateData(["Bio": userBio.text, "name":userName.text, "phoneNumber":userPhoneNumber.text])
+        user?.updateEmail(to: userEmail.text ?? "", completion: nil)
+       // fireService.collection("userDetails").updateData(["Bio": userBio.text, "name":userName.text, "phoneNumber":userPhoneNumber.text])
     }
 }
 

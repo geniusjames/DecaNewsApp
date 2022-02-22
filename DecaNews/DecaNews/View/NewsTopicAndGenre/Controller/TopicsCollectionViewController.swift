@@ -25,7 +25,6 @@ class TopicsCollectionViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        dismissKeyboard()
     }
     
     @IBAction func seeMoreAuthorsActionButton(_ sender: Any) {
