@@ -3,7 +3,7 @@ import GoogleSignIn
 import AuthenticationServices
 import FirebaseAuth
 
-class LoginViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
+class AuthRootViewController: UIViewController, ASAuthorizationControllerPresentationContextProviding {
     var serviceViewModel: ServicesViewModel?
     var navigateToEmailSignin: (() -> Void)?
     
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, ASAuthorizationControllerPresentati
     }
 }
 
-extension LoginViewController: ASAuthorizationControllerDelegate {
+extension AuthRootViewController: ASAuthorizationControllerDelegate {
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
 
@@ -71,4 +71,8 @@ extension LoginViewController: ASAuthorizationControllerDelegate {
         print("Authorization Error Occured", error)
         }
     }
+}
+
+extension AuthRootViewController: Storyboardable {
+    static var storyboard: Storyboard { .auth }
 }

@@ -20,11 +20,15 @@ final class AuthCoordinator: Coordinator {
     }
     
     override func start() {
-        // loadAuthRoot()
-        navigateToEmailSignin()
+        loadAuthRoot()
     }
     
     func loadAuthRoot() {
+        let viewController = AuthRootViewController.instantiate()
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func startLogin() {
         guard let viewController = AuthComposer.makeLoginController() else { return }
         navigationController.pushViewController(viewController, animated: true)
     }

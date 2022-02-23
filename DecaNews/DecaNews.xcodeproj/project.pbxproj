@@ -19,7 +19,7 @@
 		045B321127C30E8500D41470 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321027C30E8500D41470 /* News.swift */; };
 		045B321427C30EEC00D41470 /* PreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321327C30EEC00D41470 /* PreviewController.swift */; };
 		045B321627C30F3200D41470 /* PreviewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321527C30F3200D41470 /* PreviewControllerLayout.swift */; };
-		049D60D927B8059E00DB35F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60D827B8059E00DB35F1 /* LoginViewController.swift */; };
+		049D60D927B8059E00DB35F1 /* AuthRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60D827B8059E00DB35F1 /* AuthRootViewController.swift */; };
 		049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */; };
 		049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E127B8062800DB35F1 /* DashboardViewController.swift */; };
 		049D60F027B8062800DB35F1 /* LatestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */; };
@@ -132,7 +132,7 @@
 		045B321027C30E8500D41470 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		045B321327C30EEC00D41470 /* PreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewController.swift; sourceTree = "<group>"; };
 		045B321527C30F3200D41470 /* PreviewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewControllerLayout.swift; sourceTree = "<group>"; };
-		049D60D827B8059E00DB35F1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = DecaNews/App/Auth/LoginOptions/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
+		049D60D827B8059E00DB35F1 /* AuthRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRootViewController.swift; path = DecaNews/App/Auth/LoginOptions/AuthRootViewController.swift; sourceTree = SOURCE_ROOT; };
 		049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDirectory.swift; sourceTree = "<group>"; };
 		049D60E127B8062800DB35F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestNewsViewController.swift; sourceTree = "<group>"; };
@@ -433,9 +433,9 @@
 		941B377927C683660025753A /* Child Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
 				94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */,
 				B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */,
-				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
 				94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */,
 				B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */,
 				B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */,
@@ -731,7 +731,7 @@
 		B45C37AB27C5754C009995B7 /* LoginOptions */ = {
 			isa = PBXGroup;
 			children = (
-				049D60D827B8059E00DB35F1 /* LoginViewController.swift */,
+				049D60D827B8059E00DB35F1 /* AuthRootViewController.swift */,
 			);
 			path = LoginOptions;
 			sourceTree = "<group>";
@@ -952,7 +952,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049D60D927B8059E00DB35F1 /* LoginViewController.swift in Sources */,
+				049D60D927B8059E00DB35F1 /* AuthRootViewController.swift in Sources */,
 				94EDA13C27C4DC400019DF5C /* DetailsViewController.swift in Sources */,
 				9412445D27C033600045484E /* Storyboard.swift in Sources */,
 				94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */,

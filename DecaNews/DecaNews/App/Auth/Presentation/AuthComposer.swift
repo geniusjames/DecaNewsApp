@@ -10,8 +10,8 @@ import UIKit
 
 final class AuthComposer {
     
-    static func makeLoginController() -> LoginViewController? {
-        let viewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController
+    static func makeLoginController() -> AuthRootViewController? {
+        let viewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? AuthRootViewController
         let serviceViewModel = DIContainer.makeServiceViewModel()
         serviceViewModel.addOnboarded()
         viewController?.serviceViewModel = serviceViewModel
