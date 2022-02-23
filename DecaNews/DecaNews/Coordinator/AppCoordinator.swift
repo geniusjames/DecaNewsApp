@@ -69,12 +69,12 @@ final class AppCoordinator: Coordinator {
         pushCoordinator(bookmarksCoordinator)
         window.rootViewController = bookmarksCoordinator.rootViewController
         window.makeKeyAndVisible()
-        
         bookmarksCoordinator.didFinish = { [weak self] coordinator in
             self?.popCoordinator(coordinator)
             self?.startAuth()
         }
     }
+    
     func startPasswordChange() {
         let changePasswordCoordinator = PasswordChangeCoordinator()
         pushCoordinator(changePasswordCoordinator)
@@ -92,7 +92,6 @@ final class AppCoordinator: Coordinator {
         pushCoordinator(writeNewsCoordinator)
         window.rootViewController = writeNewsCoordinator.rootViewController
         window.makeKeyAndVisible()
-        
         writeNewsCoordinator.didFinish = { [weak self] coordinator in
             self?.popCoordinator(coordinator)
             self?.startAuth()

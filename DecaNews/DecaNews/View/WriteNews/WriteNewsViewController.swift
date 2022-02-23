@@ -14,7 +14,6 @@ class WriteNewsViewController: UIViewController {
     var imageData: Data?
     var image: UIImage?
     var writeNewsViewModel: WriteNewsViewModel?
-    
     var news: NewsModel?
     var imageUrl: String = ""
     
@@ -42,8 +41,7 @@ class WriteNewsViewController: UIViewController {
     }
     
     @objc func preview() {
-        
-        news = NewsModel(title: viewLayout.titleField.text, content: viewLayout.contentField.text, topic: viewLayout.topicField.text, image: image)
+        news = NewsModel(title: viewLayout.titleField.text ?? "Hell", content: viewLayout.contentField.text ?? "Content", topic: viewLayout.topicField.text, image: image)
         navigateToPreview?()
     }
     
@@ -51,7 +49,7 @@ class WriteNewsViewController: UIViewController {
         navigateToPickTopic?()
     }
     
-    @objc func imagePicker() {
+    @objc func pickImage() {
       showImagePickerControllerActionSheet()
     }
     
@@ -60,11 +58,9 @@ class WriteNewsViewController: UIViewController {
         AlertService.showAlert(style: .alert, title: "Choose topic", message: "Make", actions: [cancelAction], completion: nil)
     }
     
-  
-    
     func setActionsEvents() {
         viewLayout.publishButton.addTarget(self, action: #selector(publishNews), for: .touchUpInside)
-        viewLayout.uploadButton.addTarget(self, action: #selector(imagePicker), for: .touchUpInside)
+        viewLayout.uploadButton.addTarget(self, action: #selector(pickImage), for: .touchUpInside)
         viewLayout.topicField.addTarget(self, action: #selector(pickTopic), for: .allTouchEvents)
     }
 
@@ -92,9 +88,7 @@ class WriteNewsViewController: UIViewController {
         case .success(let id):
            print(id)
         case .failure(let error):
-
             print("\(error.localizedDescription)")
-
         }
     }
     
@@ -103,14 +97,11 @@ class WriteNewsViewController: UIViewController {
         case .success(let id):
             imageUrl = id
         case .failure(let error):
-
             print("\(error.localizedDescription)")
-
         }
     }
     
     fileprivate func setupLayoutConstraints() {
-        
         view.addSubview(viewLayout)
         viewLayout.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([viewLayout.topAnchor.constraint(equalTo: view.topAnchor),
@@ -120,6 +111,7 @@ class WriteNewsViewController: UIViewController {
                                     ])
     }
 }
+
 extension WriteNewsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {

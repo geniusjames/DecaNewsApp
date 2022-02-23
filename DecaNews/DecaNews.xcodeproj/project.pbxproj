@@ -23,6 +23,7 @@
 		045B321627C30F3200D41470 /* PreviewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321527C30F3200D41470 /* PreviewControllerLayout.swift */; };
 		045B321827C3101C00D41470 /* WriteNews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 045B321727C3101C00D41470 /* WriteNews.storyboard */; };
 		045B321A27C4E95300D41470 /* WriteNewsControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321927C4E95300D41470 /* WriteNewsControllerLayout.swift */; };
+		045B321C27C4F7C300D41470 /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321B27C4F7C300D41470 /* TextField+Extension.swift */; };
 		049D60D927B8059E00DB35F1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60D827B8059E00DB35F1 /* LoginViewController.swift */; };
 		049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */; };
 		049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E127B8062800DB35F1 /* DashboardViewController.swift */; };
@@ -128,6 +129,7 @@
 		045B321527C30F3200D41470 /* PreviewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewControllerLayout.swift; sourceTree = "<group>"; };
 		045B321727C3101C00D41470 /* WriteNews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteNews.storyboard; sourceTree = "<group>"; };
 		045B321927C4E95300D41470 /* WriteNewsControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNewsControllerLayout.swift; sourceTree = "<group>"; };
+		045B321B27C4F7C300D41470 /* TextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extension.swift"; sourceTree = "<group>"; };
 		049D60D827B8059E00DB35F1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = DecaNews/View/LoginViewController/Controller/LoginViewController.swift; sourceTree = SOURCE_ROOT; };
 		049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDirectory.swift; sourceTree = "<group>"; };
 		049D60E127B8062800DB35F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 				B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */,
 				B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */,
 				B45C378927C1D36F009995B7 /* Date+Extension.swift */,
+				045B321B27C4F7C300D41470 /* TextField+Extension.swift */,
 			);
 			name = Extension;
 			path = DecaNews/Extension;
@@ -783,6 +786,7 @@
 				B47E589C27948C0100D70341 /* Coordinator.swift in Sources */,
 				049D610F27B89A0900DB35F1 /* DetailsSettingsView.swift in Sources */,
 				B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */,
+				045B321C27C4F7C300D41470 /* TextField+Extension.swift in Sources */,
 				049D60F227B8062800DB35F1 /* DashboardTableViewController.swift in Sources */,
 				B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */,
 				B45C378227C1D335009995B7 /* SortByUIView.swift in Sources */,

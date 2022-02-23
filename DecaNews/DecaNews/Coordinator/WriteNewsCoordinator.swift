@@ -22,16 +22,29 @@ final class WriteNewsCoordinator: Coordinator {
         loadWriteNewsRoot()
     }
     
+    func goBack() {
+        navigationController.popViewController(animated: true)
+    }
+
+    func navigateToPreview(_ news: NewsModel) {
+        let viewController = UIStoryboard(name: "WriteNews", bundle: nil).instantiateViewController(withIdentifier: "PreviewController") as? PreviewController
+               guard let viewController = viewController else { return }
+        viewController.goBack = {
+            self.goBack()
+        }
+        viewController.news = news
+        navigationController.pushViewController(viewController, animated: true)
+    }
+    
     func loadWriteNewsRoot() {
         guard let viewController = UIStoryboard(name: "WriteNews", bundle: nil)
                 .instantiateViewController(withIdentifier: "WriteNewsViewController") as? WriteNewsViewController else {
                     return
                 }
-        
-        viewController.didClickPreview = { [weak self] in
-            self?.finish()
+        viewController.navigateToPreview = { [weak self] in
+            self?.navigateToPreview(viewController.news ?? NewsModel(title: "G", content: "hi", topic: "jj"))
         }
-        
         navigationController.pushViewController(viewController, animated: true)
     }
+
 }

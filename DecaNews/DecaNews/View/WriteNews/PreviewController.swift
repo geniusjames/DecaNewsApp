@@ -20,6 +20,7 @@ class PreviewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(back))
         navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "black")
         setValues()
+//        setupLayoutConstraints()
     }
     
     override func viewDidLayoutSubviews() {

@@ -3,142 +3,160 @@
 //  DecaNews
 //
 //  Created by JustifiedTech on 2/22/22.
-//
-
 
 import Foundation
 import UIKit
 
 class WriteNewsControllerLayout: UIView {
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
+    
     override func layoutSubviews() {
         setUpScrollView()
         setUpView()
-       
     }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     lazy var topicStack: UIStackView = {
-        
-    }()
-    lazy var contentStack: UIStackView = {
-        
-    }()
-    lazy var imageView: UIView = {
-        
-    }()
-    lazy  var titleStack: UIStackView = {
-        
-    }()
-    lazy var coverImage: UIImageView = {
-        var image = UIImageView()
-        image.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.2).isActive = true
-        image.layer.cornerRadius = 20
-        image.clipsToBounds = true
-        image.translatesAutoresizingMaskIntoConstraints = false
-        return image
-        
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
     }()
     
-    lazy var uploadTitle: UILabel = {
+    lazy var contentStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    lazy var imageView: UIView = {
+        let view = UIView()
+        view.layer.borderWidth = 1
+        view.layer.cornerRadius = 10
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
+        view.backgroundColor = UIColor.systemGray.withAlphaComponent(0)
+        return view
+    }()
+    
+    lazy var titleStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        stackView.contentMode = .scaleAspectFit
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(titleField)
+        return stackView
+    }()
+    
+   lazy var coverImage: UIImageView = {
+        var image = UIImageView()
+        image.translatesAutoresizingMaskIntoConstraints = false
+        image.clipsToBounds = true
+        image.image = UIImage(named: "profile")
+        image.layer.cornerRadius = 10
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = true
+        image.layer.borderColor = .init(gray: 255, alpha: 1)
+        return image
+    }()
+    
+    var uploadTitle: UILabel = {
         var label = UILabel()
-
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "Upload cover image"
+        return label
+    }()
+var uploadButton: UIButton = {
+        let button = UIButton()
+    button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+        
+    }()
+    var uploadLabel: UILabel = {
+        var label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
         
     }()
-    lazy var uploadButton: UIButton = {
-        
-    }()
-    lazy  var uploadLabel: UILabel = {
-        
-    }()
-  lazy var titleLabel: UILabel = {
+   var titleLabel: UILabel = {
       var label = UILabel()
-      label.numberOfLines = 0
+      label.numberOfLines = 1
+       label.text = "Title"
       label.textAlignment = .center
       label.font = UIFont.systemFont(ofSize: 24, weight: .bold)
-    
       label.translatesAutoresizingMaskIntoConstraints = false
       return label
     }()
-    lazy var titleField: UITextField = {
+     var titleField: TextFieldPadding = {
+        let textField = TextFieldPadding()
+         textField.translatesAutoresizingMaskIntoConstraints = false
+//         textField.placeholder = "title"
+        return textField
         
     }()
-    lazy var contentLabel: UILabel = {
+     var contentLabel: UILabel = {
         var label = UILabel()
-
+         label.translatesAutoresizingMaskIntoConstraints = false
         return label
         
     }()
-    lazy var contentField: UITextView = {
+     var contentField: UITextView = {
         let textView = UITextView()
-       textView.smartDashesType = .default
-       textView.dataDetectorTypes = .all
-       textView.smartQuotesType = .yes
-       textView.isUserInteractionEnabled = false
+        textView.smartDashesType = .default
+        textView.dataDetectorTypes = .all
+        textView.smartQuotesType = .yes
+        textView.layer.borderWidth = 1
+        textView.layer.cornerRadius = 10
+        textView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         textView.textAlignment = .natural
-//        textView.numberOfLines = 0
         textView.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-       textView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.7).isActive = true
+       textView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.height * 0.4).isActive = true
         textView.translatesAutoresizingMaskIntoConstraints = false
-//        textView.backgroundColor = UIColor.lightGray
         return textView
-
+    }()
+    
+    var topicField: TextFieldPadding = {
+        let textField = TextFieldPadding()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+     
+        return textField
         
     }()
-    lazy var topicField: UITextField = {
-        
-    }()
+    
     lazy var topicLabel: UILabel = {
         var label = UILabel()
-
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
         
     }()
     
     lazy var publishButton: UIButton = {
-        
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
-    func coverImageStyle() {
-     .coverImage.clipsToBounds = true
-        viewLayout.coverImage.layer.cornerRadius = 10
-        viewLayout.coverImage.layer.borderWidth = 1
-        viewLayout.coverImage.layer.masksToBounds = true
-        viewLayout.coverImage.layer.borderColor = .init(gray: 255, alpha: 1)
-        
-    }
-    func uniformFieldStyle(_ field: UITextField, _ placeHolder: String) {
+    func uniformFieldStyle(_ field: TextFieldPadding, _ placeHolder: String) {
         field.autocorrectionType = .no
         field.layer.borderWidth = 0.2
         field.layer.cornerRadius = 10
         field.placeholder = placeHolder
         field.rightViewMode = .always
+        field.heightAnchor.constraint(equalToConstant: 50).isActive = true
     }
     
-    func imageViewStyle() {
-        viewLayout.imageView.layer.borderWidth = 1
-        viewLayout.imageView.layer.cornerRadius = 10
-        viewLayout.imageView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
-        viewLayout.imageView.backgroundColor = UIColor.systemGray.withAlphaComponent(0)
-    }
-    
-    func textFieldStyle() {
-        viewLayout.topicField.rightView = view.arrow_downward
-        viewLayout.contentField.layer.borderWidth = 1
-        viewLayout.contentField.layer.cornerRadius = 10
-        viewLayout.contentField.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
+func textFieldStyle() {
+   topicField.rightView = arrow_downward
         uniformFieldStyle(titleField, "Write title")
         uniformFieldStyle(topicField, "topic")
     }
-    
-
     
     let scrollView: UIScrollView = {
         let view = UIScrollView()
@@ -149,7 +167,7 @@ class WriteNewsControllerLayout: UIView {
     let contentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        
+
         return view
     }()
     
@@ -173,37 +191,44 @@ class WriteNewsControllerLayout: UIView {
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.trailingAnchor),
-            
+
             contentView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
             contentViewCenterY,
             contentViewHeight
         ])
     }
     
+    func setupTitleStack() {
+        titleStack.addArrangedSubview(titleLabel)
+        titleStack.addArrangedSubview(titleField)
+    }
     func setUpView() {
+        textFieldStyle()
+        contentView.addSubviews(uploadTitle, coverImage, imageView, titleStack, titleLabel, titleField, contentStack, topicStack, uploadLabel, uploadButton, contentLabel, contentField, topicLabel, topicField, publishButton)
         
-        contentView.addSubviews(newsTitle, newsCover, newsDetails)
-                
         NSLayoutConstraint.activate([
-            
             scrollView.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
             
-            newsTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30),
-            newsTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            newsTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+        uploadTitle.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
+            uploadTitle.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            uploadTitle.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             
-            newsCover.topAnchor.constraint(equalTo: newsTitle.bottomAnchor, constant: 20),
+            coverImage.topAnchor.constraint(equalTo: uploadTitle.bottomAnchor, constant: 10),
+            coverImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            coverImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            coverImage.heightAnchor.constraint(equalToConstant: 200),
             
-            newsCover.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            newsCover.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
-            
-            newsDetails.topAnchor.constraint(equalTo: newsCover.bottomAnchor, constant: 20),
-            
-            newsDetails.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            newsDetails.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+           imageView.topAnchor.constraint(equalTo: uploadTitle.bottomAnchor, constant: 10),
+            imageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            imageView.heightAnchor.constraint(equalToConstant: 200),
+
+            titleStack.topAnchor.constraint(equalTo: coverImage.bottomAnchor, constant: 10),
+            titleStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            titleStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
         ])
     }
 }
