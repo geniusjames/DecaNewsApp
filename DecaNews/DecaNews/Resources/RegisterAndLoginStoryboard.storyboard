@@ -537,6 +537,94 @@
             </objects>
             <point key="canvasLocation" x="1328" y="70"/>
         </scene>
+        <!--Password Reset View Controller-->
+        <scene sceneID="OYv-RI-hLb">
+            <objects>
+                <viewController restorationIdentifier="PasswordResetViewController" storyboardIdentifier="PasswordResetViewController" id="Vcz-Bi-QxL" customClass="PasswordResetViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="P4r-gk-KW5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qo-rv-FDX">
+                                <rect key="frame" x="24" y="152" width="164.5" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="deepBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email and we will send you a link to reset your password. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbu-uJ-yUP">
+                                <rect key="frame" x="24" y="189" width="366" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZX-kI-9y5">
+                                <rect key="frame" x="24" y="251.5" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="deepBlack"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter your email" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rgd-pd-uQo">
+                                <rect key="frame" x="24" y="278.5" width="366" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="56" id="mNg-fI-X4K"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdc-1q-7Wn">
+                                <rect key="frame" x="24" y="469.5" width="366" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="eqx-dP-mbJ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Send Reset Link">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                    <color key="baseBackgroundColor" name="deepBlack"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="resetLink:" destination="Vcz-Bi-QxL" eventType="touchUpInside" id="wH9-rs-gPE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bg-g1-69L">
+                                <rect key="frame" x="24" y="354.5" width="366" height="65"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zNV-40-baJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rdc-1q-7Wn" firstAttribute="leading" secondItem="zNV-40-baJ" secondAttribute="leading" constant="24" id="623-0C-8T5"/>
+                            <constraint firstItem="7Qo-rv-FDX" firstAttribute="leading" secondItem="zNV-40-baJ" secondAttribute="leading" constant="24" id="7kG-6O-5XS"/>
+                            <constraint firstItem="zNV-40-baJ" firstAttribute="trailing" secondItem="Rgd-pd-uQo" secondAttribute="trailing" constant="24" id="9ek-5n-D90"/>
+                            <constraint firstAttribute="trailing" secondItem="Dbu-uJ-yUP" secondAttribute="trailing" constant="24" id="Bhn-Cq-nph"/>
+                            <constraint firstItem="ZZX-kI-9y5" firstAttribute="leading" secondItem="zNV-40-baJ" secondAttribute="leading" constant="24" id="HEz-0Z-t9F"/>
+                            <constraint firstItem="rdc-1q-7Wn" firstAttribute="top" secondItem="Rgd-pd-uQo" secondAttribute="bottom" constant="135" id="MMS-uS-5zo"/>
+                            <constraint firstItem="2bg-g1-69L" firstAttribute="top" secondItem="Rgd-pd-uQo" secondAttribute="bottom" constant="20" id="S2l-Yd-wih"/>
+                            <constraint firstItem="7Qo-rv-FDX" firstAttribute="top" secondItem="zNV-40-baJ" secondAttribute="top" constant="108" id="WHk-Hz-cPT"/>
+                            <constraint firstItem="zNV-40-baJ" firstAttribute="trailing" secondItem="2bg-g1-69L" secondAttribute="trailing" constant="24" id="WcY-6c-CgT"/>
+                            <constraint firstItem="ZZX-kI-9y5" firstAttribute="top" secondItem="Dbu-uJ-yUP" secondAttribute="bottom" constant="24" id="dbs-jE-CgR"/>
+                            <constraint firstItem="Dbu-uJ-yUP" firstAttribute="top" secondItem="7Qo-rv-FDX" secondAttribute="bottom" constant="8" id="l0p-Fx-xaV"/>
+                            <constraint firstItem="Dbu-uJ-yUP" firstAttribute="leading" secondItem="zNV-40-baJ" secondAttribute="leading" constant="24" id="mT6-1b-X4X"/>
+                            <constraint firstItem="zNV-40-baJ" firstAttribute="trailing" secondItem="rdc-1q-7Wn" secondAttribute="trailing" constant="24" id="x9M-Wm-Ji8"/>
+                            <constraint firstItem="rdc-1q-7Wn" firstAttribute="top" secondItem="2bg-g1-69L" secondAttribute="bottom" constant="50" id="xCg-UU-wZp"/>
+                            <constraint firstItem="Rgd-pd-uQo" firstAttribute="top" secondItem="ZZX-kI-9y5" secondAttribute="bottom" constant="6" id="xrb-y4-L6d"/>
+                            <constraint firstItem="2bg-g1-69L" firstAttribute="leading" secondItem="zNV-40-baJ" secondAttribute="leading" constant="24" id="yp8-eR-4Gu"/>
+                            <constraint firstItem="Rgd-pd-uQo" firstAttribute="leading" secondItem="zNV-40-baJ" secondAttribute="leading" constant="24" id="zZl-u9-SBM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorPage" destination="2bg-g1-69L" id="WpS-pw-iqa"/>
+                        <outlet property="passwordReset" destination="Rgd-pd-uQo" id="PFA-r0-rcq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B5G-R7-OXU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2020" y="70"/>
+        </scene>
     </scenes>
     <resources>
         <image name="app_logo" width="40" height="40"/>
@@ -565,6 +653,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
