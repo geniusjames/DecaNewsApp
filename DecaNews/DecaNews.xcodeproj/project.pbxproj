@@ -80,9 +80,9 @@
 		B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */; };
 		B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */; };
 		B441647F27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */; };
+		B441648127C61C8700F1EE3D /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441648027C61C8700F1EE3D /* News.storyboard */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
-		B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373D27ADB9DD009995B7 /* password_reset.storyboard */; };
 		B45C374127ADBB0A009995B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C374027ADBB0A009995B7 /* User.swift */; };
 		B45C377827C1D2FC009995B7 /* SearchSortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C377727C1D2FC009995B7 /* SearchSortBy.swift */; };
 		B45C377E27C1D335009995B7 /* SearchNewsDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C377927C1D334009995B7 /* SearchNewsDatasource.swift */; };
@@ -188,9 +188,9 @@
 		B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
 		B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
 		B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterAndLoginStoryboard.storyboard; sourceTree = "<group>"; };
+		B441648027C61C8700F1EE3D /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
-		B45C373D27ADB9DD009995B7 /* password_reset.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = password_reset.storyboard; sourceTree = "<group>"; };
 		B45C374027ADBB0A009995B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B45C377727C1D2FC009995B7 /* SearchSortBy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchSortBy.swift; path = Enums/SearchSortBy.swift; sourceTree = "<group>"; };
 		B45C377927C1D334009995B7 /* SearchNewsDatasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNewsDatasource.swift; sourceTree = "<group>"; };
@@ -450,22 +450,22 @@
 			children = (
 				04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */,
 				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
-				B4B51EEB27C41EBC0004E468 /* Comments.storyboard */,
-				B45C378627C1D34B009995B7 /* NewSearch.storyboard */,
-				0417C34E27BCFCAA006AB3B4 /* editProfilePage.storyboard */,
-				049D610827B88BFC00DB35F1 /* SideMenu.storyboard */,
-				049D610627B88BDC00DB35F1 /* NewsDetails.storyboard */,
+				B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */,
 				049D610427B88BBB00DB35F1 /* Dashboard.storyboard */,
+				049D610827B88BFC00DB35F1 /* SideMenu.storyboard */,
+				B4B51EEB27C41EBC0004E468 /* Comments.storyboard */,
+				0417C34E27BCFCAA006AB3B4 /* editProfilePage.storyboard */,
+				049D610627B88BDC00DB35F1 /* NewsDetails.storyboard */,
 				B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */,
-				B45C373D27ADB9DD009995B7 /* password_reset.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
-				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
 				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
+				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
+				045B321727C3101C00D41470 /* WriteNews.storyboard */,
+				B45C378627C1D34B009995B7 /* NewSearch.storyboard */,
 				B4E7B99E27BC658900F809CE /* NewsCategories.storyboard */,
 				0417C34827BCEB7F006AB3B4 /* Profile.storyboard */,
-				045B321727C3101C00D41470 /* WriteNews.storyboard */,
-				B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */,
+				B441648027C61C8700F1EE3D /* News.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -698,6 +698,7 @@
 				B4E7B99F27BC658900F809CE /* NewsCategories.storyboard in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
+				B441648127C61C8700F1EE3D /* News.storyboard in Resources */,
 				B441647F27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard in Resources */,
 				B45C378827C1D34B009995B7 /* NewSearch.storyboard in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
@@ -708,7 +709,6 @@
 				045B321827C3101C00D41470 /* WriteNews.storyboard in Resources */,
 				B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */,
 				B4B51EEC27C41EBC0004E468 /* Comments.storyboard in Resources */,
-				B45C373F27ADB9DD009995B7 /* password_reset.storyboard in Resources */,
 				0417C34F27BCFCAA006AB3B4 /* editProfilePage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

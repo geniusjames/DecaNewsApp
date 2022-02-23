@@ -548,7 +548,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Qo-rv-FDX">
                                 <rect key="frame" x="24" y="152" width="164.5" height="29"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" name="deepBlack"/>
+                                <color key="textColor" name="black"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your email and we will send you a link to reset your password. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbu-uJ-yUP">
@@ -581,7 +581,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Send Reset Link">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
-                                    <color key="baseBackgroundColor" name="deepBlack"/>
+                                    <color key="baseBackgroundColor" name="black"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="resetLink:" destination="Vcz-Bi-QxL" eventType="touchUpInside" id="wH9-rs-gPE"/>
@@ -1021,13 +1021,71 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uy6-fG-Tfr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2717" y="70"/>
+            <point key="canvasLocation" x="3345" y="70"/>
+        </scene>
+        <!--Reset Link View Controller-->
+        <scene sceneID="tCA-fh-Swo">
+            <objects>
+                <viewController restorationIdentifier="ResetLinkViewController" storyboardIdentifier="ResetLinkViewController" id="j9M-Zh-7f8" customClass="ResetLinkViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6xb-dx-4f8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bu1-ng-BFW">
+                                <rect key="frame" x="24" y="152" width="362" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" name="black"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A password reset link has been sent to your mail to change your password" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiZ-YM-pxg">
+                                <rect key="frame" x="24" y="191" width="319" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bes-Xw-1yR">
+                                <rect key="frame" x="24" y="323" width="366" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="DDR-ma-1rC"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Login">
+                                    <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                    <color key="baseBackgroundColor" name="black"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="loginScreen:" destination="j9M-Zh-7f8" eventType="touchUpInside" id="98f-58-sYe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9zv-Qc-2QX"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bu1-ng-BFW" firstAttribute="top" secondItem="9zv-Qc-2QX" secondAttribute="top" constant="108" id="LgW-hZ-cqN"/>
+                            <constraint firstItem="9zv-Qc-2QX" firstAttribute="trailing" secondItem="ZiZ-YM-pxg" secondAttribute="trailing" constant="71" id="O6R-V2-rI5"/>
+                            <constraint firstItem="Bu1-ng-BFW" firstAttribute="leading" secondItem="9zv-Qc-2QX" secondAttribute="leading" constant="24" id="RkL-cS-zqB"/>
+                            <constraint firstItem="9zv-Qc-2QX" firstAttribute="trailing" secondItem="Bes-Xw-1yR" secondAttribute="trailing" constant="24" id="hWt-w3-IZe"/>
+                            <constraint firstItem="Bes-Xw-1yR" firstAttribute="top" secondItem="ZiZ-YM-pxg" secondAttribute="bottom" constant="91" id="hlL-Rt-oHp"/>
+                            <constraint firstItem="9zv-Qc-2QX" firstAttribute="trailing" secondItem="Bu1-ng-BFW" secondAttribute="trailing" constant="28" id="jQk-Ks-tQe"/>
+                            <constraint firstItem="Bes-Xw-1yR" firstAttribute="leading" secondItem="9zv-Qc-2QX" secondAttribute="leading" constant="24" id="o9a-Qs-7xf"/>
+                            <constraint firstItem="ZiZ-YM-pxg" firstAttribute="leading" secondItem="9zv-Qc-2QX" secondAttribute="leading" constant="24" id="xge-hF-uGG"/>
+                            <constraint firstItem="ZiZ-YM-pxg" firstAttribute="top" secondItem="Bu1-ng-BFW" secondAttribute="bottom" constant="10" id="yyT-mJ-mQU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9wT-rw-4P7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJ4-DV-mJ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2693" y="70"/>
         </scene>
     </scenes>
     <resources>
         <image name="app_logo" width="40" height="40"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <namedColor name="black">
+            <color red="0.071000002324581146" green="0.071000002324581146" blue="0.071000002324581146" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="deepBlack">
             <color red="0.32899999618530273" green="0.32400000095367432" blue="0.4779999852180481" alpha="0.33000001311302185" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
