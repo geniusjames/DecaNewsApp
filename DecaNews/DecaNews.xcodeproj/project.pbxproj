@@ -76,7 +76,7 @@
 		B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */; };
 		B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */; };
 		B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */; };
-		B441647F27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */; };
+		B441647F27C605F100F1EE3D /* RegisterAndLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441647E27C605F100F1EE3D /* RegisterAndLogin.storyboard */; };
 		B441648127C61C8700F1EE3D /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441648027C61C8700F1EE3D /* News.storyboard */; };
 		B441648327C628D300F1EE3D /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441648227C628D300F1EE3D /* Search.storyboard */; };
 		B441648527C62A9600F1EE3D /* ProfileAndSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441648427C62A9600F1EE3D /* ProfileAndSettings.storyboard */; };
@@ -99,7 +99,7 @@
 		B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */; };
 		B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */; };
 		B48F2A1C27B4148300BDC8D4 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */; };
-		B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* onboarding.storyboard */; };
+		B49DCD422797DE6E005E9A04 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B49DCD412797DE6E005E9A04 /* Onboarding.storyboard */; };
 		B49DCD442797F082005E9A04 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD432797F082005E9A04 /* OnboardingViewController.swift */; };
 		B49DCD462797F680005E9A04 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */; };
 		B4B51EE427C41D780004E468 /* CommentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE327C41D780004E468 /* CommentsModel.swift */; };
@@ -178,7 +178,7 @@
 		B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggleVisibilityView.swift; sourceTree = "<group>"; };
 		B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
 		B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
-		B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterAndLoginStoryboard.storyboard; sourceTree = "<group>"; };
+		B441647E27C605F100F1EE3D /* RegisterAndLogin.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterAndLogin.storyboard; sourceTree = "<group>"; };
 		B441648027C61C8700F1EE3D /* News.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		B441648227C628D300F1EE3D /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		B441648427C62A9600F1EE3D /* ProfileAndSettings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ProfileAndSettings.storyboard; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 		B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookmarksTableViewCell.xib; sourceTree = "<group>"; };
 		B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookmarksViewModel.swift; path = "DecaNews/View-Model/BookmarksViewModel.swift"; sourceTree = SOURCE_ROOT; };
-		B49DCD412797DE6E005E9A04 /* onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = onboarding.storyboard; sourceTree = "<group>"; };
+		B49DCD412797DE6E005E9A04 /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		B49DCD432797F082005E9A04 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = DecaNews/View/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		B49DCD452797F680005E9A04 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		B4B51EE327C41D780004E468 /* CommentsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsModel.swift; sourceTree = "<group>"; };
@@ -437,17 +437,17 @@
 			isa = PBXGroup;
 			children = (
 				04F2AA7227931F0E00D4C062 /* LaunchScreen.storyboard */,
-				B49DCD412797DE6E005E9A04 /* onboarding.storyboard */,
-				B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */,
+				B49DCD412797DE6E005E9A04 /* Onboarding.storyboard */,
+				B441647E27C605F100F1EE3D /* RegisterAndLogin.storyboard */,
 				049D610427B88BBB00DB35F1 /* Dashboard.storyboard */,
 				049D610827B88BFC00DB35F1 /* SideMenu.storyboard */,
 				B441648027C61C8700F1EE3D /* News.storyboard */,
 				B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */,
 				045B321727C3101C00D41470 /* WriteNews.storyboard */,
 				B441648227C628D300F1EE3D /* Search.storyboard */,
+				B441648427C62A9600F1EE3D /* ProfileAndSettings.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
-				B441648427C62A9600F1EE3D /* ProfileAndSettings.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -678,8 +678,8 @@
 				049D611427B89CAB00DB35F1 /* GoogleService-Info.plist in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B441648127C61C8700F1EE3D /* News.storyboard in Resources */,
-				B441647F27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard in Resources */,
-				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
+				B441647F27C605F100F1EE3D /* RegisterAndLogin.storyboard in Resources */,
+				B49DCD422797DE6E005E9A04 /* Onboarding.storyboard in Resources */,
 				049D610927B88BFC00DB35F1 /* SideMenu.storyboard in Resources */,
 				B441648527C62A9600F1EE3D /* ProfileAndSettings.storyboard in Resources */,
 				049D610527B88BBC00DB35F1 /* Dashboard.storyboard in Resources */,
