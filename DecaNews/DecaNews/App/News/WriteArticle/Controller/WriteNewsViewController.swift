@@ -203,3 +203,7 @@ extension WriteNewsViewController: UIImagePickerControllerDelegate, UINavigation
         dismiss(animated: true, completion: setValues)
     }
 }
+
+extension WriteNewsViewController: Storyboardable {
+    static var storyboard: Storyboard { .news }
+}

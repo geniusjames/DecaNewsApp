@@ -48,3 +48,7 @@ class PasswordChangeViewController: UIViewController {
         }
     }
 }
+
+extension PasswordChangeViewController: Storyboardable {
+    static var storyboard: Storyboard { .profile }
+}

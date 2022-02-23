@@ -61,7 +61,7 @@
 		94E9F3EE27C4CD320041A542 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3ED27C4CD320041A542 /* RealmSwift */; };
 		94E9F3F227C4D6730041A542 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3F127C4D6730041A542 /* IQKeyboardManagerSwift */; };
 		94EDA13A27C4DB580019DF5C /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */; };
-		94EDA13C27C4DC400019DF5C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDA13B27C4DC400019DF5C /* DetailsViewController.swift */; };
+		94EDA13C27C4DC400019DF5C /* NewsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDA13B27C4DC400019DF5C /* NewsDetailsViewController.swift */; };
 		94EDA16D27C679350019DF5C /* SideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDA16227C679350019DF5C /* SideMenu.storyboard */; };
 		94EDA16F27C679350019DF5C /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDA16427C679350019DF5C /* Search.storyboard */; };
 		94EDA17027C679350019DF5C /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDA16527C679350019DF5C /* Onboarding.storyboard */; };
@@ -80,7 +80,6 @@
 		B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */; };
 		B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5427B67050002C5E01 /* MenuDelegate.swift */; };
 		B4249F5727B67144002C5E01 /* NewsPersistenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */; };
-		B42573A427BCE340006F1944 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A327BCE340006F1944 /* PasswordChangeViewController.swift */; };
 		B42573A627BCE5B6006F1944 /* HideOrShowPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */; };
 		B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */; };
 		B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */; };
@@ -96,6 +95,7 @@
 		B45C378227C1D335009995B7 /* SortByUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C377D27C1D335009995B7 /* SortByUIView.swift */; };
 		B45C378427C1D33F009995B7 /* SearchNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C378327C1D33F009995B7 /* SearchNewsViewModel.swift */; };
 		B45C378A27C1D36F009995B7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C378927C1D36F009995B7 /* Date+Extension.swift */; };
+		B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C37BC27C6D8C3009995B7 /* PasswordChangeViewController.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* AppCoordinator.swift */; };
@@ -167,7 +167,7 @@
 		94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppCoordinator.swift; sourceTree = "<group>"; };
 		94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
-		94EDA13B27C4DC400019DF5C /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		94EDA13B27C4DC400019DF5C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		94EDA16227C679350019DF5C /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
 		94EDA16427C679350019DF5C /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		94EDA16527C679350019DF5C /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
@@ -185,7 +185,6 @@
 		B4249F4827B5BB8D002C5E01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B4249F5427B67050002C5E01 /* MenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
 		B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPersistenceModel.swift; sourceTree = "<group>"; };
-		B42573A327BCE340006F1944 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PasswordChangeViewController.swift; path = DecaNews/App/Auth/ResetPassword/Controller/PasswordChangeViewController.swift; sourceTree = SOURCE_ROOT; };
 		B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideOrShowPasswordTextField.swift; sourceTree = "<group>"; };
 		B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggleVisibilityView.swift; sourceTree = "<group>"; };
 		B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
@@ -201,6 +200,7 @@
 		B45C377D27C1D335009995B7 /* SortByUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SortByUIView.swift; sourceTree = "<group>"; };
 		B45C378327C1D33F009995B7 /* SearchNewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNewsViewModel.swift; sourceTree = "<group>"; };
 		B45C378927C1D36F009995B7 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		B45C37BC27C6D8C3009995B7 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -572,7 +572,6 @@
 			children = (
 				B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */,
 				9410301427A9404700411376 /* PasswordResetViewController.swift */,
-				B42573A327BCE340006F1944 /* PasswordChangeViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -618,7 +617,7 @@
 		B45C379C27C572EF009995B7 /* Details */ = {
 			isa = PBXGroup;
 			children = (
-				94EDA13B27C4DC400019DF5C /* DetailsViewController.swift */,
+				B45C37BA27C6D76D009995B7 /* Controller */,
 			);
 			path = Details;
 			sourceTree = "<group>";
@@ -722,8 +721,8 @@
 		B45C37AA27C5749C009995B7 /* Setting */ = {
 			isa = PBXGroup;
 			children = (
-				94EDA17D27C67A370019DF5C /* SettingsViewController.swift */,
-				94EDA17927C67A370019DF5C /* SettingsTableViewCell.swift */,
+				B45C37BE27C6D8F4009995B7 /* View */,
+				B45C37BB27C6D897009995B7 /* Controller */,
 			);
 			path = Setting;
 			sourceTree = "<group>";
@@ -759,8 +758,7 @@
 		B45C37AE27C5761B009995B7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				049D610E27B89A0900DB35F1 /* DetailsSettingsView.swift */,
-				049D611027B89A1400DB35F1 /* SettingsBackgroundUIView.swift */,
+				B45C37B927C6D690009995B7 /* View */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -813,6 +811,40 @@
 			isa = PBXGroup;
 			children = (
 				B48F2A1727B3AA3A00BDC8D4 /* NewsTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B45C37B927C6D690009995B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049D610E27B89A0900DB35F1 /* DetailsSettingsView.swift */,
+				049D611027B89A1400DB35F1 /* SettingsBackgroundUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B45C37BA27C6D76D009995B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				94EDA13B27C4DC400019DF5C /* NewsDetailsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B45C37BB27C6D897009995B7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B45C37BC27C6D8C3009995B7 /* PasswordChangeViewController.swift */,
+				94EDA17D27C67A370019DF5C /* SettingsViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B45C37BE27C6D8F4009995B7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94EDA17927C67A370019DF5C /* SettingsTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -953,7 +985,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049D60D927B8059E00DB35F1 /* AuthRootViewController.swift in Sources */,
-				94EDA13C27C4DC400019DF5C /* DetailsViewController.swift in Sources */,
+				94EDA13C27C4DC400019DF5C /* NewsDetailsViewController.swift in Sources */,
 				9412445D27C033600045484E /* Storyboard.swift in Sources */,
 				94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */,
 				9410302027A9409F00411376 /* String+Extension.swift in Sources */,
@@ -970,7 +1002,6 @@
 				B45C378027C1D335009995B7 /* SearchNewsViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				9412445327C023160045484E /* AuthComposer.swift in Sources */,
-				B42573A427BCE340006F1944 /* PasswordChangeViewController.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */,
@@ -1023,6 +1054,7 @@
 				049D60F427B8062800DB35F1 /* LatestNewsTableViewCell.swift in Sources */,
 				B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */,
 				049D60F127B8062800DB35F1 /* DashboardCollectionViewController.swift in Sources */,
+				B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				B41D231227C5050F0048EC40 /* UserProfile.swift in Sources */,
 				B4B51EE827C41D960004E468 /* CommentViewModel.swift in Sources */,

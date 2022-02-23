@@ -19,3 +19,7 @@ override func viewDidLoad() {
         navigateToEmailSignin?()
     }
 }
+
+extension ResetLinkViewController: Storyboardable {
+    static var storyboard: Storyboard { .auth }
+}

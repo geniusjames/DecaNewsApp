@@ -58,3 +58,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
 }
+
+extension CommentsViewController: Storyboardable {
+    static var storyboard: Storyboard { .news }
+}

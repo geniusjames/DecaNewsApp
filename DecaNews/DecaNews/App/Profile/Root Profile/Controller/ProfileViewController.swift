@@ -61,3 +61,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	}
     
 }
+
+extension ProfileViewController: Storyboardable {
+    static var storyboard: Storyboard { .profile }
+}

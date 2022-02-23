@@ -86,3 +86,7 @@ class MenuTableViewController: UITableViewController {
     }
 
 }
+
+extension MenuTableViewController: Storyboardable {
+    static var storyboard: Storyboard { .dashboard }
+}

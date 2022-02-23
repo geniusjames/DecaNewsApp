@@ -19,3 +19,7 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
 }
+
+extension SettingsViewController: Storyboardable {
+    static var storyboard: Storyboard { .settings }
+}

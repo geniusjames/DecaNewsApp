@@ -68,3 +68,7 @@ final class NewsDetailsViewController: UIViewController {
     }
     
 }
+
+extension NewsDetailsViewController: Storyboardable {
+    static var storyboard: Storyboard { .news }
+}

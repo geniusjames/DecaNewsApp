@@ -143,3 +143,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	}
 	
 }
+
+extension DashboardCollectionViewController: Storyboardable {
+    static var storyboard: Storyboard { .dashboard }
+}

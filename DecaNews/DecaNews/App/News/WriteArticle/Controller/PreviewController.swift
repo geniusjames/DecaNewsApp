@@ -48,3 +48,7 @@ class PreviewController: UIViewController {
 goBack?()
 }
 }
+
+extension PreviewController: Storyboardable {
+    static var storyboard: Storyboard { .news }
+}
