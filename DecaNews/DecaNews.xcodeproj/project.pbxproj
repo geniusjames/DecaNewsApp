@@ -430,6 +430,20 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		941B377927C683660025753A /* Child Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */,
+				B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */,
+				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
+				94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */,
+				B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */,
+				B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */,
+				045B320827C30B6D00D41470 /* WriteNewsCoordinator.swift */,
+			);
+			path = "Child Coordinators";
+			sourceTree = "<group>";
+		};
 		94EDA15F27C678410019DF5C /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -806,16 +820,10 @@
 		B47E589A27948BD800D70341 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				9412445E27C034290045484E /* Storyboard */,
 				B47E589B27948C0100D70341 /* Coordinator.swift */,
 				B47E589D27948C1D00D70341 /* AppCoordinator.swift */,
-				B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */,
-				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
-				94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */,
-				94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */,
-				B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */,
-				B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */,
-				045B320827C30B6D00D41470 /* WriteNewsCoordinator.swift */,
+				9412445E27C034290045484E /* Storyboard */,
+				941B377927C683660025753A /* Child Coordinators */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -1165,7 +1173,7 @@
 				INFOPLIST_FILE = DecaNews/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = onboarding;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
@@ -1198,7 +1206,7 @@
 				INFOPLIST_FILE = DecaNews/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = onboarding;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.7;

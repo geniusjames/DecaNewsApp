@@ -33,7 +33,7 @@
         "repositoryURL": "https://github.com/firebase/firebase-ios-sdk",
         "state": {
           "branch": "master",
-          "revision": "802b595c2aefe64ef4978c8cada0ab34fc3cc730",
+          "revision": "a1dde8ee6863d4a0500c80533d399bb46da9c6aa",
           "version": null
         }
       },
@@ -42,8 +42,8 @@
         "repositoryURL": "https://github.com/google/GoogleAppMeasurement.git",
         "state": {
           "branch": null,
-          "revision": "9b2f6aca5b4685c45f9f5481f19bee8e7982c538",
-          "version": "8.9.1"
+          "revision": "6cc2991c11872510a5314bc112cc7558dd9d046a",
+          "version": "8.12.0"
         }
       },
       {
@@ -150,7 +150,7 @@
         "repositoryURL": "https://github.com/realm/realm-swift.git",
         "state": {
           "branch": "master",
-          "revision": "bf5c0461952c427caaf5ef738a2050dcaaaa9830",
+          "revision": "2a130ce1fc663be5d5aed62fca1534468679f1f0",
           "version": null
         }
       },

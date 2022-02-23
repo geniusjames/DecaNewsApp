@@ -82,3 +82,7 @@ extension OnboardingViewController: UICollectionViewDataSource,
         return CGSize(width: itemWidth, height: itemHeight)
     }
 }
+
+extension OnboardingViewController: Storyboardable {
+    static var storyboard: Storyboard { .onboarding }
+}

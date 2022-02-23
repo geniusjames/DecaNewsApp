@@ -24,11 +24,7 @@ final class OnboardingCoordinator: Coordinator {
     }
     
     func loadOnboardingRoot() {
-        guard let viewController = UIStoryboard(name: "onboarding", bundle: nil)
-                .instantiateViewController(withIdentifier: "onboarding") as? OnboardingViewController else {
-                    return
-                }
-        
+        let viewController = OnboardingViewController.instantiate()
         viewController.didCompleteOnboarding = { [weak self] in
             self?.finish()
         }
