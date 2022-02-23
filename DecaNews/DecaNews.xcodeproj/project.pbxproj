@@ -69,7 +69,6 @@
 		94E9F3F227C4D6730041A542 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3F127C4D6730041A542 /* IQKeyboardManagerSwift */; };
 		94EDA13A27C4DB580019DF5C /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */; };
 		94EDA13C27C4DC400019DF5C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDA13B27C4DC400019DF5C /* DetailsViewController.swift */; };
-		B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */; };
 		B41D231227C5050F0048EC40 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D231127C5050F0048EC40 /* UserProfile.swift */; };
 		B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4827B5BB8D002C5E01 /* Persistence.swift */; };
 		B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */; };
@@ -80,6 +79,7 @@
 		B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */; };
 		B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */; };
 		B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */; };
+		B441647F27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */; };
@@ -179,7 +179,6 @@
 		94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppCoordinator.swift; sourceTree = "<group>"; };
 		94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		94EDA13B27C4DC400019DF5C /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
-		B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginScreen.storyboard; sourceTree = "<group>"; };
 		B41D231127C5050F0048EC40 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		B4249F4827B5BB8D002C5E01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B4249F5427B67050002C5E01 /* MenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
@@ -189,6 +188,7 @@
 		B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggleVisibilityView.swift; sourceTree = "<group>"; };
 		B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
 		B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
+		B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RegisterAndLoginStoryboard.storyboard; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C373C27ADB9DC009995B7 /* EmailLogin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EmailLogin.storyboard; sourceTree = "<group>"; };
@@ -462,13 +462,13 @@
 				B48F2A1827B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib */,
 				B45C373D27ADB9DD009995B7 /* password_reset.storyboard */,
 				04F2AA7027931F0E00D4C062 /* Assets.xcassets */,
-				B41C322327A99A4A00A173A3 /* LoginScreen.storyboard */,
 				B4655A1527A289DA0012E4CD /* EmailSignin.storyboard */,
 				B48F2A1327B3A47F00BDC8D4 /* Bookmarks.storyboard */,
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
 				B4E7B99E27BC658900F809CE /* NewsCategories.storyboard */,
 				0417C34827BCEB7F006AB3B4 /* Profile.storyboard */,
 				045B321727C3101C00D41470 /* WriteNews.storyboard */,
+				B441647E27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -701,6 +701,7 @@
 				B4E7B99F27BC658900F809CE /* NewsCategories.storyboard in Resources */,
 				04F2AA7127931F0E00D4C062 /* Assets.xcassets in Resources */,
 				B48F2A1427B3A47F00BDC8D4 /* Bookmarks.storyboard in Resources */,
+				B441647F27C605F100F1EE3D /* RegisterAndLoginStoryboard.storyboard in Resources */,
 				B45C378827C1D34B009995B7 /* NewSearch.storyboard in Resources */,
 				B49DCD422797DE6E005E9A04 /* onboarding.storyboard in Resources */,
 				049D610927B88BFC00DB35F1 /* SideMenu.storyboard in Resources */,
@@ -708,7 +709,6 @@
 				B45C373E27ADB9DD009995B7 /* EmailLogin.storyboard in Resources */,
 				0417C34927BCEB7F006AB3B4 /* Profile.storyboard in Resources */,
 				049D610527B88BBC00DB35F1 /* Dashboard.storyboard in Resources */,
-				B41C322427A99A4A00A173A3 /* LoginScreen.storyboard in Resources */,
 				045B321827C3101C00D41470 /* WriteNews.storyboard in Resources */,
 				B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */,
 				B4B51EEC27C41EBC0004E468 /* Comments.storyboard in Resources */,
