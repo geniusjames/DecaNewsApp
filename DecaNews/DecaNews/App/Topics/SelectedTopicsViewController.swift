@@ -66,3 +66,7 @@ final class SelectedTopicsViewController: UIViewController {
         navigateHome?()
     }
 }
+
+extension SelectedTopicsViewController: Storyboardable {
+    static var storyboard: Storyboard { .auth }
+}

@@ -87,3 +87,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
     }
 	
 }
+
+extension DashboardTableViewController: Storyboardable {
+    static var storyboard: Storyboard { .dashboard }
+}

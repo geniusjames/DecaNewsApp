@@ -60,3 +60,7 @@ class TopicsCollectionViewController: UIViewController {
         searchBarField.isUserInteractionEnabled = true
     }
 }
+
+extension TopicsCollectionViewController: Storyboardable {
+    static var storyboard: Storyboard { .search }
+}

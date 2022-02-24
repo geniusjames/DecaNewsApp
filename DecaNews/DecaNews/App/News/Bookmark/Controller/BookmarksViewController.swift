@@ -45,3 +45,7 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
 }
+
+extension BookmarksViewController: Storyboardable {
+    static var storyboard: Storyboard { .news }
+}

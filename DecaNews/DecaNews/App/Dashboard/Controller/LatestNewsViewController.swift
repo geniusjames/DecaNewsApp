@@ -62,3 +62,7 @@ class LatestNewsViewController: UIViewController, UITableViewDataSource, UITable
 //        navigationController?.pushViewController(newsDetailsController, animated: true)
 //    }
 }
+
+extension LatestNewsViewController: Storyboardable {
+    static var storyboard: Storyboard { .dashboard }
+}

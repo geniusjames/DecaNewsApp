@@ -41,3 +41,7 @@ class PasswordResetViewController: UIViewController {
 
     }
 }
+
+extension PasswordResetViewController: Storyboardable {
+    static var storyboard: Storyboard { .auth }
+}

@@ -73,3 +73,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 	]
 	
 }
+
+extension DashboardViewController: Storyboardable {
+    static var storyboard: Storyboard { .dashboard }
+}

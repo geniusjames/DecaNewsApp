@@ -86,7 +86,5 @@ final class EmailSiginInViewController: UIViewController {
 
 
 extension EmailSiginInViewController: Storyboardable {
-    static var storyboard: Storyboard {
-        return .auth
-    }
+    static var storyboard: Storyboard { return .auth }
 }
