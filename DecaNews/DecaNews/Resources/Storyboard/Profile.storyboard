@@ -13,7 +13,7 @@
         <!--Edit Profile Page View Controller-->
         <scene sceneID="GBT-Ix-IHC">
             <objects>
-                <viewController storyboardIdentifier="EditProfilePageViewController" id="Ofk-pj-Ffu" customClass="EditProfilePageViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EditProfilePageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ofk-pj-Ffu" customClass="EditProfilePageViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e3A-dm-tuQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -176,7 +176,7 @@
         <!--Password Change View Controller-->
         <scene sceneID="OaI-DK-tTu">
             <objects>
-                <viewController storyboardIdentifier="PasswordChange" id="gBP-Yn-sxF" customClass="PasswordChangeViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="PasswordChangeViewController" storyboardIdentifier="PasswordChangeViewController" id="gBP-Yn-sxF" customClass="PasswordChangeViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ms-uv-8Iu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,7 +295,7 @@
         <!--Profile View Controller-->
         <scene sceneID="Pvr-IC-X4e">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cuc-ny-0B1" customClass="ProfileViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cuc-ny-0B1" customClass="ProfileViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hwu-Pc-qu6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

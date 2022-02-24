@@ -14,7 +14,7 @@
         <!--Dashboard View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="Dashboard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DashboardViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="DashboardViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -133,7 +133,7 @@
         <!--Dashboard Collection View Controller-->
         <scene sceneID="hUU-cw-y4w">
             <objects>
-                <viewController storyboardIdentifier="DashboardCollectionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tik-vc-v7u" customClass="DashboardCollectionViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tik-vc-v7u" customClass="DashboardCollectionViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="RAp-DE-Zfy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="432"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -335,7 +335,7 @@
         <!--Latest News View Controller-->
         <scene sceneID="RHI-na-cTb">
             <objects>
-                <viewController storyboardIdentifier="LatestNewsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7as-mm-iW9" customClass="LatestNewsViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LatestNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7as-mm-iW9" customClass="LatestNewsViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lTM-SI-JMp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -475,7 +475,7 @@
         <!--Dashboard Table View Controller-->
         <scene sceneID="l1s-N7-rkz">
             <objects>
-                <viewController storyboardIdentifier="DashboardTableView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vx2-jx-1jl" customClass="DashboardTableViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vx2-jx-1jl" customClass="DashboardTableViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TCK-xG-VzR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

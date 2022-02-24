@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -170,7 +171,6 @@
                             <constraint firstItem="Dm8-8d-hiQ" firstAttribute="top" secondItem="SUm-hk-GtN" secondAttribute="bottom" constant="24" id="1Ol-3e-qpy"/>
                             <constraint firstItem="SUm-hk-GtN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="5KZ-UU-lTp"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="udB-OF-vMI" secondAttribute="trailing" constant="88" id="BeA-VA-mpR"/>
-                            <constraint firstItem="iee-zO-3Qw" firstAttribute="leading" secondItem="SUm-hk-GtN" secondAttribute="trailing" id="Hkh-Kr-SDD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Dm8-8d-hiQ" secondAttribute="bottom" constant="100" id="IMQ-iv-BBf"/>
                             <constraint firstItem="iee-zO-3Qw" firstAttribute="leading" secondItem="SUm-hk-GtN" secondAttribute="trailing" constant="2" id="LTc-oa-78H"/>
                             <constraint firstItem="iee-zO-3Qw" firstAttribute="top" secondItem="SUm-hk-GtN" secondAttribute="top" id="LZr-hX-lD5"/>

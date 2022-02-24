@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -14,7 +14,7 @@
         <!--Bookmarks View Controller-->
         <scene sceneID="U5W-I4-20S">
             <objects>
-                <viewController storyboardIdentifier="Bookmarks" id="aiQ-Jw-Sl8" customClass="BookmarksViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="BookmarksViewController" storyboardIdentifier="BookmarksViewController" id="aiQ-Jw-Sl8" customClass="BookmarksViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PZI-gF-pia">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -139,7 +139,7 @@
         <!--News Details View Controller-->
         <scene sceneID="FeI-if-vr2">
             <objects>
-                <viewController storyboardIdentifier="NewsDetails" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QSj-Ur-gRm" customClass="NewsDetailsViewController" customModule="DecaNews" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewsDetailsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="QSj-Ur-gRm" customClass="NewsDetailsViewController" customModule="DecaNews" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="f9h-F8-CJ4">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="969"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -410,7 +410,7 @@
         <!--Comments View Controller-->
         <scene sceneID="ycH-Qg-9X1">
             <objects>
-                <viewController storyboardIdentifier="CommentsViewController" id="nWB-qo-Hhv" customClass="CommentsViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CommentsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nWB-qo-Hhv" customClass="CommentsViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="af2-Fm-bjs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -607,7 +607,7 @@
         <!--Write News View Controller-->
         <scene sceneID="RnC-0C-JIr">
             <objects>
-                <viewController storyboardIdentifier="WriteNewsViewController" id="C6m-S8-omy" customClass="WriteNewsViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteNewsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="C6m-S8-omy" customClass="WriteNewsViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XZg-qy-Geo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
