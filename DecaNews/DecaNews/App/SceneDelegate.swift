@@ -17,12 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         setupAppCoordinator(for: windowScene)
     }
+    
     func setupAppCoordinator(for windowScene: UIWindowScene) {
         let appWindow = UIWindow(frame: windowScene.coordinateSpace.bounds)
         appWindow.windowScene = windowScene
         self.window = appWindow
         AppDelegate.standard?.window = appWindow
-        coordinator = AppCoordinator(window: appWindow)
+        coordinator = AppCoordinator(window: appWindow, servicesViewModel: DIContainer.makeServiceViewModel())
         coordinator?.start()
     }
     

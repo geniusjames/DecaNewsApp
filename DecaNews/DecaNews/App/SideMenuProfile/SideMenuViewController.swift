@@ -50,4 +50,3 @@ class SideMenuViewController: UIViewController, MenuControllerDelegate {
                               "Version 1.0"
     ]
 }
-

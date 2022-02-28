@@ -19,7 +19,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
 	private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
 	
-	private var collectionViewNews: [Article]?
+	public var collectionViewNews: [Article]?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -42,7 +42,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		recentButton.addGestureRecognizer(tapRecentTab)
 	}
 	
-	private func fetchData(url: String) {
+	public func fetchData(url: String) {
 		NetworkManager.shared.networkRequest(url: url) { [weak self] response in
 			self?.collectionViewNews = response.articles
 			DispatchQueue.main.async {
@@ -142,4 +142,8 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	   return 0.0
 	}
 	
+}
+
+extension DashboardCollectionViewController: Storyboardable {
+    static var storyboard: Storyboard { .dashboard }
 }
