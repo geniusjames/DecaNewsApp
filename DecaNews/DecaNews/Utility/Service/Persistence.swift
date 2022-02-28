@@ -45,7 +45,7 @@ class FireStorePersistence: PersistenceManager {
         
     }
 
-    func read<T: Codable>(completion: @escaping (([T])-> Void)) -> [T]{
+    func read<T: Codable>( completion: @escaping (([T])-> Void)) -> [T]{
         var output: [T] = []
         do {
             db.collection(collectionName).getDocuments { (querySnapshot, error) in
@@ -75,6 +75,7 @@ class FireStorePersistence: PersistenceManager {
     
         return output
     }
+   
     private func enableOffline() {
            let settings = FirestoreSettings()
            settings.isPersistenceEnabled = true

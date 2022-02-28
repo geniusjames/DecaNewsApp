@@ -47,8 +47,7 @@ final class EmailSiginInViewController: UIViewController {
                     }
                }
             }
-        }
-        else {
+        } else {
        print("here")
         }
     }
@@ -83,7 +82,6 @@ final class EmailSiginInViewController: UIViewController {
         }
     }
 }
-
 
 extension EmailSiginInViewController: Storyboardable {
     static var storyboard: Storyboard {

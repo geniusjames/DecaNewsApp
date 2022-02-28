@@ -6,19 +6,15 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 final class CommentViewModel {
-//    var allComments = [CommentModel]()
+
     var persistence = FireStorePersistence(collectionName: "comments")
     let networkManager = NetworkManager()
-    
-//    func getComments(forArticle articleId: Int) -> [CommentModel] {
-//        return readComments().filter{ comment in
-//            return true
-//            return comment.articleId == articleId
-//        }
-//    }
-    
+    let firebaseService = FirebaseService()
+    let db = Firestore.firestore()
     init() {
     }
     
@@ -26,12 +22,65 @@ final class CommentViewModel {
         persistence.add(item: comment)
     }
     
-    func readComments(completion: @escaping ([CommentModel]) -> Void) {
-        let comments: [CommentModel] = persistence.read { result in
-            completion(result)
+//    func readComments(completion: @escaping ([CommentModel]) -> Void) {
+//        let comments: [CommentModel] = persistence.read { result in
+//            completion(result)
+//        }
+//    }
+    func userName() -> String {
+        let user = firebaseService.getUserDetails()
+       return user?.displayName ?? "Unknown User"
+    }
+    var artileId: String {
+        get {
+            " " //TO-DO: return news article URL
+        }
+        set(newValue) {
+            
         }
     }
-    
-    func addImage() {
+    func getPhotoURL() -> URL {
+        let user = firebaseService.getUserDetails()
+        guard let url = user?.photoURL else {return URL(fileURLWithPath: "")}
+        return  url 
     }
+    func addComments(comments: CommentModel) {
+        do {// TO-DO: make the second document id the username
+            try  db.collection("comments").document("articles").collection("articleID").document().setData(from: comments)
+        } catch {
+            print("Error saving data")
+        }
+    }
+    func increaseOrDecreaseLike(id: String, val: Int) {
+        db.collection("comments").document("articles").collection("articleID").document(id).updateData(["count": FieldValue.increment(Int64(val))])
+    }
+    func readComments(completion: @escaping (([CommentModel]) -> Void)) {
+        var output: [CommentModel] = []
+        do {
+            db.collection("comments").document("articles").collection("articleID").getDocuments {(querySnapshot, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    for documents in querySnapshot!.documents {
+                        let result = Result {
+                            try? documents.data(as: CommentModel.self)
+                        }
+                        switch result {
+                        case .success(let doc):
+                            if var doc = doc {
+                                doc.id = documents.documentID
+                                output.append(doc)
+                            } else {
+                                print("documents does not exits")
+                            }
+                        case .failure(let error):
+                            print(error)
+                        }
+                    }
+                    completion(output)
+                }
+            }
+        }
+    }
+
 }

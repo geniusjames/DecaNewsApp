@@ -25,7 +25,6 @@ final class AuthComposer {
     }
 }
 
-
 class DIContainer {
     
     static func makeServiceViewModel() -> ServicesViewModel {

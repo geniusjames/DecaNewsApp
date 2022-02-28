@@ -24,7 +24,7 @@ final class CommentsCoordinator: Coordinator {
     }
 
     func loadPasswordChangeViewController() {
-        guard let viewController = UIStoryboard(name: "Comments", bundle: nil)
+        guard let viewController = UIStoryboard(name: "News", bundle: nil)
                 .instantiateViewController(withIdentifier: "CommentsViewController") as? CommentsViewController else {
                     return
                 }

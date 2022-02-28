@@ -111,7 +111,7 @@ class SearchNewsViewController: UIViewController {
 
 extension SearchNewsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //go to details screen
+        // go to details screen
     }
 }
 

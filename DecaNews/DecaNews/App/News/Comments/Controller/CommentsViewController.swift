@@ -12,20 +12,18 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     private let commentViewModel = CommentViewModel()
     var didCompleteComments: CoordinatorTransition?
     var count = 0
+    var like = false
+    var ids = [String]()
+    var index = 0
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var commentTextField: UITextField!
-    
-    var totalComments: Int?
-    
+    @IBOutlet weak var likeButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.dataSource = self
         tableView.delegate = self
         reloadTableView()
-
-        totalComments = 15
-
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -37,24 +35,46 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
             return UITableViewCell()
         }
         cell.configureCell(index: indexPath.row)
+        cell.likeButton.addTarget(self, action: #selector(incrementLike), for: .allTouchEvents)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    @objc func incrementLike() {
+        
+        _ = like ? { [self] in commentViewModel.increaseOrDecreaseLike(id: ids[index], val: 1)
+            like = !like
+           return
+        }
+        : {[self] in
+            commentViewModel.increaseOrDecreaseLike(id: ids[index], val: -1)
+            like = !like
+            return
+        }
     }
     @IBAction func sendBtnPressed(_ sender: Any) {
         
         guard let text = commentTextField.text else {return}
-        let model = CommentModel(id: 123, articleId: "234", usersName: "ebele", commentText: text, dateAndTime: Date(), liked: false)
-        commentViewModel.add(comment: model)
+        let model = CommentModel(articleId: commentViewModel.artileId, usersName: commentViewModel.userName(), commentText: text, dateAndTime: Date())
+        commentViewModel.addComments(comments: model)
         commentTextField.text = ""
         reloadTableView()
     }
-
+    
     func reloadTableView() {
         commentViewModel.readComments { comments in
-           
+            
             self.count = comments.count
+            self.ids = comments.map { comment in
+                comment.id ?? ""
+            }
             self.tableView.reloadData()
         }
         tableView.reloadData()
     }
+    // pass the article id
+    // work on the like function
     
 }
