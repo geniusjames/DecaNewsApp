@@ -143,7 +143,6 @@ public extension UIView {
     func centerY(inView view: UIView) -> UIView {
         translatesAutoresizingMaskIntoConstraints = false
         centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        
         return self
     }
     
@@ -159,7 +158,6 @@ public extension UIView {
         let view = UIView()
         view.frame = CGRect(x: 0, y: 0, width: UIImage(systemName: "chevron.down")!.size.width, height: UIImage(systemName: "chevron.down")!.size.height)
         view.addSubview(imageIcon)
-        
         return view
         
     }

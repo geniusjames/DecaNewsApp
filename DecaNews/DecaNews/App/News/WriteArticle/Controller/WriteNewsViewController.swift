@@ -2,47 +2,30 @@
 //  WriteNewsViewController.swift
 //  DecaNews
 //
-//  Created by Decagon on 2/21/22.
+//  Created by JustifiedTech on 2/21/22.
 //
 
 import Foundation
 import UIKit
 
 class WriteNewsViewController: UIViewController {
-    
-    @IBOutlet weak var topicStack: UIStackView!
-    @IBOutlet weak var contentStack: UIStackView!
-    @IBOutlet weak var imageView: UIView!
-    @IBOutlet weak var titleStack: UIStackView!
-    @IBOutlet weak var coverImage: UIImageView!
-    @IBOutlet weak var uploadTitle: UILabel!
-    @IBOutlet weak var uploadButton: UIButton!
-    @IBOutlet weak var uploadLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var contentField: UITextView!
-    @IBOutlet weak var topicField: UITextField!
-    @IBOutlet weak var topicLabel: UILabel!
-    
-    @IBOutlet weak var publishButton: UIButton!
-//    var coordinator: MainCoordinator?
+    private let viewLayout = WriteNewsControllerLayout()
+   
     var imageData: Data?
     var image: UIImage?
     var writeNewsViewModel: WriteNewsViewModel?
-    var navigateToPreview: (() -> Void)?
-    var navigateToPickTopic: (() -> Void)?
     var news: NewsModel?
     var imageUrl: String = ""
     
     // MARK: - Coordinator Closures
-    var didClickPreview: CoordinatorTransition?
+    var navigateToPreview: CoordinatorTransition?
+    var navigateToPickTopic: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Write News"
         setupNavBarButtons()
-        setUp()
+        setActionsEvents()
     }
     
     override func viewDidLayoutSubviews() {
@@ -58,8 +41,7 @@ class WriteNewsViewController: UIViewController {
     }
     
     @objc func preview() {
-        
-         news = NewsModel(title: titleField.text, content: contentField.text, topic: topicField.text, image: image)
+        news = NewsModel(title: viewLayout.titleField.text ?? "Hell", content: viewLayout.contentField.text ?? "Content", topic: viewLayout.topicField.text, image: image)
         navigateToPreview?()
     }
     
@@ -67,41 +49,8 @@ class WriteNewsViewController: UIViewController {
         navigateToPickTopic?()
     }
     
-    @objc func imagePicker() {
+    @objc func pickImage() {
       showImagePickerControllerActionSheet()
-    }
-    
-    func coverImageStyle() {
-        coverImage.clipsToBounds = true
-        coverImage.layer.cornerRadius = 10
-        coverImage.layer.borderWidth = 1
-        coverImage.layer.masksToBounds = true
-        coverImage.layer.borderColor = .init(gray: 255, alpha: 1)
-        
-    }
-    
-    func imageViewStyle() {
-        imageView.layer.borderWidth = 1
-        imageView.layer.cornerRadius = 10
-        imageView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
-        imageView.backgroundColor = UIColor.systemGray.withAlphaComponent(0)
-    }
-    
-    func textFieldStyle() {
-        topicField.rightView = view.arrow_downward
-        contentField.layer.borderWidth = 1
-        contentField.layer.cornerRadius = 10
-        contentField.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
-        uniformFieldStyle(titleField, "Write title")
-        uniformFieldStyle(topicField, "topic")
-    }
-    
-    func setUp() {
-        coverImageStyle()
-        imageViewStyle()
-        textFieldStyle()
-        setButtonActions()
-        topicField.addTarget(self, action: #selector(pickTopic), for: .allTouchEvents)
     }
     
     @objc func loadTopics() {
@@ -109,26 +58,19 @@ class WriteNewsViewController: UIViewController {
         AlertService.showAlert(style: .alert, title: "Choose topic", message: "Make", actions: [cancelAction], completion: nil)
     }
     
-    func uniformFieldStyle(_ field: UITextField, _ placeHolder: String) {
-        field.autocorrectionType = .no
-        field.layer.borderWidth = 0.2
-        field.layer.cornerRadius = 10
-        field.placeholder = placeHolder
-        field.rightViewMode = .always
-    }
-    
-    func setButtonActions() {
-        publishButton.addTarget(self, action: #selector(publishNews), for: .touchUpInside)
-        uploadButton.addTarget(self, action: #selector(imagePicker), for: .touchUpInside)
+    func setActionsEvents() {
+        viewLayout.publishButton.addTarget(self, action: #selector(publishNews), for: .touchUpInside)
+        viewLayout.uploadButton.addTarget(self, action: #selector(pickImage), for: .touchUpInside)
+        viewLayout.topicField.addTarget(self, action: #selector(pickTopic), for: .allTouchEvents)
     }
 
     func setValues() {
-        if coverImage.image != nil {
-           uploadLabel.text = "change image"
-           uploadLabel.font  = UIFont.preferredFont(forTextStyle: .body)
-           uploadLabel.textColor = .white
-           uploadButton.imageView?.tintColor = .white
-            imageView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        if viewLayout.coverImage.image != nil {
+            viewLayout.uploadLabel.text = "change image"
+            viewLayout.uploadLabel.font  = UIFont.preferredFont(forTextStyle: .body)
+            viewLayout.uploadLabel.textColor = .white
+            viewLayout.uploadButton.imageView?.tintColor = .white
+            viewLayout.imageView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
        }
     }
     
@@ -137,7 +79,7 @@ class WriteNewsViewController: UIViewController {
             .uploadImage(image: imageData!, completionHandler: uploadData(_:))
          if imageUrl != "" {
              writeNewsViewModel?
-                 .saveToFirebase(title: titleField.text ?? "title", topic: "Science", content: contentField.text ?? "Content", cover: imageUrl, saveData(_:))
+                 .saveToFirebase(title: viewLayout.titleField.text ?? "title", topic: "Science", content: viewLayout.contentField.text ?? "Content", cover: imageUrl, saveData(_:))
          }
     }
 
@@ -146,9 +88,7 @@ class WriteNewsViewController: UIViewController {
         case .success(let id):
            print(id)
         case .failure(let error):
-
             print("\(error.localizedDescription)")
-
         }
     }
     
@@ -157,16 +97,21 @@ class WriteNewsViewController: UIViewController {
         case .success(let id):
             imageUrl = id
         case .failure(let error):
-
             print("\(error.localizedDescription)")
-
         }
     }
     
-    func setupLayoutConstraints() {
-        uploadTitle.anchored(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: UIEdgeInsets(top: 0, left: 24, bottom: 0, right: 24))
+    fileprivate func setupLayoutConstraints() {
+        view.addSubview(viewLayout)
+        viewLayout.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([viewLayout.topAnchor.constraint(equalTo: view.topAnchor),
+        viewLayout.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+        viewLayout.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+        viewLayout.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+                                    ])
     }
 }
+
 extension WriteNewsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func showImagePickerControllerActionSheet() {
@@ -191,11 +136,11 @@ extension WriteNewsViewController: UIImagePickerControllerDelegate, UINavigation
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            coverImage.image = editedImage
+            viewLayout.coverImage.image = editedImage
             image = editedImage
             imageData = editedImage.pngData()
         } else  if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            coverImage.image = originalImage
+            viewLayout.coverImage.image = originalImage
             image = originalImage
             imageData = originalImage.pngData()
         }
