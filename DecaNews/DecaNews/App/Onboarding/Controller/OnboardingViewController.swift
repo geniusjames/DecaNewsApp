@@ -9,80 +9,71 @@ import UIKit
 
 final class OnboardingViewController: UIViewController {
     
-    // MARK: - Coordinator Closures
+    // MARK: -
+    var viewModel: OnboardingViewModel!
     var didCompleteOnboarding: CoordinatorTransition?
     
-    // MARK: - Instance Properties
-    let viewModel = OnboardingViewModel()
-
     // MARK: - Outlets
-    @IBOutlet weak var onboardingCV: UICollectionView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var proceedButton: UIButton!
     @IBOutlet var indicators: [UILabel]!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var proceedButton: UIButton!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var onboardingCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        proceedButton.addTarget(self, action: #selector(proceed), for: .touchUpInside)
-        onboardingCV.delegate = self
-        onboardingCV.dataSource = self
-        
+        setupOnLoad()
     }
     
-    @objc func proceed() {
+    private func setupOnLoad() {
+        onboardingCollectionView.delegate = self
+        onboardingCollectionView.dataSource = self
+        proceedButton.addTarget(self, action: #selector(proceedToDashboard), for: .touchUpInside)
+    }
+    
+    @objc private func proceedToDashboard() {
         didCompleteOnboarding?()
+    }
+    
+    private func updateView(with slide: OnboardingSlide) {
+        titleLabel.text = slide.title
+        descriptionLabel.text = slide.desctiption
+        let proceedImage = UIImage(imageLiteralResourceName: slide.imageName)
+        proceedButton.setImage(proceedImage, for: .normal)
     }
     
     @IBAction func skipButtonPressed(_ sender: Any) {
-        didCompleteOnboarding?()
-    }
-}
-
-extension OnboardingViewController: UICollectionViewDataSource,
-                                    UICollectionViewDelegate,
-                                    UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView,
-                        numberOfItemsInSection section: Int) -> Int {
-        viewModel.onboardingTitle.count
-    }
-    func collectionView(_ collectionView: UICollectionView,
-                        cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell =
-                collectionView.dequeueReusableCell(withReuseIdentifier: viewModel.cellID,
-                                                   for: indexPath) as? OnboardingCollectionViewCell
-        else {
-            return OnboardingCollectionViewCell()
-        }
-        cell.configureViewCell(indexPath: indexPath.row)
-        return cell
-    }
-    func collectionView(_ collectionView: UICollectionView,
-                        willDisplay cell: UICollectionViewCell,
-                        forItemAt indexPath: IndexPath) {
-        DispatchQueue.main.async { [self] in
-            let row = indexPath.row
-            titleLabel.text = viewModel.onboardingTitle[row]
-            descriptionLabel.text = viewModel.onboardingDescription[row]
-            proceedButton.setImage(UIImage(imageLiteralResourceName: viewModel.buttonImageNames[row]), for: .normal)
-            indicators.enumerated().forEach { (index, indicator) in
-                if index == row {
-                    indicator.backgroundColor = .black
-                } else {
-                    indicator.backgroundColor = .gray
-                }
-            }
-        }
-    }
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let itemWidth = collectionView.bounds.width - 5
-        let itemHeight = collectionView.bounds.height
-        return CGSize(width: itemWidth, height: itemHeight)
+        proceedToDashboard()
     }
 }
 
 extension OnboardingViewController: Storyboardable {
     static var storyboard: Storyboard { .onboarding }
+}
+
+extension OnboardingViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.slides.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: OnboardingCollectionViewCell.viewIdentifier, for: indexPath) as? OnboardingCollectionViewCell
+        else { return UICollectionViewCell() }
+        cell.configureViewCell(with: viewModel.slides[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        updateView(with: viewModel.slides[indexPath.row])
+        indicators.enumerated().forEach { (index, indicator) in
+            indicator.backgroundColor = indexPath.row == index ? .black : .gray
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let itemWidth = collectionView.bounds.width - 5
+        let itemHeight = collectionView.bounds.height
+        return CGSize(width: itemWidth, height: itemHeight)
+    }
 }

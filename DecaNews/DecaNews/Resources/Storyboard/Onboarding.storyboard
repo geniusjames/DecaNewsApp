@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
@@ -16,11 +14,11 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="OnboardingViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="center" distribution="equalCentering" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-AE-c6f">
-                                <rect key="frame" x="24" y="44" width="387" height="31"/>
+                                <rect key="frame" x="24" y="0.0" width="573" height="31"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="CHb-SE-1B2">
                                         <rect key="frame" x="0.0" y="0.0" width="163" height="31"/>
@@ -41,7 +39,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXu-3U-DQy">
-                                        <rect key="frame" x="335" y="0.0" width="52" height="31"/>
+                                        <rect key="frame" x="521" y="0.0" width="52" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Skip">
                                             <color key="baseForegroundColor" name="peach"/>
@@ -53,7 +51,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="G3H-uk-rLO">
-                                <rect key="frame" x="0.0" y="144" width="414" height="295.5"/>
+                                <rect key="frame" x="0.0" y="100" width="600" height="198"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="ShH-bL-DOY">
                                     <size key="itemSize" width="414" height="306"/>
@@ -63,7 +61,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="onboarding" id="f4d-2P-9kV" customClass="OnboardingCollectionViewCell" customModule="DecaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-5.5" width="414" height="306"/>
+                                        <rect key="frame" x="0.0" y="-54" width="414" height="306"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="306"/>
@@ -89,21 +87,21 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9L-j6-uW4">
-                                <rect key="frame" x="150" y="738" width="114" height="104"/>
+                                <rect key="frame" x="243" y="476" width="114" height="104"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="button0" title=""/>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="xuk-VQ-LPU">
-                                <rect key="frame" x="40" y="515.5" width="334" height="65.5"/>
+                                <rect key="frame" x="40" y="374" width="520" height="65.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CrL-06-Y3X">
-                                        <rect key="frame" x="136.5" y="0.0" width="61.5" height="29"/>
+                                        <rect key="frame" x="229.5" y="0.0" width="61.5" height="29"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GVb-aR-SPD">
-                                        <rect key="frame" x="146.5" y="45" width="41.5" height="20.5"/>
+                                        <rect key="frame" x="239.5" y="45" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" name="deepGrey"/>
                                         <nil key="highlightedColor"/>
@@ -111,7 +109,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wMw-F7-Cdd">
-                                <rect key="frame" x="157" y="479.5" width="100" height="4"/>
+                                <rect key="frame" x="250" y="338" width="100" height="4"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1jd-qh-uUn" customClass="IndicatorLabel" customModule="DecaNews" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="28" height="4"/>
@@ -170,7 +168,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionLabel" destination="GVb-aR-SPD" id="HeJ-7n-Tty"/>
-                        <outlet property="onboardingCV" destination="G3H-uk-rLO" id="qnk-0L-eVg"/>
+                        <outlet property="onboardingCollectionView" destination="G3H-uk-rLO" id="qnk-0L-eVg"/>
                         <outlet property="proceedButton" destination="j9L-j6-uW4" id="LNI-Cd-1Oz"/>
                         <outlet property="titleLabel" destination="CrL-06-Y3X" id="vER-wf-I1T"/>
                         <outletCollection property="indicators" destination="1jd-qh-uUn" collectionClass="NSMutableArray" id="dhH-V5-W8Z"/>

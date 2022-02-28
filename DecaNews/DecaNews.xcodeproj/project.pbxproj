@@ -51,6 +51,7 @@
 		94083F0127CD2F3A008E523B /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083F0027CD2F3A008E523B /* UserStore.swift */; };
 		94083F0327CD2FA6008E523B /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */; };
 		94083F0527CD3362008E523B /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083F0427CD3362008E523B /* DIContainer.swift */; };
+		94083F0727CD3A01008E523B /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083F0627CD3A01008E523B /* OnboardingSlide.swift */; };
 		9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301327A9404700411376 /* EmailSignUpViewController.swift */; };
 		9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301427A9404700411376 /* PasswordResetViewController.swift */; };
 		9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301527A9404700411376 /* SelectedTopicsViewController.swift */; };
@@ -164,6 +165,7 @@
 		94083F0027CD2F3A008E523B /* UserStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStore.swift; sourceTree = "<group>"; };
 		94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		94083F0427CD3362008E523B /* DIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIContainer.swift; sourceTree = "<group>"; };
+		94083F0627CD3A01008E523B /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		9410301327A9404700411376 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		9410301427A9404700411376 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		9410301527A9404700411376 /* SelectedTopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTopicsViewController.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 		04F2AA8527943F5000D4C062 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				94083F0627CD3A01008E523B /* OnboardingSlide.swift */,
 				B45C374027ADBB0A009995B7 /* User.swift */,
 				045B321027C30E8500D41470 /* News.swift */,
 				0417C35827BDA621006AB3B4 /* BookmarkModel.swift */,
@@ -1006,6 +1009,7 @@
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */,
+				94083F0727CD3A01008E523B /* OnboardingSlide.swift in Sources */,
 				9412445B27C032440045484E /* Storyboardable.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
 				B4E7B9AF27BCF8B400F809CE /* TopicsCollectionViewController+Extensions.swift in Sources */,

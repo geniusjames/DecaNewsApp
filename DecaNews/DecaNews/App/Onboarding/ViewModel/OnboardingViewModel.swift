@@ -7,14 +7,16 @@
 
 import Foundation
 
-class OnboardingViewModel {
-
-    let onboardingTitle = ["Discover Curated News",
-                           "Update News Everyday",
-                           "Browse by Categories"]
-    let onboardingDescription = ["Keep up-to-date with the actual and valid news everyday",
-                                 "Get the recent news everyday with DecaNews",
-                                 "Get the recent news everyday with DecaNews"]
-    let cellID = "onboarding"
-    let buttonImageNames = ["button0", "button1", "button2"]
+final class OnboardingViewModel {
+    
+    var slides: [OnboardingSlide] {
+        return makeSlides()
+    }
+    
+    private func makeSlides() -> [OnboardingSlide] {
+        [OnboardingSlide(title: "Discover Curated News", desctiption: "Keep up-to-date with the actual and valid news everyday", imageName: "button0", backDropImage: "onboarding0"),
+         OnboardingSlide(title: "Update News Everyday", desctiption: "Get the recent news everyday with DecaNews", imageName: "button1", backDropImage: "onboarding1"),
+         OnboardingSlide(title: "Browse by Categories", desctiption: "Get the recent news everyday with DecaNews", imageName: "button2", backDropImage: "onboarding2")
+        ]
+    }
 }

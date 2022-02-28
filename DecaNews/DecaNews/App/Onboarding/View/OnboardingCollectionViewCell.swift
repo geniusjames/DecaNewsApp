@@ -7,10 +7,11 @@
 
 import UIKit
 
-class OnboardingCollectionViewCell: UICollectionViewCell {
+final class OnboardingCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var onboardingBackgroundPicture: UIImageView!
-	let imageFileName = ["onboarding0", "onboarding1", "onboarding2"]
-    func configureViewCell(indexPath: Int) {
-        onboardingBackgroundPicture.image = UIImage(imageLiteralResourceName: imageFileName[indexPath])
+    
+    func configureViewCell(with slide: OnboardingSlide) {
+        onboardingBackgroundPicture.image = UIImage(imageLiteralResourceName: slide.backDropImage)
     }
 }

@@ -13,6 +13,10 @@ public struct AnchoredConstraints {
 
 public extension UIView {
     
+    static var viewIdentifier: String {
+        return String(describing: self)
+    }
+    
     @discardableResult
     func anchored(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) -> AnchoredConstraints {
         
