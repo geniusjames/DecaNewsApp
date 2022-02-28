@@ -25,9 +25,8 @@ final class OnboardingCoordinator: Coordinator {
     
     func loadOnboardingRoot() {
         let viewController = OnboardingViewController.instantiate()
-        let viewModel = OnboardingViewModel()
+        let viewModel = DIContainer.makeOnboardingViewModel()
         viewController.viewModel = viewModel
-        
         viewController.didCompleteOnboarding = { [weak self] in
             self?.finish()
         }

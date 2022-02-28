@@ -22,4 +22,9 @@ final class DIContainer {
         let firbaseService = FirebaseService()
         return firbaseService
     }
+    
+    static func makeOnboardingViewModel() -> OnboardingViewModel {
+        let userStore = makeUserStore()
+        return OnboardingViewModel(store: userStore)
+    }
 }

@@ -9,7 +9,7 @@ import Foundation
 
 protocol UserPersistenceStore {
     var isUserOnboarded: Bool { get }
-    func setUserOnbordingStatus()
+    func setUserOnboardingStatus()
     
     var isUserSignedIn: Bool { get }
 }
@@ -20,7 +20,7 @@ final class UserStore: UserPersistenceStore {
         UserDefaults.standard.isUserOnboarded
     }
     
-    func setUserOnbordingStatus() {
+    func setUserOnboardingStatus() {
         UserDefaults.standard.isUserOnboarded = true
     }
     

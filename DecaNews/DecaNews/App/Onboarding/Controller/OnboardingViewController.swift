@@ -33,6 +33,7 @@ final class OnboardingViewController: UIViewController {
     
     @objc private func proceedToDashboard() {
         didCompleteOnboarding?()
+        viewModel.completeOnboarding()
     }
     
     private func updateView(with slide: OnboardingSlide) {

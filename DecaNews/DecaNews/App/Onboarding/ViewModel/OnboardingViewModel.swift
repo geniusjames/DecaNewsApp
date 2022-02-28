@@ -9,6 +9,12 @@ import Foundation
 
 final class OnboardingViewModel {
     
+    let userStore: UserPersistenceStore
+    
+    init(store: UserPersistenceStore) {
+        self.userStore = store
+    }
+    
     var slides: [OnboardingSlide] {
         return makeSlides()
     }
@@ -18,5 +24,9 @@ final class OnboardingViewModel {
          OnboardingSlide(title: "Update News Everyday", desctiption: "Get the recent news everyday with DecaNews", imageName: "button1", backDropImage: "onboarding1"),
          OnboardingSlide(title: "Browse by Categories", desctiption: "Get the recent news everyday with DecaNews", imageName: "button2", backDropImage: "onboarding2")
         ]
+    }
+    
+    func completeOnboarding() {
+        userStore.setUserOnboardingStatus()
     }
 }
