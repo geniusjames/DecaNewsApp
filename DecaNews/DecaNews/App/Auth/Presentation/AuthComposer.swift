@@ -24,16 +24,3 @@ final class AuthComposer {
         return viewController
     }
 }
-
-class DIContainer {
-    
-    static func makeServiceViewModel() -> ServicesViewModel {
-        let serviceViewModel = ServicesViewModel(firebaseService: makeAuthRepository())
-        return serviceViewModel
-    }
-    
-    private static func makeAuthRepository() -> AuthServiceRepository {
-        let firbaseService = FirebaseService()
-        return firbaseService
-    }
-}

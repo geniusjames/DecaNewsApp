@@ -10,17 +10,16 @@ import UIKit
 final class AppCoordinator: Coordinator {
     
     private let window: UIWindow
-    private let servicesViewModel: ServicesViewModel
     private var navigationController: UINavigationController
     
-    init(window: UIWindow, servicesViewModel: ServicesViewModel) {
+    init(window: UIWindow) {
         self.window = window
-        self.servicesViewModel = servicesViewModel
         navigationController = UINavigationController()
     }
     
     override func start() {
-        servicesViewModel.getOnboardedStatus ? autenticateUser() : startOnboarding()
+        let userStore = DIContainer.makeUserStore()
+        userStore.isUserOnboarded ? autenticateUser() : startOnboarding()
     }
     
     func startOnboarding() {
@@ -36,7 +35,8 @@ final class AppCoordinator: Coordinator {
     }
     
     private func autenticateUser() {
-        servicesViewModel.getSignedStatus ? startMainApp() : startAuth()
+        let userStore = DIContainer.makeUserStore()
+        userStore.isUserSignedIn ? startMainApp() : startAuth()
     }
     
     func startAuth() {
