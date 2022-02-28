@@ -48,6 +48,7 @@
 		94083EFA27CD2D1F008E523B /* TextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083EF927CD2D1F008E523B /* TextField+Extension.swift */; };
 		94083EFC27CD2DA8008E523B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083EFB27CD2DA8008E523B /* SettingsViewController.swift */; };
 		94083EFE27CD2DB1008E523B /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083EFD27CD2DB1008E523B /* SettingsTableViewCell.swift */; };
+		94083F0327CD2FA6008E523B /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */; };
 		9410301627A9404700411376 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301327A9404700411376 /* EmailSignUpViewController.swift */; };
 		9410301727A9404700411376 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301427A9404700411376 /* PasswordResetViewController.swift */; };
 		9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9410301527A9404700411376 /* SelectedTopicsViewController.swift */; };
@@ -158,6 +159,7 @@
 		94083EF927CD2D1F008E523B /* TextField+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "TextField+Extension.swift"; path = "DecaNews/Utility/Custom Views/TextField+Extension.swift"; sourceTree = SOURCE_ROOT; };
 		94083EFB27CD2DA8008E523B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		94083EFD27CD2DB1008E523B /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		9410301327A9404700411376 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		9410301427A9404700411376 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		9410301527A9404700411376 /* SelectedTopicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectedTopicsViewController.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 				B45C378927C1D36F009995B7 /* Date+Extension.swift */,
 				049D611227B89B3D00DB35F1 /* UIView+Extension.swift */,
 				9410301F27A9409F00411376 /* String+Extension.swift */,
+				94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */,
 			);
 			name = Extension;
 			path = DecaNews/Utility/Extension;
@@ -1018,6 +1021,7 @@
 				049D611127B89A1400DB35F1 /* SettingsBackgroundUIView.swift in Sources */,
 				94A2C96D27BAE85D0048F37C /* AuthCoordinator.swift in Sources */,
 				B45C377F27C1D335009995B7 /* CheckMarkImageView.swift in Sources */,
+				94083F0327CD2FA6008E523B /* UserDefaults+Extension.swift in Sources */,
 				B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */,
 				B4E7B9A727BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift in Sources */,
 				B4E7B9A927BC69DA00F809CE /* PopularAuthorViewCell.swift in Sources */,
