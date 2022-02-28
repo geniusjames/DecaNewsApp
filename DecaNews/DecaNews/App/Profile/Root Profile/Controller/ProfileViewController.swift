@@ -42,7 +42,6 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 		}
 	}
 	
-
 	@IBAction func EditProfileButtonAction(_ sender: Any) {
 	}
 	

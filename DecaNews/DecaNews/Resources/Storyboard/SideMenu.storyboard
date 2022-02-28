@@ -31,10 +31,10 @@
             </objects>
             <point key="canvasLocation" x="1018.840579710145" y="97.767857142857139"/>
         </scene>
-        <!--Menu View Controller-->
+        <!--Menu Table View Controller-->
         <scene sceneID="BdT-Zs-1TJ">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" id="lKS-76-wGS" customClass="MenuViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MenuTableViewController" storyboardIdentifier="MenuTableViewController" id="lKS-76-wGS" customClass="MenuTableViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4qw-dz-rwI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

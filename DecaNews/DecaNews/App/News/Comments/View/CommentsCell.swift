@@ -8,7 +8,7 @@
 import UIKit
 
 class CommentsCell: UITableViewCell {
-
+    
     var comment: CommentModel?
     
     @IBOutlet weak var profilePic: UIImageView!
@@ -17,15 +17,14 @@ class CommentsCell: UITableViewCell {
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var userComment: UILabel!
     @IBOutlet weak var likeButton: UIButton!
-    
+    let networkManager = NetworkManager()
     @IBOutlet weak var likeCount: UILabel!
     
     @IBAction func likeButtonAction(_ sender: UIButton) {
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
     
     func setLikeImage(_ isLiked: Bool) {
@@ -38,10 +37,11 @@ class CommentsCell: UITableViewCell {
     let viewModel = CommentViewModel()
     func configureCell(index: Int) {
         viewModel.readComments { comments in
+            self.networkManager.getImageDataFrom(url: self.viewModel.getPhotoURL(), imageCell: self.profilePic)
             self.userComment.text = comments[index].commentText
-          let days =  Date.timeDifference(lhs: Date(), rhs: comments[index].dateAndTime).toString()
+            let days =  Date.timeDifference(lhs: Date(), rhs: comments[index].dateAndTime).toString()
             self.time.text = "\(days) ago"
-            self.setLikeImage(comments[index].liked)
+            self.setLikeImage(comments[index].liked ?? false)
         }
     }
     func setUp() {

@@ -24,7 +24,7 @@ final class PasswordChangeCoordinator: Coordinator {
     }
 
     func loadPasswordChangeViewController() {
-        guard let viewController = UIStoryboard(name: "EmailSignin", bundle: nil)
+        guard let viewController = UIStoryboard(name: "News", bundle: nil)
                 .instantiateViewController(withIdentifier: "PasswordChange") as? PasswordChangeViewController else {
                     return
                 }

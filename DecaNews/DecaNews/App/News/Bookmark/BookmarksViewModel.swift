@@ -15,7 +15,7 @@ class BookmarksViewModel {
     func fetchPersistedNews() {
         
     }
-    func fetch( completion: @escaping (([News]) -> Void)){
+    func fetch (completion: @escaping ( ([News]) -> Void)){
         _ =  store.read { contents in
             completion(contents)
         }
