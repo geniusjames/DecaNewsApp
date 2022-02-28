@@ -36,7 +36,7 @@ final class AppCoordinator: Coordinator {
     }
     
     private func autenticateUser() {
-        servicesViewModel.getSignedStatus ? startMainApp() : startComments()
+        servicesViewModel.getSignedStatus ? startMainApp() : startAuth()
     }
     
     func startAuth() {
@@ -58,17 +58,6 @@ final class AppCoordinator: Coordinator {
         window.makeKeyAndVisible()
         
         mainAppCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-            self?.startAuth()
-        }
-    }
-    func startComments() {
-        let commentsCoordinator = CommentsCoordinator()
-        pushCoordinator(commentsCoordinator)
-        window.rootViewController = commentsCoordinator.rootViewController
-        window.makeKeyAndVisible()
-        
-        commentsCoordinator.didFinish = { [weak self] coordinator in
             self?.popCoordinator(coordinator)
             self?.startAuth()
         }
