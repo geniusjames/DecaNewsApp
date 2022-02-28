@@ -78,3 +78,7 @@ class CommentsViewController: UIViewController, UITableViewDataSource, UITableVi
     // work on the like function
     
 }
+
+extension CommentsViewController: Storyboardable {
+    static var storyboard: Storyboard { .news }
+}

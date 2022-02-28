@@ -97,3 +97,7 @@ extension EmailSignUpViewController: UITextFieldDelegate {
         textField.layer.borderColor = UIColor(named: "peach")?.cgColor
     }
 }
+
+extension EmailSignUpViewController: Storyboardable {
+    static var storyboard: Storyboard { .auth }
+}

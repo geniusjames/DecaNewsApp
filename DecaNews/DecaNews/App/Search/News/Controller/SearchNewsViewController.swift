@@ -122,3 +122,7 @@ extension SearchNewsViewController: UITextFieldDelegate {
         searchNewsViewModel?.fetchNews()
     }
 }
+
+extension SearchNewsViewController: Storyboardable {
+    static var storyboard: Storyboard { .search }
+}

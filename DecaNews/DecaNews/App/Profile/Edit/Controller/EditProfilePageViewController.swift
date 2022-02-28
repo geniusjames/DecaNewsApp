@@ -107,3 +107,7 @@ extension EditProfilePageViewController: UIImagePickerControllerDelegate, UINavi
     }
     
 }
+
+extension EditProfilePageViewController: Storyboardable {
+    static var storyboard: Storyboard { .profile }
+}
