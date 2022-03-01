@@ -10,10 +10,10 @@ import Foundation
 final class LatestNewsViewModel {
     let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
     private var allArticles: [Article]?
-    let networkManager: NetworkManager
+    let networkManagerRepository: NetworkManagerRepository
     
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
+    init(networkManager: NetworkManagerRepository) {
+        self.networkManagerRepository = networkManager
     }
     var articles: [Article] {
         get {
@@ -29,7 +29,7 @@ final class LatestNewsViewModel {
     }
     
     func fetchData(successCompletion: @escaping () -> Void, errorCompletion: ErrorBlock) {
-        networkManager.networkRequest(url: url, successCompletion: { [weak self] response in
+        networkManagerRepository.networkRequest(url: url, successCompletion: { [weak self] response in
             self?.setArticles(articles: response.articles)
             successCompletion()
         }, errorCompletion: errorCompletion)

@@ -93,6 +93,8 @@
 		B458C31327CEC5F0001147F3 /* MenuTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31227CEC5F0001147F3 /* MenuTableViewModel.swift */; };
 		B458C31527CEC91C001147F3 /* DashboardUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31427CEC91C001147F3 /* DashboardUser.swift */; };
 		B458C31727CED4EF001147F3 /* LatestNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31627CED4EF001147F3 /* LatestNewsViewModel.swift */; };
+		B458C31927CED980001147F3 /* DashboardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31827CED980001147F3 /* DashboardCollectionViewModel.swift */; };
+		B458C31B27CEE21F001147F3 /* DashboardTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31A27CEE21F001147F3 /* DashboardTableViewModel.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C374127ADBB0A009995B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C374027ADBB0A009995B7 /* User.swift */; };
@@ -209,6 +211,8 @@
 		B458C31227CEC5F0001147F3 /* MenuTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewModel.swift; sourceTree = "<group>"; };
 		B458C31427CEC91C001147F3 /* DashboardUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardUser.swift; sourceTree = "<group>"; };
 		B458C31627CED4EF001147F3 /* LatestNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsViewModel.swift; sourceTree = "<group>"; };
+		B458C31827CED980001147F3 /* DashboardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewModel.swift; sourceTree = "<group>"; };
+		B458C31A27CEE21F001147F3 /* DashboardTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewModel.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C374027ADBB0A009995B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -548,6 +552,8 @@
 				B458C31027CEC4CE001147F3 /* DashboardViewModel.swift */,
 				B458C31227CEC5F0001147F3 /* MenuTableViewModel.swift */,
 				B458C31627CED4EF001147F3 /* LatestNewsViewModel.swift */,
+				B458C31827CED980001147F3 /* DashboardCollectionViewModel.swift */,
+				B458C31A27CEE21F001147F3 /* DashboardTableViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -1033,6 +1039,7 @@
 				049D60D927B8059E00DB35F1 /* AuthRootViewController.swift in Sources */,
 				94EDA13C27C4DC400019DF5C /* NewsDetailsViewController.swift in Sources */,
 				B458C31327CEC5F0001147F3 /* MenuTableViewModel.swift in Sources */,
+				B458C31B27CEE21F001147F3 /* DashboardTableViewModel.swift in Sources */,
 				9412445D27C033600045484E /* Storyboard.swift in Sources */,
 				94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */,
 				9410302027A9409F00411376 /* String+Extension.swift in Sources */,
@@ -1127,6 +1134,7 @@
 				045B321127C30E8500D41470 /* News.swift in Sources */,
 				94EDA13A27C4DB580019DF5C /* OnboardingCollectionViewCell.swift in Sources */,
 				B458C31727CED4EF001147F3 /* LatestNewsViewModel.swift in Sources */,
+				B458C31927CED980001147F3 /* DashboardCollectionViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,12 +14,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	@IBOutlet weak var trendingButton: UILabel!
 	@IBOutlet weak var recentButton: UILabel!
 	
-	let directory = ArticleDirectory()
-	private let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
-	private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
-	private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
-	
-	public var collectionViewNews: [Article]?
+    var viewModel: DashboardCollectionViewModel?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -28,7 +23,7 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	
 	private func config() {
 		collectionView.dataSource = self
-		fetchData(url: url)
+		fetchData(1)
 		
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
 		
@@ -42,10 +37,9 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		recentButton.addGestureRecognizer(tapRecentTab)
 	}
 	
-	public func fetchData(url: String) {
-		NetworkManager.shared.networkRequest(url: url) { [weak self] response in
-			self?.collectionViewNews = response.articles
-			DispatchQueue.main.async {
+    public func fetchData(_ val: Int) {
+        viewModel?.fetchData(val) {
+			DispatchQueue.main.async { [weak self] in
 				self?.collectionView.reloadData()
 			}
 		} errorCompletion: { error in
@@ -56,19 +50,11 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 	}
 	
 	func updateBookmarks(with article: Article) {
-		directory.addBookmark(
-			author: article.author ?? "",
-			title: article.title ?? "",
-			articleDescription: article.articleDescription ?? "",
-			url: article.url ?? "",
-			urlToImage: article.urlToImage ?? "",
-			publishedAt: article.publishedAt ?? "",
-			content: article.content ?? ""
-		)
+        viewModel?.addBookMark(article: article)
 	}
 	
-	func deleteBookmark(with article: Article) {
-		print("delete Bookmark")
+	func deleteBookmark(with url: String?) {
+        viewModel?.deleteBookMark(url: url)
 	}
 	
 	@objc func didTapPopular() {
@@ -78,10 +64,10 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		trendingButton.textColor = UIColor(named: "deepGrey")
 		recentButton.font = .systemFont(ofSize: 20)
 		recentButton.textColor = UIColor(named: "deepGrey")
-		fetchData(url: url)
-		DispatchQueue.main.async {
-			self.collectionView.reloadData()
-		}
+		fetchData(1)
+//		DispatchQueue.main.async {
+//			self.collectionView.reloadData()
+//		}
 	}
 
 	@objc func didTapTrending() {
@@ -91,10 +77,10 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		popularButton.textColor = UIColor(named: "deepGrey")
 		recentButton.font = .systemFont(ofSize: 20)
 		recentButton.textColor = UIColor(named: "deepGrey")
-		fetchData(url: url2)
-		DispatchQueue.main.async {
-			self.collectionView.reloadData()
-		}
+		fetchData(2)
+//		DispatchQueue.main.async {
+//			self.collectionView.reloadData()
+//		}
 	}
 
 	@objc func didTapRecent() {
@@ -104,10 +90,10 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		trendingButton.textColor = UIColor(named: "deepGrey")
 		popularButton.font = .systemFont(ofSize: 20)
 		popularButton.textColor = UIColor(named: "deepGrey")
-		fetchData(url: url3)
-		DispatchQueue.main.async {
-			self.collectionView.reloadData()
-		}
+		fetchData(3)
+//		DispatchQueue.main.async {
+//			self.collectionView.reloadData()
+//		}
 	}
 	
 	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -118,12 +104,12 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashBoardCollectionViewCell", for: indexPath) as? DashboardCollectionViewCell else {
 			return UICollectionViewCell()
 		}
-		if let articles = collectionViewNews {
+        if let articles = viewModel?.collectionViewNews {
 			let article = articles[indexPath.row]
 			cell.setup(with: article)
 			cell.didTapBookmarkBtn = { [weak self] in
 				cell.isBookmarked ?
-				self?.deleteBookmark(with: article) :
+                self?.deleteBookmark(with: article.url) :
 				self?.updateBookmarks(with: article)
 			}
 		}
