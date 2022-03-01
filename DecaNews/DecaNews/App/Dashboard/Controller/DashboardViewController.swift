@@ -11,9 +11,9 @@ import SideMenu
 class DashboardViewController: UIViewController, MenuControllerDelegate {
 	
 	private var sideMenu: SideMenuNavigationController?
-	let coordinator = MainAppCoordinator()
-	let directory = ArticleDirectory()
-	var data: [BookmarkArticle] = [BookmarkArticle]()
+    var menu: MenuTableViewController!
+    var didCompleteOnboarding: CoordinatorTransition?
+    var viewModel: DashboardViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,14 +22,12 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 	
 	func setUp() {
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
-		let menu = MenuTableViewController(with: itemList)
 		sideMenu = SideMenuNavigationController(rootViewController: menu)
 		menu.delegate = self
 		sideMenu?.leftSide = true
 		SideMenuManager.default.leftMenuNavigationController = sideMenu
 		SideMenuManager.default.addPanGestureToPresent(toView: view)
-		data = directory.readBookmarks()
-		print(data)
+        let _ = viewModel?.bookmarks ?? []
 	}
 	
 	@IBAction func menuButton(_ sender: Any) {
@@ -61,17 +59,6 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 			}
 		})
 	}
-	
-	var itemList: [String] = ["Home",
-							  "Saved News",
-							  "Write News",
-							  "Membership",
-							  "Help",
-							  "Settings",
-							  "Logout",
-							  "Version 1.0"
-	]
-	
 }
 
 extension DashboardViewController: Storyboardable {

@@ -18,7 +18,7 @@ final class SignUpViewModel {
     }
     
     func didSignIn() {
-        userStore.signIn()
+        userStore.signInUser()
     }
     
     func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {

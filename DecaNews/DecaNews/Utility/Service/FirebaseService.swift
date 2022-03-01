@@ -15,6 +15,7 @@ protocol AuthServiceRepository {
     func signIn(_ email: String, _ password: String, completionHandler: @escaping (Result<Int, Error>) -> Void)
     func resetPassword(_ text: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void)
     func changePassword(oldPassword: String, newPassword: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void)
+    var userDetails: FirebaseAuth.User? { get }
 }
 
 final class FirebaseService: AuthServiceRepository {
@@ -22,6 +23,10 @@ final class FirebaseService: AuthServiceRepository {
     private let auth = Auth.auth()
     private let db = Firestore.firestore()
     private let storage = Storage.storage().reference()
+    
+    var userDetails: FirebaseAuth.User? {
+        auth.currentUser
+    }
     
     func signUp(_ email: String, _ password: String, _ completionHandler: @escaping (Result<Int, Error>) -> Void) {
         auth.createUser(withEmail: email, password: password) { _, error in
@@ -79,10 +84,10 @@ final class FirebaseService: AuthServiceRepository {
         
     }
     
-    func getUserDetails() -> FirebaseAuth.User? {
-        let user = auth.currentUser
-        return user
-    }
+//    func getUserDetails() -> FirebaseAuth.User? {
+//        let user = auth.currentUser
+//        return user
+//    }
     
     func saveNewsData(title: String, topic: String, content: String, cover: String, _ completionHandler: @escaping (Result<String, Error>) -> Void ) {
         

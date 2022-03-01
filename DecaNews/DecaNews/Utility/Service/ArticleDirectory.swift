@@ -8,7 +8,15 @@
 import Foundation
 import RealmSwift
 
-class ArticleDirectory {
+protocol ArticleDirectoryRepository {
+    func readBookmarks() -> [BookmarkArticle]
+    func addBookmark(author: String, title: String, articleDescription: String, url: String, urlToImage: String, publishedAt: String, content: String)
+    func deleteBookmark(article: BookmarkArticle)
+    func updateBookmark(article: BookmarkArticle, author: String, title: String,
+        articleDescription: String, url: String, urlToImage: String, publishedAt: String, content: String)
+}
+
+class ArticleDirectory: ArticleDirectoryRepository {
 	
 	private let realm = try? Realm()
 
