@@ -13,7 +13,7 @@ final class EmailSignUpViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorMessageLabel: UILabel!
-    var serviceViewModel: ServicesViewModel?
+    var viewModel: SignUpViewModel?
     var navigateToTopics: (() -> Void)?
     var navigateToEmailSignin: (() -> Void)?
 
@@ -37,7 +37,7 @@ final class EmailSignUpViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
-        serviceViewModel?.firebaseService.signUp(email, password, loggedIn(_:))
+        viewModel?.signUp(email, password, loggedIn(_:))
     }
 
     @IBAction func login(_ sender: Any) {
@@ -51,6 +51,7 @@ final class EmailSignUpViewController: UIViewController {
     func loggedIn(_ result: Result<Int, Error>) {
         switch result {
         case .success(_:):
+            viewModel?.didSignIn()
             navigateToTopics?()
         case .failure(let error):
             errorMessageLabel.text = error.localizedDescription

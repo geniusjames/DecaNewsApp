@@ -23,4 +23,9 @@ final class AuthComposer {
         viewController.viewModel = DIContainer.makeEmailSignInViewModel()
         return viewController
     }
-}
+    
+    static func makeEmailSignupController() -> EmailSignUpViewController {
+        let viewController = EmailSignUpViewController.instantiate()
+        viewController.viewModel = DIContainer.makeSignUpViewModel()
+        return viewController
+    }}
