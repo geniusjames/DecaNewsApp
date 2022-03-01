@@ -32,7 +32,7 @@ class TopicsCollectionViewController: UIViewController {
     }
     
     private func fetchDataTocell(url: String) {
-        NetworkManager.shared.networkRequest(url: url) {[weak self] response in
+        NetworkManager().networkRequest(url: url) {[weak self] response in
             self?.collectionViewNews = response.articles
             DispatchQueue.main.async {
                 self?.cardShapedCollectionView.reloadData()
@@ -43,7 +43,7 @@ class TopicsCollectionViewController: UIViewController {
     }
     
     private func fetchDataToThirdCell(url: String) {
-        NetworkManager.shared.networkRequest(url: url) {[weak self] response in self?.authorsCollectionViewNews = response.articles
+        NetworkManager().networkRequest(url: url) {[weak self] response in self?.authorsCollectionViewNews = response.articles
             DispatchQueue.main.async {
                 self?.authorsCardShapedCollectionView.reloadData()
             }

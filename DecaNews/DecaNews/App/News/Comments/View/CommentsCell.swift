@@ -37,7 +37,10 @@ class CommentsCell: UITableViewCell {
     let viewModel = CommentViewModel()
     func configureCell(index: Int) {
         viewModel.readComments { comments in
-            self.networkManager.getImageDataFrom(url: self.viewModel.getPhotoURL(), imageCell: self.profilePic)
+//            self.networkManager.getImageDataFrom(url: self.viewModel.getPhotoURL(), imageCell: self.profilePic)
+            self.networkManager.getImageDataFrom(url: self.viewModel.getPhotoURL()) { [weak self] data in
+                self?.profilePic.image = UIImage(data: data)
+            }
             self.userComment.text = comments[index].commentText
             let days =  Date.timeDifference(lhs: Date(), rhs: comments[index].dateAndTime).toString()
             self.time.text = "\(days) ago"
@@ -47,7 +50,10 @@ class CommentsCell: UITableViewCell {
     func setUp() {
         let networkManager = NetworkManager()
         if let url = URL(string: comment?.imageUrl ?? "") {
-            networkManager.getImageDataFrom(url: url, imageCell: profilePic)
+//            networkManager.getImageDataFrom(url: url, imageCell: profilePic)
+            networkManager.getImageDataFrom(url: url) { [weak self] data in
+                self?.profilePic.image = UIImage(data: data)
+            }
         }
         setLikeImage(comment?.liked ?? false)
         userComment.text = comment?.commentText

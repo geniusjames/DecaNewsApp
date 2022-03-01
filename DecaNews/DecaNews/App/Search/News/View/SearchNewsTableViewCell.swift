@@ -35,7 +35,10 @@ class SearchNewsTableViewCell: UITableViewCell {
         readTimeLabel.text = "\(2) mins read"
         daysAgoLabel.text = (Date() - publishedDate.dateChanger()).toString()
         if let cellImage = cellData.urlToImage, let url = URL(string: cellImage) {
-            NetworkManager().getImageDataFrom(url: url, imageCell: profilePictureImgView)
+//            NetworkManager().getImageDataFrom(url: url, imageCell: profilePictureImgView)
+            NetworkManager().getImageDataFrom(url: url) { [weak self] data in
+                self?.profilePictureImgView.image = UIImage(data: data)
+            }
         }
         bookMarkImage.setTitle("", for: .normal)
     }

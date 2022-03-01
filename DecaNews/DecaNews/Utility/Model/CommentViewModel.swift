@@ -28,7 +28,7 @@ final class CommentViewModel {
 //        }
 //    }
     func userName() -> String {
-        let user = firebaseService.getUserDetails()
+        let user = firebaseService.userDetails
        return user?.displayName ?? "Unknown User"
     }
     var artileId: String {
@@ -40,7 +40,7 @@ final class CommentViewModel {
         }
     }
     func getPhotoURL() -> URL {
-        let user = firebaseService.getUserDetails()
+        let user = firebaseService.userDetails
         guard let url = user?.photoURL else {return URL(fileURLWithPath: "")}
         return  url 
     }

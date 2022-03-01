@@ -32,7 +32,10 @@ class DashboardTableViewCell: UITableViewCell {
 		authorsName.text = article.author
 		if let articleURLString = article.urlToImage,
 			let catImageURL = URL(string: articleURLString) {
-			NetworkManager().getImageDataFrom(url: catImageURL, imageCell: newsImage)
+//			NetworkManager().getImageDataFrom(url: catImageURL, imageCell: newsImage)
+            NetworkManager().getImageDataFrom(url: catImageURL) { [weak self] data in
+                self?.newsImage.image = UIImage(data: data)
+            }
 		}
 	}
 	

@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	@IBOutlet weak var profileEmail: UILabel!
 	@IBOutlet weak var bio: UILabel!
 	
-	let dashboardTableVC = DashboardTableViewController()
+	let dashboardTableVC = DashboardTableViewModel()
 	let firebaseService = FirebaseService()
 	var articles: [Article] = [Article]()
 	var userArticles: [Article] = [Article]()
@@ -30,11 +30,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 		tableView.delegate = self
 		tableView.dataSource = self
 		articles = dashboardTableVC.articles ?? []
-		let user = firebaseService.getUserDetails()
+        let user = firebaseService.userDetails
 		profileName.text = user?.displayName
 		profileEmail.text = user?.email
 		bio.text = ""
-		NetworkManager.shared.getImageDataFrom(url: (user?.photoURL)!, imageCell: displayPicture)
+//		NetworkManager().getImageDataFrom(url: (user?.photoURL)!, imageCell: displayPicture)
+        NetworkManager().getImageDataFrom(url: (user?.photoURL)!) { [weak self] data in
+            self?.displayPicture.image = UIImage(data: data)
+        }
 		for article in articles {
 			if article.author == profileName.text {
 				userArticles.append(article)
