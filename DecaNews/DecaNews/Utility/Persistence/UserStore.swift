@@ -12,6 +12,8 @@ protocol UserPersistenceStore {
     func setUserOnboardingStatus()
     
     var isUserSignedIn: Bool { get }
+    func signInUser()
+    func signOutUser()
 }
 
 final class UserStore: UserPersistenceStore {
@@ -25,6 +27,14 @@ final class UserStore: UserPersistenceStore {
     }
     
     var isUserSignedIn: Bool {
-        false
+        UserDefaults.standard.isUserSignedIn
+    }
+    
+    func signInUser() {
+        UserDefaults.standard.isUserSignedIn = true
+    }
+    
+    func signOutUser() {
+        UserDefaults.standard.isUserSignedIn = false
     }
 }

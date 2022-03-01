@@ -27,4 +27,8 @@ final class DIContainer {
         let userStore = makeUserStore()
         return OnboardingViewModel(store: userStore)
     }
+    
+    static func makeEmailSignInViewModel() -> EmailSignInViewModel {
+        return EmailSignInViewModel(store: makeUserStore(), authServiceRepository: makeAuthRepository())
+    }
 }
