@@ -88,6 +88,7 @@
 		B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */; };
 		B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */; };
 		B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */; };
+		B4429D7327CEC7170011B078 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4429D7227CEC7160011B078 /* AppColors.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C374127ADBB0A009995B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C374027ADBB0A009995B7 /* User.swift */; };
@@ -198,6 +199,7 @@
 		B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordToggleVisibilityView.swift; sourceTree = "<group>"; };
 		B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksCoordinator.swift; sourceTree = "<group>"; };
 		B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsCoordinator.swift; sourceTree = "<group>"; };
+		B4429D7227CEC7160011B078 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C374027ADBB0A009995B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -490,6 +492,7 @@
 			isa = PBXGroup;
 			children = (
 				94083F0427CD3362008E523B /* DIContainer.swift */,
+				B4429D7227CEC7160011B078 /* AppColors.swift */,
 				04F2AA8527943F5000D4C062 /* Model */,
 				9410301D27A9408000411376 /* Service */,
 				9410301E27A9409F00411376 /* Extension */,
@@ -1011,6 +1014,7 @@
 				B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */,
 				94083F0727CD3A01008E523B /* OnboardingSlide.swift in Sources */,
 				9412445B27C032440045484E /* Storyboardable.swift in Sources */,
+				B4429D7327CEC7170011B078 /* AppColors.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
 				B4E7B9AF27BCF8B400F809CE /* TopicsCollectionViewController+Extensions.swift in Sources */,
 				049D60FD27B8063D00DB35F1 /* MenuTableViewController.swift in Sources */,

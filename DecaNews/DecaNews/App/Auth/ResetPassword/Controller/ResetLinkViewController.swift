@@ -12,8 +12,6 @@ class ResetLinkViewController: UIViewController {
     
 override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     @IBAction func loginScreen(_ sender: Any) {
         navigateToEmailSignin?()

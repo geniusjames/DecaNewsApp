@@ -27,4 +27,10 @@ final class DIContainer {
         let userStore = makeUserStore()
         return OnboardingViewModel(store: userStore)
     }
+    
+    static func makeResetPasswordViewModel() -> ResetPasswordViewModel {
+        let resetPasswordViewModel = ResetPasswordViewModel()
+        return resetPasswordViewModel
+    }
+    
 }

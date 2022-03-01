@@ -23,4 +23,11 @@ final class AuthComposer {
         viewController.servicesViewModel = DIContainer.makeServiceViewModel()
         return viewController
     }
+    
+    static func makePasswordResetController() -> PasswordResetViewController {
+        let viewController = PasswordResetViewController.instantiate()
+        viewController.resetViewModel = DIContainer.makeResetPasswordViewModel()
+        return viewController
+    }
+    
 }
