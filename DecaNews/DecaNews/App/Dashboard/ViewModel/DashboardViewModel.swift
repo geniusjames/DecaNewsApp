@@ -9,10 +9,10 @@ import Foundation
 
 class DashboardViewModel {
     
-    let networkManager: NetworkManager
+    let networkManager: NetworkManagerRepository
     let articleRepository: ArticleDirectoryRepository
     
-    init(networkManager: NetworkManager, articleRepository: ArticleDirectoryRepository) {
+    init(networkManager: NetworkManagerRepository, articleRepository: ArticleDirectoryRepository) {
         self.networkManager = networkManager
         self.articleRepository = articleRepository
     }

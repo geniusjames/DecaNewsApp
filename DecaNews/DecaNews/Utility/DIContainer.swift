@@ -23,6 +23,14 @@ final class DIContainer {
         return firbaseService
     }
     
+    private static func makeNetworkRepository() -> NetworkManagerRepository {
+        NetworkManager()
+    }
+    
+    private static func makeArticleRepository() -> ArticleDirectoryRepository {
+        ArticleDirectory()
+    }
+    
     static func makeOnboardingViewModel() -> OnboardingViewModel {
         let userStore = makeUserStore()
         return OnboardingViewModel(store: userStore)
@@ -36,5 +44,25 @@ final class DIContainer {
 
     static func makeEmailSignInViewModel() -> EmailSignInViewModel {
         return EmailSignInViewModel(store: makeUserStore(), authServiceRepository: makeAuthRepository())
+    }
+    
+    static func makeMenuTableViewModel() -> MenuTableViewModel {
+        return MenuTableViewModel(authServiceRepository: makeAuthRepository(), networkManagerRepository: makeNetworkRepository())
+    }
+    
+    static func makeDashboardViewModel() -> DashboardViewModel {
+        DashboardViewModel(networkManager: makeNetworkRepository(), articleRepository: makeArticleRepository())
+    }
+    
+    static func makeLatestNewsViewModel() -> LatestNewsViewModel {
+        LatestNewsViewModel(networkManager: makeNetworkRepository())
+    }
+    
+    static func makeDashboardCollectionViewModel() -> DashboardCollectionViewModel {
+        DashboardCollectionViewModel(articleRepository: makeArticleRepository(), networkManager: makeNetworkRepository())
+    }
+    
+    static func makeDashboardTableViewModel() -> DashboardTableViewModel {
+        DashboardTableViewModel(articleRepository: makeArticleRepository(), networkManagerRepository: makeNetworkRepository())
     }
 }

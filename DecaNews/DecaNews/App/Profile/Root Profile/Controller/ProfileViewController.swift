@@ -15,7 +15,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 	@IBOutlet weak var profileEmail: UILabel!
 	@IBOutlet weak var bio: UILabel!
 	
-	let dashboardTableVC = DashboardTableViewModel()
+    let dashboardTableVC = DIContainer.makeDashboardTableViewModel()
 	let firebaseService = FirebaseService()
 	var articles: [Article] = [Article]()
 	var userArticles: [Article] = [Article]()
@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
 		tableView.delegate = self
 		tableView.dataSource = self
-		articles = dashboardTableVC.articles ?? []
+        articles = dashboardTableVC.articles
         let user = firebaseService.userDetails
 		profileName.text = user?.displayName
 		profileEmail.text = user?.email

@@ -95,6 +95,7 @@
 		B458C31727CED4EF001147F3 /* LatestNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31627CED4EF001147F3 /* LatestNewsViewModel.swift */; };
 		B458C31927CED980001147F3 /* DashboardCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31827CED980001147F3 /* DashboardCollectionViewModel.swift */; };
 		B458C31B27CEE21F001147F3 /* DashboardTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31A27CEE21F001147F3 /* DashboardTableViewModel.swift */; };
+		B458C31E27CEE7F9001147F3 /* DashboardComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C31D27CEE7F9001147F3 /* DashboardComposer.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
 		B45C374127ADBB0A009995B7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C374027ADBB0A009995B7 /* User.swift */; };
@@ -213,6 +214,7 @@
 		B458C31627CED4EF001147F3 /* LatestNewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestNewsViewModel.swift; sourceTree = "<group>"; };
 		B458C31827CED980001147F3 /* DashboardCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewModel.swift; sourceTree = "<group>"; };
 		B458C31A27CEE21F001147F3 /* DashboardTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewModel.swift; sourceTree = "<group>"; };
+		B458C31D27CEE7F9001147F3 /* DashboardComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardComposer.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
 		B45C374027ADBB0A009995B7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -300,6 +302,7 @@
 		049D60DC27B8062800DB35F1 /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				B458C31C27CEE7EA001147F3 /* Presentation */,
 				B458C30D27CEC401001147F3 /* ViewModel */,
 				049D60E027B8062800DB35F1 /* Controller */,
 				049D60E727B8062800DB35F1 /* View */,
@@ -556,6 +559,14 @@
 				B458C31A27CEE21F001147F3 /* DashboardTableViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B458C31C27CEE7EA001147F3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B458C31D27CEE7F9001147F3 /* DashboardComposer.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		B45C379027C53A5B009995B7 /* Onboarding */ = {
@@ -1118,6 +1129,7 @@
 				B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				B41D231227C5050F0048EC40 /* UserProfile.swift in Sources */,
+				B458C31E27CEE7F9001147F3 /* DashboardComposer.swift in Sources */,
 				B4B51EE827C41D960004E468 /* CommentViewModel.swift in Sources */,
 				049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */,
 				B458C30C27CDA229001147F3 /* EmailSignInViewModel.swift in Sources */,
