@@ -38,11 +38,14 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         NetworkManager().getImageDataFrom(url: (user?.photoURL)!) { [weak self] data in
             self?.displayPicture.image = UIImage(data: data)
         }
-		for article in articles {
-			if article.author == profileName.text {
-				userArticles.append(article)
-			}
-		}
+        userArticles.append(contentsOf: articles.filter { article in
+            article.author == profileName.text
+        })
+//		for article in articles {
+//			if article.author == profileName.text {
+//				userArticles.append(article)
+//			}
+//		}
 	}
 	
 	@IBAction func EditProfileButtonAction(_ sender: Any) {

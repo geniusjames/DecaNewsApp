@@ -23,7 +23,7 @@ class DashboardViewModel {
     
     func fetchData(url: String) -> [Article] {
         var articles: [Article]?
-        networkManager.networkRequest(url: url) { [weak self] response in
+        networkManager.networkRequest(url: url) { response in
             articles? = response.articles
         } errorCompletion: { error in
             print("THE ERROR IS: ", error)

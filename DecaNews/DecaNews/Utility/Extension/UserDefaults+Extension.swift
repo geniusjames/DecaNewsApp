@@ -9,11 +9,11 @@ import Foundation
 
 extension UserDefaults {
     
-    enum UserKeys: String  {
+    enum UserKeys: String {
         case token
     }
     
-    enum DeviceKeys: String  {
+    enum DeviceKeys: String {
         case isUserOnboarded
         case isUserSignedIn
     }

@@ -33,10 +33,10 @@ final class CommentViewModel {
     }
     var artileId: String {
         get {
-            " " //TO-DO: return news article URL
+            " " // TO-DO: return news article URL
         }
-        set(newValue) {
-            
+        set {
+            _ = newValue
         }
     }
     func getPhotoURL() -> URL {

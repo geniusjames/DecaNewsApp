@@ -39,10 +39,6 @@ class Coordinator: NSObject {
     }
 }
 
-
-
-
-
 /*
  func startBookmarks() {
      let bookmarksCoordinator = BookmarksCoordinator()

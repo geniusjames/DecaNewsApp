@@ -66,11 +66,10 @@ final class FirebaseService: AuthServiceRepository {
         guard let email = user.email else {return}
         var credential: AuthCredential
         credential = EmailAuthProvider.credential(withEmail: email, password: oldPassword )
-        user.reauthenticate(with: credential) { result, error  in
+        user.reauthenticate(with: credential) { _, error  in
             if let error = error {
                 completionHandler(.failure(error))
-            }
-            else {
+            } else {
                 user.updatePassword(to: newPassword) { error in
                     if let error = error {
                         completionHandler(.failure(error))

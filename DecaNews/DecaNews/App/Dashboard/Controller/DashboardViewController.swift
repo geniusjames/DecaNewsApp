@@ -27,7 +27,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		sideMenu?.leftSide = true
 		SideMenuManager.default.leftMenuNavigationController = sideMenu
 		SideMenuManager.default.addPanGestureToPresent(toView: view)
-        let _ = viewModel?.bookmarks ?? []
+        _ = viewModel?.bookmarks ?? []
 	}
 	
 	@IBAction func menuButton(_ sender: Any) {
