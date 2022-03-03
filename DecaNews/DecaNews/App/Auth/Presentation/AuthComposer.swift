@@ -20,7 +20,7 @@ final class AuthComposer {
     
     static func makeEmailSigninController() -> EmailSiginInViewController {
         let viewController = EmailSiginInViewController.instantiate()
-        viewController.servicesViewModel = DIContainer.makeServiceViewModel()
+        viewController.viewModel = DIContainer.makeEmailSignInViewModel()
         return viewController
     }
     
@@ -30,4 +30,9 @@ final class AuthComposer {
         return viewController
     }
     
+    static func makeEmailSignupController() -> EmailSignUpViewController {
+        let viewController = EmailSignUpViewController.instantiate()
+        viewController.viewModel = DIContainer.makeSignUpViewModel()
+        return viewController
+    }
 }

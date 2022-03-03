@@ -7,12 +7,12 @@
 import UIKit
 
 final class EmailSiginInViewController: UIViewController {
-    var showPassword: Bool = false
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var resultLabel: UILabel!
-    var servicesViewModel: ServicesViewModel?
+    
+    var viewModel: EmailSignInViewModel?
     var navigateToReset: (() -> Void)?
     var navigateSignUp: (() -> Void)?
     var navigateHome: (() -> Void)?
@@ -30,12 +30,10 @@ final class EmailSiginInViewController: UIViewController {
         guard let password = passwordTextField.text
         else {return}
         if emailAddress.isValidEmail && password.isValidPassword {
-            print("seen")
-            servicesViewModel?.firebaseService.signIn(emailAddress, password) {result in
-                print("reached")
-                
+            viewModel?.signIn(email: emailAddress, password: password) {result in
                 switch result {
                 case .success(_:):
+                    self.viewModel?.signInUser()
                     self.navigateHome?()
                 case .failure(let error):
                     UIView.animate(withDuration: 3) {
@@ -47,8 +45,6 @@ final class EmailSiginInViewController: UIViewController {
                     }
                }
             }
-        } else {
-       print("here")
         }
     }
 
