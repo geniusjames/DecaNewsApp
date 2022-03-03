@@ -24,8 +24,15 @@ final class AuthComposer {
         return viewController
     }
     
+    static func makePasswordResetController() -> PasswordResetViewController {
+        let viewController = PasswordResetViewController.instantiate()
+        viewController.resetViewModel = DIContainer.makeResetPasswordViewModel()
+        return viewController
+    }
+    
     static func makeEmailSignupController() -> EmailSignUpViewController {
         let viewController = EmailSignUpViewController.instantiate()
         viewController.viewModel = DIContainer.makeSignUpViewModel()
         return viewController
-    }}
+    }
+}

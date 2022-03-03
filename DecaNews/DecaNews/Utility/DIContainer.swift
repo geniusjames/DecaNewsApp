@@ -28,6 +28,11 @@ final class DIContainer {
         return OnboardingViewModel(store: userStore)
     }
   
+    static func makeResetPasswordViewModel() -> ResetPasswordViewModel {
+        let resetPasswordViewModel = ResetPasswordViewModel()
+        return resetPasswordViewModel
+    }
+  
     static func makeSignUpViewModel() -> SignUpViewModel {
         let userStore = makeUserStore()
         let authServiceRepository = makeAuthRepository()

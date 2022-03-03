@@ -37,6 +37,11 @@ final class AuthCoordinator: Coordinator {
         let viewController = AuthComposer.makeEmailSigninController()
         navigationController.pushViewController(viewController, animated: true)
     }
+    
+    func navigateToPasswordReset() {
+        let viewController = AuthComposer.makePasswordResetController()
+        navigationController.pushViewController(viewController, animated: true)
+    }
 }
 
 /*

@@ -16,11 +16,10 @@ class PasswordResetViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         passwordResetProperties()
-        // Do any additional setup after loading the view.
     }
 
     func passwordResetProperties() {
-        passwordReset.layer.borderColor = UIColor(named: "deepPeach")?.cgColor
+        passwordReset.layer.borderColor = UIColor(named: AppColors.deapPeach)?.cgColor
         passwordReset.layer.borderWidth = 1
         passwordReset.layer.cornerRadius = 10
     }
@@ -38,7 +37,6 @@ class PasswordResetViewController: UIViewController {
         case .failure(let error):
             errorPage.text = error.localizedDescription
         }
-
     }
 }
 
