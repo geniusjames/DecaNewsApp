@@ -31,7 +31,10 @@ class ProfileTableViewCell: UITableViewCell {
 		newsTitle?.text = article.title
 		if let articleURLString = article.urlToImage,
 			let catImageURL = URL(string: articleURLString) {
-			NetworkManager().getImageDataFrom(url: catImageURL, imageCell: newsImage)
+//			NetworkManager().getImageDataFrom(url: catImageURL, imageCell: newsImage)
+            NetworkManager().getImageDataFrom(url: catImageURL) { [weak self] data in
+                self?.newsImage.image = UIImage(data: data)
+            }
 		}
 	}
 	

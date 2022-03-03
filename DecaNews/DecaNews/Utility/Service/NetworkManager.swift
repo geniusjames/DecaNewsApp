@@ -10,9 +10,15 @@ import UIKit
 typealias SuccessBlock = ((Base) -> Void)?
 typealias ErrorBlock = ((String) -> Void)?
 
-class NetworkManager {
+protocol NetworkManagerRepository {
+    func networkRequest(url: String, successCompletion: SuccessBlock, errorCompletion: ErrorBlock)
+    
+    func getImageDataFrom(url: URL, completionHandler: @escaping (Data) -> Void)
+}
+
+class NetworkManager: NetworkManagerRepository {
 	
-	static var shared = NetworkManager()
+//	static var shared = NetworkManager()
 	
 	var successResponse: SuccessBlock!
 	var errorResponse: ErrorBlock!
@@ -40,20 +46,19 @@ class NetworkManager {
 		}.resume()
 	}
 	
-	public func getImageDataFrom(url: URL, imageCell: UIImageView) {
+    public func getImageDataFrom(url: URL, completionHandler: @escaping (Data) -> Void) {
 		URLSession.shared.dataTask(with: url) {(data, _, error) in
-			 if let error = error {
-				print("error is: \(error.localizedDescription)")
+			 if error == nil {
 				return
 			}
 			  guard let data = data else {
-				print("no data found")
 				return
 			}
 			 DispatchQueue.main.async {
-				if let img = UIImage(data: data) {
-					imageCell.image = img
-				}
+//				if let img = UIImage(data: data) {
+//					imageCell.image = img
+//				}
+                 completionHandler(data)
 			}
 		}.resume()
 	}

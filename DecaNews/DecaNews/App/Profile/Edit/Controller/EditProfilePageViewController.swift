@@ -70,13 +70,13 @@ class EditProfilePageViewController: UIViewController {
     }
     
     func UserDetails() {
-        let user = fireService?.getUserDetails()
+        let user = fireService?.userDetails
         userName.text = user?.displayName
         userEmail.text = user?.email
     }
     
     func updateUserDetails() {
-        let user = fireService?.getUserDetails()
+        let user = fireService?.userDetails
         user?.updateEmail(to: userEmail.text ?? "", completion: nil)
         let setDetails = UserSetDetails(phoneNumber: userPhoneNumber.text ?? "", bio: userBio.text ?? "", name: userName.text ?? "")
            persistence.add(item: setDetails)

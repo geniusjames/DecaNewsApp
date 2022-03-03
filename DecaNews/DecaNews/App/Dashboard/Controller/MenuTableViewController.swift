@@ -9,12 +9,11 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     public weak var delegate: MenuControllerDelegate?
-    var imageList: [String] = [ "home", "Bookmark", "card", "edit", "logout", "card", "settings"]
     private let menuItem: [String]
-	let firebaseService = FirebaseService()
+    var viewModel: MenuTableViewModel?
 
-    init(with menuItems: [String]) {
-        self.menuItem = menuItems
+    init() {
+        self.menuItem = viewModel?.menuItems ?? []
         super.init(nibName: nil, bundle: nil)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
@@ -23,7 +22,6 @@ class MenuTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.backgroundColor = .black
-        //            tableView.rowHeight = CGFloat(60.0)
         tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
     }
 
@@ -40,9 +38,11 @@ class MenuTableViewController: UITableViewController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuTableViewCell.identifier, for: indexPath) as? SideMenuTableViewCell else {
                 return UITableViewCell()
             }
-			let user = firebaseService.getUserDetails()
+            let user = viewModel?.getUserDetails()
 			cell.profileName.text = user?.displayName
-			NetworkManager.shared.getImageDataFrom(url: (user?.photoURL)!, imageCell: cell.profileImage)
+            viewModel?.getImageData(url: (user?.photoURL)!) { data in
+                cell.profileImage.image = UIImage(data: data)
+            }
             cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
             return cell
         } else {
@@ -52,7 +52,7 @@ class MenuTableViewController: UITableViewController {
             if indexPath.row - 1 == menuItem.count - 1 {
                 cell.textLabel?.textColor = UIColor(named: "deepGrey")
             } else {cell.textLabel?.textColor = .white}
-
+            guard let imageList = viewModel?.images else { return UITableViewCell() }
             if indexPath.row - 1 < isIndexGreaterThanSix(in: menuItem) {
                 cell.imageView?.image = UIImage(named: imageList[indexPath.row - 1])
             }

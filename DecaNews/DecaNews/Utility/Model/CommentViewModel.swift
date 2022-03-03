@@ -28,19 +28,19 @@ final class CommentViewModel {
 //        }
 //    }
     func userName() -> String {
-        let user = firebaseService.getUserDetails()
+        let user = firebaseService.userDetails
        return user?.displayName ?? "Unknown User"
     }
     var artileId: String {
         get {
-            " " //TO-DO: return news article URL
+            " " // TO-DO: return news article URL
         }
-        set(newValue) {
-            
+        set {
+            _ = newValue
         }
     }
     func getPhotoURL() -> URL {
-        let user = firebaseService.getUserDetails()
+        let user = firebaseService.userDetails
         guard let url = user?.photoURL else {return URL(fileURLWithPath: "")}
         return  url 
     }

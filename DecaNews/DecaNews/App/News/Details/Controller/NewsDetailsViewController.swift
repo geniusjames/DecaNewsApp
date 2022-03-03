@@ -62,7 +62,10 @@ final class NewsDetailsViewController: UIViewController {
         newsContent.text = article?.content
         if let newsImages = article?.urlToImage,
            let urlToImages = URL(string: newsImages) {
-            NetworkManager().getImageDataFrom(url: urlToImages, imageCell: newsImage)
+//            NetworkManager().getImageDataFrom(url: urlToImages, imageCell: newsImage)
+            NetworkManager().getImageDataFrom(url: urlToImages) { [weak self] data in
+                self?.newsImage.image = UIImage(data: data)
+            }
             usersName.adjustsFontSizeToFitWidth = true
         }
     }

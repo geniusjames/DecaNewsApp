@@ -45,7 +45,7 @@ class FireStorePersistence: PersistenceManager {
         
     }
 
-    func read<T: Codable>( completion: @escaping (([T])-> Void)) -> [T]{
+    func read<T: Codable>( completion: @escaping (([T]) -> Void)) -> [T] {
         var output: [T] = []
         do {
             db.collection(collectionName).getDocuments { (querySnapshot, error) in

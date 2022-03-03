@@ -194,9 +194,7 @@ class WriteNewsControllerLayout: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
- 
-    
+
     func setUpScrollView() {
         scrollView.addSubview(contentView)
         self.addSubview(scrollView)
