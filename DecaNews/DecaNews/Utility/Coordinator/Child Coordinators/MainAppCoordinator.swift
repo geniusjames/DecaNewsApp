@@ -24,9 +24,7 @@ final class MainAppCoordinator: Coordinator {
     }
     
     func loadMainAppRoot() {
-        let viewController = UIStoryboard(name: "Dashboard",
-                       bundle: nil).instantiateViewController(withIdentifier: "Dashboard") as? DashboardViewController
-        guard let viewController = viewController else { return }
+        let viewController = DashboardComposer.makeDashboardViewController()
         navigationController.pushViewController(viewController, animated: true)
     }
 }

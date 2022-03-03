@@ -96,9 +96,9 @@ class DashboardCollectionViewController: UIViewController, UICollectionViewDataS
 //		}
 	}
 	
-	func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		3
-	}
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return  min(viewModel?.collectionViewNews.count ?? 0, 3)
+    }
 	
 	func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 		guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DashBoardCollectionViewCell", for: indexPath) as? DashboardCollectionViewCell else {

@@ -11,13 +11,37 @@ import SideMenu
 class DashboardViewController: UIViewController, MenuControllerDelegate {
 	
 	private var sideMenu: SideMenuNavigationController?
-    var menu: MenuTableViewController!
+   
     var didCompleteOnboarding: CoordinatorTransition?
     var viewModel: DashboardViewModel?
-
+    
+    var menu: MenuTableViewController!
+    
+    var dashboardTableViewController: DashboardTableViewController!
+    var dashboardCollectionViewController: DashboardCollectionViewController!
+    
+    @IBOutlet weak var topContainer: UIView!
+    @IBOutlet weak var bottomContainer: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-		setUp()
+        setupTopContainer()
+        setupBottomContainer()
+        setUp()
+    }
+    
+    private func setupTopContainer() {
+        addChild(dashboardCollectionViewController)
+        topContainer.addSubview(dashboardCollectionViewController.view)
+        dashboardCollectionViewController.view.fillSuperview()
+        dashboardCollectionViewController.didMove(toParent: self)
+    }
+    
+    private func setupBottomContainer() {
+        addChild(dashboardTableViewController)
+        bottomContainer.addSubview(dashboardTableViewController.view)
+        dashboardTableViewController.view.fillSuperview()
+        dashboardTableViewController.didMove(toParent: self)
     }
 	
 	func setUp() {

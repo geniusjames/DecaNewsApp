@@ -43,7 +43,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel?.articles.count ?? 10
+        viewModel?.articles.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -64,14 +64,11 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        guard let newsDetailsController = UIStoryboard(name: "NewsDetails", bundle: nil).instantiateViewController(withIdentifier: "NewsDetails") as? NewsDetailsViewController else {
-            return
-        }
-        if let unwrappedArticles = viewModel?.articles {
-            let article = unwrappedArticles[indexPath.row]
+        if let article = viewModel?.articles[indexPath.row] {
+            let newsDetailsController = NewsDetailsViewController.instantiate()
             newsDetailsController.article = article
+            navigationController?.pushViewController(newsDetailsController, animated: true)
         }
-        navigationController?.pushViewController(newsDetailsController, animated: true)
     }
 	
 }
