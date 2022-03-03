@@ -10,14 +10,6 @@ import UIKit
 
 final class AuthComposer {
     
-    static func makeLoginController() -> AuthRootViewController? {
-        let viewController = UIStoryboard(name: "LoginScreen", bundle: nil).instantiateViewController(withIdentifier: "LoginViewController") as? AuthRootViewController
-        let serviceViewModel = DIContainer.makeServiceViewModel()
-        serviceViewModel.addOnboarded()
-        viewController?.serviceViewModel = serviceViewModel
-        return viewController
-    }
-    
     static func makeEmailSigninController() -> EmailSiginInViewController {
         let viewController = EmailSiginInViewController.instantiate()
         viewController.viewModel = DIContainer.makeEmailSignInViewModel()
@@ -33,6 +25,11 @@ final class AuthComposer {
     static func makeEmailSignupController() -> EmailSignUpViewController {
         let viewController = EmailSignUpViewController.instantiate()
         viewController.viewModel = DIContainer.makeSignUpViewModel()
+        return viewController
+    }
+    
+    static func makeSelectTopicsController() -> SelectedTopicsViewController {
+        let viewController = SelectedTopicsViewController.instantiate()
         return viewController
     }
 }
