@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -85,15 +85,9 @@
                             </button>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IgQ-xr-lTD">
                                 <rect key="frame" x="0.0" y="95" width="414" height="432"/>
-                                <connections>
-                                    <segue destination="tik-vc-v7u" kind="embed" id="R4L-6Y-9Gg"/>
-                                </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUU-h9-zPB">
                                 <rect key="frame" x="0.0" y="566" width="414" height="296"/>
-                                <connections>
-                                    <segue destination="vx2-jx-1jl" kind="embed" id="7oC-X6-Shm"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
@@ -121,21 +115,23 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomContainer" destination="YUU-h9-zPB" id="7Md-oX-qx5"/>
                         <outlet property="popularTab" destination="TVM-FT-Nhk" id="Sqa-gs-B0W"/>
                         <outlet property="recentTab" destination="sLj-Ol-n7q" id="CUb-mO-7bK"/>
+                        <outlet property="topContainer" destination="IgQ-xr-lTD" id="wmJ-c3-8g4"/>
                         <outlet property="trendingTab" destination="6Ru-p7-Y3q" id="Ijd-sB-t70"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111.59420289855073" y="64.955357142857139"/>
+            <point key="canvasLocation" x="-235" y="-96"/>
         </scene>
         <!--Dashboard Collection View Controller-->
         <scene sceneID="hUU-cw-y4w">
             <objects>
                 <viewController storyboardIdentifier="DashboardCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="tik-vc-v7u" customClass="DashboardCollectionViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="RAp-DE-Zfy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="432"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="28" translatesAutoresizingMaskIntoConstraints="NO" id="K3G-3B-g4N">
@@ -162,7 +158,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" directionalLockEnabled="YES" pagingEnabled="YES" indicatorStyle="black" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QHg-jb-Uff">
-                                <rect key="frame" x="0.0" y="34" width="414" height="388"/>
+                                <rect key="frame" x="0.0" y="34" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1Sh-8i-W8z">
                                     <size key="itemSize" width="381" height="340.5"/>
@@ -172,7 +168,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DashBoardCollectionViewCell" id="0wU-nb-M93" customClass="DashboardCollectionViewCell" customModule="DecaNews" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24" width="381" height="340.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="381" height="340.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="vtS-XD-7eQ">
                                             <rect key="frame" x="0.0" y="0.0" width="381" height="340.5"/>
@@ -330,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fnb-D8-ZVS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="950.72463768115949" y="-95.089285714285708"/>
+            <point key="canvasLocation" x="514" y="-96"/>
         </scene>
         <!--Latest News View Controller-->
         <scene sceneID="RHI-na-cTb">
@@ -470,18 +466,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUo-jX-FxV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1686.9565217391305" y="64.955357142857139"/>
+            <point key="canvasLocation" x="2099" y="72"/>
         </scene>
         <!--Dashboard Table View Controller-->
         <scene sceneID="l1s-N7-rkz">
             <objects>
                 <viewController storyboardIdentifier="DashboardTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vx2-jx-1jl" customClass="DashboardTableViewController" customModule="DecaNews" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TCK-xG-VzR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lNY-XN-gGH">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="296"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DashboardTableViewCell" rowHeight="120" id="aHe-k1-6Rb" customClass="DashboardTableViewCell" customModule="DecaNews" customModuleProvider="target">
@@ -598,7 +594,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X4B-SO-0Ed" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="950.72463768115949" y="273.88392857142856"/>
+            <point key="canvasLocation" x="1210" y="-97"/>
         </scene>
     </scenes>
     <resources>

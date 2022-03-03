@@ -8,33 +8,37 @@
 import Foundation
 
 final class DashboardComposer {
-    static func makeMenuTableViewController() -> MenuTableViewController {
-        let viewController = MenuTableViewController.instantiate()
+    
+    static func makeDashboardViewController() -> DashboardViewController {
+        let viewController = DashboardViewController.instantiate()
+        viewController.dashboardCollectionViewController = makeDashboardCollectionViewController()
+        viewController.dashboardTableViewController = makeDashboardTableViewController()
+        viewController.menu = makeMenuTableViewController()
+        viewController.viewModel = DIContainer.makeDashboardViewModel()
+        return viewController
+    }
+    
+    private static func makeDashboardCollectionViewController() -> DashboardCollectionViewController {
+        let viewController = DashboardCollectionViewController.instantiate()
+        viewController.viewModel = DIContainer.makeDashboardCollectionViewModel()
+        return viewController
+    }
+    
+    private static func makeMenuTableViewController() -> MenuTableViewController {
+        let viewController = MenuTableViewController()
         viewController.viewModel = DIContainer.makeMenuTableViewModel()
         return viewController
     }
     
-    static func makeDashboardViewController() -> DashboardViewController {
-        let viewController = DashboardViewController.instantiate()
-        viewController.viewModel = DIContainer.makeDashboardViewModel()
+    private static func makeDashboardTableViewController() -> DashboardTableViewController {
+        let viewController = DashboardTableViewController.instantiate()
+        viewController.viewModel = DIContainer.makeDashboardTableViewModel()
         return viewController
     }
     
     static func makeLatestViewController() -> LatestNewsViewController {
         let viewController = LatestNewsViewController.instantiate()
         viewController.viewModel = DIContainer.makeLatestNewsViewModel()
-        return viewController
-    }
-    
-    static func makeDashboardCollectionViewController() -> DashboardCollectionViewController {
-        let viewController = DashboardCollectionViewController.instantiate()
-        viewController.viewModel = DIContainer.makeDashboardCollectionViewModel()
-        return viewController
-    }
-    
-    static func makeDashboardTableViewController() -> DashboardTableViewController {
-        let viewController = DashboardTableViewController.instantiate()
-        viewController.viewModel = DIContainer.makeDashboardTableViewModel()
         return viewController
     }
 }

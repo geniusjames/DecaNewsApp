@@ -47,7 +47,7 @@ final class AppCoordinator: Coordinator {
         
         authCoordinator.didFinish = { [weak self] coordinator in
             self?.popCoordinator(coordinator)
-            self?.startMainApp()
+            self?.autenticateUser()
         }
     }
     

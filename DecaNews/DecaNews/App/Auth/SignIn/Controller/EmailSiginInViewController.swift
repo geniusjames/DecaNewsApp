@@ -29,7 +29,7 @@ final class EmailSiginInViewController: UIViewController {
         else {return}
         guard let password = passwordTextField.text
         else {return}
-        if emailAddress.isValidEmail && password.isValidPassword {
+        if emailAddress.isValidEmail {
             viewModel?.signIn(email: emailAddress, password: password) {result in
                 switch result {
                 case .success(_:):
@@ -43,7 +43,7 @@ final class EmailSiginInViewController: UIViewController {
                         self.resultLabel.text = ""
                         self.resultLabel.alpha = 1
                     }
-               }
+                }
             }
         }
     }

@@ -40,9 +40,9 @@ class MenuTableViewController: UITableViewController {
             }
             let user = viewModel?.getUserDetails()
 			cell.profileName.text = user?.displayName
-            viewModel?.getImageData(url: (user?.photoURL)!) { data in
-                cell.profileImage.image = UIImage(data: data)
-            }
+//            viewModel?.getImageData(url: (user?.photoURL)!) { data in
+//                cell.profileImage.image = UIImage(data: data)
+//            }
             cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
             return cell
         } else {
@@ -85,8 +85,4 @@ class MenuTableViewController: UITableViewController {
         }
     }
 
-}
-
-extension MenuTableViewController: Storyboardable {
-    static var storyboard: Storyboard { .dashboard }
 }
