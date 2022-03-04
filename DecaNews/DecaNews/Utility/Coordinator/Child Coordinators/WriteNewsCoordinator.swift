@@ -10,12 +10,8 @@ final class WriteNewsCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     
-    var rootViewController: UIViewController {
-        navigationController
-    }
-    
-    override init() {
-        navigationController = UINavigationController()
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
     override func start() {
@@ -37,10 +33,7 @@ final class WriteNewsCoordinator: Coordinator {
     }
     
     func loadWriteNewsRoot() {
-        guard let viewController = UIStoryboard(name: "WriteNews", bundle: nil)
-                .instantiateViewController(withIdentifier: "WriteNewsViewController") as? WriteNewsViewController else {
-                    return
-                }
+        let viewController = WriteNewsViewController()
         viewController.navigateToPreview = { [weak self] in
             self?.navigateToPreview(viewController.news ?? NewsModel(title: "G", content: "hi", topic: "jj"))
         }

@@ -40,9 +40,15 @@ final class MainAppCoordinator: Coordinator {
 
 /*
  
- func start() {
-   
+ func showWriteNews() {
+     let writeNewsCoordinator = WriteNewsCoordinator(navigationController: navigationController)
+     pushCoordinator(writeNewsCoordinator)
+     
+     writeNewsCoordinator.didFinish = { [weak self] coordinator in
+         self?.popCoordinator(coordinator)
+     }
  }
+ 
  
  func navigateToLatestNewsScreen() {
      guard let viewController = UIStoryboard(name: "Dashboard",

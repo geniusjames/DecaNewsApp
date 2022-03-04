@@ -474,10 +474,10 @@
 		941B377927C683660025753A /* Child Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */,
 				94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */,
 				94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */,
 				B441647A27C424E300F1EE3D /* CommentsCoordinator.swift */,
-				94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */,
 				B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */,
 				045B320827C30B6D00D41470 /* WriteNewsCoordinator.swift */,
 				B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */,
