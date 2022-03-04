@@ -65,6 +65,7 @@
 		94A2C96A27BADB600048F37C /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96927BADB600048F37C /* OnboardingCoordinator.swift */; };
 		94A2C96D27BAE85D0048F37C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */; };
 		94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */; };
+		94AD63AC27D223AF00AA486E /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AD63AB27D223AF00AA486E /* MenuOption.swift */; };
 		94E9F3EC27C4CD320041A542 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3EB27C4CD320041A542 /* Realm */; };
 		94E9F3EE27C4CD320041A542 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3ED27C4CD320041A542 /* RealmSwift */; };
 		94E9F3F227C4D6730041A542 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3F127C4D6730041A542 /* IQKeyboardManagerSwift */; };
@@ -188,6 +189,7 @@
 		94A2C96B27BADFF00048F37C /* DecaNews.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DecaNews.entitlements; sourceTree = "<group>"; };
 		94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppCoordinator.swift; sourceTree = "<group>"; };
+		94AD63AB27D223AF00AA486E /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		94EDA13B27C4DC400019DF5C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		94EDA16227C679350019DF5C /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 				045B321027C30E8500D41470 /* News.swift */,
 				0417C35827BDA621006AB3B4 /* BookmarkModel.swift */,
 				049D60E627B8062800DB35F1 /* NewsModel.swift */,
+				94AD63AB27D223AF00AA486E /* MenuOption.swift */,
 				B4B51EE327C41D780004E468 /* CommentsModel.swift */,
 				B4B51EE527C41D950004E468 /* CommentViewModel.swift */,
 				B4249F5627B67144002C5E01 /* NewsPersistenceModel.swift */,
@@ -1087,6 +1090,7 @@
 				9410301827A9404700411376 /* SelectedTopicsViewController.swift in Sources */,
 				B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */,
 				049D60F627B8062800DB35F1 /* DashboardCollectionViewCell.swift in Sources */,
+				94AD63AC27D223AF00AA486E /* MenuOption.swift in Sources */,
 				94083EFC27CD2DA8008E523B /* SettingsViewController.swift in Sources */,
 				94083EF827CD2C7A008E523B /* WriteNewsControllerLayout.swift in Sources */,
 				B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */,

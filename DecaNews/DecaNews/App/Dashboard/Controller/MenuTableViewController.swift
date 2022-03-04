@@ -9,11 +9,12 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     public weak var delegate: MenuControllerDelegate?
-    private let menuItem: [String]
+    private let menuItem = MenuOption.allCases
     var viewModel: MenuTableViewModel?
+    
+    var didSelectMenuOption: ((MenuOption) -> Void)?
 
     init() {
-        self.menuItem = viewModel?.menuItems ?? []
         super.init(nibName: nil, bundle: nil)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(UINib(nibName: "SideMenuTableViewCell", bundle: nil), forCellReuseIdentifier: SideMenuTableViewCell.identifier)
@@ -47,30 +48,15 @@ class MenuTableViewController: UITableViewController {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = menuItem[indexPath.row - 1]
-
-            if indexPath.row - 1 == menuItem.count - 1 {
-                cell.textLabel?.textColor = UIColor(named: "deepGrey")
-            } else {cell.textLabel?.textColor = .white}
-            guard let imageList = viewModel?.images else { return UITableViewCell() }
-            if indexPath.row - 1 < isIndexGreaterThanSix(in: menuItem) {
-                cell.imageView?.image = UIImage(named: imageList[indexPath.row - 1])
-            }
+            cell.textLabel?.textColor = UIColor(named: "deepGrey")
+            cell.textLabel?.text = menuItem[indexPath.row - 1].displayname
             cell.contentView.backgroundColor = .black
             return cell
         }
-
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.row != 0 {
-            let selectedItem = menuItem[indexPath.row]
-            if indexPath.row < isIndexGreaterThanSix(in: menuItem) {
-                delegate?.didSelectMenuItem(named: selectedItem)
-            }
-        }
-
+        didSelectMenuOption?(menuItem[indexPath.row - 1])
     }
 
     func isIndexGreaterThanSix(in list: [String]) -> Int {

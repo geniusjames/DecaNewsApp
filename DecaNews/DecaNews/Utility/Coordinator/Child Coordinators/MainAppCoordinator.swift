@@ -28,6 +28,17 @@ final class MainAppCoordinator: Coordinator {
         viewController.didSelectArticle = { [weak self] selectedArticle in
             self?.showNewsDetail(article: selectedArticle)
         }
+        
+        viewController.menu.didSelectMenuOption = {
+            switch $0 {
+            case .profile:
+                self.showProfile()
+            case .writeNews:
+                self.showWriteNews()
+            }
+        }
+        
+        
         navigationController.pushViewController(viewController, animated: true)
     }
     
@@ -36,19 +47,22 @@ final class MainAppCoordinator: Coordinator {
         newsDetailsController.article = article
         navigationController.pushViewController(newsDetailsController, animated: true)
     }
+    
+    func showProfile() {
+        
+    }
+    
+    func showWriteNews() {
+        let writeNewsCoordinator = WriteNewsCoordinator(navigationController: navigationController)
+        pushCoordinator(writeNewsCoordinator)
+        
+        writeNewsCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+        }
+    }
 }
 
 /*
- 
- func showWriteNews() {
-     let writeNewsCoordinator = WriteNewsCoordinator(navigationController: navigationController)
-     pushCoordinator(writeNewsCoordinator)
-     
-     writeNewsCoordinator.didFinish = { [weak self] coordinator in
-         self?.popCoordinator(coordinator)
-     }
- }
- 
  
  func navigateToLatestNewsScreen() {
      guard let viewController = UIStoryboard(name: "Dashboard",
