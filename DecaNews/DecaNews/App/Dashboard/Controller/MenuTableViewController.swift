@@ -51,6 +51,10 @@ class MenuTableViewController: UITableViewController {
             cell.textLabel?.textColor = UIColor(named: "deepGrey")
             cell.textLabel?.text = menuItem[indexPath.row - 1].displayname
             cell.contentView.backgroundColor = .black
+            let imageName = menuItem[indexPath.row - 1].icon
+            if imageName != "" {
+                cell.imageView?.image = UIImage(named: imageName)
+            }
             return cell
         }
     }

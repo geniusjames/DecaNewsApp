@@ -6,25 +6,57 @@
 //
 
 import Foundation
-
+var images: [String] {
+    [ "home", "Bookmark", "card", "edit", "logout", "card", "settings"]
+}
 enum MenuOption: CaseIterable {
-    case profile
+    case home
+    case savedNews
     case writeNews
+    case membership
+    case help
+    case settings
+    case logout
+    case version
     
     var displayname: String {
         switch self {
-        case .profile:
-            return "Profile"
+        case .home:
+            return "Home"
+        case .savedNews:
+            return "Saved News"
         case .writeNews:
             return "Write News"
+        case .membership:
+            return "Membership"
+        case .help:
+            return "Help"
+        case .settings:
+            return "Settings"
+        case .logout:
+            return "Logout"
+        case .version:
+            return "Version 1.0"
         }
     }
     
     var icon: String {
         switch self {
-        case .profile:
-            return ""
+        case .home:
+            return "home"
+        case .savedNews:
+            return "Bookmark"
         case .writeNews:
+            return "edit"
+        case .membership:
+            return "card"
+        case .help:
+            return "FAQ"
+        case .settings:
+            return "settings"
+        case .logout:
+            return "logout"
+        case .version:
             return ""
         }
     }
