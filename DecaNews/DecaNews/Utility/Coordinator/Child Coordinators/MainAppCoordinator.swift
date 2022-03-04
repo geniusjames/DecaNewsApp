@@ -31,13 +31,24 @@ final class MainAppCoordinator: Coordinator {
         
         viewController.menu.didSelectMenuOption = {
             switch $0 {
-            case .profile:
-                self.showProfile()
+            case .home:
+                self.showHome()
             case .writeNews:
                 self.showWriteNews()
+            case .savedNews:
+                self.showBookMarks()
+            case .membership:
+                self.showMembership()
+            case .help:
+                self.showHelp()
+            case .settings:
+                self.showSettings()
+            case .logout:
+                self.logout()
+            case .version:
+                self.showVersion()
             }
         }
-        
         
         navigationController.pushViewController(viewController, animated: true)
     }
@@ -48,8 +59,13 @@ final class MainAppCoordinator: Coordinator {
         navigationController.pushViewController(newsDetailsController, animated: true)
     }
     
-    func showProfile() {
+    func showHome() {
+        let mainCoordinator = MainAppCoordinator()
+        pushCoordinator(mainCoordinator)
         
+        mainCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+        }
     }
     
     func showWriteNews() {
@@ -59,6 +75,35 @@ final class MainAppCoordinator: Coordinator {
         writeNewsCoordinator.didFinish = { [weak self] coordinator in
             self?.popCoordinator(coordinator)
         }
+    }
+    
+    func showBookMarks() {
+        let bookmarksCoordinator = BookmarksCoordinator(navigationController: navigationController)
+        pushCoordinator(bookmarksCoordinator)
+        
+        bookmarksCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+        }
+    }
+    
+    func showMembership() {
+        
+    }
+    
+    func showHelp() {
+        
+    }
+    
+    func showSettings() {
+        
+    }
+    
+    func logout() {
+        
+    }
+    
+    func showVersion() {
+        
     }
 }
 

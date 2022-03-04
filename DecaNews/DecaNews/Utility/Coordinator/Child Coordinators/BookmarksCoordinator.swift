@@ -11,12 +11,12 @@ final class BookmarksCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
     
-    var rootViewController: UIViewController {
-        navigationController
-    }
+//    var rootViewController: UIViewController {
+//        navigationController
+//    }
 
-    override init() {
-        navigationController = UINavigationController()
+    init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
 
     override func start() {
@@ -24,14 +24,11 @@ final class BookmarksCoordinator: Coordinator {
     }
 
     func loadBookmarks() {
-        guard let viewController = UIStoryboard(name: "Bookmarks", bundle: nil)
-                .instantiateViewController(withIdentifier: "Bookmarks") as? BookmarksViewController else {
-                    return
-                }
-
+        let viewController = BookmarksViewController.instantiate()
         viewController.didCompleteBookmark = { [weak self] in
             self?.finish()
         }
+//        navigationController.navigationItem.hidesBackButton = false
         navigationController.pushViewController(viewController, animated: true)
     }
 }
