@@ -11,6 +11,8 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 
 	@IBOutlet weak var tableView: UITableView!
     
+    var didSelectArticle: ((Article) -> Void)?
+    
     var viewModel: DashboardTableViewModel?
 
 	override func viewDidLoad() {
@@ -62,15 +64,11 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		return cell
 	}
     
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let article = viewModel?.articles[indexPath.row] {
-            let newsDetailsController = NewsDetailsViewController.instantiate()
-            newsDetailsController.article = article
-            navigationController?.pushViewController(newsDetailsController, animated: true)
+            didSelectArticle?(article)
         }
     }
-	
 }
 
 extension DashboardTableViewController: Storyboardable {

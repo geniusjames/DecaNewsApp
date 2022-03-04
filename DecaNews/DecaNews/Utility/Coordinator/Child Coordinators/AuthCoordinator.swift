@@ -34,7 +34,7 @@ final class AuthCoordinator: Coordinator {
     func startLogin() {
         let viewController = AuthComposer.makeEmailSigninController()
         viewController.navigateSignUp = { [weak self] in
-            self?.startLogin()
+            self?.startSignUp()
         }
         viewController.navigateToReset = { [weak self] in
             self?.navigateToPasswordReset()

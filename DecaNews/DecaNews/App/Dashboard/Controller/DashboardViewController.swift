@@ -23,11 +23,17 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
     @IBOutlet weak var topContainer: UIView!
     @IBOutlet weak var bottomContainer: UIView!
     
+    var didSelectArticle: ((Article) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTopContainer()
         setupBottomContainer()
         setUp()
+        
+        dashboardTableViewController.didSelectArticle = { [weak self] article in
+            self?.didSelectArticle?(article)
+        }
     }
     
     private func setupTopContainer() {

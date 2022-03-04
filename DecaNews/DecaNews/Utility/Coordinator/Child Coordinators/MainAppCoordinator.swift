@@ -25,7 +25,16 @@ final class MainAppCoordinator: Coordinator {
     
     func loadMainAppRoot() {
         let viewController = DashboardComposer.makeDashboardViewController()
+        viewController.didSelectArticle = { [weak self] selectedArticle in
+            self?.showNewsDetail(article: selectedArticle)
+        }
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func showNewsDetail(article: Article) {
+        let newsDetailsController = NewsDetailsViewController.instantiate()
+        newsDetailsController.article = article
+        navigationController.pushViewController(newsDetailsController, animated: true)
     }
 }
 
