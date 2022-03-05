@@ -89,20 +89,20 @@ final class FirebaseService: AuthServiceRepository {
 //    }
     
     func saveNewsData(title: String, topic: String, content: String, cover: String, _ completionHandler: @escaping (Result<String, Error>) -> Void ) {
-        
+
         var ref: DocumentReference?
         ref = db.collection("news").addDocument(data: [
             "title": title,
             "topic": topic,
             "content": content,
-            "cover": cover
+            "urlToCover": cover
             
         ]) { error in
             if let error = error {
                 completionHandler(.failure(error))
                 return
             } else {
-                completionHandler(.success(ref!.documentID))
+            completionHandler(.success(ref!.documentID))
             }
         }
     }

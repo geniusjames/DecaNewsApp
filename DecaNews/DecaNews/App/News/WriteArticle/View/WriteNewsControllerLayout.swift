@@ -14,6 +14,7 @@ class WriteNewsControllerLayout: UIView {
     
     override func layoutSubviews() {
         setUpScrollView()
+        setUpContentView()
         setupStyle()
         setUpView()
         
@@ -32,6 +33,7 @@ class WriteNewsControllerLayout: UIView {
     
     var uploadLabel: UILabel = {
         var label = UILabel()
+        label.textAlignment = .center
         return label
     }()
     
@@ -66,6 +68,7 @@ class WriteNewsControllerLayout: UIView {
     
     var contentField: UITextView = {
         let textView = UITextView()
+        textView.translatesAutoresizingMaskIntoConstraints = false
         textView.smartDashesType = .default
         textView.dataDetectorTypes = .all
         textView.smartQuotesType = .yes
@@ -74,22 +77,20 @@ class WriteNewsControllerLayout: UIView {
         textView.layer.borderColor = UIColor.systemGray.withAlphaComponent(0.2).cgColor
         textView.textAlignment = .natural
         textView.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        textView.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        textView.translatesAutoresizingMaskIntoConstraints = false
+        textView.heightAnchor.constraint(equalToConstant: 170).isActive = true
         return textView
     }()
     
     // MARK: - UIImageView
-    
     lazy var coverImage: UIImageView = {
         var image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.clipsToBounds = true
-        image.image = UIImage(named: "profile")
+//        image.image = UIImage(named: "profile")
         image.layer.cornerRadius = 10
         image.layer.borderWidth = 1
         image.layer.masksToBounds = true
-        image.layer.borderColor = .init(gray: 255, alpha: 1)
+        image.layer.borderColor = .init(gray: 200, alpha: 1)
         return image
     }()
     
@@ -138,6 +139,8 @@ class WriteNewsControllerLayout: UIView {
    lazy var uploadButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+       button.setImage(UIImage(systemName: "icloud.and.arrow.up"), for: .normal)
+       button.tintColor = .black
         return button
         
     }()
@@ -145,6 +148,10 @@ class WriteNewsControllerLayout: UIView {
     lazy var publishButton: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Publish", for: .normal)
+        button.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        button.backgroundColor = UIColor(named: "black")
+        button.layer.cornerRadius = 10
         return button
     }()
     
@@ -165,28 +172,34 @@ class WriteNewsControllerLayout: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fill
         stackView.alignment = .fill
-        stackView.contentMode = .scaleAspectFit
+        stackView.contentMode = .scaleToFill
         stackView.spacing = 10
     }
     
     func uniformLabelStyle(_ label: UILabel, _ text: String) {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
-        label.textAlignment = .left
+       
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         
+    }
+    
+    func activateConstraint(_ list: [NSLayoutConstraint]) {
+            NSLayoutConstraint.activate(list)
     }
     
     func setupStyle() {
         topicField.rightView = arrow_downward
         uniformFieldStyle(titleField, "Write title")
-        uniformFieldStyle(topicField, "topic")
+        uniformFieldStyle(topicField, "Add topic")
         uniformStackStyle(titleStack)
         uniformStackStyle(topicStack)
         uniformStackStyle(contentStack)
         uniformLabelStyle(uploadTitle, "Upload cover image")
         uniformLabelStyle(titleLabel, "Title")
         uniformLabelStyle(contentLabel, "Content")
+        uniformLabelStyle(topicLabel, "Topic")
+        uniformLabelStyle(uploadLabel, "Upload PDF, PNG, JPG, MP4 (max 5MB)")
     }
     
     let scrollView: UIScrollView = {
@@ -194,23 +207,26 @@ class WriteNewsControllerLayout: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-
+    
     func setUpScrollView() {
         scrollView.addSubview(contentView)
         self.addSubview(scrollView)
-        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
-        contentViewCenterY.priority = .defaultLow
-        
-        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor)
-        contentViewHeight.priority = .defaultLow
         let layout = self.safeAreaLayoutGuide
-        NSLayoutConstraint.activate([
-            
+        activateConstraint([
             scrollView.topAnchor.constraint(equalTo: layout.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: layout.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: layout.leadingAnchor),
-            scrollView.trailingAnchor.constraint(equalTo: layout.trailingAnchor),
-            
+            scrollView.trailingAnchor.constraint(equalTo: layout.trailingAnchor)
+        ])
+    }
+    
+    func setUpContentView() {
+        let contentViewCenterY = contentView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor)
+        contentViewCenterY.priority = .defaultLow
+        let contentViewHeight = contentView.heightAnchor.constraint(greaterThanOrEqualTo: self.heightAnchor)
+        contentViewHeight.priority = .defaultLow
+      
+        activateConstraint([
             contentView.topAnchor.constraint(equalTo: scrollView.contentLayoutGuide.topAnchor),
             contentView.bottomAnchor.constraint(equalTo: scrollView.contentLayoutGuide.bottomAnchor),
             contentView.leadingAnchor.constraint(equalTo: scrollView.contentLayoutGuide.leadingAnchor),
@@ -223,10 +239,9 @@ class WriteNewsControllerLayout: UIView {
     }
     
     func setUpView() {
+        contentView.addSubviews(uploadTitle, coverImage, imageView, titleStack, contentStack, topicStack, uploadButton, uploadLabel, publishButton)
         
-        contentView.addSubviews(uploadTitle, coverImage, imageView, titleStack, contentStack, topicStack, uploadLabel, uploadButton, contentLabel, contentField, topicLabel, topicField, publishButton)
-        
-        NSLayoutConstraint.activate([
+        activateConstraint([
             scrollView.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
@@ -246,13 +261,30 @@ class WriteNewsControllerLayout: UIView {
             imageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             imageView.heightAnchor.constraint(equalToConstant: 200),
             
+            uploadButton.topAnchor.constraint(equalTo: uploadTitle.bottomAnchor, constant: 50),
+            uploadButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            uploadButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            
+            uploadLabel.topAnchor.constraint(equalTo: uploadButton.bottomAnchor, constant: 20),
+            uploadLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            uploadLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+    
             titleStack.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 10),
             titleStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
             titleStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+
+            topicStack.topAnchor.constraint(equalTo: contentStack.bottomAnchor, constant: 10),
+            topicStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            topicStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
             
             contentStack.topAnchor.constraint(equalTo: titleStack.bottomAnchor, constant: 10),
             contentStack.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
-            contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+            contentStack.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15),
+            
+            publishButton.topAnchor.constraint(equalTo: topicStack.bottomAnchor, constant: 15),
+            publishButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15),
+            publishButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
         ])
     }
 }
+
