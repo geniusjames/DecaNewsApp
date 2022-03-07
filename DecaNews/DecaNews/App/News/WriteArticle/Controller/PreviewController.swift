@@ -1,3 +1,4 @@
+
 //
 //  PreviewController.swift
 //  DecaNews
@@ -10,7 +11,7 @@ import UIKit
 class PreviewController: UIViewController {
     
     private let viewLayout = PreviewControllerLayout()
-    var news: NewsModel?
+    var news: PreviewModel?
 
     var goBack: (() -> Void)?
 
@@ -47,8 +48,4 @@ class PreviewController: UIViewController {
 @objc func back() {
 goBack?()
 }
-}
-
-extension PreviewController: Storyboardable {
-    static var storyboard: Storyboard { .news }
 }

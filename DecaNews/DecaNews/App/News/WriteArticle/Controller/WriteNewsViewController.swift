@@ -14,7 +14,7 @@ class WriteNewsViewController: UIViewController {
     var imageData: Data?
     var image: UIImage?
     var writeNewsViewModel: WriteNewsViewModel?
-    var news: NewsModel?
+    var news: PreviewModel?
     var imageUrl: String = ""
     
     // MARK: - Coordinator Closures
@@ -41,7 +41,7 @@ class WriteNewsViewController: UIViewController {
     }
     
     @objc func preview() {
-        news = NewsModel(title: viewLayout.titleField.text ?? "Hell", content: viewLayout.contentField.text ?? "Content", topic: viewLayout.topicField.text, image: image)
+        news = PreviewModel(title: viewLayout.titleField.text ?? "Hell", content: viewLayout.contentField.text ?? "Content", topic: viewLayout.topicField.text, image: image)
         navigateToPreview?()
     }
     
@@ -66,7 +66,7 @@ class WriteNewsViewController: UIViewController {
 
     func setValues() {
         if viewLayout.coverImage.image != nil {
-            viewLayout.uploadLabel.text = "change image"
+            viewLayout.uploadLabel.text = "Change Image"
             viewLayout.uploadLabel.font  = UIFont.preferredFont(forTextStyle: .body)
             viewLayout.uploadLabel.textColor = .white
             viewLayout.uploadButton.imageView?.tintColor = .white
@@ -74,19 +74,24 @@ class WriteNewsViewController: UIViewController {
        }
     }
     
-    @objc func publishNews(_ sender: UIButton) {
+    @objc func publishNews() {
+        print("loading")
          writeNewsViewModel?
             .uploadImage(image: imageData!, completionHandler: uploadData(_:))
          if imageUrl != "" {
+             print("uploading..")
              writeNewsViewModel?
-                 .saveToFirebase(title: viewLayout.titleField.text ?? "title", topic: "Science", content: viewLayout.contentField.text ?? "Content", cover: imageUrl, saveData(_:))
+                 .saveToFirebase(title: viewLayout.titleField.text ?? "title", topic: viewLayout.topicField.text ?? "topic", content: viewLayout.contentField.text ?? "Content", cover: imageUrl, saveData(_:))
          }
+
+        print("done")
     }
 
     func saveData(_ result: Result<String, Error>) {
         switch result {
         case .success(let id):
            print(id)
+            resetAllField()
         case .failure(let error):
             print("\(error.localizedDescription)")
         }
@@ -101,6 +106,15 @@ class WriteNewsViewController: UIViewController {
         }
     }
     
+    func resetAllField() {
+        viewLayout.titleField.text = ""
+        viewLayout.contentField.text = ""
+        viewLayout.topicField.text = ""
+        imageData = nil
+        image = nil
+        imageUrl = ""
+    }
+
     fileprivate func setupLayoutConstraints() {
         view.addSubview(viewLayout)
         viewLayout.translatesAutoresizingMaskIntoConstraints = false
@@ -147,8 +161,4 @@ extension WriteNewsViewController: UIImagePickerControllerDelegate, UINavigation
         
         dismiss(animated: true, completion: setValues)
     }
-}
-
-extension WriteNewsViewController: Storyboardable {
-    static var storyboard: Storyboard { .news }
 }

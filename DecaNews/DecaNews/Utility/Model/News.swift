@@ -2,13 +2,13 @@
 //  News.swift
 //  DecaNews
 //
-//  Created by Decagon on 2/21/22.
+//  Created by JustifiedTech on 2/21/22.
 //
 
 import Foundation
 import UIKit
 
-struct NewsModel {
+struct PreviewModel {
 var title, content, topic: String?
 var image: UIImage?
 }
