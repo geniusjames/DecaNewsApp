@@ -37,7 +37,7 @@ class WriteNewsViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Preview", style: .plain, target: self, action: #selector(preview))
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(preview))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "deepPeach")
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "black")
+        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "themeWhite")
     }
     
     @objc func preview() {
@@ -68,9 +68,9 @@ class WriteNewsViewController: UIViewController {
         if viewLayout.coverImage.image != nil {
             viewLayout.uploadLabel.text = "Change Image"
             viewLayout.uploadLabel.font  = UIFont.preferredFont(forTextStyle: .body)
-            viewLayout.uploadLabel.textColor = .white
-            viewLayout.uploadButton.imageView?.tintColor = .white
-            viewLayout.imageView.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+            viewLayout.uploadLabel.textColor = UIColor(named: "themeWhite")
+            viewLayout.uploadButton.imageView?.tintColor = UIColor(named: "themeWhite")
+            viewLayout.imageView.backgroundColor = UIColor(named: "black")?.withAlphaComponent(0.5)
        }
     }
     
