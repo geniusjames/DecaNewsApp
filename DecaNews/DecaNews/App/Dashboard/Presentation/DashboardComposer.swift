@@ -13,7 +13,7 @@ final class DashboardComposer {
         let viewController = DashboardViewController.instantiate()
         viewController.dashboardCollectionViewController = makeDashboardCollectionViewController()
         viewController.dashboardTableViewController = makeDashboardTableViewController()
-        viewController.menu = makeMenuTableViewController()
+        viewController.sideMenuController = makeMenuTableViewController()
         viewController.viewModel = DIContainer.makeDashboardViewModel()
         return viewController
     }
@@ -24,8 +24,8 @@ final class DashboardComposer {
         return viewController
     }
     
-    private static func makeMenuTableViewController() -> MenuTableViewController {
-        let viewController = MenuTableViewController()
+    private static func makeMenuTableViewController() -> SideMenuViewController {
+        let viewController = SideMenuViewController()
         viewController.viewModel = DIContainer.makeMenuTableViewModel()
         return viewController
     }

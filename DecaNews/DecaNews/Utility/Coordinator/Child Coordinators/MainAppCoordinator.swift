@@ -29,7 +29,7 @@ final class MainAppCoordinator: Coordinator {
             self?.showNewsDetail(article: selectedArticle)
         }
         
-        viewController.menu.didSelectMenuOption = {
+        viewController.sideMenuController.didSelectMenuOption = {
             switch $0 {
             case .home:
                 self.showHome()

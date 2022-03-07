@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class SideMenuViewController: UITableViewController {
     public weak var delegate: MenuControllerDelegate?
     private let menuItem = MenuOption.allCases
     var viewModel: MenuTableViewModel?

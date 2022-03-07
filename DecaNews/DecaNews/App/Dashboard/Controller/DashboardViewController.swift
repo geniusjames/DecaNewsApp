@@ -15,8 +15,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
     var didCompleteOnboarding: CoordinatorTransition?
     var viewModel: DashboardViewModel?
     
-    var menu: MenuTableViewController!
-    
+    var sideMenuController: SideMenuViewController!
     var dashboardTableViewController: DashboardTableViewController!
     var dashboardCollectionViewController: DashboardCollectionViewController!
     
@@ -52,8 +51,9 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 	
 	func setUp() {
 		self.navigationController?.setNavigationBarHidden(true, animated: true)
-		sideMenu = SideMenuNavigationController(rootViewController: menu)
-		menu.delegate = self
+		sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
+        sideMenu?.setNavigationBarHidden(true, animated: false)
+		sideMenuController.delegate = self
 		sideMenu?.leftSide = true
 		SideMenuManager.default.leftMenuNavigationController = sideMenu
 		SideMenuManager.default.addPanGestureToPresent(toView: view)
