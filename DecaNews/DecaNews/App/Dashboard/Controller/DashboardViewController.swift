@@ -33,6 +33,15 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
         dashboardTableViewController.didSelectArticle = { [weak self] article in
             self?.didSelectArticle?(article)
         }
+        
+        let searchButton = UIBarButtonItem(image: UIImage(named: "search-normal"), style: .plain,
+                                                 target: self, action: #selector(showSideMenu))
+        let notificationButton = UIBarButtonItem(image: UIImage(named: "Notification"), style: .plain,
+                                            target: self, action: #selector(showSideMenu))
+        let menuButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain,
+                                                 target: self, action: #selector(showSideMenu))
+        navigationItem.leftBarButtonItems = [menuButton]
+        navigationItem.rightBarButtonItems = [searchButton, notificationButton]
     }
     
     private func setupTopContainer() {
@@ -50,7 +59,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
     }
 	
 	func setUp() {
-		self.navigationController?.setNavigationBarHidden(true, animated: true)
+		// self.navigationController?.setNavigationBarHidden(true, animated: true)
 		sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
         sideMenu?.setNavigationBarHidden(true, animated: false)
 		sideMenuController.delegate = self
@@ -59,10 +68,11 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		SideMenuManager.default.addPanGestureToPresent(toView: view)
         _ = viewModel?.bookmarks ?? []
 	}
-	
-	@IBAction func menuButton(_ sender: Any) {
-		present(sideMenu!, animated: true)
-	}
+    
+    @objc func showSideMenu() {
+        present(sideMenu!, animated: true)
+    }
+    
 	@IBAction func searchButton(_ sender: Any) {
 		print("Search button clicked")
 	}

@@ -66,6 +66,8 @@
 		94A2C96D27BAE85D0048F37C /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */; };
 		94A2C96F27BAEDEF0048F37C /* MainAppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */; };
 		94AD63AC27D223AF00AA486E /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AD63AB27D223AF00AA486E /* MenuOption.swift */; };
+		94D2308E27D6838F00316D21 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2308D27D6838E00316D21 /* BaseNavigationController.swift */; };
+		94D2309027D68D7200316D21 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2308F27D68D7200316D21 /* UINavigationController.swift */; };
 		94E9F3EC27C4CD320041A542 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3EB27C4CD320041A542 /* Realm */; };
 		94E9F3EE27C4CD320041A542 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3ED27C4CD320041A542 /* RealmSwift */; };
 		94E9F3F227C4D6730041A542 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3F127C4D6730041A542 /* IQKeyboardManagerSwift */; };
@@ -190,6 +192,8 @@
 		94A2C96C27BAE85D0048F37C /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		94A2C96E27BAEDEF0048F37C /* MainAppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppCoordinator.swift; sourceTree = "<group>"; };
 		94AD63AB27D223AF00AA486E /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
+		94D2308D27D6838E00316D21 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
+		94D2308F27D68D7200316D21 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
 		94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		94EDA13B27C4DC400019DF5C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		94EDA16227C679350019DF5C /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -440,6 +444,7 @@
 				049D611227B89B3D00DB35F1 /* UIView+Extension.swift */,
 				9410301F27A9409F00411376 /* String+Extension.swift */,
 				94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */,
+				94D2308F27D68D7200316D21 /* UINavigationController.swift */,
 			);
 			name = Extension;
 			path = DecaNews/Utility/Extension;
@@ -535,6 +540,7 @@
 				94083EF927CD2D1F008E523B /* TextField+Extension.swift */,
 				B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */,
 				B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */,
+				94D2308D27D6838E00316D21 /* BaseNavigationController.swift */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -1131,6 +1137,7 @@
 				049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */,
 				B4B51EE927C41D960004E468 /* CommentsCell.swift in Sources */,
 				049D60F427B8062800DB35F1 /* LatestNewsTableViewCell.swift in Sources */,
+				94D2308E27D6838F00316D21 /* BaseNavigationController.swift in Sources */,
 				B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */,
 				B458C31127CEC4CE001147F3 /* DashboardViewModel.swift in Sources */,
 				049D60F127B8062800DB35F1 /* DashboardCollectionViewController.swift in Sources */,
@@ -1149,6 +1156,7 @@
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
 				B45C377E27C1D335009995B7 /* SearchNewsDatasource.swift in Sources */,
 				B4B51EE427C41D780004E468 /* CommentsModel.swift in Sources */,
+				94D2309027D68D7200316D21 /* UINavigationController.swift in Sources */,
 				B45C377827C1D2FC009995B7 /* SearchSortBy.swift in Sources */,
 				B4249F5527B67050002C5E01 /* MenuDelegate.swift in Sources */,
 				045B321127C30E8500D41470 /* News.swift in Sources */,
