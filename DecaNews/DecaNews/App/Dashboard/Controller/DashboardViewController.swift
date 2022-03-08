@@ -59,7 +59,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
     }
 	
 	func setUp() {
-		// self.navigationController?.setNavigationBarHidden(true, animated: true)
+		//  self.navigationController?.setNavigationBarHidden(true, animated: true)
 		sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
         sideMenu?.setNavigationBarHidden(true, animated: false)
 		sideMenuController.delegate = self

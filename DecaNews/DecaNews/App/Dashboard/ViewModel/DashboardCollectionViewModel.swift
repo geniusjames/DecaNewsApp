@@ -49,13 +49,8 @@ final class DashboardCollectionViewModel {
     }
     
     func addBookMark(article: Article) {
-        articleRepository.addBookmark(author: article.author ?? "",
-                                      title: article.title ?? "",
-                                      articleDescription: article.articleDescription ?? "",
-                                      url: article.url ?? "",
-                                      urlToImage: article.urlToImage ?? "",
-                                      publishedAt: article.publishedAt ?? "",
-                                      content: article.content ?? "")
+        let bookmark = BookmarkComposer.makeBookmarkFromArticle(article)
+        articleRepository.addBookmark(bookmark)
     }
     
     func deleteBookMark(url: String?) {

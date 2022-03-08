@@ -26,28 +26,23 @@ final class DashboardTableViewModel {
             allArticles = newValue
         }
     }
-    
+
     func setArticles(articles: [Article]) {
         self.articles = articles
     }
-    
+
     func fetchData(successCompletion: @escaping () -> Void, errorCompletion: ErrorBlock) {
         networkManagerRepository.networkRequest(url: url, successCompletion: { [weak self] response in
             self?.setArticles(articles: response.articles)
             successCompletion()
         }, errorCompletion: errorCompletion)
     }
-    
+
     func addBookMark(article: Article) {
-        articleRepository.addBookmark(author: article.author ?? "",
-                                      title: article.title ?? "",
-                                      articleDescription: article.articleDescription ?? "",
-                                      url: article.url ?? "",
-                                      urlToImage: article.urlToImage ?? "",
-                                      publishedAt: article.publishedAt ?? "",
-                                      content: article.content ?? "")
+        let bookmark = BookmarkComposer.makeBookmarkFromArticle(article)
+        articleRepository.addBookmark(bookmark)
     }
-    
+
     func deleteBookMark(url: String?) {
         guard let url = url, let bookMark = articleRepository.readBookmark(url: url) else { return }
         articleRepository.deleteBookmark(article: bookMark)
