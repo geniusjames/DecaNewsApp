@@ -38,17 +38,25 @@ class DashboardReViewController: UIViewController {
     }
     
     func config() {
+        configureTableView()
+        configureSideMenu()
+        fetchData()
+        configureNavigationBar()
+    }
+    
+    func configureTableView() {
         tableView.delegate = self
         tableView.register(DashboardHeader.self, forHeaderFooterViewReuseIdentifier: dashboardHeader)
         tableView.rowHeight = 115
+    }
+    
+    func configureSideMenu() {
         sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
         sideMenu?.setNavigationBarHidden(true, animated: false)
         sideMenuController.delegate = self
         sideMenu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
-        fetchData()
-        configureNavigationBar()
     }
     
     func configureNavigationBar() {
