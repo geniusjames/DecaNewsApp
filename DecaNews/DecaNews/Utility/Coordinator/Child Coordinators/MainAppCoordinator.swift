@@ -30,7 +30,8 @@ final class MainAppCoordinator: Coordinator {
     }
     
     func loadMainAppRoot() {
-        let viewController = DashboardComposer.makeDashboardViewController()
+//        let viewController = DashboardComposer.makeDashboardViewController()
+        let viewController = DashboardComposer.makeDashboarReViewController()
         viewController.didSelectArticle = { [weak self] selectedArticle in
             self?.showNewsDetail(article: selectedArticle)
         }
@@ -54,6 +55,7 @@ final class MainAppCoordinator: Coordinator {
             case .version:
                 self.showVersion()
             }
+            viewController.dismissSideMenu()
         }
         
         navigationController.pushViewController(viewController, animated: true)
