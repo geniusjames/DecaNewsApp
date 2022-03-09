@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MenuTableViewController: UITableViewController {
+class SideMenuViewController: UITableViewController {
     public weak var delegate: MenuControllerDelegate?
     private let menuItem = MenuOption.allCases
     var viewModel: MenuTableViewModel?
@@ -41,9 +41,6 @@ class MenuTableViewController: UITableViewController {
             }
             let user = viewModel?.getUserDetails()
 			cell.profileName.text = user?.displayName
-//            viewModel?.getImageData(url: (user?.photoURL)!) { data in
-//                cell.profileImage.image = UIImage(data: data)
-//            }
             cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
             return cell
         } else {
@@ -61,6 +58,7 @@ class MenuTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectMenuOption?(menuItem[indexPath.row - 1])
+        
     }
 
     func isIndexGreaterThanSix(in list: [String]) -> Int {

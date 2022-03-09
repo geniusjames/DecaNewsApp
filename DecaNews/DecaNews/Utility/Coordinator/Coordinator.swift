@@ -10,7 +10,7 @@ import UIKit
 typealias Observable<T> = ((T) -> Void)
 typealias CoordinatorTransition = (() -> Void)
 
-class Coordinator: NSObject {
+class Coordinator: NSObject, UINavigationControllerDelegate {
     
     var didFinish: Observable<Coordinator>?
     
@@ -23,6 +23,10 @@ class Coordinator: NSObject {
     func finish() {
         didFinish?(self)
     }
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) { }
+    
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) { }
     
     func pushCoordinator(_ coordinator: Coordinator) {
         // Start Coordinator

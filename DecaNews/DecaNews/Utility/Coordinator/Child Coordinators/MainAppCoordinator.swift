@@ -9,27 +9,34 @@ import UIKit
 
 final class MainAppCoordinator: Coordinator {
     
-    private let navigationController: UINavigationController
+    private let navigationController: BaseNavigationController
     
     var rootViewController: UIViewController {
         navigationController
     }
     
     override init() {
-        navigationController = UINavigationController()
+        navigationController = BaseNavigationController()
+        super.init()
+        navigationController.delegate = self
     }
     
     override func start() {
         loadMainAppRoot()
     }
     
+    override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        navigationController.setBlackButton()
+    }
+    
     func loadMainAppRoot() {
-        let viewController = DashboardComposer.makeDashboardViewController()
+//        let viewController = DashboardComposer.makeDashboardViewController()
+        let viewController = DashboardComposer.makeDashboarReViewController()
         viewController.didSelectArticle = { [weak self] selectedArticle in
             self?.showNewsDetail(article: selectedArticle)
         }
         
-        viewController.menu.didSelectMenuOption = {
+        viewController.sideMenuController.didSelectMenuOption = {
             switch $0 {
             case .home:
                 self.showHome()
@@ -48,6 +55,7 @@ final class MainAppCoordinator: Coordinator {
             case .version:
                 self.showVersion()
             }
+            viewController.dismissSideMenu()
         }
         
         navigationController.pushViewController(viewController, animated: true)

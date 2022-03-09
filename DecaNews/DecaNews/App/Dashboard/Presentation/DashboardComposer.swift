@@ -9,11 +9,19 @@ import Foundation
 
 final class DashboardComposer {
     
+    static func makeDashboarReViewController() -> DashboardReViewController {
+        let viewController = DashboardReViewController.instantiate()
+        viewController.sideMenuController = makeMenuTableViewController()
+        viewController.headerViewModel = DIContainer.makeDashboardCollectionViewModel()
+        viewController.viewModel = DIContainer.makeDashboardTableViewModel()
+        return viewController
+    }
+    
     static func makeDashboardViewController() -> DashboardViewController {
         let viewController = DashboardViewController.instantiate()
         viewController.dashboardCollectionViewController = makeDashboardCollectionViewController()
         viewController.dashboardTableViewController = makeDashboardTableViewController()
-        viewController.menu = makeMenuTableViewController()
+        viewController.sideMenuController = makeMenuTableViewController()
         viewController.viewModel = DIContainer.makeDashboardViewModel()
         return viewController
     }
@@ -24,8 +32,8 @@ final class DashboardComposer {
         return viewController
     }
     
-    private static func makeMenuTableViewController() -> MenuTableViewController {
-        let viewController = MenuTableViewController()
+    private static func makeMenuTableViewController() -> SideMenuViewController {
+        let viewController = SideMenuViewController()
         viewController.viewModel = DIContainer.makeMenuTableViewModel()
         return viewController
     }
