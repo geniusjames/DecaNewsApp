@@ -1,24 +1,25 @@
 //
-//  SettingsTableViewCell.swift
+//  SettingsSecondCell.swift
 //  DecaNews
 //
-//  Created by Decagon on 23/02/2022.
+//  Created by Decagon on 09/03/2022.
 //
 
 import UIKit
 
-class SettingsTableViewCell: UITableViewCell {
-    
-    static let identifier = "SettingsTableViewCell"
+class SettingsSecondCell: UITableViewCell {
+
+    static let identifier = "SettingsSecondCell"
+    @IBOutlet weak var Darkmodeswitch: UISwitch!
+
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var selectionLabel: UILabel!
-    @IBOutlet weak var sideButton: UIButton!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
-
+    @IBAction func modeSwitch(_ sender: UISwitch) {
+    }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -133,6 +133,7 @@
 		B4CE4F4127D89E2A006D2EE1 /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4027D89E2A006D2EE1 /* SettingOptions.swift */; };
 		B4CE4F4327D8AC62006D2EE1 /* SoonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4227D8AC62006D2EE1 /* SoonCoordinator.swift */; };
 		B4CE4F4527D8AD4E006D2EE1 /* SoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4427D8AD4E006D2EE1 /* SoonViewController.swift */; };
+		B4CE4F4727D8D58F006D2EE1 /* SettingsSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4627D8D58F006D2EE1 /* SettingsSecondCell.swift */; };
 		B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */; };
 		B4E7B9A227BC690600F809CE /* PopularPublicationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */; };
 		B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */; };
@@ -262,6 +263,7 @@
 		B4CE4F4027D89E2A006D2EE1 /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
 		B4CE4F4227D8AC62006D2EE1 /* SoonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonCoordinator.swift; sourceTree = "<group>"; };
 		B4CE4F4427D8AD4E006D2EE1 /* SoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonViewController.swift; sourceTree = "<group>"; };
+		B4CE4F4627D8D58F006D2EE1 /* SettingsSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSecondCell.swift; sourceTree = "<group>"; };
 		B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeCoordinator.swift; sourceTree = "<group>"; };
 		B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPublicationsCell.swift; sourceTree = "<group>"; };
 		B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -932,6 +934,7 @@
 			isa = PBXGroup;
 			children = (
 				94083EFD27CD2DB1008E523B /* SettingsTableViewCell.swift */,
+				B4CE4F4627D8D58F006D2EE1 /* SettingsSecondCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1100,6 +1103,7 @@
 				9412445327C023160045484E /* AuthComposer.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
+				B4CE4F4727D8D58F006D2EE1 /* SettingsSecondCell.swift in Sources */,
 				B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */,
 				94083F0727CD3A01008E523B /* OnboardingSlide.swift in Sources */,
 				9412445B27C032440045484E /* Storyboardable.swift in Sources */,

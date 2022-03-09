@@ -41,5 +41,28 @@ enum SettingOptions: CaseIterable {
         
         }
     }
+    
+    var selection: String {
+        switch self {
+        case .membership:
+            return "Free Plan"
+        case .notification:
+            return ""
+        case .language:
+            return "English"
+        case .changePassword:
+            return ""
+        case .darkMode:
+            return ""
+        case .community:
+            return ""
+        case .faqAndHelp:
+            return ""
+        case .about:
+            return ""
+        case .logout:
+            return ""
+        }
+    }
 }
     

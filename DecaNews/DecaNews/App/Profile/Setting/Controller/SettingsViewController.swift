@@ -7,8 +7,8 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
-{
+class SettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     @IBOutlet weak var tableView: UITableView!
     
     private let settingItems = SettingOptions.allCases
@@ -27,24 +27,37 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 //    }
 //
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       
         settingItems.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-//                let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-//                cell.textLabel?.textColor = UIColor(named: AppColors.deepGrey)
-//                cell.textLabel?.text = menuItem[indexPath.row].displayname
-//                cell.contentView.backgroundColor = .black
-//                let imageName = menuItem[indexPath.row].icon
-//                if imageName != "" {
-//                    cell.imageView?.image = UIImage(named: imageName)
-//                }
-//                return cell
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as? SettingsTableViewCell else {
-            return UITableViewCell()}
-        cell.titleLabel.text = settingItems[indexPath.row].displayname
-        return cell
+        if indexPath.row == 4 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsSecondCell.identifier, for: indexPath) as? SettingsSecondCell else {
+                return UITableViewCell()
+            }
+            cell.titleLabel.text = settingItems[indexPath.row].displayname
+           
+            return cell
+        } else {
+
+           guard let cell = tableView.dequeueReusableCell(withIdentifier: SettingsTableViewCell.identifier, for: indexPath) as? SettingsTableViewCell
+            else {
+                return UITableViewCell()
+            }
+            cell.titleLabel.text = settingItems[indexPath.row].displayname
+            if settingItems[indexPath.row].displayname == "Logout" {
+                cell.titleLabel.textColor = UIColor(named: "deepPeach")
+            }
+            let category = settingItems[indexPath.row].selection
+            cell.selectionLabel.text = category
+            return cell
+        }
+//
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewCell", for: indexPath) as? SettingsTableViewCell else {
+//            return UITableViewCell()}
+//        cell.titleLabel.text = settingItems[indexPath.row].displayname
+//        return cell
     }
     
 }
@@ -52,4 +65,3 @@ class SettingsViewController: UIViewController, UITableViewDataSource, UITableVi
 extension SettingsViewController: Storyboardable {
     static var storyboard: Storyboard { .settings }
 }
-
