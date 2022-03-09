@@ -80,7 +80,7 @@ class DashboardReViewController: UIViewController {
             
         })
     }
-    
+        
     @objc func showSideMenu() {
         present(sideMenu!, animated: true)
     }
@@ -89,7 +89,7 @@ class DashboardReViewController: UIViewController {
         if let articles = articles {
             self.dashboardTableDatasource = DashboardTableViewDatasource(cellIdentifier: dashboardIdentifier, data: articles, headerViewModel: headerViewModel, dashboardHeader: dashboardHeader) { (cell, article) in
                 
-                cell.setup(with: article)
+                cell.setup(with: article, viewModel: self.viewModel)
             }
             tableView.dataSource = dashboardTableDatasource
         }

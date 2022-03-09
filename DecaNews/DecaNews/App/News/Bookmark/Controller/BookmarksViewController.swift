@@ -36,6 +36,9 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         cell.configureCell(index: indexPath.row)
+        cell.removeBookmark = {
+            tableView.reloadData()
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

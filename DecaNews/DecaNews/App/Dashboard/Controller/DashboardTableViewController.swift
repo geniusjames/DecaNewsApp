@@ -18,6 +18,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 	override func viewDidLoad() {
         super.viewDidLoad()
 		config()
+        
     }
 	
 	private func config() {
@@ -52,16 +53,16 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 		guard let cell = tableView.dequeueReusableCell(withIdentifier: "DashboardTableViewCell", for: indexPath) as? DashboardTableViewCell
 		else { return UITableViewCell() }
 		
-        if let articles = viewModel?.articles {
-			let article = articles[indexPath.row]
-			cell.setup(with: article)
-			cell.didTapBookmarkBtn = { [weak self] in
-                cell.isBookmarked = false
-				cell.isBookmarked ?
-				self?.deleteBookmark(with: article) :
-				self?.updateBookmarks(with: article)
-			}
-		}
+//        if let articles = viewModel?.articles {
+//			let article = articles[indexPath.row]
+//			cell.setup(with: article)
+//			cell.didTapBookmarkBtn = { [weak self] in
+//                cell.isBookmarked = false
+//				cell.isBookmarked ?
+//				self?.deleteBookmark(with: article) :
+//				self?.updateBookmarks(with: article)
+//			}
+//		}
 		return cell
 	}
     

@@ -23,7 +23,6 @@ class ArticleDirectory: ArticleDirectoryRepository {
 
 	func readBookmarks() -> [BookmarkArticle] {
 		var data = [BookmarkArticle]()
-        print(realm.objects(BookmarkArticle.self).first, "realm")
 		data = realm.objects(BookmarkArticle.self).map({ $0 })
         print(data, "testing bookmarks")
         print("User Realm User file location: \(realm.configuration.fileURL!.path)")

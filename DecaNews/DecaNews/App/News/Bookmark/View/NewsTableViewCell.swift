@@ -14,24 +14,45 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var readingTimeLabel: UILabel!
     @IBOutlet weak var newsDaysLabel: UILabel!
     @IBOutlet weak var newsHeaderLabel: UILabel!
+    var removeBookmark: (() -> Void)?
+    var currentBookmark: BookmarkArticle?
+    var savedNews: [BookmarkArticle]?
     private let viewModel = BookmarksViewModel()
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
         func configureCell(index: Int) {
-            viewModel.fetch { news in
-                self.newsSectionLabel.text = news[index].articleDescription
-                self.newsDaysLabel.text = news[index].publishedAt
-                self.newsHeaderLabel.text = news[index].title
+            loadNews()
+            guard let savedNews = savedNews else {
+                return
             }
-          
+
+                self.newsDaysLabel.text = savedNews[index].publishedAt
+                self.newsHeaderLabel.text = savedNews[index].title
+                let days =  Date.timeDifference(lhs: Date(), rhs: savedNews[index].publishedAt.dateChanger()).toString()
+                self.newsDaysLabel.text = "\(days) ago"
+                self.readingTimeLabel.text = self.viewModel.calcReadingTime(text: savedNews[index].content)
+                self.currentBookmark = savedNews[index]
+            }
+
+    @IBAction func bookmarkButton(_ sender: Any) {
+        guard let currentBookmark = currentBookmark else {
+            return
         }
+
+        viewModel.removeBookmark(bookmark: currentBookmark)
+        loadNews()
+        removeBookmark?()
+    }
+    func loadNews() {
+        viewModel.fetch { news in
+            self.savedNews = news
+        }
+    }
 
 }
