@@ -11,13 +11,29 @@ final class DashboardCollectionViewModel {
     
     let articleRepository: ArticleDirectoryRepository
     let networkManagerRepository: NetworkManagerRepository
-    private let url = "https://newsapi.org/v2/everything?q=apple&from=2022-02-07&to=2022-02-07&sortBy=popularity&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
+    private let url: String
     private let url2 = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
     private let url3 = "https://newsapi.org/v2/everything?domains=wsj.com&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
     private var allArticles: [Article]?
+    
+    let fromDate: String
+    let toDate: String
+    
     init(articleRepository: ArticleDirectoryRepository, networkManager: NetworkManagerRepository) {
         self.articleRepository = articleRepository
         self.networkManagerRepository = networkManager
+        
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YY-MM-dd"
+        toDate = dateFormatter.string(from: date)
+        var dayComponent = DateComponents()
+        dayComponent.day = -7
+        let theCalendar = Calendar.current
+        let nextDate = theCalendar.date(byAdding: dayComponent, to: date) ?? Date()
+        fromDate = dateFormatter.string(from: nextDate)
+        
+        url = "https://newsapi.org/v2/everything?q=apple&from=\(fromDate)&to=\(toDate)&sortBy=popularity&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
     }
     
     var collectionViewNews: [Article] {
