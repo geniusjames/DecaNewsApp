@@ -23,7 +23,7 @@ final class WriteNewsCoordinator: Coordinator {
     }
 
     func navigateToPreview(_ news: PreviewModel) {
-        let viewController = UIStoryboard(name: "WriteNews", bundle: nil).instantiateViewController(withIdentifier: "PreviewController") as? PreviewController
+        let viewController = UIStoryboard(name: "News", bundle: nil).instantiateViewController(withIdentifier: "PreviewController") as? PreviewController
                guard let viewController = viewController else { return }
         viewController.goBack = {
             self.goBack()
