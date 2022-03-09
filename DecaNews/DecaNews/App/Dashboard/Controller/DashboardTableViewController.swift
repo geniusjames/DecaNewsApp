@@ -56,6 +56,7 @@ class DashboardTableViewController: UIViewController, UITableViewDelegate, UITab
 			let article = articles[indexPath.row]
 			cell.setup(with: article)
 			cell.didTapBookmarkBtn = { [weak self] in
+                cell.isBookmarked = false
 				cell.isBookmarked ?
 				self?.deleteBookmark(with: article) :
 				self?.updateBookmarks(with: article)

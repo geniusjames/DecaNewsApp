@@ -18,30 +18,33 @@ protocol ArticleDirectoryRepository {
 }
 
 class ArticleDirectory: ArticleDirectoryRepository {
-	
-	private let realm = try? Realm()
+	//swiftlint:disable force_try
+	private let realm = try! Realm()
 
 	func readBookmarks() -> [BookmarkArticle] {
 		var data = [BookmarkArticle]()
-		data = realm!.objects(BookmarkArticle.self).map({ $0 })
+        print(realm.objects(BookmarkArticle.self).first, "realm")
+		data = realm.objects(BookmarkArticle.self).map({ $0 })
+        print(data, "testing bookmarks")
+        print("User Realm User file location: \(realm.configuration.fileURL!.path)")
 		return data
 	}
 
     func readBookmark(url: String) -> BookmarkArticle? {
-        realm!.objects(BookmarkArticle.self).filter { bookArticle in
+        realm.objects(BookmarkArticle.self).filter { bookArticle in
             bookArticle.url == url
         }.first
     }
 
     func addBookmark(_ article: BookmarkArticle) {
-		try? realm!.write {
-			realm!.add(article)
+		try? realm.write {
+			realm.add(article)
 		}
 	}
 
 	func deleteBookmark(article: BookmarkArticle) {
-		try? realm!.write {
-			realm!.delete(article)
+		try? realm.write {
+			realm.delete(article)
 		}
 	}
 

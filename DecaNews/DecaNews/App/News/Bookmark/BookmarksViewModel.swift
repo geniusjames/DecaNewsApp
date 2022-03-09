@@ -10,14 +10,21 @@ import Firebase
 
 class BookmarksViewModel {
   
-    let store = FireStorePersistence(collectionName: "new")
+    var articleDirectory: ArticleDirectory?
     let cellID = "cell"
-    func fetchPersistedNews() {
-        
-    }
-    func fetch (completion: @escaping ( ([News]) -> Void)) {
-        _ =  store.read { contents in
-            completion(contents)
+ 
+    func fetch (completion: @escaping ( ([BookmarkArticle]) -> Void)) {
+        guard let articleDirectory = articleDirectory else {
+            return
         }
+        
+        completion(articleDirectory.readBookmarks())
+        }
+    
+    func removeBookmark(bookmark: BookmarkArticle) {
+        guard let articleDirectory = articleDirectory else {
+            return
+        }
+        articleDirectory.deleteBookmark(article: bookmark)
     }
 }

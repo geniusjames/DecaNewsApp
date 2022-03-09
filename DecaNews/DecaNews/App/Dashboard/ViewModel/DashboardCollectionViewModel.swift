@@ -47,7 +47,7 @@ final class DashboardCollectionViewModel {
             successCompletion()
         }, errorCompletion: errorCompletion)
     }
-    
+
     func addBookMark(article: Article) {
         let bookmark = BookmarkComposer.makeBookmarkFromArticle(article)
         articleRepository.addBookmark(bookmark)
