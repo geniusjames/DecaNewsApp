@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 class WriteNewsViewController: UIViewController {
+    
     private let viewLayout = WriteNewsControllerLayout()
    
     var imageData: Data?
@@ -26,18 +27,13 @@ class WriteNewsViewController: UIViewController {
         title = "Write News"
         setupNavBarButtons()
         setActionsEvents()
-    }
-    
-    override func viewDidLayoutSubviews() {
         setupLayoutConstraints()
         setValues()
     }
  
     func setupNavBarButtons() {
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Preview", style: .plain, target: self, action: #selector(preview))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "arrow.left"), style: .plain, target: self, action: #selector(preview))
         navigationItem.rightBarButtonItem?.tintColor = UIColor(named: "deepPeach")
-        navigationItem.leftBarButtonItem?.tintColor = UIColor(named: "themeWhite")
     }
     
     @objc func preview() {
@@ -117,12 +113,7 @@ class WriteNewsViewController: UIViewController {
 
     fileprivate func setupLayoutConstraints() {
         view.addSubview(viewLayout)
-        viewLayout.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([viewLayout.topAnchor.constraint(equalTo: view.topAnchor),
-        viewLayout.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-        viewLayout.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-        viewLayout.bottomAnchor.constraint(equalTo: view.bottomAnchor)
-                                    ])
+        viewLayout.fillSuperview()
     }
 }
 

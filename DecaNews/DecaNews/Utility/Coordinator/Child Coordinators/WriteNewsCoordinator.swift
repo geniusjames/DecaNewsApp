@@ -33,10 +33,7 @@ final class WriteNewsCoordinator: Coordinator {
     }
     
     func loadWriteNewsRoot() {
-        guard let viewController = UIStoryboard(name: "News", bundle: nil).instantiateViewController(withIdentifier: "WriteNewsViewController") as? WriteNewsViewController else {
-            return
-        }
-//        let viewController = WriteNewsViewController()
+        let viewController = WriteNewsViewController()
         viewController.navigateToPreview = { [weak self] in
             self?.navigateToPreview(viewController.news ?? PreviewModel(title: "G", content: "hi", topic: "jj"))
         }

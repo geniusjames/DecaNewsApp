@@ -239,6 +239,8 @@ class WriteNewsControllerLayout: UIView {
     func setUpView() {
         contentView.addSubviews(uploadTitle, coverImage, imageView, titleStack, contentStack, topicStack, uploadButton, uploadLabel, publishButton)
         
+        backgroundColor = .white
+        
         activateConstraint([
             scrollView.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
