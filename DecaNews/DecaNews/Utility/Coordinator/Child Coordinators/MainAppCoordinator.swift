@@ -55,7 +55,6 @@ final class MainAppCoordinator: Coordinator {
             case .version:
                 self.showVersion()
             }
-            viewController.dismissSideMenu()
         }
         
         navigationController.pushViewController(viewController, animated: true)

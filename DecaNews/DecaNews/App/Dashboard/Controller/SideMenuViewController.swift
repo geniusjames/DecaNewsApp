@@ -57,8 +57,9 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectMenuOption?(menuItem[indexPath.row - 1])
-        
+        dismiss(animated: false, completion: {
+            self.didSelectMenuOption?(self.menuItem[indexPath.row - 1])
+        }) 
     }
 
     func isIndexGreaterThanSix(in list: [String]) -> Int {
