@@ -41,9 +41,6 @@ class SideMenuViewController: UITableViewController {
             }
             let user = viewModel?.getUserDetails()
 			cell.profileName.text = user?.displayName
-//            viewModel?.getImageData(url: (user?.photoURL)!) { data in
-//                cell.profileImage.image = UIImage(data: data)
-//            }
             cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
             return cell
         } else {
@@ -61,6 +58,7 @@ class SideMenuViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectMenuOption?(menuItem[indexPath.row - 1])
+        
     }
 
     func isIndexGreaterThanSix(in list: [String]) -> Int {
