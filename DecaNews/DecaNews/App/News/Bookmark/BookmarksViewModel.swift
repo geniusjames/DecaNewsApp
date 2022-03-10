@@ -26,4 +26,5 @@ class BookmarksViewModel {
     func calcReadingTime(text: String) -> String{
         return "\((text.count / 100) * 4) mins read"
     }
+
 }

@@ -21,15 +21,9 @@ final class BookmarkComposer {
         return bookmark
     }
     
-//    static func makeArticleFromBookmark(_ bookmark: BookmarkArticle) -> Article {
-//        let article = Article(from: <#Decoder#>)
-//        article.author = bookmark.author ?? ""
-//        article.title = bookmark.title ?? ""
-//        article.url = bookmark.url ?? ""
-//        article.publishedAt = bookmark.publishedAt ?? ""
-//        article.content = bookmark.content ?? ""
-//        article.articleDescription = bookmark.articleDescription ?? ""
-//
-//
-//    }
+    static func makeArticleFromBookmark(_ bookmark: BookmarkArticle) -> Article {
+        let source = Source(id: "", name: "")
+        let article = Article(source: source, author: bookmark.author, title: bookmark.title, articleDescription: bookmark.articleDescription, url: bookmark.url, urlToImage: bookmark.urlToImage, publishedAt: bookmark.publishedAt, content: bookmark.content)
+        return article
+    }
 }

@@ -11,7 +11,7 @@ class BookmarksViewController: UIViewController {
     
     // MARK: - Coordinator Closures
     var didCompleteBookmark: CoordinatorTransition?
-    var didSelectArticle: ((BookmarkArticle) -> Void)?
+    var didSelectArticle: ((Article) -> Void)?
     @IBOutlet weak var newsTableView: UITableView!
     var viewModel: BookmarksViewModel!
     override func viewDidLoad() {
@@ -43,8 +43,9 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-         let article = viewModel.bookmarkArticles[indexPath.row]
-        didSelectArticle?(article)
+         let bookmarkedArticle = viewModel.bookmarkArticles[indexPath.row]
+        
+        didSelectArticle?(BookmarkComposer.makeArticleFromBookmark(bookmarkedArticle))
     }
 
 }
