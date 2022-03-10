@@ -8,7 +8,7 @@
 import Foundation
 
 final class LatestNewsViewModel {
-    let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
+    let url = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=eab5e092c34a4cbb9d8443165b75f194" //"https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=c47e6bd7b3c74efa885b276cceed84e6"
     private var allArticles: [Article]?
     let networkManagerRepository: NetworkManagerRepository
     

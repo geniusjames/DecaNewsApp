@@ -31,28 +31,18 @@ class NewsTableViewCell: UITableViewCell {
             guard let savedNews = savedNews else {
                 return
             }
-
                 self.newsDaysLabel.text = savedNews[index].publishedAt
                 self.newsHeaderLabel.text = savedNews[index].title
                 let days =  Date.timeDifference(lhs: Date(), rhs: savedNews[index].publishedAt.dateChanger()).toString()
                 self.newsDaysLabel.text = "\(days) ago"
                 self.readingTimeLabel.text = self.viewModel.calcReadingTime(text: savedNews[index].content)
-                self.currentBookmark = savedNews[index]
             }
 
     @IBAction func bookmarkButton(_ sender: Any) {
-        guard let currentBookmark = currentBookmark else {
-            return
-        }
-
-        viewModel.removeBookmark(bookmark: currentBookmark)
-        loadNews()
+ 
         removeBookmark?()
     }
     func loadNews() {
-        viewModel.fetch { news in
-            self.savedNews = news
-        }
+        savedNews = viewModel.bookmarkArticles
     }
-
 }

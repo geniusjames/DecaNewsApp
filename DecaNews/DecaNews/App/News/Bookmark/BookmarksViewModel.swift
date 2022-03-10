@@ -12,19 +12,16 @@ class BookmarksViewModel {
   
     var articleDirectory = ArticleDirectory()
     let cellID = "cell"
- 
+    var bookmarkArticles: [BookmarkArticle]?
+    
+    init() {
+        bookmarkArticles = articleDirectory.readBookmarks()
+    }
     func fetch (completion: @escaping ( ([BookmarkArticle]) -> Void)) {
-//        guard let articleDirectory = articleDirectory else {
-//            return
-//        }
-        
         completion(articleDirectory.readBookmarks())
         }
     
     func removeBookmark(bookmark: BookmarkArticle) {
-//        guard let articleDirectory = articleDirectory else {
-//            return
-//        }
         articleDirectory.deleteBookmark(article: bookmark)
     }
     
