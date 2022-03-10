@@ -23,18 +23,19 @@ class BookmarksViewController: UIViewController {
 extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.bookmarkArticles?.count ?? 0
+        return viewModel.bookmarkArticles.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell  = tableView.dequeueReusableCell(withIdentifier: viewModel.cellID, for: indexPath) as? NewsTableViewCell else {
             return UITableViewCell()
         }
+        cell.viewModel = viewModel
         cell.configureCell(index: indexPath.row)
         cell.removeBookmark = { [self] in
-            guard let bookmark = viewModel.bookmarkArticles?[indexPath.row] else {return}
+        let bookmark = viewModel.bookmarkArticles[indexPath.row]
             viewModel.removeBookmark(bookmark: bookmark)
-            viewModel.bookmarkArticles?.remove(at: indexPath.row)
+            viewModel.bookmarkArticles.remove(at: indexPath.row)
             cell.loadNews()
             tableView.deleteRows(at: [indexPath], with: .fade)
             }
@@ -42,8 +43,7 @@ extension BookmarksViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let article = viewModel.bookmarkArticles?[indexPath.row]
-        else {return}
+         let article = viewModel.bookmarkArticles[indexPath.row]
         didSelectArticle?(article)
     }
 

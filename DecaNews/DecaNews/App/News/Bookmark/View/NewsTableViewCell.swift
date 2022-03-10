@@ -17,7 +17,7 @@ class NewsTableViewCell: UITableViewCell {
     var removeBookmark: (() -> Void)?
     var currentBookmark: BookmarkArticle?
     var savedNews: [BookmarkArticle]?
-    private let viewModel = BookmarksViewModel()
+    var viewModel: BookmarksViewModel!
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -36,10 +36,16 @@ class NewsTableViewCell: UITableViewCell {
                 let days =  Date.timeDifference(lhs: Date(), rhs: savedNews[index].publishedAt.dateChanger()).toString()
                 self.newsDaysLabel.text = "\(days) ago"
                 self.readingTimeLabel.text = self.viewModel.calcReadingTime(text: savedNews[index].content)
+            
+            
+               if let URL = URL(string: savedNews[index].urlToImage) {
+                NetworkManager().getImageDataFrom(url: URL) { [weak self] data in
+                    self?.newsImage.image = UIImage(data: data)
+                }
+            }
             }
 
     @IBAction func bookmarkButton(_ sender: Any) {
- 
         removeBookmark?()
     }
     func loadNews() {

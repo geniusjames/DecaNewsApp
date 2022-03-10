@@ -10,22 +10,20 @@ import Firebase
 
 class BookmarksViewModel {
   
-    var articleDirectory = ArticleDirectory()
+    var articleDirectory: ArticleDirectory
     let cellID = "cell"
-    var bookmarkArticles: [BookmarkArticle]?
+    var bookmarkArticles: [BookmarkArticle]
     
-    init() {
+    init(articleDirectory: ArticleDirectory) {
+        self.articleDirectory = articleDirectory
         bookmarkArticles = articleDirectory.readBookmarks()
     }
-    func fetch (completion: @escaping ( ([BookmarkArticle]) -> Void)) {
-        completion(articleDirectory.readBookmarks())
-        }
-    
+
     func removeBookmark(bookmark: BookmarkArticle) {
         articleDirectory.deleteBookmark(article: bookmark)
     }
     
     func calcReadingTime(text: String) -> String{
-        return "\((text.count / 1000) * 4) mins"
+        return "\((text.count / 100) * 4) mins read"
     }
 }

@@ -64,18 +64,18 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9N6-f3-eSk">
-                                                    <rect key="frame" x="128" y="81.5" width="52" height="14.5"/>
+                                                    <rect key="frame" x="128" y="81.5" width="100" height="14.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="52" id="PBL-ek-yK2"/>
+                                                        <constraint firstAttribute="width" constant="100" id="PBL-ek-yK2"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" name="grey"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7GQ-29-eCN">
-                                                    <rect key="frame" x="180" y="81.5" width="56" height="14.5"/>
+                                                    <rect key="frame" x="233" y="81.5" width="90" height="14.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="56" id="r1v-JO-Vl7"/>
+                                                        <constraint firstAttribute="width" constant="90" id="r1v-JO-Vl7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" name="grey"/>
@@ -106,7 +106,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="0uH-gb-MyL" secondAttribute="bottom" id="mK0-wD-fDS"/>
                                                 <constraint firstItem="yic-Ae-i90" firstAttribute="top" secondItem="ryX-Hq-cfN" secondAttribute="bottom" constant="4" id="nbH-8x-Enp"/>
                                                 <constraint firstAttribute="bottom" secondItem="7GQ-29-eCN" secondAttribute="bottom" id="r77-f6-uma"/>
-                                                <constraint firstItem="7GQ-29-eCN" firstAttribute="leading" secondItem="9N6-f3-eSk" secondAttribute="trailing" id="ser-uM-iBC"/>
+                                                <constraint firstItem="7GQ-29-eCN" firstAttribute="leading" secondItem="9N6-f3-eSk" secondAttribute="trailing" constant="5" id="ser-uM-iBC"/>
                                                 <constraint firstItem="yic-Ae-i90" firstAttribute="leading" secondItem="0uH-gb-MyL" secondAttribute="trailing" constant="8" id="tZ8-OO-1WU"/>
                                                 <constraint firstItem="0uH-gb-MyL" firstAttribute="top" secondItem="RkG-V1-9ux" secondAttribute="top" id="y9m-Os-agN"/>
                                             </constraints>

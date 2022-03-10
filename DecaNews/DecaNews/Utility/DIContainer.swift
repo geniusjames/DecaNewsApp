@@ -70,4 +70,10 @@ final class DIContainer {
     static func makeDashboardTableViewModel() -> DashboardTableViewModel {
         DashboardTableViewModel(articleRepository: makeArticleRepository(), networkManagerRepository: makeNetworkRepository())
     }
+    
+    static func makeBookmarkViewModel() -> BookmarksViewModel {
+        BookmarksViewModel(articleDirectory: ArticleDirectory())
+    }
+    
+ 
 }

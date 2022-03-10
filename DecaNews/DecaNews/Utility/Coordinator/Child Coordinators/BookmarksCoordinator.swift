@@ -20,7 +20,8 @@ final class BookmarksCoordinator: Coordinator {
 
     func loadBookmarks() {
         let viewController = BookmarksViewController.instantiate()
-        viewController.viewModel = BookmarksViewModel()
+        viewController.viewModel = DIContainer.makeBookmarkViewModel()
+        
         viewController.didCompleteBookmark = { [weak self] in
             self?.finish()
         }
