@@ -48,7 +48,7 @@ class NetworkManager: NetworkManagerRepository {
 	
     public func getImageDataFrom(url: URL, completionHandler: @escaping (Data) -> Void) {
 		URLSession.shared.dataTask(with: url) {(data, _, error) in
-			 if error == nil {
+			 if let error = error {
 				return
 			}
 			  guard let data = data else {

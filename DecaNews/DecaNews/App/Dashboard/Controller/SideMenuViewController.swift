@@ -35,6 +35,15 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: SideMenuTableViewCell.identifier, for: indexPath) as? SideMenuTableViewCell else {
+                return UITableViewCell()
+            }
+            let user = viewModel?.getUserDetails()
+			cell.profileName.text = user?.displayName
+            cell.profileImage.layer.cornerRadius = cell.profileImage.frame.size.width / 2
+            return cell
+        } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
             cell.textLabel?.textColor = UIColor(named: AppColors.deepGrey)
             cell.textLabel?.text = menuItem[indexPath.row].displayname
@@ -47,7 +56,9 @@ class SideMenuViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectMenuOption?(menuItem[indexPath.row])
+        dismiss(animated: false, completion: {
+            self.didSelectMenuOption?(self.menuItem[indexPath.row - 1])
+        }) 
     }
 
     func isIndexGreaterThanSix(in list: [String]) -> Int {
