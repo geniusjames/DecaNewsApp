@@ -27,6 +27,7 @@ final class MainAppCoordinator: Coordinator {
     
     override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         navigationController.setBlackButton()
+        
     }
     
     func loadMainAppRoot() {
@@ -45,15 +46,15 @@ final class MainAppCoordinator: Coordinator {
             case .savedNews:
                 self.showBookMarks()
             case .membership:
-                self.showMembership()
+                self.showComingSoon()
             case .help:
-                self.showHelp()
+                self.showComingSoon()
             case .settings:
                 self.showSettings()
             case .logout:
                 self.logout()
-            case .version:
-                self.showVersion()
+//            case .version:
+//                self.showVersion()
             }
         }
         
@@ -67,12 +68,13 @@ final class MainAppCoordinator: Coordinator {
     }
     
     func showHome() {
-        let mainCoordinator = MainAppCoordinator()
-        pushCoordinator(mainCoordinator)
-        
-        mainCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-        }
+//        let mainCoordinator = MainAppCoordinator()
+//        pushCoordinator(mainCoordinator)
+//
+//        mainCoordinator.didFinish = { [weak self] coordinator in
+//            self?.popCoordinator(coordinator)
+//        }
+        loadMainAppRoot()
     }
     
     func showWriteNews() {
@@ -101,12 +103,27 @@ final class MainAppCoordinator: Coordinator {
         
     }
     
+    func showComingSoon() {
+        let soonCoordinator = SoonCoordinator(navigationController: navigationController)
+        pushCoordinator(soonCoordinator)
+        
+        soonCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+        }
+    }
+    
     func showSettings() {
+        let settingsCoordinator = SettingsCoordinator(navigationController: navigationController)
+        pushCoordinator(settingsCoordinator)
+        
+        settingsCoordinator.didFinish = { [weak self] coordinator in
+            self?.popCoordinator(coordinator)
+        }
         
     }
     
     func logout() {
-        
+        finish()
     }
     
     func showVersion() {
