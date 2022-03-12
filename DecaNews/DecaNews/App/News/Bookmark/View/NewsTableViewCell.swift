@@ -14,24 +14,41 @@ class NewsTableViewCell: UITableViewCell {
     @IBOutlet weak var readingTimeLabel: UILabel!
     @IBOutlet weak var newsDaysLabel: UILabel!
     @IBOutlet weak var newsHeaderLabel: UILabel!
-    private let viewModel = BookmarksViewModel()
+    var removeBookmark: (() -> Void)?
+    var currentBookmark: BookmarkArticle?
+    var savedNews: [BookmarkArticle]?
+    var viewModel: BookmarksViewModel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
         func configureCell(index: Int) {
-            viewModel.fetch { news in
-                self.newsSectionLabel.text = news[index].articleDescription
-                self.newsDaysLabel.text = news[index].publishedAt
-                self.newsHeaderLabel.text = news[index].title
+            loadNews()
+            guard let savedNews = savedNews else {
+                return
             }
-          
-        }
+                self.newsDaysLabel.text = savedNews[index].publishedAt
+                self.newsHeaderLabel.text = savedNews[index].title
+                let days =  Date.timeDifference(lhs: Date(), rhs: savedNews[index].publishedAt.dateChanger()).toString()
+                self.newsDaysLabel.text = "\(days) ago"
+                self.readingTimeLabel.text = self.viewModel.calcReadingTime(text: savedNews[index].content)
+            
+            
+               if let URL = URL(string: savedNews[index].urlToImage) {
+                NetworkManager().getImageDataFrom(url: URL) { [weak self] data in
+                    self?.newsImage.image = UIImage(data: data)
+                }
+            }
+            }
 
+    @IBAction func bookmarkButton(_ sender: Any) {
+        removeBookmark?()
+    }
+    func loadNews() {
+        savedNews = viewModel.bookmarkArticles
+    }
 }

@@ -119,6 +119,7 @@
 		B45C378427C1D33F009995B7 /* SearchNewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C378327C1D33F009995B7 /* SearchNewsViewModel.swift */; };
 		B45C378A27C1D36F009995B7 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C378927C1D36F009995B7 /* Date+Extension.swift */; };
 		B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C37BC27C6D8C3009995B7 /* PasswordChangeViewController.swift */; };
+		B45FFB1E27D7F09A006AC8E6 /* BookmarkComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45FFB1D27D7F099006AC8E6 /* BookmarkComposer.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* AppCoordinator.swift */; };
@@ -256,6 +257,7 @@
 		B45C378327C1D33F009995B7 /* SearchNewsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchNewsViewModel.swift; sourceTree = "<group>"; };
 		B45C378927C1D36F009995B7 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		B45C37BC27C6D8C3009995B7 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
+		B45FFB1D27D7F099006AC8E6 /* BookmarkComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkComposer.swift; sourceTree = "<group>"; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -726,6 +728,7 @@
 				B48F2A1B27B4148300BDC8D4 /* BookmarksViewModel.swift */,
 				B45C37B527C58CBB009995B7 /* View */,
 				B45C37B427C58CB2009995B7 /* Controller */,
+				B45FFB1D27D7F099006AC8E6 /* BookmarkComposer.swift */,
 			);
 			path = Bookmark;
 			sourceTree = "<group>";
@@ -1162,6 +1165,7 @@
 				B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */,
 				049D611127B89A1400DB35F1 /* SettingsBackgroundUIView.swift in Sources */,
 				94A2C96D27BAE85D0048F37C /* AuthCoordinator.swift in Sources */,
+				B45FFB1E27D7F09A006AC8E6 /* BookmarkComposer.swift in Sources */,
 				B45C377F27C1D335009995B7 /* CheckMarkImageView.swift in Sources */,
 				94083F0327CD2FA6008E523B /* UserDefaults+Extension.swift in Sources */,
 				B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */,

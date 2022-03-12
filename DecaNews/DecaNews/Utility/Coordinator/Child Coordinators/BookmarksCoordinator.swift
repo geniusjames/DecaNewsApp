@@ -10,11 +10,6 @@ import UIKit
 final class BookmarksCoordinator: Coordinator {
     
     private let navigationController: UINavigationController
-    
-//    var rootViewController: UIViewController {
-//        navigationController
-//    }
-
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
@@ -25,10 +20,20 @@ final class BookmarksCoordinator: Coordinator {
 
     func loadBookmarks() {
         let viewController = BookmarksViewController.instantiate()
+        viewController.viewModel = DIContainer.makeBookmarkViewModel()
+        viewController.didSelectArticle = {[weak self] selectedArticle in
+            self?.showNewsDetail(article: selectedArticle)
+            
+        }
         viewController.didCompleteBookmark = { [weak self] in
             self?.finish()
         }
-//        navigationController.navigationItem.hidesBackButton = false
+        
         navigationController.pushViewController(viewController, animated: true)
+    }
+    func showNewsDetail(article: Article) {
+        let newsDetailsController = NewsDetailsViewController.instantiate()
+        newsDetailsController.article = article
+        navigationController.pushViewController(newsDetailsController, animated: true)
     }
 }

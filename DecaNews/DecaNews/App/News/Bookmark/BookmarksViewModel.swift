@@ -10,14 +10,21 @@ import Firebase
 
 class BookmarksViewModel {
   
-    let store = FireStorePersistence(collectionName: "new")
+    var articleDirectory: ArticleDirectory
     let cellID = "cell"
-    func fetchPersistedNews() {
-        
+    var bookmarkArticles: [BookmarkArticle]
+    
+    init(articleDirectory: ArticleDirectory) {
+        self.articleDirectory = articleDirectory
+        bookmarkArticles = articleDirectory.readBookmarks()
     }
-    func fetch (completion: @escaping ( ([News]) -> Void)) {
-        _ =  store.read { contents in
-            completion(contents)
-        }
+
+    func removeBookmark(bookmark: BookmarkArticle) {
+        articleDirectory.deleteBookmark(article: bookmark)
     }
+    
+    func calcReadingTime(text: String) -> String{
+        return "\((text.count / 100) * 4) mins read"
+    }
+
 }
