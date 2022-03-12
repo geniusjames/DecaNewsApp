@@ -20,10 +20,10 @@ final class CommentsCoordinator: Coordinator {
     }
 
     override func start() {
-        loadPasswordChangeViewController()
+        loadCommentsViewController()
     }
 
-    func loadPasswordChangeViewController() {
+    func loadCommentsViewController() {
         guard let viewController = UIStoryboard(name: "News", bundle: nil)
                 .instantiateViewController(withIdentifier: "CommentsViewController") as? CommentsViewController else {
                     return

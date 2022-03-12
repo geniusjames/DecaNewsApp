@@ -94,10 +94,6 @@ class DashboardReViewController: UIViewController {
             tableView.dataSource = dashboardTableDatasource
         }
     }
-    
-    func dismissSideMenu() {
-        sideMenu?.dismiss(animated: true, completion: nil)
-    }
 }
 
 extension DashboardReViewController: Storyboardable {

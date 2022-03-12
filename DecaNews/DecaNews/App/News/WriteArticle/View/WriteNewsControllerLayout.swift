@@ -179,9 +179,7 @@ class WriteNewsControllerLayout: UIView {
     func uniformLabelStyle(_ label: UILabel, _ text: String) {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = text
-       
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
-        
     }
     
     func activateConstraint(_ list: [NSLayoutConstraint]) {
@@ -241,6 +239,8 @@ class WriteNewsControllerLayout: UIView {
     func setUpView() {
         contentView.addSubviews(uploadTitle, coverImage, imageView, titleStack, contentStack, topicStack, uploadButton, uploadLabel, publishButton)
         
+        backgroundColor = .white
+        
         activateConstraint([
             scrollView.topAnchor.constraint(equalTo: contentView.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor),
@@ -287,4 +287,3 @@ class WriteNewsControllerLayout: UIView {
         ])
     }
 }
-

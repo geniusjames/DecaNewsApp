@@ -6,9 +6,7 @@
 //
 
 import Foundation
-var images: [String] {
-    [ "home", "Bookmark", "card", "edit", "logout", "card", "settings"]
-}
+
 enum MenuOption: CaseIterable {
     case home
     case savedNews
@@ -17,7 +15,7 @@ enum MenuOption: CaseIterable {
     case help
     case settings
     case logout
-    case version
+//    case version
     
     var displayname: String {
         switch self {
@@ -35,8 +33,8 @@ enum MenuOption: CaseIterable {
             return "Settings"
         case .logout:
             return "Logout"
-        case .version:
-            return "Version 1.0"
+//        case .version:
+//            return "Version 1.0"
         }
     }
     
@@ -56,8 +54,8 @@ enum MenuOption: CaseIterable {
             return "settings"
         case .logout:
             return "logout"
-        case .version:
-            return ""
+//        case .version:
+//            return ""
         }
     }
 }

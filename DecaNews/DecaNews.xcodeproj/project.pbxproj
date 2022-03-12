@@ -135,6 +135,13 @@
 		B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B51EE727C41D960004E468 /* CommentsViewController.swift */; };
 		B4C013C727CE0B2A0078CF41 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C013C627CE0B2A0078CF41 /* SignUpViewModel.swift */; };
 		B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */; };
+		B4CE4F3927D73F87006D2EE1 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F3827D73F86006D2EE1 /* SettingsCoordinator.swift */; };
+		B4CE4F3B27D74DDA006D2EE1 /* Soon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4CE4F3A27D74DD9006D2EE1 /* Soon.storyboard */; };
+		B4CE4F3F27D895C1006D2EE1 /* SideMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F3E27D895C1006D2EE1 /* SideMenuHeader.swift */; };
+		B4CE4F4127D89E2A006D2EE1 /* SettingOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4027D89E2A006D2EE1 /* SettingOptions.swift */; };
+		B4CE4F4327D8AC62006D2EE1 /* SoonCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4227D8AC62006D2EE1 /* SoonCoordinator.swift */; };
+		B4CE4F4527D8AD4E006D2EE1 /* SoonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4427D8AD4E006D2EE1 /* SoonViewController.swift */; };
+		B4CE4F4727D8D58F006D2EE1 /* SettingsSecondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CE4F4627D8D58F006D2EE1 /* SettingsSecondCell.swift */; };
 		B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */; };
 		B4E7B9A227BC690600F809CE /* PopularPublicationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */; };
 		B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */; };
@@ -266,6 +273,13 @@
 		B4B51EE727C41D960004E468 /* CommentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
 		B4C013C627CE0B2A0078CF41 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		B4CBBBD127ADB3EB00A9647F /* ResetLinkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetLinkViewController.swift; sourceTree = "<group>"; };
+		B4CE4F3827D73F86006D2EE1 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
+		B4CE4F3A27D74DD9006D2EE1 /* Soon.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Soon.storyboard; sourceTree = "<group>"; };
+		B4CE4F3E27D895C1006D2EE1 /* SideMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeader.swift; sourceTree = "<group>"; };
+		B4CE4F4027D89E2A006D2EE1 /* SettingOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptions.swift; sourceTree = "<group>"; };
+		B4CE4F4227D8AC62006D2EE1 /* SoonCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonCoordinator.swift; sourceTree = "<group>"; };
+		B4CE4F4427D8AD4E006D2EE1 /* SoonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonViewController.swift; sourceTree = "<group>"; };
+		B4CE4F4627D8D58F006D2EE1 /* SettingsSecondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSecondCell.swift; sourceTree = "<group>"; };
 		B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeCoordinator.swift; sourceTree = "<group>"; };
 		B4E7B9A127BC690600F809CE /* PopularPublicationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularPublicationsCell.swift; sourceTree = "<group>"; };
 		B4E7B9A327BC693800F809CE /* TopicsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicsCollectionViewController.swift; sourceTree = "<group>"; };
@@ -342,6 +356,7 @@
 				049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */,
 				049D60E327B8062800DB35F1 /* DashboardCollectionViewController.swift */,
 				049D60E427B8062800DB35F1 /* DashboardTableViewController.swift */,
+				B4CE4F4427D8AD4E006D2EE1 /* SoonViewController.swift */,
 				B458C32F27D6F7B8001147F3 /* DashboardReViewController.swift */,
 			);
 			path = Controller;
@@ -354,6 +369,7 @@
 				049D60E927B8062800DB35F1 /* DashboardTableViewCell.swift */,
 				049D60FB27B8063D00DB35F1 /* SideMenuTableViewCell.swift */,
 				049D60EA27B8062800DB35F1 /* DashboardCollectionViewCell.swift */,
+				B4CE4F3E27D895C1006D2EE1 /* SideMenuHeader.swift */,
 				B458C32727D6DE64001147F3 /* DashboardHeader.swift */,
 				B458C32927D6DF09001147F3 /* DashboardHeaderCollectionView.swift */,
 				B458C32B27D6DF9A001147F3 /* DashboardHeaderCollectionViewCell.swift */,
@@ -433,6 +449,7 @@
 				B4E7B9B027BDC11600F809CE /* ExploreTopicsStruct.swift */,
 				B41D231127C5050F0048EC40 /* UserProfile.swift */,
 				B458C31427CEC91C001147F3 /* DashboardUser.swift */,
+				B4CE4F4027D89E2A006D2EE1 /* SettingOptions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -511,6 +528,8 @@
 				B4356C9527BBF47B00DDB6DB /* BookmarksCoordinator.swift */,
 				045B320827C30B6D00D41470 /* WriteNewsCoordinator.swift */,
 				B4E402F327BD44F500C336ED /* PasswordChangeCoordinator.swift */,
+				B4CE4F3827D73F86006D2EE1 /* SettingsCoordinator.swift */,
+				B4CE4F4227D8AC62006D2EE1 /* SoonCoordinator.swift */,
 			);
 			path = "Child Coordinators";
 			sourceTree = "<group>";
@@ -535,6 +554,7 @@
 				94EDA16827C679350019DF5C /* Profile.storyboard */,
 				94EDA16427C679350019DF5C /* Search.storyboard */,
 				94EDA16A27C679350019DF5C /* Settings.storyboard */,
+				B4CE4F3A27D74DD9006D2EE1 /* Soon.storyboard */,
 				B458C33327D7083F001147F3 /* DashboardRe.storyboard */,
 			);
 			path = Storyboard;
@@ -938,6 +958,7 @@
 			isa = PBXGroup;
 			children = (
 				94083EFD27CD2DB1008E523B /* SettingsTableViewCell.swift */,
+				B4CE4F4627D8D58F006D2EE1 /* SettingsSecondCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1048,6 +1069,7 @@
 				B48F2A1A27B3AA3A00BDC8D4 /* BookmarksTableViewCell.xib in Resources */,
 				94EDA17427C679350019DF5C /* News.storyboard in Resources */,
 				94EDA17327C679350019DF5C /* Profile.storyboard in Resources */,
+				B4CE4F3B27D74DDA006D2EE1 /* Soon.storyboard in Resources */,
 				94EDA17727C679350019DF5C /* Auth.storyboard in Resources */,
 				94EDA17127C679350019DF5C /* Dashboard.storyboard in Resources */,
 				B458C33427D7083F001147F3 /* DashboardRe.storyboard in Resources */,
@@ -1106,9 +1128,11 @@
 				9412445327C023160045484E /* AuthComposer.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
+				B4CE4F4727D8D58F006D2EE1 /* SettingsSecondCell.swift in Sources */,
 				B4E7B9A427BC693800F809CE /* TopicsCollectionViewController.swift in Sources */,
 				94083F0727CD3A01008E523B /* OnboardingSlide.swift in Sources */,
 				9412445B27C032440045484E /* Storyboardable.swift in Sources */,
+				B4CE4F3927D73F87006D2EE1 /* SettingsCoordinator.swift in Sources */,
 				B4429D7327CEC7170011B078 /* AppColors.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
 				B4E7B9AF27BCF8B400F809CE /* TopicsCollectionViewController+Extensions.swift in Sources */,
@@ -1122,10 +1146,12 @@
 				B42573A827BCE7CD006F1944 /* PasswordToggleVisibilityView.swift in Sources */,
 				049D60F627B8062800DB35F1 /* DashboardCollectionViewCell.swift in Sources */,
 				94AD63AC27D223AF00AA486E /* MenuOption.swift in Sources */,
+				B4CE4F4127D89E2A006D2EE1 /* SettingOptions.swift in Sources */,
 				B458C32827D6DE65001147F3 /* DashboardHeader.swift in Sources */,
 				94083EFC27CD2DA8008E523B /* SettingsViewController.swift in Sources */,
 				94083EF827CD2C7A008E523B /* WriteNewsControllerLayout.swift in Sources */,
 				B441647B27C424E300F1EE3D /* CommentsCoordinator.swift in Sources */,
+				B4CE4F4527D8AD4E006D2EE1 /* SoonViewController.swift in Sources */,
 				049D60F327B8062800DB35F1 /* NewsModel.swift in Sources */,
 				94EDA18927C6800A0019DF5C /* OnboardingViewController.swift in Sources */,
 				B4E7B9A227BC690600F809CE /* PopularPublicationsCell.swift in Sources */,
@@ -1161,6 +1187,7 @@
 				049D60F227B8062800DB35F1 /* DashboardTableViewController.swift in Sources */,
 				B4E7B9B127BDC11700F809CE /* ExploreTopicsStruct.swift in Sources */,
 				B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */,
+				B4CE4F3F27D895C1006D2EE1 /* SideMenuHeader.swift in Sources */,
 				B45C378227C1D335009995B7 /* SortByUIView.swift in Sources */,
 				045B320927C30B6D00D41470 /* WriteNewsCoordinator.swift in Sources */,
 				049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */,
@@ -1173,6 +1200,7 @@
 				049D60F127B8062800DB35F1 /* DashboardCollectionViewController.swift in Sources */,
 				B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
+				B4CE4F4327D8AC62006D2EE1 /* SoonCoordinator.swift in Sources */,
 				B41D231227C5050F0048EC40 /* UserProfile.swift in Sources */,
 				B458C31E27CEE7F9001147F3 /* DashboardComposer.swift in Sources */,
 				B4B51EE827C41D960004E468 /* CommentViewModel.swift in Sources */,
