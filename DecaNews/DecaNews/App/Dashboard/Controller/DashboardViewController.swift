@@ -11,19 +11,17 @@ import SideMenu
 final class DashboardViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var sideMenuController: SideMenuViewController!
     private var sideMenu: SideMenuNavigationController?
     
-    var didCompleteOnboarding: CoordinatorTransition?
     var viewModel: DashboardTableViewModel?
     
-    var sideMenuController: SideMenuViewController!
+    var didSelectArticle: ((Article) -> Void)?
+    var didSelectShowSearch: CoordinatorTransition?
+    var didSelectShowNotification: CoordinatorTransition?
     
     private var dashboardTableDatasource: DashboardTableViewDatasource<DashboardTableViewCell, Article>?
-    private let dashboardHeader = "dashboardHeader"
-    private let dashboardIdentifier = "DashboardTableViewCell"
     var headerViewModel: DashboardCollectionViewModel?
-    
-    var didSelectArticle: ((Article) -> Void)?
     
     private var articles: [Article]? {
         didSet {
@@ -33,37 +31,35 @@ final class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        config()
+        setupOnLoad()
     }
     
-    func config() {
+    func setupOnLoad() {
         configureTableView()
         configureSideMenu()
         fetchData()
         configureNavigationBar()
     }
     
-    func configureTableView() {
+    private func configureTableView() {
         tableView.delegate = self
-        tableView.register(DashboardHeader.self, forHeaderFooterViewReuseIdentifier: dashboardHeader)
+        tableView.register(DashboardHeader.self, forHeaderFooterViewReuseIdentifier: DashboardHeader.viewIdentifier)
         tableView.rowHeight = 115
     }
     
-    func configureSideMenu() {
+    private func configureSideMenu() {
         sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
-        sideMenu?.setNavigationBarHidden(true, animated: false)
-        sideMenuController.menuControllerDelegate = self
-        sideMenu?.leftSide = true
         SideMenuManager.default.leftMenuNavigationController = sideMenu
         SideMenuManager.default.addPanGestureToPresent(toView: view)
+        sideMenu?.setNavigationBarHidden(true, animated: false)
+        sideMenu?.leftSide = true
     }
     
-    func configureNavigationBar() {
+    private func configureNavigationBar() {
         let searchButton = UIBarButtonItem(image: UIImage(named: "search-normal"), style: .plain,
-                                           target: self, action: #selector(showSideMenu))
+                                           target: self, action: #selector(showSearch))
         let notificationButton = UIBarButtonItem(image: UIImage(named: "Notification"), style: .plain,
-                                                 target: self, action: #selector(showSideMenu))
+                                                 target: self, action: #selector(showNotication))
         let menuButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain,
                                          target: self, action: #selector(showSideMenu))
         navigationItem.leftBarButtonItems = [menuButton]
@@ -85,9 +81,17 @@ final class DashboardViewController: UIViewController {
         present(sideMenu!, animated: true)
     }
     
+    @objc func showSearch() {
+        didSelectShowSearch?()
+    }
+    
+    @objc func showNotication() {
+        didSelectShowNotification?()
+    }
+    
     func runSetup() {
         if let articles = articles {
-            self.dashboardTableDatasource = DashboardTableViewDatasource(cellIdentifier: dashboardIdentifier, data: articles, headerViewModel: headerViewModel, dashboardHeader: dashboardHeader) { (cell, article) in
+            self.dashboardTableDatasource = DashboardTableViewDatasource(data: articles, headerViewModel: headerViewModel) { (cell, article) in
                 
                 cell.setup(with: article, viewModel: self.viewModel)
             }
@@ -107,7 +111,7 @@ extension DashboardViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: dashboardHeader) as? DashboardHeader else { return UIView() }
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: DashboardHeader.viewIdentifier) as? DashboardHeader else { return UIView() }
         headerView.viewModel = headerViewModel
         headerView.setHeaderCollectionViewModel()
         return headerView
@@ -117,24 +121,5 @@ extension DashboardViewController: UITableViewDelegate {
         if let article = viewModel?.articles[indexPath.row] {
             didSelectArticle?(article)
         }
-    }
-}
-
-extension DashboardViewController: MenuControllerDelegate {
-    func didSelectMenuItem(named: String) {
-        sideMenu?.dismiss(animated: true, completion: { [weak self] in
-            switch named {
-            case "Home":
-                self?.view.backgroundColor = .white
-            case "Saved News":
-                self?.view.backgroundColor = .red
-            case "Write News":
-                self?.view.backgroundColor = .white
-            case "Membership":
-                self?.view.backgroundColor = .gray
-            default:
-                return
-            }
-        })
     }
 }
