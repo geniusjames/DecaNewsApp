@@ -1,106 +1,140 @@
 //
-//  DashboardViewController.swift
+//  DashboardReTableViewController.swift
 //  DecaNews
 //
-//  Created by mac on 06/02/2022.
+//  Created by Decagon on 08/03/2022.
 //
 
 import UIKit
 import SideMenu
 
-class DashboardViewController: UIViewController, MenuControllerDelegate {
-	
-	private var sideMenu: SideMenuNavigationController?
-   
+final class DashboardViewController: UIViewController {
+    
+    @IBOutlet weak var tableView: UITableView!
+    private var sideMenu: SideMenuNavigationController?
+    
     var didCompleteOnboarding: CoordinatorTransition?
-    var viewModel: DashboardViewModel?
+    var viewModel: DashboardTableViewModel?
     
     var sideMenuController: SideMenuViewController!
-    var dashboardTableViewController: DashboardTableViewController!
-    var dashboardCollectionViewController: DashboardCollectionViewController!
     
-    @IBOutlet weak var topContainer: UIView!
-    @IBOutlet weak var bottomContainer: UIView!
+    private var dashboardTableDatasource: DashboardTableViewDatasource<DashboardTableViewCell, Article>?
+    private let dashboardHeader = "dashboardHeader"
+    private let dashboardIdentifier = "DashboardTableViewCell"
+    var headerViewModel: DashboardCollectionViewModel?
     
     var didSelectArticle: ((Article) -> Void)?
     
+    private var articles: [Article]? {
+        didSet {
+            runSetup()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTopContainer()
-        setupBottomContainer()
-        setUp()
         
-        dashboardTableViewController.didSelectArticle = { [weak self] article in
-            self?.didSelectArticle?(article)
-        }
-        
-        let searchButton = UIBarButtonItem(image: UIImage(named: "search-normal"), style: .plain,
-                                                 target: self, action: #selector(showSideMenu))
-        let notificationButton = UIBarButtonItem(image: UIImage(named: "Notification"), style: .plain,
-                                            target: self, action: #selector(showSideMenu))
-        let menuButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain,
-                                                 target: self, action: #selector(showSideMenu))
-        navigationItem.leftBarButtonItems = [menuButton]
-        navigationItem.rightBarButtonItems = [searchButton, notificationButton]
+        config()
     }
     
-    private func setupTopContainer() {
-        addChild(dashboardCollectionViewController)
-        topContainer.addSubview(dashboardCollectionViewController.view)
-        dashboardCollectionViewController.view.fillSuperview()
-        dashboardCollectionViewController.didMove(toParent: self)
+    func config() {
+        configureTableView()
+        configureSideMenu()
+        fetchData()
+        configureNavigationBar()
     }
     
-    private func setupBottomContainer() {
-        addChild(dashboardTableViewController)
-        bottomContainer.addSubview(dashboardTableViewController.view)
-        dashboardTableViewController.view.fillSuperview()
-        dashboardTableViewController.didMove(toParent: self)
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.register(DashboardHeader.self, forHeaderFooterViewReuseIdentifier: dashboardHeader)
+        tableView.rowHeight = 115
     }
-	
-	func setUp() {
-		//  self.navigationController?.setNavigationBarHidden(true, animated: true)
-		sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
+    
+    func configureSideMenu() {
+        sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
         sideMenu?.setNavigationBarHidden(true, animated: false)
-		sideMenuController.menuControllerDelegate = self
-		sideMenu?.leftSide = true
-		SideMenuManager.default.leftMenuNavigationController = sideMenu
-		SideMenuManager.default.addPanGestureToPresent(toView: view)
-        _ = viewModel?.bookmarks ?? []
-	}
+        sideMenuController.menuControllerDelegate = self
+        sideMenu?.leftSide = true
+        SideMenuManager.default.leftMenuNavigationController = sideMenu
+        SideMenuManager.default.addPanGestureToPresent(toView: view)
+    }
+    
+    func configureNavigationBar() {
+        let searchButton = UIBarButtonItem(image: UIImage(named: "search-normal"), style: .plain,
+                                           target: self, action: #selector(showSideMenu))
+        let notificationButton = UIBarButtonItem(image: UIImage(named: "Notification"), style: .plain,
+                                                 target: self, action: #selector(showSideMenu))
+        let menuButton = UIBarButtonItem(image: UIImage(named: "Menu"), style: .plain,
+                                         target: self, action: #selector(showSideMenu))
+        navigationItem.leftBarButtonItems = [menuButton]
+        navigationItem.rightBarButtonItems = [notificationButton, searchButton]
+    }
+    
+    func fetchData() {
+        viewModel?.fetchData(successCompletion: {
+            DispatchQueue.main.async { [weak self] in
+                self?.articles = self?.viewModel?.articles ?? []
+                self?.tableView.reloadData()
+            }
+        }, errorCompletion: {_ in
+            
+        })
+    }
     
     @objc func showSideMenu() {
         present(sideMenu!, animated: true)
     }
     
-	@IBAction func searchButton(_ sender: Any) {
-		print("Search button clicked")
-	}
-	@IBAction func writeNewsButton(_ sender: Any) {
-		print("Write button clicked")
-	}
-	@IBAction func seeMoreButton(_ sender: Any) {
-//		coordinator.loadLatestNewsScreen()
-	}
-	
-	func didSelectMenuItem(named: String) {
-		sideMenu?.dismiss(animated: true, completion: { [weak self] in
-			switch named {
-			case "Home":
-				self?.view.backgroundColor = .white
-			case "Saved News":
-				self?.view.backgroundColor = .red
-			case "Write News":
-				self?.view.backgroundColor = .white
-			case "Membership":
-				self?.view.backgroundColor = .gray
-			default:
-				return
-			}
-		})
-	}
+    func runSetup() {
+        if let articles = articles {
+            self.dashboardTableDatasource = DashboardTableViewDatasource(cellIdentifier: dashboardIdentifier, data: articles, headerViewModel: headerViewModel, dashboardHeader: dashboardHeader) { (cell, article) in
+                
+                cell.setup(with: article, viewModel: self.viewModel)
+            }
+            tableView.dataSource = dashboardTableDatasource
+        }
+    }
 }
 
 extension DashboardViewController: Storyboardable {
     static var storyboard: Storyboard { .dashboard }
+}
+
+extension DashboardViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        400
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: dashboardHeader) as? DashboardHeader else { return UIView() }
+        headerView.viewModel = headerViewModel
+        headerView.setHeaderCollectionViewModel()
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let article = viewModel?.articles[indexPath.row] {
+            didSelectArticle?(article)
+        }
+    }
+}
+
+extension DashboardViewController: MenuControllerDelegate {
+    func didSelectMenuItem(named: String) {
+        sideMenu?.dismiss(animated: true, completion: { [weak self] in
+            switch named {
+            case "Home":
+                self?.view.backgroundColor = .white
+            case "Saved News":
+                self?.view.backgroundColor = .red
+            case "Write News":
+                self?.view.backgroundColor = .white
+            case "Membership":
+                self?.view.backgroundColor = .gray
+            default:
+                return
+            }
+        })
+    }
 }

@@ -19,7 +19,6 @@ enum Storyboard: String {
     case search
     case settings
     case sideMenu
-    case dashboardRe
     
     var identifier: String {
         return rawValue.capitalizedFirstCharacter

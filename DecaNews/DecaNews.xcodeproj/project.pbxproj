@@ -21,10 +21,7 @@
 		045B321627C30F3200D41470 /* PreviewControllerLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045B321527C30F3200D41470 /* PreviewControllerLayout.swift */; };
 		049D60D927B8059E00DB35F1 /* AuthRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60D827B8059E00DB35F1 /* AuthRootViewController.swift */; };
 		049D60EE27B8062800DB35F1 /* ArticleDirectory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */; };
-		049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E127B8062800DB35F1 /* DashboardViewController.swift */; };
 		049D60F027B8062800DB35F1 /* LatestNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */; };
-		049D60F127B8062800DB35F1 /* DashboardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E327B8062800DB35F1 /* DashboardCollectionViewController.swift */; };
-		049D60F227B8062800DB35F1 /* DashboardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E427B8062800DB35F1 /* DashboardTableViewController.swift */; };
 		049D60F327B8062800DB35F1 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E627B8062800DB35F1 /* NewsModel.swift */; };
 		049D60F427B8062800DB35F1 /* LatestNewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E827B8062800DB35F1 /* LatestNewsTableViewCell.swift */; };
 		049D60F527B8062800DB35F1 /* DashboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049D60E927B8062800DB35F1 /* DashboardTableViewCell.swift */; };
@@ -106,8 +103,7 @@
 		B458C32A27D6DF09001147F3 /* DashboardHeaderCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C32927D6DF09001147F3 /* DashboardHeaderCollectionView.swift */; };
 		B458C32C27D6DF9A001147F3 /* DashboardHeaderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C32B27D6DF9A001147F3 /* DashboardHeaderCollectionViewCell.swift */; };
 		B458C32E27D6F4A8001147F3 /* DashboardHeaderDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C32D27D6F4A8001147F3 /* DashboardHeaderDatasource.swift */; };
-		B458C33027D6F7B8001147F3 /* DashboardReViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C32F27D6F7B8001147F3 /* DashboardReViewController.swift */; };
-		B458C33427D7083F001147F3 /* DashboardRe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B458C33327D7083F001147F3 /* DashboardRe.storyboard */; };
+		B458C33027D6F7B8001147F3 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C32F27D6F7B8001147F3 /* DashboardViewController.swift */; };
 		B458C33627D7282F001147F3 /* DashboardTableViewDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B458C33527D7282F001147F3 /* DashboardTableViewDatasource.swift */; };
 		B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */; };
 		B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */; };
@@ -168,10 +164,7 @@
 		045B321527C30F3200D41470 /* PreviewControllerLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewControllerLayout.swift; sourceTree = "<group>"; };
 		049D60D827B8059E00DB35F1 /* AuthRootViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthRootViewController.swift; path = DecaNews/App/Auth/LoginOptions/AuthRootViewController.swift; sourceTree = SOURCE_ROOT; };
 		049D60DF27B8062800DB35F1 /* ArticleDirectory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleDirectory.swift; sourceTree = "<group>"; };
-		049D60E127B8062800DB35F1 /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestNewsViewController.swift; sourceTree = "<group>"; };
-		049D60E327B8062800DB35F1 /* DashboardCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewController.swift; sourceTree = "<group>"; };
-		049D60E427B8062800DB35F1 /* DashboardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewController.swift; sourceTree = "<group>"; };
 		049D60E627B8062800DB35F1 /* NewsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		049D60E827B8062800DB35F1 /* LatestNewsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatestNewsTableViewCell.swift; sourceTree = "<group>"; };
 		049D60E927B8062800DB35F1 /* DashboardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardTableViewCell.swift; sourceTree = "<group>"; };
@@ -246,8 +239,7 @@
 		B458C32927D6DF09001147F3 /* DashboardHeaderCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderCollectionView.swift; sourceTree = "<group>"; };
 		B458C32B27D6DF9A001147F3 /* DashboardHeaderCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderCollectionViewCell.swift; sourceTree = "<group>"; };
 		B458C32D27D6F4A8001147F3 /* DashboardHeaderDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardHeaderDatasource.swift; sourceTree = "<group>"; };
-		B458C32F27D6F7B8001147F3 /* DashboardReViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardReViewController.swift; sourceTree = "<group>"; };
-		B458C33327D7083F001147F3 /* DashboardRe.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardRe.storyboard; sourceTree = "<group>"; };
+		B458C32F27D6F7B8001147F3 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		B458C33527D7282F001147F3 /* DashboardTableViewDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardTableViewDatasource.swift; sourceTree = "<group>"; };
 		B45C373827ADB9AB009995B7 /* ServicesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServicesViewModel.swift; sourceTree = "<group>"; };
 		B45C373927ADB9AB009995B7 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
@@ -355,13 +347,10 @@
 		049D60E027B8062800DB35F1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				B458C32F27D6F7B8001147F3 /* DashboardViewController.swift */,
 				049D60F927B8063D00DB35F1 /* SideMenuViewController.swift */,
-				049D60E127B8062800DB35F1 /* DashboardViewController.swift */,
 				049D60E227B8062800DB35F1 /* LatestNewsViewController.swift */,
-				049D60E327B8062800DB35F1 /* DashboardCollectionViewController.swift */,
-				049D60E427B8062800DB35F1 /* DashboardTableViewController.swift */,
 				B4CE4F4427D8AD4E006D2EE1 /* SoonViewController.swift */,
-				B458C32F27D6F7B8001147F3 /* DashboardReViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -560,7 +549,6 @@
 				94EDA16427C679350019DF5C /* Search.storyboard */,
 				94EDA16A27C679350019DF5C /* Settings.storyboard */,
 				B4CE4F3A27D74DD9006D2EE1 /* Soon.storyboard */,
-				B458C33327D7083F001147F3 /* DashboardRe.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -1078,7 +1066,6 @@
 				B4CE4F3B27D74DDA006D2EE1 /* Soon.storyboard in Resources */,
 				94EDA17727C679350019DF5C /* Auth.storyboard in Resources */,
 				94EDA17127C679350019DF5C /* Dashboard.storyboard in Resources */,
-				B458C33427D7083F001147F3 /* DashboardRe.storyboard in Resources */,
 				94EDA17527C679350019DF5C /* Settings.storyboard in Resources */,
 				94EDA17027C679350019DF5C /* Onboarding.storyboard in Resources */,
 			);
@@ -1191,20 +1178,17 @@
 				B47E589C27948C0100D70341 /* Coordinator.swift in Sources */,
 				049D610F27B89A0900DB35F1 /* DetailsSettingsView.swift in Sources */,
 				B4356C9627BBF47B00DDB6DB /* BookmarksCoordinator.swift in Sources */,
-				049D60F227B8062800DB35F1 /* DashboardTableViewController.swift in Sources */,
 				B4E7B9B127BDC11700F809CE /* ExploreTopicsStruct.swift in Sources */,
 				B4E402F427BD44F500C336ED /* PasswordChangeCoordinator.swift in Sources */,
 				B4CE4F3F27D895C1006D2EE1 /* SideMenuHeader.swift in Sources */,
 				B45C378227C1D335009995B7 /* SortByUIView.swift in Sources */,
 				045B320927C30B6D00D41470 /* WriteNewsCoordinator.swift in Sources */,
-				049D60EF27B8062800DB35F1 /* DashboardViewController.swift in Sources */,
 				B4B51EE927C41D960004E468 /* CommentsCell.swift in Sources */,
 				049D60F427B8062800DB35F1 /* LatestNewsTableViewCell.swift in Sources */,
 				94D2308E27D6838F00316D21 /* BaseNavigationController.swift in Sources */,
 				B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */,
 				B458C32E27D6F4A8001147F3 /* DashboardHeaderDatasource.swift in Sources */,
 				B458C31127CEC4CE001147F3 /* DashboardViewModel.swift in Sources */,
-				049D60F127B8062800DB35F1 /* DashboardCollectionViewController.swift in Sources */,
 				B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */,
 				04F2AA6827931F0A00D4C062 /* AppDelegate.swift in Sources */,
 				B4CE4F4327D8AC62006D2EE1 /* SoonCoordinator.swift in Sources */,
@@ -1221,7 +1205,7 @@
 				B42573A627BCE5B6006F1944 /* HideOrShowPasswordTextField.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,
-				B458C33027D6F7B8001147F3 /* DashboardReViewController.swift in Sources */,
+				B458C33027D6F7B8001147F3 /* DashboardViewController.swift in Sources */,
 				B45C377E27C1D335009995B7 /* SearchNewsDatasource.swift in Sources */,
 				B4B51EE427C41D780004E468 /* CommentsModel.swift in Sources */,
 				94D2309027D68D7200316D21 /* UINavigationController.swift in Sources */,
