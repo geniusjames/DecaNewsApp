@@ -7,13 +7,13 @@
 
 import UIKit
 
-class SideMenuHeader: UITableViewHeaderFooterView {
+final class SideMenuHeader: UITableViewHeaderFooterView {
     
     override init(reuseIdentifier: String?) {
         super.init(reuseIdentifier: reuseIdentifier)
     }
     
-    func setHeader(viewModel: MenuTableViewModel?) {
+    func setHeader(viewModel: SideMenuViewModel?) {
         let imageView = UIImageView()
         imageView.constrainHeight(constant: 140)
         let user = viewModel?.getUserDetails()

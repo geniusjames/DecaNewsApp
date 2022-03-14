@@ -9,7 +9,6 @@ import UIKit
 
 class SideMenuTableViewCell: UITableViewCell {
     
-    static let identifier = "ProfileTableViewCell"
     @IBOutlet weak var profileName: UILabel!
     
     @IBOutlet weak var profileImage: UIImageView!

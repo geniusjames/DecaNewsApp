@@ -7,10 +7,11 @@
 
 import Foundation
 
-final class MenuTableViewModel {
+final class SideMenuViewModel {
     
-    let authServiceRepository: AuthServiceRepository
-    let networkManagerRepository: NetworkManagerRepository
+    let menuItem = MenuOption.allCases
+    private let authServiceRepository: AuthServiceRepository
+    private let networkManagerRepository: NetworkManagerRepository
     
     init(authServiceRepository: AuthServiceRepository, networkManagerRepository: NetworkManagerRepository) {
         self.authServiceRepository = authServiceRepository

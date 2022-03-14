@@ -33,7 +33,7 @@ final class DashboardComposer {
     }
     
     private static func makeMenuTableViewController() -> SideMenuViewController {
-        let viewController = SideMenuViewController()
+        let viewController = SideMenuViewController.instantiate()
         viewController.viewModel = DIContainer.makeMenuTableViewModel()
         return viewController
     }

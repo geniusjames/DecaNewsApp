@@ -28,11 +28,13 @@ class Coordinator: NSObject, UINavigationControllerDelegate {
     
     func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) { }
     
-    func pushCoordinator(_ coordinator: Coordinator) {
-        // Start Coordinator
-        coordinator.start()
+    func pushCoordinator(_ coordinator: Coordinator, completion: (() -> Void)? = nil) {
+        coordinator.didFinish = { [weak self] (coordinator) in
+            self?.popCoordinator(coordinator)
+            completion?()
+        }
         
-        // Append to Child Coordinators
+        coordinator.start()
         childCoordinators.append(coordinator)
     }
     

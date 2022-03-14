@@ -51,8 +51,8 @@ final class DIContainer {
         return EmailSignInViewModel(store: makeUserStore(), authServiceRepository: makeAuthRepository())
     }
     
-    static func makeMenuTableViewModel() -> MenuTableViewModel {
-        return MenuTableViewModel(authServiceRepository: makeAuthRepository(), networkManagerRepository: makeNetworkRepository())
+    static func makeMenuTableViewModel() -> SideMenuViewModel {
+        return SideMenuViewModel(authServiceRepository: makeAuthRepository(), networkManagerRepository: makeNetworkRepository())
     }
     
     static func makeDashboardViewModel() -> DashboardViewModel {

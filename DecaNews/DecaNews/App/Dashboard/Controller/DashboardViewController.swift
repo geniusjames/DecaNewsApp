@@ -62,7 +62,7 @@ class DashboardViewController: UIViewController, MenuControllerDelegate {
 		//  self.navigationController?.setNavigationBarHidden(true, animated: true)
 		sideMenu = SideMenuNavigationController(rootViewController: sideMenuController)
         sideMenu?.setNavigationBarHidden(true, animated: false)
-		sideMenuController.delegate = self
+		sideMenuController.menuControllerDelegate = self
 		sideMenu?.leftSide = true
 		SideMenuManager.default.leftMenuNavigationController = sideMenu
 		SideMenuManager.default.addPanGestureToPresent(toView: view)

@@ -27,11 +27,10 @@ final class MainAppCoordinator: Coordinator {
     
     override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         navigationController.setBlackButton()
-        
     }
     
     func loadMainAppRoot() {
-//        let viewController = DashboardComposer.makeDashboardViewController()
+        //        let viewController = DashboardComposer.makeDashboardViewController()
         let viewController = DashboardComposer.makeDashboarReViewController()
         viewController.didSelectArticle = { [weak self] selectedArticle in
             self?.showNewsDetail(article: selectedArticle)
@@ -53,12 +52,18 @@ final class MainAppCoordinator: Coordinator {
                 self.showSettings()
             case .logout:
                 self.logout()
-//            case .version:
-//                self.showVersion()
             }
         }
-        
         navigationController.pushViewController(viewController, animated: true)
+    }
+    
+    func logout() {
+        let alert = UIAlertController(title: "Logout", message: "Are you sure you want to logout?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "Logout", style: .destructive, handler: { [weak self] _ in
+            self?.finish()
+        }))
+        navigationController.present(alert, animated: true, completion: nil)
     }
     
     func showNewsDetail(article: Article) {
@@ -68,12 +73,6 @@ final class MainAppCoordinator: Coordinator {
     }
     
     func showHome() {
-//        let mainCoordinator = MainAppCoordinator()
-//        pushCoordinator(mainCoordinator)
-//
-//        mainCoordinator.didFinish = { [weak self] coordinator in
-//            self?.popCoordinator(coordinator)
-//        }
         loadMainAppRoot()
     }
     
@@ -95,14 +94,6 @@ final class MainAppCoordinator: Coordinator {
         }
     }
     
-    func showMembership() {
-        
-    }
-    
-    func showHelp() {
-        
-    }
-    
     func showComingSoon() {
         let soonCoordinator = SoonCoordinator(navigationController: navigationController)
         pushCoordinator(soonCoordinator)
@@ -115,71 +106,5 @@ final class MainAppCoordinator: Coordinator {
     func showSettings() {
         let settingsCoordinator = SettingsCoordinator(navigationController: navigationController)
         pushCoordinator(settingsCoordinator)
-        
-        settingsCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-        }
-        
-    }
-    
-    func logout() {
-        finish()
-    }
-    
-    func showVersion() {
-        
     }
 }
-
-/*
- 
- func navigateToLatestNewsScreen() {
-     guard let viewController = UIStoryboard(name: "Dashboard",
-                    bundle: nil).instantiateViewController(withIdentifier: "LatestNewsVC") as? LatestNewsViewController
-      else {return}
-     viewController.coordinator = self
-     controller.pushViewController(viewController, animated: true)
-     window.rootViewController = controller
-     window.makeKeyAndVisible()
- }
- 
- func navigateToDetailsPage() {
-     guard let detailsViewController = UIStoryboard(name: "NewsDetails",
-                    bundle: nil).instantiateViewController(withIdentifier: "NewsDetails") as? DetailsViewController
-      else {return}
-     detailsViewController.coordinator = self
-     controller.pushViewController(detailsViewController, animated: true)
- }
- 
- func navigatingToSideMenu() {
-     guard let viewController = UIStoryboard(name: "SideMenu",
-                    bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as? SideMenuViewController
-      else {return}
-     viewController.coordinator = self
-     controller.pushViewController(viewController, animated: true)
- }
- 
- func startBookmarks() {
-     let bookmarksCoordinator = BookmarksCoordinator()
-     pushCoordinator(bookmarksCoordinator)
-     window.rootViewController = bookmarksCoordinator.rootViewController
-     window.makeKeyAndVisible()
-     
-     bookmarksCoordinator.didFinish = { [weak self] coordinator in
-         self?.popCoordinator(coordinator)
-         self?.startAuth()
-     }
- }
- func startPasswordChange() {
-     let changePasswordCoordinator = PasswordChangeCoordinator()
-     pushCoordinator(changePasswordCoordinator)
-     window.rootViewController = changePasswordCoordinator.rootViewController
-     window.makeKeyAndVisible()
-     
-     changePasswordCoordinator.didFinish = { [weak self] coordinator in
-         self?.popCoordinator(coordinator)
-         self?.startAuth()
-     }
- }
- 
- */
