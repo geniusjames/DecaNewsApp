@@ -11,6 +11,7 @@ final class SideMenuViewController: UIViewController {
     
     var viewModel: SideMenuViewModel!
     var didSelectMenuOption: ((MenuOption) -> Void)?
+    var didSelectShowProfile: CoordinatorTransition?
     weak var menuControllerDelegate: MenuControllerDelegate?
     
     @IBOutlet weak var sideMenuTable: UITableView!
@@ -21,9 +22,18 @@ final class SideMenuViewController: UIViewController {
     }
     
     private func setupViewOnLoad() {
+        let tableFooter = SideMenuFooter()
+        sideMenuTable.tableFooterView = tableFooter
+        sideMenuTable.tableFooterView?.frame.size = CGSize(width: sideMenuTable.frame.width, height: CGFloat(146))
         sideMenuTable.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.viewIdentifier)
         sideMenuTable.register(SideMenuHeader.self, forHeaderFooterViewReuseIdentifier: SideMenuHeader.viewIdentifier)
         sideMenuTable.register(SideMenuTableViewCell.self, forCellReuseIdentifier: SideMenuTableViewCell.viewIdentifier)
+    }
+    
+    @objc private func showProfile() {
+        dismiss(animated: false) { [weak self] in
+            self?.didSelectShowProfile?()
+        }
     }
     
     private func selectMenu(at index: Int) {
@@ -46,13 +56,14 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.viewIdentifier, for: indexPath)
-        cell.textLabel?.textColor = UIColor(named: AppColors.deepGrey)
-        cell.textLabel?.text = viewModel.menuItem[indexPath.row].displayname
         cell.contentView.backgroundColor = UIColor(named: "black")
+        cell.textLabel?.textColor = .white
+        cell.textLabel?.text = viewModel.menuItem[indexPath.row].displayname
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        
         let imageName = viewModel.menuItem[indexPath.row].icon
-        if imageName != "" {
-            cell.imageView?.image = UIImage(named: imageName)
-        }
+        cell.imageView?.image = UIImage(named: imageName)
+        
         return cell
     }
     
@@ -65,29 +76,15 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 180.0
+        return 217
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: SideMenuHeader.viewIdentifier) as? SideMenuHeader else {
-            return UIView()
+            return nil
         }
+        headerView.viewProfileButton.addTarget(self, action: #selector(showProfile), for: .touchUpInside)
         headerView.setHeader(viewModel: viewModel)
         return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 60.0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let label: UILabel = {
-            let label = UILabel()
-            label.text = "Version 1.0"
-            label.textColor = .white
-            label.textAlignment = .left
-            return label
-        }()
-        return label
     }
 }

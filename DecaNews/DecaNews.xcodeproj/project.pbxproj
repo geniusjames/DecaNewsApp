@@ -68,6 +68,8 @@
 		94AD63AC27D223AF00AA486E /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AD63AB27D223AF00AA486E /* MenuOption.swift */; };
 		94D2308E27D6838F00316D21 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2308D27D6838E00316D21 /* BaseNavigationController.swift */; };
 		94D2309027D68D7200316D21 /* UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D2308F27D68D7200316D21 /* UINavigationController.swift */; };
+		94D908C727DFBFC300B859A6 /* VerticalStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D908C627DFBFC300B859A6 /* VerticalStack.swift */; };
+		94D908C927DFC61C00B859A6 /* SideMenuFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D908C827DFC61C00B859A6 /* SideMenuFooter.swift */; };
 		94E9F3EC27C4CD320041A542 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3EB27C4CD320041A542 /* Realm */; };
 		94E9F3EE27C4CD320041A542 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3ED27C4CD320041A542 /* RealmSwift */; };
 		94E9F3F227C4D6730041A542 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 94E9F3F127C4D6730041A542 /* IQKeyboardManagerSwift */; };
@@ -209,6 +211,8 @@
 		94AD63AB27D223AF00AA486E /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		94D2308D27D6838E00316D21 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		94D2308F27D68D7200316D21 /* UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationController.swift; sourceTree = "<group>"; };
+		94D908C627DFBFC300B859A6 /* VerticalStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerticalStack.swift; sourceTree = "<group>"; };
+		94D908C827DFC61C00B859A6 /* SideMenuFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuFooter.swift; sourceTree = "<group>"; };
 		94EDA13927C4DB580019DF5C /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
 		94EDA13B27C4DC400019DF5C /* NewsDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDetailsViewController.swift; sourceTree = "<group>"; };
 		94EDA16227C679350019DF5C /* SideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenu.storyboard; sourceTree = "<group>"; };
@@ -370,6 +374,7 @@
 				049D60FB27B8063D00DB35F1 /* SideMenuTableViewCell.swift */,
 				049D60EA27B8062800DB35F1 /* DashboardCollectionViewCell.swift */,
 				B4CE4F3E27D895C1006D2EE1 /* SideMenuHeader.swift */,
+				94D908C827DFC61C00B859A6 /* SideMenuFooter.swift */,
 				B458C32727D6DE64001147F3 /* DashboardHeader.swift */,
 				B458C32927D6DF09001147F3 /* DashboardHeaderCollectionView.swift */,
 				B458C32B27D6DF9A001147F3 /* DashboardHeaderCollectionViewCell.swift */,
@@ -581,6 +586,7 @@
 			children = (
 				B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */,
 				94083EF927CD2D1F008E523B /* TextField+Extension.swift */,
+				94D908C627DFBFC300B859A6 /* VerticalStack.swift */,
 				B42573A727BCE7CD006F1944 /* PasswordToggleVisibilityView.swift */,
 				B42573A527BCE5B6006F1944 /* HideOrShowPasswordTextField.swift */,
 				94D2308D27D6838E00316D21 /* BaseNavigationController.swift */,
@@ -1136,6 +1142,7 @@
 				B4429D7327CEC7170011B078 /* AppColors.swift in Sources */,
 				B48F2A1627B3A9E900BDC8D4 /* BookmarksViewController.swift in Sources */,
 				B4E7B9AF27BCF8B400F809CE /* TopicsCollectionViewController+Extensions.swift in Sources */,
+				94D908C727DFBFC300B859A6 /* VerticalStack.swift in Sources */,
 				049D60FD27B8063D00DB35F1 /* SideMenuViewController.swift in Sources */,
 				045B321427C30EEC00D41470 /* PreviewController.swift in Sources */,
 				B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */,
@@ -1210,6 +1217,7 @@
 				94083F0127CD2F3A008E523B /* UserStore.swift in Sources */,
 				B458C31527CEC91C001147F3 /* DashboardUser.swift in Sources */,
 				B4C013C727CE0B2A0078CF41 /* SignUpViewModel.swift in Sources */,
+				94D908C927DFC61C00B859A6 /* SideMenuFooter.swift in Sources */,
 				B42573A627BCE5B6006F1944 /* HideOrShowPasswordTextField.swift in Sources */,
 				04F2AA6A27931F0A00D4C062 /* SceneDelegate.swift in Sources */,
 				B45C374127ADBB0A009995B7 /* User.swift in Sources */,

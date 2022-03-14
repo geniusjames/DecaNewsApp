@@ -36,10 +36,14 @@ final class MainAppCoordinator: Coordinator {
             self?.showNewsDetail(article: selectedArticle)
         }
         
+        viewController.sideMenuController.didSelectShowProfile = { [weak self] in
+            self?.showProfile()
+        }
+        
         viewController.sideMenuController.didSelectMenuOption = {
             switch $0 {
             case .home:
-                self.showHome()
+                break
             case .writeNews:
                 self.showWriteNews()
             case .savedNews:
@@ -72,35 +76,24 @@ final class MainAppCoordinator: Coordinator {
         navigationController.pushViewController(newsDetailsController, animated: true)
     }
     
-    func showHome() {
-        loadMainAppRoot()
-    }
-    
     func showWriteNews() {
         let writeNewsCoordinator = WriteNewsCoordinator(navigationController: navigationController)
         pushCoordinator(writeNewsCoordinator)
-        
-        writeNewsCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-        }
     }
     
     func showBookMarks() {
         let bookmarksCoordinator = BookmarksCoordinator(navigationController: navigationController)
         pushCoordinator(bookmarksCoordinator)
-        
-        bookmarksCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-        }
+    }
+    
+    func showProfile() {
+        let soonCoordinator = SoonCoordinator(navigationController: navigationController)
+        pushCoordinator(soonCoordinator)
     }
     
     func showComingSoon() {
         let soonCoordinator = SoonCoordinator(navigationController: navigationController)
         pushCoordinator(soonCoordinator)
-        
-        soonCoordinator.didFinish = { [weak self] coordinator in
-            self?.popCoordinator(coordinator)
-        }
     }
     
     func showSettings() {
