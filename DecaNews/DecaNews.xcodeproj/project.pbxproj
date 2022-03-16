@@ -81,6 +81,7 @@
 		94EDA17527C679350019DF5C /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDA16A27C679350019DF5C /* Settings.storyboard */; };
 		94EDA17727C679350019DF5C /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94EDA16C27C679350019DF5C /* Auth.storyboard */; };
 		94EDA18927C6800A0019DF5C /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EDA18827C6800A0019DF5C /* OnboardingViewController.swift */; };
+		B40810C427E1EF5A00C4B0AC /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40810C327E1EF5A00C4B0AC /* UIViewController+Extension.swift */; };
 		B41D231227C5050F0048EC40 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B41D231127C5050F0048EC40 /* UserProfile.swift */; };
 		B4249F4927B5BB8D002C5E01 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4249F4827B5BB8D002C5E01 /* Persistence.swift */; };
 		B4249F4B27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = B4249F4A27B64E24002C5E01 /* FirebaseFirestoreSwift-Beta */; };
@@ -223,6 +224,7 @@
 		94EDA16A27C679350019DF5C /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
 		94EDA16C27C679350019DF5C /* Auth.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		94EDA18827C6800A0019DF5C /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		B40810C327E1EF5A00C4B0AC /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		B41D231127C5050F0048EC40 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		B4249F4827B5BB8D002C5E01 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B4249F5427B67050002C5E01 /* MenuDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuDelegate.swift; sourceTree = "<group>"; };
@@ -500,6 +502,7 @@
 				B45C378927C1D36F009995B7 /* Date+Extension.swift */,
 				049D611227B89B3D00DB35F1 /* UIView+Extension.swift */,
 				9410301F27A9409F00411376 /* String+Extension.swift */,
+				B40810C327E1EF5A00C4B0AC /* UIViewController+Extension.swift */,
 				94083F0227CD2FA6008E523B /* UserDefaults+Extension.swift */,
 				94D2308F27D68D7200316D21 /* UINavigationController.swift */,
 			);
@@ -1248,6 +1251,7 @@
 				B45C378127C1D335009995B7 /* SearchNewsTableViewCell.swift in Sources */,
 				049D60F727B8062800DB35F1 /* NetworkManager.swift in Sources */,
 				045B321627C30F3200D41470 /* PreviewControllerLayout.swift in Sources */,
+				B40810C427E1EF5A00C4B0AC /* UIViewController+Extension.swift in Sources */,
 				94083EFE27CD2DB1008E523B /* SettingsTableViewCell.swift in Sources */,
 				045B320B27C30CD500D41470 /* WriteNewsViewController.swift in Sources */,
 				B45C373B27ADB9AB009995B7 /* ResetPasswordViewModel.swift in Sources */,
