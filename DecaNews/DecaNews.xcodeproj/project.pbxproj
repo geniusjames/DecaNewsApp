@@ -120,6 +120,7 @@
 		B45FFB1E27D7F09A006AC8E6 /* BookmarkComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45FFB1D27D7F099006AC8E6 /* BookmarkComposer.swift */; };
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B4747F2B27E153D000B7EDF3 /* TaskProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747F2A27E153D000B7EDF3 /* TaskProgressIndicator.swift */; };
+		B4747F2E27E1710700B7EDF3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747F2D27E1710700B7EDF3 /* Alert.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* AppCoordinator.swift */; };
 		B4851E7627A525C2005F4399 /* EmailSiginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */; };
@@ -259,6 +260,7 @@
 		B45FFB1D27D7F099006AC8E6 /* BookmarkComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkComposer.swift; sourceTree = "<group>"; };
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B4747F2A27E153D000B7EDF3 /* TaskProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressIndicator.swift; sourceTree = "<group>"; };
+		B4747F2D27E1710700B7EDF3 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSiginInViewController.swift; path = DecaNews/App/Auth/SignIn/Controller/EmailSiginInViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -574,8 +576,8 @@
 		94EDA18227C67A560019DF5C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B4747F2C27E170D900B7EDF3 /* Alerts */,
 				94083F0427CD3362008E523B /* DIContainer.swift */,
-				B4747F2A27E153D000B7EDF3 /* TaskProgressIndicator.swift */,
 				B4429D7227CEC7160011B078 /* AppColors.swift */,
 				04F2AA8527943F5000D4C062 /* Model */,
 				9410301D27A9408000411376 /* Service */,
@@ -976,6 +978,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B4747F2C27E170D900B7EDF3 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				B4747F2A27E153D000B7EDF3 /* TaskProgressIndicator.swift */,
+				B4747F2D27E1710700B7EDF3 /* Alert.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
 		B47E589A27948BD800D70341 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1244,7 @@
 				B48F2A1927B3AA3A00BDC8D4 /* NewsTableViewCell.swift in Sources */,
 				B4747F2B27E153D000B7EDF3 /* TaskProgressIndicator.swift in Sources */,
 				94083F0527CD3362008E523B /* DIContainer.swift in Sources */,
+				B4747F2E27E1710700B7EDF3 /* Alert.swift in Sources */,
 				B4E7B9A727BC69AB00F809CE /* NewsTopicsCollectionViewCell.swift in Sources */,
 				B4E7B9A927BC69DA00F809CE /* PopularAuthorViewCell.swift in Sources */,
 				B458C32C27D6DF9A001147F3 /* DashboardHeaderCollectionViewCell.swift in Sources */,
