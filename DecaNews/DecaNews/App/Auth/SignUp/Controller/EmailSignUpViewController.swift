@@ -52,9 +52,11 @@ final class EmailSignUpViewController: UIViewController {
     func loggedIn(_ result: Result<Int, Error>) {
         switch result {
         case .success(_:):
+            HUD.hide()
             viewModel?.didSignIn()
             navigateToTopics?()
         case .failure(let error):
+            HUD.hide()
             errorMessageLabel.text = error.localizedDescription
         }
     }
