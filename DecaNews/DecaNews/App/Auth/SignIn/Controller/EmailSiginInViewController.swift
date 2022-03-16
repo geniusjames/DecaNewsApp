@@ -30,12 +30,14 @@ final class EmailSiginInViewController: UIViewController {
         guard let password = passwordTextField.text
         else {return}
         if emailAddress.isValidEmail {
+            HUD.show()
             viewModel?.signIn(email: emailAddress, password: password) {result in
                 switch result {
                 case .success(_:):
                     self.viewModel?.signInUser()
                     self.navigateHome?()
                 case .failure(let error):
+                    HUD.hide()
                     UIView.animate(withDuration: 3) {
                         self.resultLabel.text = error.localizedDescription
                     }

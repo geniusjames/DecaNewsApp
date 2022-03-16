@@ -44,7 +44,7 @@ class AuthRootViewController: UIViewController, ASAuthorizationControllerPresent
             // If sign in succeeded, display the app's main content View.
         }
     }
-   
+
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return view.window!
     }

@@ -37,6 +37,7 @@ final class EmailSignUpViewController: UIViewController {
         guard let email = emailTextField.text, let password = passwordTextField.text else {
             return
         }
+        HUD.show()
         viewModel?.signUp(email, password, loggedIn(_:))
     }
 
