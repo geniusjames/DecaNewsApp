@@ -55,6 +55,7 @@ final class EmailSignUpViewController: UIViewController {
             HUD.hide()
             viewModel?.didSignIn()
             navigateToTopics?()
+            DisplayAlert.alert(message: AppMessages.signUpSuccessful, title: AppMessages.signUpTitle, view: self)
         case .failure(let error):
             HUD.hide()
             errorMessageLabel.text = error.localizedDescription

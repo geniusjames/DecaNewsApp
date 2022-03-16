@@ -121,6 +121,8 @@
 		B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */; };
 		B4747F2B27E153D000B7EDF3 /* TaskProgressIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747F2A27E153D000B7EDF3 /* TaskProgressIndicator.swift */; };
 		B4747F2E27E1710700B7EDF3 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747F2D27E1710700B7EDF3 /* Alert.swift */; };
+		B4747F3127E175CE00B7EDF3 /* AppMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747F3027E175CE00B7EDF3 /* AppMessages.swift */; };
+		B4747F3327E176C800B7EDF3 /* AppErrorMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4747F3227E176C800B7EDF3 /* AppErrorMessages.swift */; };
 		B47E589C27948C0100D70341 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589B27948C0100D70341 /* Coordinator.swift */; };
 		B47E589E27948C1D00D70341 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47E589D27948C1D00D70341 /* AppCoordinator.swift */; };
 		B4851E7627A525C2005F4399 /* EmailSiginInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */; };
@@ -261,6 +263,8 @@
 		B46C8ECB279C650400C1A903 /* IndicatorLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLabel.swift; sourceTree = "<group>"; };
 		B4747F2A27E153D000B7EDF3 /* TaskProgressIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgressIndicator.swift; sourceTree = "<group>"; };
 		B4747F2D27E1710700B7EDF3 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		B4747F3027E175CE00B7EDF3 /* AppMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppMessages.swift; sourceTree = "<group>"; };
+		B4747F3227E176C800B7EDF3 /* AppErrorMessages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppErrorMessages.swift; sourceTree = "<group>"; };
 		B47E589B27948C0100D70341 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B47E589D27948C1D00D70341 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		B4851E7527A525C2005F4399 /* EmailSiginInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmailSiginInViewController.swift; path = DecaNews/App/Auth/SignIn/Controller/EmailSiginInViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -576,6 +580,7 @@
 		94EDA18227C67A560019DF5C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				B4747F2F27E1756700B7EDF3 /* Messages */,
 				B4747F2C27E170D900B7EDF3 /* Alerts */,
 				94083F0427CD3362008E523B /* DIContainer.swift */,
 				B4429D7227CEC7160011B078 /* AppColors.swift */,
@@ -987,6 +992,15 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
+		B4747F2F27E1756700B7EDF3 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				B4747F3027E175CE00B7EDF3 /* AppMessages.swift */,
+				B4747F3227E176C800B7EDF3 /* AppErrorMessages.swift */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
 		B47E589A27948BD800D70341 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1198,6 +1212,7 @@
 				B45C378027C1D335009995B7 /* SearchNewsViewController.swift in Sources */,
 				B46C8ECC279C650400C1A903 /* IndicatorLabel.swift in Sources */,
 				9412445327C023160045484E /* AuthComposer.swift in Sources */,
+				B4747F3327E176C800B7EDF3 /* AppErrorMessages.swift in Sources */,
 				B45C373A27ADB9AB009995B7 /* ServicesViewModel.swift in Sources */,
 				B4CBBBD227ADB3EB00A9647F /* ResetLinkViewController.swift in Sources */,
 				B4CE4F4727D8D58F006D2EE1 /* SettingsSecondCell.swift in Sources */,
@@ -1268,6 +1283,7 @@
 				049D60F427B8062800DB35F1 /* LatestNewsTableViewCell.swift in Sources */,
 				94D2308E27D6838F00316D21 /* BaseNavigationController.swift in Sources */,
 				B4B51EEA27C41D960004E468 /* CommentsViewController.swift in Sources */,
+				B4747F3127E175CE00B7EDF3 /* AppMessages.swift in Sources */,
 				B458C32E27D6F4A8001147F3 /* DashboardHeaderDatasource.swift in Sources */,
 				B458C31127CEC4CE001147F3 /* DashboardViewModel.swift in Sources */,
 				B45C37BD27C6D8C3009995B7 /* PasswordChangeViewController.swift in Sources */,
